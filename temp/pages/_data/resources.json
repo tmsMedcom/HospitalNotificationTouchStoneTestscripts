@@ -1,0 +1,241 @@
+{
+  "ImplementationGuide/medcom": {
+    "history": false,
+    "index": 0,
+    "source": "C:\\MedCom\\HNFSHReceive\\fsh-generated\\resources\\ImplementationGuide-medcom.json",
+    "url": "http://example.org/fhir/fish/ImplementationGuide/medcom",
+    "name": "HospitalnotificationTestscripts",
+    "title": "HospitalNotification Testscripts",
+    "version": "0.1.0",
+    "date": "2021-07-08T10:14:29+02:00",
+    "status": {
+      "class": "colsd",
+      "status": "Draft"
+    }
+  },
+  "TestScript/UFHV01": {
+    "history": false,
+    "index": 1,
+    "source": "fsh-generated/resources/TestScript-UFHV01.json",
+    "url": "http://build.fhir.org/ig/hl7dk/dk-medcom/",
+    "name": "receive-notification-about-admission",
+    "title": "hospitalNotification-message admit-inpatient receiving XML",
+    "version": "0.1.0",
+    "date": "2021-06-25",
+    "status": {
+      "class": "colstu",
+      "owner": "MedCom",
+      "status": "Active"
+    }
+  },
+  "TestScript/UFHV02": {
+    "history": false,
+    "index": 2,
+    "source": "fsh-generated/resources/TestScript-UFHV02.json",
+    "url": "http://build.fhir.org/ig/hl7dk/dk-medcom/",
+    "name": "receive-notification-correction",
+    "title": "Correction: Patient is admitted but the hospital department registered is incorrect ",
+    "version": "0.1.0",
+    "date": "2021-06-30",
+    "status": {
+      "class": "colstu",
+      "owner": "MedCom",
+      "status": "Active"
+    }
+  },
+  "TestScript/UFHV03": {
+    "history": false,
+    "index": 3,
+    "source": "fsh-generated/resources/TestScript-UFHV03.json",
+    "url": "http://build.fhir.org/ig/hl7dk/dk-medcom/",
+    "name": "receive-notification-Cancellation",
+    "title": "Cancellation: Wrong patient has been admitted",
+    "version": "0.1.0",
+    "date": "2021-06-30",
+    "status": {
+      "class": "colstu",
+      "owner": "MedCom",
+      "status": "Active"
+    }
+  },
+  "TestScript/UFHV04": {
+    "history": false,
+    "index": 4,
+    "source": "fsh-generated/resources/TestScript-UFHV04.json",
+    "url": "http://build.fhir.org/ig/hl7dk/dk-medcom/",
+    "name": "receive-notification-admitted and discharged",
+    "title": "Patient is admitted at hospital and a day after discharged (emergency)",
+    "version": "0.1.0",
+    "date": "2021-06-30",
+    "status": {
+      "class": "colstu",
+      "owner": "MedCom",
+      "status": "Active"
+    }
+  },
+  "TestScript/UFHV05": {
+    "history": false,
+    "index": 5,
+    "source": "fsh-generated/resources/TestScript-UFHV05.json",
+    "url": "http://build.fhir.org/ig/hl7dk/dk-medcom/",
+    "name": "receive-notification-admit and discharge to home",
+    "title": "Patient is admitted at hospital, goes on leave from hospital, returns after leave, and is finally discharged to home",
+    "version": "0.1.0",
+    "date": "2021-06-30",
+    "status": {
+      "class": "colstu",
+      "owner": "MedCom",
+      "status": "Active"
+    }
+  },
+  "TestScript/UFHV06": {
+    "history": false,
+    "index": 6,
+    "source": "fsh-generated/resources/TestScript-UFHV06.json",
+    "url": "http://build.fhir.org/ig/hl7dk/dk-medcom/",
+    "name": "never returns after leave",
+    "title": "Patient is admitted at hospital, goes on leave from hospital but never returns after leave",
+    "version": "0.1.0",
+    "date": "2021-06-30",
+    "status": {
+      "class": "colstu",
+      "owner": "MedCom",
+      "status": "Active"
+    }
+  },
+  "TestScript/UFHV08": {
+    "history": false,
+    "index": 7,
+    "source": "fsh-generated/resources/TestScript-UFHV08.json",
+    "url": "http://build.fhir.org/ig/hl7dk/dk-medcom/",
+    "name": "Admitted, transferred and discharged to home",
+    "title": "Patient is admitted at hospital, transferred to another hospital (same region), and finally discharged to home",
+    "version": "0.1.0",
+    "date": "2021-07-05",
+    "status": {
+      "class": "colstu",
+      "owner": "MedCom",
+      "status": "Active"
+    }
+  },
+  "TestScript/UFHV09": {
+    "history": false,
+    "index": 8,
+    "source": "fsh-generated/resources/TestScript-UFHV09.json",
+    "url": "http://build.fhir.org/ig/hl7dk/dk-medcom/",
+    "name": "Admitted, transferred and discharged to home",
+    "title": "Patient is admitted at hospital, transfers himself to another hospital (same region), and finally dicharged to home",
+    "version": "0.1.0",
+    "date": "2021-07-05",
+    "status": {
+      "class": "colstu",
+      "owner": "MedCom",
+      "status": "Active"
+    }
+  },
+  "TestScript/UFHV10": {
+    "history": false,
+    "index": 9,
+    "source": "fsh-generated/resources/TestScript-UFHV10.json",
+    "url": "http://build.fhir.org/ig/hl7dk/dk-medcom/",
+    "name": "Patient is admitted at hospital, transferred to another hospital (another region), and finally discharged to home",
+    "title": "Patient is admitted at hospital, transferred to another hospital (another region), and finally discharged to home",
+    "version": "0.1.0",
+    "date": "2021-07-05",
+    "status": {
+      "class": "colstu",
+      "owner": "MedCom",
+      "status": "Active"
+    }
+  },
+  "TestScript/UFHV11": {
+    "history": false,
+    "index": 10,
+    "source": "fsh-generated/resources/TestScript-UFHV11.json",
+    "url": "http://build.fhir.org/ig/hl7dk/dk-medcom/",
+    "name": "Patient is admitted at hospital, transfers himself to another hospital (another region), and finally discharged to home",
+    "title": "Patient is admitted at hospital, transfers himself to another hospital (another region), and finally discharged to home",
+    "version": "0.1.0",
+    "date": "2021-07-06",
+    "status": {
+      "class": "colstu",
+      "owner": "MedCom",
+      "status": "Active"
+    }
+  },
+  "TestScript/UFHV12": {
+    "history": false,
+    "index": 11,
+    "source": "fsh-generated/resources/TestScript-UFHV12.json",
+    "url": "http://build.fhir.org/ig/hl7dk/dk-medcom/",
+    "name": "Patient is in an emergency outpatient setting ay hospital, but ends up being admitted",
+    "title": "Patient is in an emergency outpatient setting ay hospital, but ends up being admitted",
+    "version": "0.1.0",
+    "date": "2021-07-06",
+    "status": {
+      "class": "colstu",
+      "owner": "MedCom",
+      "status": "Active"
+    }
+  },
+  "TestScript/UFHV13": {
+    "history": false,
+    "index": 12,
+    "source": "fsh-generated/resources/TestScript-UFHV13.json",
+    "url": "http://build.fhir.org/ig/hl7dk/dk-medcom/",
+    "name": "Patient dies upon arrival at the hospital",
+    "title": "Patient dies upon arrival at the hospital",
+    "version": "0.1.0",
+    "date": "2021-07-07",
+    "status": {
+      "class": "colstu",
+      "owner": "MedCom",
+      "status": "Active"
+    }
+  },
+  "TestScript/UFHV14": {
+    "history": false,
+    "index": 13,
+    "source": "fsh-generated/resources/TestScript-UFHV14.json",
+    "url": "http://build.fhir.org/ig/hl7dk/dk-medcom/",
+    "name": "Patient is admitted and dies at the hospital",
+    "title": "Patient is admitted and dies at the hospital",
+    "version": "0.1.0",
+    "date": "2021-07-07",
+    "status": {
+      "class": "colstu",
+      "owner": "MedCom",
+      "status": "Active"
+    }
+  },
+  "TestScript/UFHV15": {
+    "history": false,
+    "index": 14,
+    "source": "fsh-generated/resources/TestScript-UFHV15.json",
+    "url": "http://build.fhir.org/ig/hl7dk/dk-medcom/",
+    "name": "Dies during leave",
+    "title": "Patient is admitted, goes on leave from the hospital and dies during leave",
+    "version": "0.1.0",
+    "date": "2021-07-07",
+    "status": {
+      "class": "colstu",
+      "owner": "MedCom",
+      "status": "Active"
+    }
+  },
+  "TestScript/UFHV16": {
+    "history": false,
+    "index": 15,
+    "source": "fsh-generated/resources/TestScript-UFHV16.json",
+    "url": "http://build.fhir.org/ig/hl7dk/dk-medcom/",
+    "name": "transferred to a private hospital",
+    "title": "Patient is admitted, transferred to a private hospital (or other department) not sending notifications, and finally discharged",
+    "version": "0.1.0",
+    "date": "2021-07-07",
+    "status": {
+      "class": "colstu",
+      "owner": "MedCom",
+      "status": "Active"
+    }
+  }
+}

@@ -1,0 +1,518 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ImplementationGuide xmlns="http://hl7.org/fhir">
+   <id value="medcom"/>
+   <text>
+      <status value="extensions"/>
+      <div xmlns="http://www.w3.org/1999/xhtml">
+         <h2>HospitalnotificationTestscripts</h2>
+         <p>The official URL for this implementation guide is: </p>
+         <pre>http://example.org/fhir/fish/ImplementationGuide/medcom</pre>
+         <div>
+            <p>Testscripts for HospitalNotification</p>
+         </div>
+      </div>
+   </text>
+   <url value="http://example.org/fhir/fish/ImplementationGuide/medcom"/>
+   <version value="0.1.0"/>
+   <name value="HospitalnotificationTestscripts"/>
+   <title value="HospitalNotification Testscripts"/>
+   <status value="draft"/>
+   <date value="2021-07-08T10:14:29+02:00"/>
+   <contact>
+      <name value="MedCom"/>
+      <telecom>
+         <system value="email"/>
+         <value value="fhir@medcom.dk"/>
+      </telecom>
+   </contact>
+   <description value="Testscripts for HospitalNotification"/>
+   <packageId value="medcom"/>
+   <license value="CC0-1.0"/>
+   <fhirVersion value="4.0.1"/>
+   <definition>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      <grouping id="-ex-example">
+         <name value="Example: Example Instances"/>
+         <description value="These are example instances that show what data produced and consumed by systems conforming with this implementation guide might look like"/>
+      </grouping>
+
+      <resource>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+            <valueString value="TestScript"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+            <valueUri value="TestScript-UFHV01.html"/>
+         </extension>
+         <reference>
+            <reference value="TestScript/UFHV01"/>
+         </reference>
+         <name value="TestinstanceUFHV1"/>
+         <description value="Testing correct use of status admit-inpatient"/>
+         <exampleBoolean value="true"/>
+         <groupingId value="-ex-example"/>
+      </resource>
+      <resource>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+            <valueString value="TestScript"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+            <valueUri value="TestScript-UFHV02.html"/>
+         </extension>
+         <reference>
+            <reference value="TestScript/UFHV02"/>
+         </reference>
+         <name value="TestinstanceUFHV2"/>
+         <description value="Testing correct use of correction"/>
+         <exampleBoolean value="true"/>
+         <groupingId value="-ex-example"/>
+      </resource>
+      <resource>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+            <valueString value="TestScript"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+            <valueUri value="TestScript-UFHV03.html"/>
+         </extension>
+         <reference>
+            <reference value="TestScript/UFHV03"/>
+         </reference>
+         <name value="TestinstanceUFHV3"/>
+         <description value="Testing correct use of Cancellation"/>
+         <exampleBoolean value="true"/>
+         <groupingId value="-ex-example"/>
+      </resource>
+      <resource>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+            <valueString value="TestScript"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+            <valueUri value="TestScript-UFHV04.html"/>
+         </extension>
+         <reference>
+            <reference value="TestScript/UFHV04"/>
+         </reference>
+         <name value="TestinstanceUFHV4"/>
+         <description value="Testing correct use of emergency admit and discharge"/>
+         <exampleBoolean value="true"/>
+         <groupingId value="-ex-example"/>
+      </resource>
+      <resource>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+            <valueString value="TestScript"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+            <valueUri value="TestScript-UFHV05.html"/>
+         </extension>
+         <reference>
+            <reference value="TestScript/UFHV05"/>
+         </reference>
+         <name value="TestinstanceUFHV5"/>
+         <description value="Testing correct use of admit and discharge"/>
+         <exampleBoolean value="true"/>
+         <groupingId value="-ex-example"/>
+      </resource>
+      <resource>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+            <valueString value="TestScript"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+            <valueUri value="TestScript-UFHV06.html"/>
+         </extension>
+         <reference>
+            <reference value="TestScript/UFHV06"/>
+         </reference>
+         <name value="TestinstanceUFHV6"/>
+         <description value="Testing correct use of admit and discharge"/>
+         <exampleBoolean value="true"/>
+         <groupingId value="-ex-example"/>
+      </resource>
+      <resource>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+            <valueString value="TestScript"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+            <valueUri value="TestScript-UFHV08.html"/>
+         </extension>
+         <reference>
+            <reference value="TestScript/UFHV08"/>
+         </reference>
+         <name value="TestinstanceUFHV8"/>
+         <description value="Testing correct use of admit and discharge"/>
+         <exampleBoolean value="true"/>
+         <groupingId value="-ex-example"/>
+      </resource>
+      <resource>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+            <valueString value="TestScript"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+            <valueUri value="TestScript-UFHV09.html"/>
+         </extension>
+         <reference>
+            <reference value="TestScript/UFHV09"/>
+         </reference>
+         <name value="TestinstanceUFHV9"/>
+         <description value="Testing correct use of admit and discharge"/>
+         <exampleBoolean value="true"/>
+         <groupingId value="-ex-example"/>
+      </resource>
+      <resource>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+            <valueString value="TestScript"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+            <valueUri value="TestScript-UFHV10.html"/>
+         </extension>
+         <reference>
+            <reference value="TestScript/UFHV10"/>
+         </reference>
+         <name value="TestinstanceUFHV10"/>
+         <description value="Testing correct use of admit and discharge"/>
+         <exampleBoolean value="true"/>
+         <groupingId value="-ex-example"/>
+      </resource>
+      <resource>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+            <valueString value="TestScript"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+            <valueUri value="TestScript-UFHV11.html"/>
+         </extension>
+         <reference>
+            <reference value="TestScript/UFHV11"/>
+         </reference>
+         <name value="TestinstanceUFHV11"/>
+         <description value="Testing correct use of admit and discharge"/>
+         <exampleBoolean value="true"/>
+         <groupingId value="-ex-example"/>
+      </resource>
+      <resource>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+            <valueString value="TestScript"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+            <valueUri value="TestScript-UFHV12.html"/>
+         </extension>
+         <reference>
+            <reference value="TestScript/UFHV12"/>
+         </reference>
+         <name value="TestinstanceUFHV12"/>
+         <description value="Testing correct use of emergency admit and discharge"/>
+         <exampleBoolean value="true"/>
+         <groupingId value="-ex-example"/>
+      </resource>
+      <resource>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+            <valueString value="TestScript"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+            <valueUri value="TestScript-UFHV13.html"/>
+         </extension>
+         <reference>
+            <reference value="TestScript/UFHV13"/>
+         </reference>
+         <name value="TestinstanceUFHV13"/>
+         <description value="Testing correct use of correction"/>
+         <exampleBoolean value="true"/>
+         <groupingId value="-ex-example"/>
+      </resource>
+      <resource>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+            <valueString value="TestScript"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+            <valueUri value="TestScript-UFHV14.html"/>
+         </extension>
+         <reference>
+            <reference value="TestScript/UFHV14"/>
+         </reference>
+         <name value="TestinstanceUFHV14"/>
+         <description value="Testing correct use of status admit-inpatient"/>
+         <exampleBoolean value="true"/>
+         <groupingId value="-ex-example"/>
+      </resource>
+      <resource>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+            <valueString value="TestScript"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+            <valueUri value="TestScript-UFHV15.html"/>
+         </extension>
+         <reference>
+            <reference value="TestScript/UFHV15"/>
+         </reference>
+         <name value="TestinstanceUFHV15"/>
+         <description value="Testing correct use of admit and discharge"/>
+         <exampleBoolean value="true"/>
+         <groupingId value="-ex-example"/>
+      </resource>
+      <resource>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+            <valueString value="TestScript"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+            <valueUri value="TestScript-UFHV16.html"/>
+         </extension>
+         <reference>
+            <reference value="TestScript/UFHV16"/>
+         </reference>
+         <name value="TestinstanceUFHV16"/>
+         <description value="Testing correct use of correction"/>
+         <exampleBoolean value="true"/>
+         <groupingId value="-ex-example"/>
+      </resource>
+      <page>
+         <nameUrl value="toc.html"/>
+         <title value="Table of Contents"/>
+         <generation value="html"/>
+         <page>
+            <nameUrl value="index.html"/>
+            <title value="Home"/>
+            <generation value="markdown"/>
+         </page>
+         <page>
+            <nameUrl value="artifacts.html"/>
+            <title value="Artifacts Summary"/>
+            <generation value="html"/>
+            <page>
+               <nameUrl value="TestScript-UFHV01.html"/>
+               <title value="TestinstanceUFHV1"/>
+               <generation value="generated"/>
+            </page>
+            <page>
+               <nameUrl value="TestScript-UFHV02.html"/>
+               <title value="TestinstanceUFHV2"/>
+               <generation value="generated"/>
+            </page>
+            <page>
+               <nameUrl value="TestScript-UFHV03.html"/>
+               <title value="TestinstanceUFHV3"/>
+               <generation value="generated"/>
+            </page>
+            <page>
+               <nameUrl value="TestScript-UFHV04.html"/>
+               <title value="TestinstanceUFHV4"/>
+               <generation value="generated"/>
+            </page>
+            <page>
+               <nameUrl value="TestScript-UFHV05.html"/>
+               <title value="TestinstanceUFHV5"/>
+               <generation value="generated"/>
+            </page>
+            <page>
+               <nameUrl value="TestScript-UFHV06.html"/>
+               <title value="TestinstanceUFHV6"/>
+               <generation value="generated"/>
+            </page>
+            <page>
+               <nameUrl value="TestScript-UFHV08.html"/>
+               <title value="TestinstanceUFHV8"/>
+               <generation value="generated"/>
+            </page>
+            <page>
+               <nameUrl value="TestScript-UFHV09.html"/>
+               <title value="TestinstanceUFHV9"/>
+               <generation value="generated"/>
+            </page>
+            <page>
+               <nameUrl value="TestScript-UFHV10.html"/>
+               <title value="TestinstanceUFHV10"/>
+               <generation value="generated"/>
+            </page>
+            <page>
+               <nameUrl value="TestScript-UFHV11.html"/>
+               <title value="TestinstanceUFHV11"/>
+               <generation value="generated"/>
+            </page>
+            <page>
+               <nameUrl value="TestScript-UFHV12.html"/>
+               <title value="TestinstanceUFHV12"/>
+               <generation value="generated"/>
+            </page>
+            <page>
+               <nameUrl value="TestScript-UFHV13.html"/>
+               <title value="TestinstanceUFHV13"/>
+               <generation value="generated"/>
+            </page>
+            <page>
+               <nameUrl value="TestScript-UFHV14.html"/>
+               <title value="TestinstanceUFHV14"/>
+               <generation value="generated"/>
+            </page>
+            <page>
+               <nameUrl value="TestScript-UFHV15.html"/>
+               <title value="TestinstanceUFHV15"/>
+               <generation value="generated"/>
+            </page>
+            <page>
+               <nameUrl value="TestScript-UFHV16.html"/>
+               <title value="TestinstanceUFHV16"/>
+               <generation value="generated"/>
+            </page>
+         </page>
+      </page>
+      <parameter>
+         <code value="copyrightyear"/>
+         <value value="2020+"/>
+      </parameter>
+      <parameter>
+         <code value="releaselabel"/>
+         <value value="ci-build"/>
+      </parameter>
+      <parameter>
+         <code value="apply-publisher"/>
+         <value value="true"/>
+      </parameter>
+      <parameter>
+         <code value="apply-contact"/>
+         <value value="true"/>
+      </parameter>
+      <parameter>
+         <code value="show-inherited-invariants"/>
+         <value value="false"/>
+      </parameter>
+      <parameter>
+         <code value="autoload-resources"/>
+         <value value="true"/>
+      </parameter>
+      <parameter>
+         <code value="path-resource"/>
+         <value value="input/capabilities"/>
+      </parameter>
+      <parameter>
+         <code value="path-resource"/>
+         <value value="input/examples"/>
+      </parameter>
+      <parameter>
+         <code value="path-resource"/>
+         <value value="input/extensions"/>
+      </parameter>
+      <parameter>
+         <code value="path-resource"/>
+         <value value="input/models"/>
+      </parameter>
+      <parameter>
+         <code value="path-resource"/>
+         <value value="input/operations"/>
+      </parameter>
+      <parameter>
+         <code value="path-resource"/>
+         <value value="input/profiles"/>
+      </parameter>
+      <parameter>
+         <code value="path-resource"/>
+         <value value="input/resources"/>
+      </parameter>
+      <parameter>
+         <code value="path-resource"/>
+         <value value="input/vocabulary"/>
+      </parameter>
+      <parameter>
+         <code value="path-resource"/>
+         <value value="input/maps"/>
+      </parameter>
+      <parameter>
+         <code value="path-resource"/>
+         <value value="input/testing"/>
+      </parameter>
+      <parameter>
+         <code value="path-resource"/>
+         <value value="input/history"/>
+      </parameter>
+      <parameter>
+         <code value="path-resource"/>
+         <value value="fsh-generated/resources"/>
+      </parameter>
+      <parameter>
+         <code value="path-pages"/>
+         <value value="template/config"/>
+      </parameter>
+      <parameter>
+         <code value="path-pages"/>
+         <value value="input/images"/>
+      </parameter>
+      <parameter>
+         <code value="path-liquid"/>
+         <value value="template/liquid"/>
+      </parameter>
+      <parameter>
+         <code value="path-liquid"/>
+         <value value="input/liquid"/>
+      </parameter>
+      <parameter>
+         <code value="path-qa"/>
+         <value value="temp/qa"/>
+      </parameter>
+      <parameter>
+         <code value="path-temp"/>
+         <value value="temp/pages"/>
+      </parameter>
+      <parameter>
+         <code value="path-output"/>
+         <value value="output"/>
+      </parameter>
+      <parameter>
+         <code value="path-tx-cache"/>
+         <value value="input-cache/txcache"/>
+      </parameter>
+      <parameter>
+         <code value="path-suppressed-warnings"/>
+         <value value="input/ignoreWarnings.txt"/>
+      </parameter>
+      <parameter>
+         <code value="path-history"/>
+         <value value="http://example.org/fhir/fish/history.html"/>
+      </parameter>
+      <parameter>
+         <code value="template-html"/>
+         <value value="template-page.html"/>
+      </parameter>
+      <parameter>
+         <code value="template-md"/>
+         <value value="template-page-md.html"/>
+      </parameter>
+      <parameter>
+         <code value="apply-context"/>
+         <value value="true"/>
+      </parameter>
+      <parameter>
+         <code value="apply-copyright"/>
+         <value value="true"/>
+      </parameter>
+      <parameter>
+         <code value="apply-jurisdiction"/>
+         <value value="true"/>
+      </parameter>
+      <parameter>
+         <code value="apply-license"/>
+         <value value="true"/>
+      </parameter>
+      <parameter>
+         <code value="apply-version"/>
+         <value value="true"/>
+      </parameter>
+      <parameter>
+         <code value="active-tables"/>
+         <value value="true"/>
+      </parameter>
+   </definition>
+</ImplementationGuide>

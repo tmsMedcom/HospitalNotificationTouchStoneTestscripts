@@ -1,0 +1,21 @@
+---
+---
+<!-- layouts\layout-changehistory.html -->
+<!-- get modelType -->
+
+
+{% include fragment-pagebegin.html %}
+
+<div style="counter-reset: section 10" class="col-12">
+  <!--ReleaseHeader--><p id="publish-box">Publish Box goes here</p><!--EndReleaseHeader-->
+  {% include fragment-base-navtabs.html type='TestScript' id='UFHV10' active='history' %}
+
+  <a name="root"> </a>
+  <h2 id="root">{{type}}: Patient is admitted at hospital, transferred to another hospital (another region), and finally discharged to home - Change History</h2>
+  <p>History of changes for UFHV10 {{type | downcase}}.</p>
+
+  {%include TestScript-UFHV10-history.xhtml%}
+
+</div>
+{% assign includetabscripts = 'true' %}
+{% include fragment-pageend.html %}
