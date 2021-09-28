@@ -1,5 +1,12 @@
 [
   {
+    "id": "ACK01-ok",
+    "type": "TestScript",
+    "url": "http://build.fhir.org/ig/hl7dk/dk-medcom/",
+    "version": "0.1.0",
+    "name": "medcom-Acknowledgement-ok-xml-json"
+  },
+  {
     "id": "UFHV01",
     "type": "TestScript",
     "url": "http://build.fhir.org/ig/hl7dk/dk-medcom/",

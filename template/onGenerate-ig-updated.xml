@@ -17,7 +17,7 @@
    <name value="HospitalnotificationTestscripts"/>
    <title value="HospitalNotification Testscripts"/>
    <status value="draft"/>
-   <date value="2021-07-08T10:14:29+02:00"/>
+   <date value="2021-09-27T14:23:21+02:00"/>
    <contact>
       <name value="MedCom"/>
       <telecom>
@@ -55,6 +55,21 @@
          <description value="These are example instances that show what data produced and consumed by systems conforming with this implementation guide might look like"/>
       </grouping>
 
+      <resource>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+            <valueString value="TestScript"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+            <valueUri value="TestScript-ACK01-ok.html"/>
+         </extension>
+         <reference>
+            <reference value="TestScript/ACK01-ok"/>
+         </reference>
+         <name value="TestinstanceACK-OK"/>
+         <description value="Testing correct use of acknowledgment"/>
+         <exampleBoolean value="true"/>
+         <groupingId value="-ex-example"/>
+      </resource>
       <resource>
          <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
             <valueString value="TestScript"/>
@@ -293,6 +308,11 @@
             <nameUrl value="artifacts.html"/>
             <title value="Artifacts Summary"/>
             <generation value="html"/>
+            <page>
+               <nameUrl value="TestScript-ACK01-ok.html"/>
+               <title value="TestinstanceACK-OK"/>
+               <generation value="generated"/>
+            </page>
             <page>
                <nameUrl value="TestScript-UFHV01.html"/>
                <title value="TestinstanceUFHV1"/>

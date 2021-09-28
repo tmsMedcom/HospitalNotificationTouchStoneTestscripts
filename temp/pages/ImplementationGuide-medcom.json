@@ -10,7 +10,7 @@
   "name": "HospitalnotificationTestscripts",
   "title": "HospitalNotification Testscripts",
   "status": "draft",
-  "date": "2021-07-08T10:14:29+02:00",
+  "date": "2021-09-27T14:23:21+02:00",
   "contact": [
     {
       "name": "MedCom",
@@ -305,6 +305,20 @@
       }
     ],
     "resource": [
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "TestScript"
+          }
+        ],
+        "reference": {
+          "reference": "TestScript/ACK01-ok"
+        },
+        "name": "TestinstanceACK-OK",
+        "description": "Testing correct use of acknowledgment",
+        "exampleBoolean": true
+      },
       {
         "extension": [
           {

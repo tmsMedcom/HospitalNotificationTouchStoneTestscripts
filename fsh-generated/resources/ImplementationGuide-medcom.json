@@ -27,6 +27,13 @@
     "resource": [
       {
         "reference": {
+          "reference": "TestScript/ACK01-ok"
+        },
+        "name": "TestinstanceACK-OK",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
           "reference": "TestScript/UFHV01"
         },
         "name": "TestinstanceUFHV1",

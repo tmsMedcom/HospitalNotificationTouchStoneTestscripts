@@ -23,6 +23,13 @@
          <tbody>
             <tr>
                <td style="column-width:30%">
+                  <a href="TestScript-ACK01-ok.html" title="TestScript/ACK01-ok">TestinstanceACK-OK</a>
+               </td>
+               <td>{% capture desc %}Testing correct use of acknowledgment{% endcapture %}
+{{ desc | markdownify}}</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
                   <a href="TestScript-UFHV01.html" title="TestScript/UFHV01">TestinstanceUFHV1</a>
                </td>
                <td>{% capture desc %}Testing correct use of status admit-inpatient{% endcapture %}
