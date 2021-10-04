@@ -1,0 +1,21 @@
+---
+---
+<!-- layouts\layout-changehistory.html -->
+<!-- get modelType -->
+
+
+{% include fragment-pagebegin.html %}
+
+<div style="counter-reset: section 10" class="col-12">
+  <!--ReleaseHeader--><p id="publish-box">Publish Box goes here</p><!--EndReleaseHeader-->
+  {% include fragment-base-navtabs.html type='TestScript' id='83e8e271-ced4-4ca7-ad4b-256ca00ed07f' active='history' %}
+
+  <a name="root"> </a>
+  <h2 id="root">{{type}}: medcom-Acknowledgement-ok-xml-json - Change History</h2>
+  <p>History of changes for 83e8e271-ced4-4ca7-ad4b-256ca00ed07f {{type | downcase}}.</p>
+
+  {%include TestScript-83e8e271-ced4-4ca7-ad4b-256ca00ed07f-history.xhtml%}
+
+</div>
+{% assign includetabscripts = 'true' %}
+{% include fragment-pageend.html %}

@@ -27,6 +27,34 @@
     "resource": [
       {
         "reference": {
+          "reference": "TestScript/3e345dfd-32bb-4b0f-92f4-b5798f7c27e4"
+        },
+        "name": "TestinstanceACKfatal-error",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "TestScript/5e657b1f-060e-423f-b198-fa8ffee77b87"
+        },
+        "name": "GeneratedHNrecScript",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "TestScript/83e8e271-ced4-4ca7-ad4b-256ca00ed07f"
+        },
+        "name": "TestinstanceACKOK",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "TestScript/92446d93-ec60-4151-b550-3ef6a1b37e08"
+        },
+        "name": "TestinstanceACKtransient-error",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
           "reference": "TestScript/ACK01-ok"
         },
         "name": "TestinstanceACK-OK",

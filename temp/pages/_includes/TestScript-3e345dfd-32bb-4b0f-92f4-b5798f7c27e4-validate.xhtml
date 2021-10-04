@@ -1,0 +1,6 @@
+{% raw %}<p><b>Validation Links:</b></p><ul><li><a href="https://confluence.hl7.org/display/FHIR/Using+the+FHIR+Validator">Validate using FHIR Validator</a> (Java): <code id="vl-TestScript-3e345dfd-32bb-4b0f-92f4-b5798f7c27e4">$cmd$</code></li></ul>
+<script type="text/javascript">
+  var x = window.location.href;
+  document.getElementById("vl-TestScript-3e345dfd-32bb-4b0f-92f4-b5798f7c27e4").innerHTML = "java -jar [path]/org.hl7.fhir.validator.jar -ig medcom#dev "+x.substr(0, x.lastIndexOf(".")).replace("file:///", "") + ".json";
+</script>
+{% endraw %}

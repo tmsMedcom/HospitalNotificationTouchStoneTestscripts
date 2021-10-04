@@ -7,15 +7,75 @@
     "name": "HospitalnotificationTestscripts",
     "title": "HospitalNotification Testscripts",
     "version": "0.1.0",
-    "date": "2021-09-27T14:23:21+02:00",
+    "date": "2021-10-04T15:18:47+02:00",
     "status": {
       "class": "colsd",
       "status": "Draft"
     }
   },
-  "TestScript/ACK01-ok": {
+  "TestScript/3e345dfd-32bb-4b0f-92f4-b5798f7c27e4": {
     "history": false,
     "index": 1,
+    "source": "fsh-generated/resources/TestScript-3e345dfd-32bb-4b0f-92f4-b5798f7c27e4.json",
+    "url": "http://build.fhir.org/ig/hl7dk/dk-medcom/",
+    "name": "medcom-Acknowledgement-fatal-error-xml-json",
+    "title": "medcom-Acknowledgement-fatal-error",
+    "version": "0.1.0",
+    "date": "2021-09-20",
+    "status": {
+      "class": "colstu",
+      "owner": "MedCom",
+      "status": "Active"
+    }
+  },
+  "TestScript/5e657b1f-060e-423f-b198-fa8ffee77b87": {
+    "history": false,
+    "index": 2,
+    "source": "fsh-generated/resources/TestScript-5e657b1f-060e-423f-b198-fa8ffee77b87.json",
+    "url": "http://build.fhir.org/ig/hl7dk/dk-medcom/",
+    "name": "re111ceive-notification-about-admission",
+    "title": "111hospitalNotification-message admit-inpatient receiving XML",
+    "version": "0.1.0",
+    "date": "2021-06-25",
+    "status": {
+      "class": "colstu",
+      "owner": "MedCom",
+      "status": "Active"
+    }
+  },
+  "TestScript/83e8e271-ced4-4ca7-ad4b-256ca00ed07f": {
+    "history": false,
+    "index": 3,
+    "source": "fsh-generated/resources/TestScript-83e8e271-ced4-4ca7-ad4b-256ca00ed07f.json",
+    "url": "http://build.fhir.org/ig/hl7dk/dk-medcom/",
+    "name": "medcom-Acknowledgement-ok-xml-json",
+    "title": "medcom-Acknowledgement-ok",
+    "version": "0.1.0",
+    "date": "2021-09-20",
+    "status": {
+      "class": "colstu",
+      "owner": "MedCom",
+      "status": "Active"
+    }
+  },
+  "TestScript/92446d93-ec60-4151-b550-3ef6a1b37e08": {
+    "history": false,
+    "index": 4,
+    "source": "fsh-generated/resources/TestScript-92446d93-ec60-4151-b550-3ef6a1b37e08.json",
+    "url": "http://build.fhir.org/ig/hl7dk/dk-medcom/",
+    "name": "medcom-Acknowledgement-transient-error-xml-json",
+    "title": "medcom-Acknowledgement-transient-error",
+    "version": "0.1.0",
+    "date": "2021-09-20",
+    "status": {
+      "class": "colstu",
+      "owner": "MedCom",
+      "status": "Active"
+    }
+  },
+  "TestScript/ACK01-ok": {
+    "history": false,
+    "index": 5,
     "source": "fsh-generated/resources/TestScript-ACK01-ok.json",
     "url": "http://build.fhir.org/ig/hl7dk/dk-medcom/",
     "name": "medcom-Acknowledgement-ok-xml-json",
@@ -30,7 +90,7 @@
   },
   "TestScript/UFHV01": {
     "history": false,
-    "index": 2,
+    "index": 6,
     "source": "fsh-generated/resources/TestScript-UFHV01.json",
     "url": "http://build.fhir.org/ig/hl7dk/dk-medcom/",
     "name": "receive-notification-about-admission",
@@ -45,7 +105,7 @@
   },
   "TestScript/UFHV02": {
     "history": false,
-    "index": 3,
+    "index": 7,
     "source": "fsh-generated/resources/TestScript-UFHV02.json",
     "url": "http://build.fhir.org/ig/hl7dk/dk-medcom/",
     "name": "receive-notification-correction",
@@ -60,7 +120,7 @@
   },
   "TestScript/UFHV03": {
     "history": false,
-    "index": 4,
+    "index": 8,
     "source": "fsh-generated/resources/TestScript-UFHV03.json",
     "url": "http://build.fhir.org/ig/hl7dk/dk-medcom/",
     "name": "receive-notification-Cancellation",
@@ -75,7 +135,7 @@
   },
   "TestScript/UFHV04": {
     "history": false,
-    "index": 5,
+    "index": 9,
     "source": "fsh-generated/resources/TestScript-UFHV04.json",
     "url": "http://build.fhir.org/ig/hl7dk/dk-medcom/",
     "name": "receive-notification-admitted and discharged",
@@ -90,7 +150,7 @@
   },
   "TestScript/UFHV05": {
     "history": false,
-    "index": 6,
+    "index": 10,
     "source": "fsh-generated/resources/TestScript-UFHV05.json",
     "url": "http://build.fhir.org/ig/hl7dk/dk-medcom/",
     "name": "receive-notification-admit and discharge to home",
@@ -105,7 +165,7 @@
   },
   "TestScript/UFHV06": {
     "history": false,
-    "index": 7,
+    "index": 11,
     "source": "fsh-generated/resources/TestScript-UFHV06.json",
     "url": "http://build.fhir.org/ig/hl7dk/dk-medcom/",
     "name": "never returns after leave",
@@ -120,7 +180,7 @@
   },
   "TestScript/UFHV08": {
     "history": false,
-    "index": 8,
+    "index": 12,
     "source": "fsh-generated/resources/TestScript-UFHV08.json",
     "url": "http://build.fhir.org/ig/hl7dk/dk-medcom/",
     "name": "Admitted, transferred and discharged to home",
@@ -135,7 +195,7 @@
   },
   "TestScript/UFHV09": {
     "history": false,
-    "index": 9,
+    "index": 13,
     "source": "fsh-generated/resources/TestScript-UFHV09.json",
     "url": "http://build.fhir.org/ig/hl7dk/dk-medcom/",
     "name": "Admitted, transferred and discharged to home",
@@ -150,7 +210,7 @@
   },
   "TestScript/UFHV10": {
     "history": false,
-    "index": 10,
+    "index": 14,
     "source": "fsh-generated/resources/TestScript-UFHV10.json",
     "url": "http://build.fhir.org/ig/hl7dk/dk-medcom/",
     "name": "Patient is admitted at hospital, transferred to another hospital (another region), and finally discharged to home",
@@ -165,7 +225,7 @@
   },
   "TestScript/UFHV11": {
     "history": false,
-    "index": 11,
+    "index": 15,
     "source": "fsh-generated/resources/TestScript-UFHV11.json",
     "url": "http://build.fhir.org/ig/hl7dk/dk-medcom/",
     "name": "Patient is admitted at hospital, transfers himself to another hospital (another region), and finally discharged to home",
@@ -180,7 +240,7 @@
   },
   "TestScript/UFHV12": {
     "history": false,
-    "index": 12,
+    "index": 16,
     "source": "fsh-generated/resources/TestScript-UFHV12.json",
     "url": "http://build.fhir.org/ig/hl7dk/dk-medcom/",
     "name": "Patient is in an emergency outpatient setting ay hospital, but ends up being admitted",
@@ -195,7 +255,7 @@
   },
   "TestScript/UFHV13": {
     "history": false,
-    "index": 13,
+    "index": 17,
     "source": "fsh-generated/resources/TestScript-UFHV13.json",
     "url": "http://build.fhir.org/ig/hl7dk/dk-medcom/",
     "name": "Patient dies upon arrival at the hospital",
@@ -210,7 +270,7 @@
   },
   "TestScript/UFHV14": {
     "history": false,
-    "index": 14,
+    "index": 18,
     "source": "fsh-generated/resources/TestScript-UFHV14.json",
     "url": "http://build.fhir.org/ig/hl7dk/dk-medcom/",
     "name": "Patient is admitted and dies at the hospital",
@@ -225,7 +285,7 @@
   },
   "TestScript/UFHV15": {
     "history": false,
-    "index": 15,
+    "index": 19,
     "source": "fsh-generated/resources/TestScript-UFHV15.json",
     "url": "http://build.fhir.org/ig/hl7dk/dk-medcom/",
     "name": "Dies during leave",
@@ -240,7 +300,7 @@
   },
   "TestScript/UFHV16": {
     "history": false,
-    "index": 16,
+    "index": 20,
     "source": "fsh-generated/resources/TestScript-UFHV16.json",
     "url": "http://build.fhir.org/ig/hl7dk/dk-medcom/",
     "name": "transferred to a private hospital",

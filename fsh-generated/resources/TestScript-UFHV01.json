@@ -54,6 +54,30 @@
       }
     },
     {
+      "id": "bundle-create-ack-OK",
+      "autocreate": false,
+      "autodelete": false,
+      "resource": {
+        "reference": "/FHIRSandbox/MedCom/401-Acknowledgement/_reference/resources/Acknowledgement-ok.xml"
+      }
+    },
+    {
+      "id": "bundle-create-ack-ok",
+      "autocreate": false,
+      "autodelete": false,
+      "resource": {
+        "reference": "/FHIRSandbox/MedCom/401-Acknowledgement/_reference/resources/Acknowledgement-ok.xml"
+      }
+    },
+    {
+      "id": "bundle-create-ack-ok",
+      "autocreate": false,
+      "autodelete": false,
+      "resource": {
+        "reference": "/FHIRSandbox/MedCom/401-Acknowledgement/_reference/resources/Acknowledgement-ok.xml"
+      }
+    },
+    {
       "id": "bundle-create-SLHJ",
       "autocreate": false,
       "autodelete": false,
@@ -64,8 +88,8 @@
   ],
   "profile": [
     {
-      "id": "hospitalnotification-profile",
-      "reference": "http://medcomfhir.dk/fhir/core/1.0/StructureDefinition/medcom-hospitalNotification-message"
+      "id": "acknowledgment-profile",
+      "reference": "http://medcomfhir.dk/fhir/core/1.0/StructureDefinition/medcom-messaging-acknowledgement"
     }
   ],
   "variable": [
@@ -75,9 +99,44 @@
       "sourceId": "bundle-create-STIN"
     },
     {
+      "name": "headerResourceReference",
+      "expression": "Bundle.entry[0].fullUrl",
+      "sourceId": "bundle-create-ack-ok"
+    },
+    {
+      "name": "bundleResourceid2",
+      "expression": "Bundle.id",
+      "sourceId": "bundle-create-SLHJ"
+    },
+    {
+      "name": "MessageHeaderIdentifier2",
+      "expression": "Bundle.entry[0].fullUrl",
+      "sourceId": "bundle-create-SLHJ"
+    },
+    {
       "name": "destinationUriK3",
       "expression": "Bundle.entry.resource.ofType(MessageHeader).destination.endpoint",
       "sourceId": "bundle-create-SLHJ"
+    },
+    {
+      "name": "headerResourceReference",
+      "expression": "Bundle.entry[0].fullUrl",
+      "sourceId": "bundle-create-ack-ok"
+    },
+    {
+      "name": "bundleResourceidSLHJ",
+      "expression": "Bundle.id",
+      "sourceId": "bundle-create-SLHJ"
+    },
+    {
+      "name": "MessageHeaderIdentifierSLHJ",
+      "expression": "Bundle.entry[0].fullUrl",
+      "sourceId": "bundle-create-SLHJ"
+    },
+    {
+      "name": "destinationUri",
+      "expression": "Bundle.entry.resource.ofType(MessageHeader).destination.endpoint",
+      "sourceId": "bundle-create-STIN"
     }
   ],
   "setup": {
@@ -180,6 +239,72 @@
             "description": "Confirm that the returned HTTP status is 200(OK).",
             "direction": "response",
             "responseCode": "200",
+            "warningOnly": false
+          }
+        }
+      ]
+    },
+    {
+      "id": "02-ACK-01-STIN",
+      "name": "Post Acknowledgement",
+      "description": "GET a Hospital notification",
+      "action": [
+        {
+          "operation": {
+            "type": {
+              "system": "http://terminology.hl7.org/CodeSystem/testscript-operation-codes",
+              "code": "create"
+            },
+            "resource": "Bundle",
+            "description": "Post a acknowledgement",
+            "accept": "xml",
+            "destination": 1,
+            "encodeRequestUrl": true,
+            "origin": 1,
+            "sourceId": "bundle-create-ack-OK"
+          }
+        },
+        {
+          "assert": {
+            "description": "Confirm that the client request payload contains a Bundle resource type.",
+            "direction": "request",
+            "resource": "Bundle",
+            "warningOnly": false
+          }
+        },
+        {
+          "assert": {
+            "description": "Confirm that the MessageHeader response code is OK",
+            "direction": "request",
+            "expression": "Bundle.entry.resource.ofType(MessageHeader).response.code",
+            "operator": "equals",
+            "value": "OK",
+            "warningOnly": false
+          }
+        },
+        {
+          "assert": {
+            "description": "Confirm that the Bundle not containing a OperationOutcome",
+            "direction": "request",
+            "expression": "Bundle.entry.resource.ofType(OperationOutcome).exists().not()",
+            "warningOnly": false
+          }
+        },
+        {
+          "assert": {
+            "description": "Confirm that the MessageHeader.response.identifier is equal to Id of original message ",
+            "direction": "request",
+            "expression": "Bundle.entry.resource.ofType(MessageHeader).response.identifier",
+            "operator": "equals",
+            "value": "${bundleResourceid}",
+            "warningOnly": false
+          }
+        },
+        {
+          "assert": {
+            "description": "Confirm that the reference original Provenance.entity.what is equal to Id of original messageheader.identifier",
+            "direction": "request",
+            "expression": "Bundle.entry.resource.ofType(Provenance).where(entity.what.reference ='${MessageHeaderIdentifier}')",
             "warningOnly": false
           }
         }

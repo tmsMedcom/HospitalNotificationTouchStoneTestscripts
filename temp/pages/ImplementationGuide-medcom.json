@@ -10,7 +10,7 @@
   "name": "HospitalnotificationTestscripts",
   "title": "HospitalNotification Testscripts",
   "status": "draft",
-  "date": "2021-09-27T14:23:21+02:00",
+  "date": "2021-10-04T15:18:47+02:00",
   "contact": [
     {
       "name": "MedCom",
@@ -305,6 +305,62 @@
       }
     ],
     "resource": [
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "TestScript"
+          }
+        ],
+        "reference": {
+          "reference": "TestScript/3e345dfd-32bb-4b0f-92f4-b5798f7c27e4"
+        },
+        "name": "TestinstanceACKfatal-error",
+        "description": "Testing correct use of acknowledgment",
+        "exampleBoolean": true
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "TestScript"
+          }
+        ],
+        "reference": {
+          "reference": "TestScript/5e657b1f-060e-423f-b198-fa8ffee77b87"
+        },
+        "name": "GeneratedHNrecScript",
+        "description": "Testing correct use of status admit-inpatient",
+        "exampleBoolean": true
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "TestScript"
+          }
+        ],
+        "reference": {
+          "reference": "TestScript/83e8e271-ced4-4ca7-ad4b-256ca00ed07f"
+        },
+        "name": "TestinstanceACKOK",
+        "description": "Testing correct use of acknowledgment",
+        "exampleBoolean": true
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "TestScript"
+          }
+        ],
+        "reference": {
+          "reference": "TestScript/92446d93-ec60-4151-b550-3ef6a1b37e08"
+        },
+        "name": "TestinstanceACKtransient-error",
+        "description": "Testing correct use of acknowledgment",
+        "exampleBoolean": true
+      },
       {
         "extension": [
           {
