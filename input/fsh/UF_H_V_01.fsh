@@ -1,19 +1,10 @@
 Instance: TestinstanceUFHV1
 InstanceOf: TestScript
+* insert Metadata
 * id = "UFHV01"
-* meta.profile = "http://touchstone.aegis.net/touchstone/fhir/testing/StructureDefinition/testscript"
-* url = "http://build.fhir.org/ig/hl7dk/dk-medcom/"
 * name = "receive-notification-about-admission"
 * title = "hospitalNotification-message admit-inpatient receiving XML"
-* status = #active
-* date = 2021-06-25
-* publisher = "MedCom"
-* contact.name = "MedCom"
-* contact.telecom.system = #email
-* contact.telecom.value = "fhir@medcom.dk"
-* contact.telecom.use = #work
 * description = "Testing correct use of status admit-inpatient"
-* copyright = "MedCom 2021"
 
 * origin.index = 1
 * origin.profile.system = "http://terminology.hl7.org/CodeSystem/testscript-profile-origin-types"
@@ -28,19 +19,14 @@ InstanceOf: TestScript
 * fixture[=].autodelete = false
 * fixture[=].resource.reference = "/FHIRSandbox/MedCom/401-Hospitalnotification/receive/Userstory/_reference/resources/HospitalNotificationMessage-STIN-K1.xml"
 
-//SKAL MED I TBD fælles
-* fixture[1].id = "bundle-create-ack-OK"
-* fixture[1].autocreate = false
-* fixture[1].autodelete = false
-* fixture[1].resource.reference = "/FHIRSandbox/MedCom/401-Acknowledgement/_reference/resources/Acknowledgement-ok.xml"
-
-* insert ACKRuleAddOn("bundle-create-STIN",STIN)
-* insert ACKRuleAddOn("bundle-create-SLHJ", SLHJ)
-
 * fixture[+].id = "bundle-create-SLHJ"
 * fixture[=].autocreate = false
 * fixture[=].autodelete = false
 * fixture[=].resource.reference = "/FHIRSandbox/MedCom/401-Hospitalnotification/receive/Userstory/_reference/resources/HospitalNotificationMessage-SLHJ-K3.xml"
+
+
+//Only one ACK each testscipt
+* insert ACKFixture 
 
 * profile.id = "hospitalnotification-profile"
 * profile.reference = "http://medcomfhir.dk/fhir/core/1.0/StructureDefinition/medcom-hospitalNotification-message"  
@@ -53,30 +39,41 @@ InstanceOf: TestScript
 * variable[+].name = "destinationUri"
 * variable[=].expression = "Bundle.entry.resource.ofType(MessageHeader).destination.endpoint"
 * variable[=].sourceId = "bundle-create-STIN"
+/*
+// test1 ack - SKAL MED I TBD indvi
+* variable[+].name = "bundleResourceid"
+* variable[=].expression = "Bundle.id"
+* variable[=].sourceId = "bundle-create-STIN"
+// test1 ack - SKAL MED I TBD indvi
+* variable[+].name = "MessageHeaderIdentifier"
+* variable[=].expression = "Bundle.entry[0].fullUrl"
+* variable[=].sourceId = "bundle-create-STIN"
 
 // test1 ack - SKAL MED I TBD indvi
-* variable[2].name = "bundleResourceid"
-* variable[2].expression = "Bundle.id"
-* variable[2].sourceId = "bundle-create-STIN"
-// test1 ack - SKAL MED I TBD indvi
-* variable[3].name = "MessageHeaderIdentifier"
-* variable[3].expression = "Bundle.entry[0].fullUrl"
-* variable[3].sourceId = "bundle-create-STIN"
-
+* variable[+].name = "ProvenanceID"
+* variable[=].expression = "Bundle.entry.resource.ofType(Provenance).id"
+* variable[=].sourceId = "bundle-create-STIN"
+*/
 //Test2 HN
+
 * variable[+].name = "destinationUriK3"
 * variable[=].expression = "Bundle.entry.resource.ofType(MessageHeader).destination.endpoint"
 * variable[=].sourceId = "bundle-create-SLHJ"
-
+/*
+// test2 ack - SKAL MED I TBD indvi 
+* variable[+].name = "bundleResourceid2"
+* variable[=].expression = "Bundle.id"
+* variable[=].sourceId = "bundle-create-SLHJ"
 // test2 ack - SKAL MED I TBD indvi
-* variable[2].name = "bundleResourceid2"
-* variable[2].expression = "Bundle.id"
-* variable[2].sourceId = "bundle-create-SLHJ"
-// test2 ack - SKAL MED I TBD indvi
-* variable[3].name = "MessageHeaderIdentifier2"
-* variable[3].expression = "Bundle.entry[0].fullUrl"
-* variable[3].sourceId = "bundle-create-SLHJ"
+* variable[+].name = "MessageHeaderIdentifier2"
+* variable[=].expression = "Bundle.entry[0].fullUrl"
+* variable[=].sourceId = "bundle-create-SLHJ"
 
+// test1 ack - SKAL MED I TBD indvi
+* variable[+].name = "ProvenanceID2"
+* variable[=].expression = "Bundle.entry.resource.ofType(Provenance).id"
+* variable[=].sourceId = "bundle-create-SLHJ"
+*/
 
 * setup.action[+].operation.type.system = "http://terminology.hl7.org/CodeSystem/testscript-operation-codes"
 * setup.action[=].operation.type.code = #delete
@@ -125,78 +122,42 @@ InstanceOf: TestScript
 * test[+].id = "01-STIN-admitted"
 * test[=].name = "HospitalNotification-STIN"
 * test[=].description = "GET a Hospital notification. The expected response is a 200(OK) with a payload of the Hospital notification resource in XML format."
-* test[=].action[0].operation.type.system = "http://terminology.hl7.org/CodeSystem/testscript-operation-codes"
-* test[=].action[0].operation.type.code = #read
-* test[=].action[0].operation.resource = #Bundle
-* test[=].action[0].operation.description = "Receive notification about admission -STIN"
-* test[=].action[0].operation.accept = #xml
-* test[=].action[0].operation.destination = 1
-* test[=].action[0].operation.encodeRequestUrl = true
-* test[=].action[0].operation.origin = 1
-* test[=].action[0].operation.params = "?message.destination-uri=${destinationUri}"
-* test[=].action[1].assert.description = "Confirm that the returned HTTP status is 200(OK)."
-* test[=].action[1].assert.direction = #response
-* test[=].action[1].assert.responseCode = "200"
-* test[=].action[1].assert.warningOnly = false
+* test[=].action[+].operation.type.system = "http://terminology.hl7.org/CodeSystem/testscript-operation-codes"
+* test[=].action[=].operation.type.code = #read
+* test[=].action[=].operation.resource = #Bundle
+* test[=].action[=].operation.description = "Receive notification about admission -STIN"
+* test[=].action[=].operation.accept = #xml
+* test[=].action[=].operation.destination = 1
+* test[=].action[=].operation.encodeRequestUrl = true
+* test[=].action[=].operation.origin = 1
+* test[=].action[=].operation.params = "?message.destination-uri=${destinationUri}"
+* test[=].action[+].assert.description = "Confirm that the returned HTTP status is 200(OK)."
+* test[=].action[=].assert.direction = #response
+* test[=].action[=].assert.responseCode = "200"
+* test[=].action[=].assert.warningOnly = false
 
-//ACk1 SKal med TBD indv
-* test[1].id = "02-ACK-01-STIN"
-* test[1].name = "Post Acknowledgement"
-* test[1].description = "GET a Hospital notification"
-* test[1].action[0].operation.type.system = "http://terminology.hl7.org/CodeSystem/testscript-operation-codes"
-* test[1].action[0].operation.type.code = #create
-* test[1].action[0].operation.resource = #Bundle
-* test[1].action[0].operation.description = "Post a acknowledgement"
-* test[1].action[0].operation.accept = #xml
-* test[1].action[0].operation.destination = 1
-* test[1].action[0].operation.encodeRequestUrl = true
-* test[1].action[0].operation.origin = 1
-* test[1].action[0].operation.sourceId = "bundle-create-ack-OK"
-
-* test[1].action[1].assert.description = "Confirm that the client request payload contains a Bundle resource type."
-* test[1].action[1].assert.direction = #request
-* test[1].action[1].assert.resource = #Bundle
-* test[1].action[1].assert.warningOnly = false
-
-* test[1].action[2].assert.description = "Confirm that the MessageHeader response code is OK"
-* test[1].action[2].assert.direction = #request
-* test[1].action[2].assert.expression = "Bundle.entry.resource.ofType(MessageHeader).response.code"
-* test[1].action[2].assert.operator = #equals
-* test[1].action[2].assert.value = "OK"
-* test[1].action[2].assert.warningOnly = false
-
-* insert OperationOutcomeNot
-
-* test[1].action[4].assert.description = "Confirm that the MessageHeader.response.identifier is equal to Id of original message "
-* test[1].action[4].assert.direction = #request
-* test[1].action[4].assert.expression = "Bundle.entry.resource.ofType(MessageHeader).response.identifier"
-* test[1].action[4].assert.operator = #equals
-* test[1].action[4].assert.value = "${bundleResourceid}"
-* test[1].action[4].assert.warningOnly = false
-
-* test[1].action[5].assert.description = "Confirm that the reference original Provenance.entity.what is equal to Id of original messageheader.identifier"
-* test[1].action[5].assert.direction = #request
-* test[1].action[5].assert.expression = "Bundle.entry.resource.ofType(Provenance).where(entity.what.reference ='${MessageHeaderIdentifier}')"
-* test[1].action[5].assert.warningOnly = false
+* insert ufhv1tmp(3, STIN, bundleResourceid, MessageHeaderIdentifier, ProvenanceID)
 
 
 
 
-
+//Test 2 starter her
 * test[+].id = "02-SLHJ-end-leave"
 * test[=].name = "HospitalNotification-SLHJ"
 * test[=].description = "GET a Hospital notification. The expected response is a 200(OK) with a payload of the Hospital notification resource in XML format."
-* test[=].action[0].operation.type.system = "http://terminology.hl7.org/CodeSystem/testscript-operation-codes"
-* test[=].action[0].operation.type.code = #read
-* test[=].action[0].operation.resource = #Bundle
-* test[=].action[0].operation.description = "The patient does not show up after ended leave -SLHJ"
-* test[=].action[0].operation.accept = #xml
-* test[=].action[0].operation.destination = 1
-* test[=].action[0].operation.encodeRequestUrl = true
-* test[=].action[0].operation.origin = 1
-* test[=].action[0].operation.params = "?message.destination-uri=${destinationUriK3}"
-* test[=].action[1].assert.description = "Confirm that the returned HTTP status is 200(OK)."
-* test[=].action[1].assert.direction = #response
-* test[=].action[1].assert.responseCode = "200"
-* test[=].action[1].assert.warningOnly = false
+* test[=].action[+].operation.type.system = "http://terminology.hl7.org/CodeSystem/testscript-operation-codes"
+* test[=].action[=].operation.type.code = #read
+* test[=].action[=].operation.resource = #Bundle
+* test[=].action[=].operation.description = "The patient does not show up after ended leave -SLHJ"
+* test[=].action[=].operation.accept = #xml
+* test[=].action[=].operation.destination = 1
+* test[=].action[=].operation.encodeRequestUrl = true
+* test[=].action[=].operation.origin = 1
+* test[=].action[=].operation.params = "?message.destination-uri=${destinationUriK3}"
+* test[=].action[+].assert.description = "Confirm that the returned HTTP status is 200(OK)."
+* test[=].action[=].assert.direction = #response
+* test[=].action[=].assert.responseCode = "200"
+* test[=].action[=].assert.warningOnly = false
 
+//ACk2 SKal med TBD indv
+* insert ufhv1tmp(4,SLHJ, bundleResourceid2, MessageHeaderIdentifier2, ProvenanceID2)

@@ -12,124 +12,124 @@ RuleSet: ACKRule(id,MessageHeaderResponseCode, Metadata, OperationOutcome)
 * destination.profile.system = "http://terminology.hl7.org/CodeSystem/testscript-profile-destination-types"
 * destination.profile.code = #FHIR-Server
 
-* fixture[0].id = "bundle-create-STIN"
-* fixture[0].autocreate = false
-* fixture[0].autodelete = false
-* fixture[0].resource.reference = "/FHIRSandbox/MedCom/401-Acknowledgement/_reference/resources/HSN.xml"
+* fixture[+].id = "bundle-create-STIN"
+* fixture[=].autocreate = false
+* fixture[=].autodelete = false
+* fixture[=].resource.reference = "/FHIRSandbox/MedCom/401-Acknowledgement/_reference/resources/HSN.xml"
 
-* fixture[1].id = "bundle-create-ack-{MessageHeaderResponseCode}"
-* fixture[1].autocreate = false
-* fixture[1].autodelete = false
-* fixture[1].resource.reference = "/FHIRSandbox/MedCom/401-Acknowledgement/_reference/resources/ACK-{MessageHeaderResponseCode}.xml"
+* fixture[+].id = "bundle-create-ack-{MessageHeaderResponseCode}"
+* fixture[=].autocreate = false
+* fixture[=].autodelete = false
+* fixture[=].resource.reference = "/FHIRSandbox/MedCom/401-Acknowledgement/_reference/resources/ACK-{MessageHeaderResponseCode}.xml"
 
 * profile.id = "acknowledgment-profile"
 * profile.reference = "http://medcomfhir.dk/fhir/core/1.0/StructureDefinition/medcom-messaging-acknowledgement"
 
-* variable[0].name = "destinationUri"
-* variable[0].expression = "Bundle.entry.resource.ofType(MessageHeader).destination.endpoint"
-* variable[0].sourceId = "bundle-create-STIN"
+* variable[+].name = "destinationUri"
+* variable[=].expression = "Bundle.entry.resource.ofType(MessageHeader).destination.endpoint"
+* variable[=].sourceId = "bundle-create-STIN"
 
-* variable[2].name = "bundleResourceid"
-* variable[2].expression = "Bundle.id"
-* variable[2].sourceId = "bundle-create-STIN"
+* variable[+].name = "bundleResourceid"
+* variable[=].expression = "Bundle.id"
+* variable[=].sourceId = "bundle-create-STIN"
 
-* variable[3].name = "MessageHeaderIdentifier"
-* variable[3].expression = "Bundle.entry[0].fullUrl"
-* variable[3].sourceId = "bundle-create-STIN"
+* variable[+].name = "MessageHeaderIdentifier"
+* variable[=].expression = "Bundle.entry[0].fullUrl"
+* variable[=].sourceId = "bundle-create-STIN"
 
 //SKAL måske ikke med
-* variable[1].name = "headerResourceReference"
-* variable[1].expression = "Bundle.entry[0].fullUrl"
-* variable[1].sourceId = "bundle-create-ack-{MessageHeaderResponseCode}"
+* variable[+].name = "headerResourceReference"
+* variable[=].expression = "Bundle.entry[0].fullUrl"
+* variable[=].sourceId = "bundle-create-ack-{MessageHeaderResponseCode}"
 
-* setup.action[0].operation.type.system = "http://terminology.hl7.org/CodeSystem/testscript-operation-codes"
-* setup.action[0].operation.type.code = #delete
-* setup.action[0].operation.resource = #Bundle
-* setup.action[0].operation.description = "System-generated search and delete operations from conditional delete on Bundle MessageHeader).destination.endpoint"
-* setup.action[0].operation.accept = #xml
-* setup.action[0].operation.encodeRequestUrl = true
+* setup.action[+].operation.type.system = "http://terminology.hl7.org/CodeSystem/testscript-operation-codes"
+* setup.action[=].operation.type.code = #delete
+* setup.action[=].operation.resource = #Bundle
+* setup.action[=].operation.description = "System-generated search and delete operations from conditional delete on Bundle MessageHeader).destination.endpoint"
+* setup.action[=].operation.accept = #xml
+* setup.action[=].operation.encodeRequestUrl = true
 
-* setup.action[0].operation.params = "?message.destination-uri=${destinationUri}"
-* setup.action[1].operation.type.system = "http://terminology.hl7.org/CodeSystem/testscript-operation-codes"
-* setup.action[1].operation.type.code = #create
-* setup.action[1].operation.resource = #Bundle
-* setup.action[1].operation.description = "Create the Bundle resource in XML format on the destination server."
-* setup.action[1].operation.accept = #xml
-* setup.action[1].operation.contentType = #xml
-* setup.action[1].operation.encodeRequestUrl = true
-* setup.action[1].operation.sourceId = "bundle-create-STIN"
+* setup.action[=].operation.params = "?message.destination-uri=${destinationUri}"
+* setup.action[=].operation.type.system = "http://terminology.hl7.org/CodeSystem/testscript-operation-codes"
+* setup.action[=].operation.type.code = #create
+* setup.action[=].operation.resource = #Bundle
+* setup.action[=].operation.description = "Create the Bundle resource in XML format on the destination server."
+* setup.action[=].operation.accept = #xml
+* setup.action[=].operation.contentType = #xml
+* setup.action[=].operation.encodeRequestUrl = true
+* setup.action[=].operation.sourceId = "bundle-create-STIN"
 
-* setup.action[2].assert.description = "Confirm that the returned HTTP status is 201(Created)."
-* setup.action[2].assert.direction = #response
-* setup.action[2].assert.responseCode = "201"
-* setup.action[2].assert.warningOnly = false
-* test[0].id = "01-ACK-get-HN"
-* test[0].name = "Get-HospitalNotification"
-* test[0].description = "GET a Hospital notification"
-* test[0].action[0].operation.type.system = "http://terminology.hl7.org/CodeSystem/testscript-operation-codes"
-* test[0].action[0].operation.type.code = #read
-* test[0].action[0].operation.resource = #Bundle
-* test[0].action[0].operation.description = "Receive notification about admission"
-* test[0].action[0].operation.accept = #xml
-* test[0].action[0].operation.destination = 1
-* test[0].action[0].operation.encodeRequestUrl = true
-* test[0].action[0].operation.origin = 1
-* test[0].action[0].operation.params = "?message.destination-uri=${destinationUri}"
-* test[0].action[0].operation.responseId = "Hn-get"
+* setup.action[+].assert.description = "Confirm that the returned HTTP status is 201(Created)."
+* setup.action[=].assert.direction = #response
+* setup.action[=].assert.responseCode = "201"
+* setup.action[=].assert.warningOnly = false
+* test[+].id = "01-ACK-get-HN"
+* test[=].name = "Get-HospitalNotification"
+* test[=].description = "GET a Hospital notification"
+* test[=].action[0].operation.type.system = "http://terminology.hl7.org/CodeSystem/testscript-operation-codes"
+* test[=].action[0].operation.type.code = #read
+* test[=].action[0].operation.resource = #Bundle
+* test[=].action[0].operation.description = "Receive notification about admission"
+* test[=].action[0].operation.accept = #xml
+* test[=].action[0].operation.destination = 1
+* test[=].action[0].operation.encodeRequestUrl = true
+* test[=].action[0].operation.origin = 1
+* test[=].action[0].operation.params = "?message.destination-uri=${destinationUri}"
+* test[=].action[0].operation.responseId = "Hn-get"
 
-* test[0].action[1].assert.description = "Confirm that the returned HTTP status is 200(OK)."
-* test[0].action[1].assert.direction = #response
-* test[0].action[1].assert.responseCode = "200"
-* test[0].action[1].assert.warningOnly = false
+* test[=].action[1].assert.description = "Confirm that the returned HTTP status is 200(OK)."
+* test[=].action[1].assert.direction = #response
+* test[=].action[1].assert.responseCode = "200"
+* test[=].action[1].assert.warningOnly = false
 
-* test[1].id = "02-ACK-01-{MessageHeaderResponseCode}"
-* test[1].name = "Post Acknowledgement"
-* test[1].description = "GET a Hospital notification"
-* test[1].action[0].operation.type.system = "http://terminology.hl7.org/CodeSystem/testscript-operation-codes"
-* test[1].action[0].operation.type.code = #create
-* test[1].action[0].operation.resource = #Bundle
-* test[1].action[0].operation.description = "Post a acknowledgement"
-* test[1].action[0].operation.accept = #xml
-* test[1].action[0].operation.destination = 1
-* test[1].action[0].operation.encodeRequestUrl = true
-* test[1].action[0].operation.origin = 1
-* test[1].action[0].operation.sourceId = "bundle-create-ack-{MessageHeaderResponseCode}"
+* test[+].id = "02-ACK-01-{MessageHeaderResponseCode}"
+* test[=].name = "Post Acknowledgement"
+* test[=].description = "GET a Hospital notification"
+* test[=].action[+].operation.type.system = "http://terminology.hl7.org/CodeSystem/testscript-operation-codes"
+* test[=].action[=].operation.type.code = #create
+* test[=].action[=].operation.resource = #Bundle
+* test[=].action[=].operation.description = "Post a acknowledgement"
+* test[=].action[=].operation.accept = #xml
+* test[=].action[=].operation.destination = 1
+* test[=].action[=].operation.encodeRequestUrl = true
+* test[=].action[=].operation.origin = 1
+* test[=].action[=].operation.sourceId = "bundle-create-ack-{MessageHeaderResponseCode}"
 
-* test[1].action[1].assert.description = "Confirm that the client request payload contains a Bundle resource type."
-* test[1].action[1].assert.direction = #request
-* test[1].action[1].assert.resource = #Bundle
-* test[1].action[1].assert.warningOnly = false
+* test[=].action[+].assert.description = "Confirm that the client request payload contains a Bundle resource type."
+* test[=].action[=].assert.direction = #request
+* test[=].action[=].assert.resource = #Bundle
+* test[=].action[=].assert.warningOnly = false
 
-* test[1].action[2].assert.description = "Confirm that the MessageHeader response code is {MessageHeaderResponseCode}"
-* test[1].action[2].assert.direction = #request
-* test[1].action[2].assert.expression = "Bundle.entry.resource.ofType(MessageHeader).response.code"
-* test[1].action[2].assert.operator = #equals
-* test[1].action[2].assert.value = "{MessageHeaderResponseCode}"
-* test[1].action[2].assert.warningOnly = false
+* test[=].action[+].assert.description = "Confirm that the MessageHeader response code is {MessageHeaderResponseCode}"
+* test[=].action[=].assert.direction = #request
+* test[=].action[=].assert.expression = "Bundle.entry.resource.ofType(MessageHeader).response.code"
+* test[=].action[=].assert.operator = #equals
+* test[=].action[=].assert.value = "{MessageHeaderResponseCode}"
+* test[=].action[=].assert.warningOnly = false
 
 * insert {OperationOutcome}
 
-* test[1].action[4].assert.description = "Confirm that the MessageHeader.response.identifier is equal to Id of original message "
-* test[1].action[4].assert.direction = #request
-* test[1].action[4].assert.expression = "Bundle.entry.resource.ofType(MessageHeader).response.identifier"
-* test[1].action[4].assert.operator = #equals
-* test[1].action[4].assert.value = "${bundleResourceid}"
-* test[1].action[4].assert.warningOnly = false
+* test[=].action[+].assert.description = "Confirm that the MessageHeader.response.identifier is equal to Id of original message "
+* test[=].action[=].assert.direction = #request
+* test[=].action[=].assert.expression = "Bundle.entry.resource.ofType(MessageHeader).response.identifier"
+* test[=].action[=].assert.operator = #equals
+* test[=].action[=].assert.value = "${bundleResourceid}"
+* test[=].action[=].assert.warningOnly = false
 
-* test[1].action[5].assert.description = "Confirm that the reference original Provenance.entity.what is equal to Id of original messageheader.identifier"
-* test[1].action[5].assert.direction = #request
-* test[1].action[5].assert.expression = "Bundle.entry.resource.ofType(Provenance).where(entity.what.reference ='${MessageHeaderIdentifier}')"
-* test[1].action[5].assert.warningOnly = false
+* test[=].action[+].assert.description = "Confirm that the reference original Provenance.entity.what is equal to Id of original messageheader.identifier"
+* test[=].action[=].assert.direction = #request
+* test[=].action[=].assert.expression = "Bundle.entry.resource.ofType(Provenance).where(entity.what.reference ='${MessageHeaderIdentifier}')"
+* test[=].action[=].assert.warningOnly = false
 
 
 RuleSet: OperationOutcomeNot
-* test[1].action[3].assert.description = "Confirm that the Bundle not containing a OperationOutcome"
-* test[1].action[3].assert.direction = #request
-* test[1].action[3].assert.expression = "Bundle.entry.resource.ofType(OperationOutcome).exists().not()"
-* test[1].action[3].assert.warningOnly = false
+* test[=].action[+].assert.description = "Confirm that the Bundle not containing a OperationOutcome"
+* test[=].action[=].assert.direction = #request
+* test[=].action[=].assert.expression = "Bundle.entry.resource.ofType(OperationOutcome).exists().not()"
+* test[=].action[=].assert.warningOnly = false
 
 RuleSet: OperationOutcome
-* test[1].action[3].assert.description = "Confirm that the Bundle containing a OperationOutcome"
-* test[1].action[3].assert.direction = #request
-* test[1].action[3].assert.expression = "Bundle.entry.resource.ofType(OperationOutcome).exists()"
-* test[1].action[3].assert.warningOnly = false
+* test[=].action[+].assert.description = "Confirm that the Bundle containing a OperationOutcome"
+* test[=].action[=].assert.direction = #request
+* test[=].action[=].assert.expression = "Bundle.entry.resource.ofType(OperationOutcome).exists()"
+* test[=].action[=].assert.warningOnly = false
