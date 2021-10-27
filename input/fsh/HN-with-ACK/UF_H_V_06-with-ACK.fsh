@@ -1,23 +1,14 @@
 //STIN+STOR+SLHJ
-Instance: TestinstanceUFHV6
+Instance: TestinstanceUFHV6-with-ACK
 InstanceOf: TestScript
 
 
-
-* id = "UFHV06"
-* meta.profile = "http://touchstone.aegis.net/touchstone/fhir/testing/StructureDefinition/testscript"
-* url = "http://build.fhir.org/ig/hl7dk/dk-medcom/"
+* insert Metadata
+* id = "UFHV06-with-ACK"
 * name = "never returns after leave"
 * title = "Patient is admitted at hospital, goes on leave from hospital but never returns after leave"
-* status = #active
-* date = 2021-06-30
-* publisher = "MedCom"
-* contact.name = "MedCom"
-* contact.telecom.system = #email
-* contact.telecom.value = "fhir@medcom.dk"
-* contact.telecom.use = #work
 * description = "Testing correct use of admit and discharge"
-* copyright = "MedCom 2021"
+
 
 * origin.index = 1
 * origin.profile.system = "http://terminology.hl7.org/CodeSystem/testscript-profile-origin-types"
@@ -37,10 +28,13 @@ InstanceOf: TestScript
 * fixture[=].autodelete = false
 * fixture[=].resource.reference = "/FHIRSandbox/MedCom/401-Hospitalnotification/receive/Userstory/_reference/resources/HospitalNotificationMessage-STOR-UF_H_V_06.xml"
 
-* fixture[+].id = "bundle-create-AN-SLHJ"
+* fixture[+].id = "bundle-create-SLHJ"
 * fixture[=].autocreate = false
 * fixture[=].autodelete = false
-* fixture[=].resource.reference = $Fixture6SLHJRefference
+* fixture[=].resource.reference = "/FHIRSandbox/MedCom/401-Hospitalnotification/receive/Userstory/_reference/resources/HospitalNotificationMessage-SLHJ-UF_H_V_06.xml"
+
+//Only one ACK each testscipt
+* insert ACKFixture 
 
 * profile.id = "hospitalnotification-profile"
 * profile.reference = "http://medcomfhir.dk/fhir/core/1.0/StructureDefinition/medcom-hospitalNotification-message"  
@@ -55,7 +49,7 @@ InstanceOf: TestScript
 
 * variable[+].name = "destinationUriSLHJ6"
 * variable[=].expression = "Bundle.entry.resource.ofType(MessageHeader).destination.endpoint"
-* variable[=].sourceId = "bundle-create-AN-SLHJ"
+* variable[=].sourceId = "bundle-create-SLHJ"
 
 
 //STIN
@@ -80,6 +74,7 @@ InstanceOf: TestScript
 * setup.action[=].assert.direction = #response
 * setup.action[=].assert.responseCode = "201"
 * setup.action[=].assert.warningOnly = false
+
 
 //STOR
 * setup.action[+].operation.type.system = "http://terminology.hl7.org/CodeSystem/testscript-operation-codes"
@@ -125,7 +120,7 @@ InstanceOf: TestScript
 * setup.action[=].operation.accept = #xml
 * setup.action[=].operation.contentType = #xml
 * setup.action[=].operation.encodeRequestUrl = true
-* setup.action[=].operation.sourceId = "bundle-create-AN-SLHJ"
+* setup.action[=].operation.sourceId = "bundle-create-SLHJ"
 
 * setup.action[+].assert.description = "Confirm that the returned HTTP status is 201(Created)."
 * setup.action[=].assert.direction = #response
@@ -150,6 +145,8 @@ InstanceOf: TestScript
 * test[=].action[=].assert.responseCode = "200"
 * test[=].action[=].assert.warningOnly = false
 
+* insert createAckTest(3, bundle-create-STIN, bundleResourceid, MessageHeaderIdentifier, ProvenanceID)
+
 * test[+].id = "02-STOR"
 * test[=].name = "HospitalNotification-STOR"
 * test[=].description = "GET a Hospital notification. The expected response is a 200(OK) with a payload of the Hospital notification resource in XML format."
@@ -167,6 +164,8 @@ InstanceOf: TestScript
 * test[=].action[=].assert.responseCode = "200"
 * test[=].action[=].assert.warningOnly = false
 
+* insert createAckTest(4, bundle-create-STOR, bundleResourceid2, MessageHeaderIdentifier2, ProvenanceID2)
+
 * test[+].id = "04-SLHJ"
 * test[=].name = "HospitalNotification-SLHJ"
 * test[=].description = "GET a Hospital notification. The expected response is a 200(OK) with a payload of the Hospital notification resource in XML format."
@@ -183,3 +182,5 @@ InstanceOf: TestScript
 * test[=].action[=].assert.direction = #response
 * test[=].action[=].assert.responseCode = "200"
 * test[=].action[=].assert.warningOnly = false
+
+* insert createAckTest(5, bundle-create-SLHJ, bundleResourceid3, MessageHeaderIdentifier3, ProvenanceID3)

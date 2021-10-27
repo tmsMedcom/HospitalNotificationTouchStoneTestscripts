@@ -1,23 +1,13 @@
 //STAA+STIN K10
-Instance: TestinstanceUFHV12
+Instance: TestinstanceUFHV12-with-ACK
 InstanceOf: TestScript
 
 
-
-* id = "UFHV12"
-* meta.profile = "http://touchstone.aegis.net/touchstone/fhir/testing/StructureDefinition/testscript"
-* url = "http://build.fhir.org/ig/hl7dk/dk-medcom/"
+* insert Metadata
+* id = "UFHV12-with-ACK"
 * name = "Patient is in an emergency outpatient setting ay hospital, but ends up being admitted"
 * title = "Patient is in an emergency outpatient setting ay hospital, but ends up being admitted"
-* status = #active
-* date = 2021-07-06
-* publisher = "MedCom"
-* contact.name = "MedCom"
-* contact.telecom.system = #email
-* contact.telecom.value = "fhir@medcom.dk"
-* contact.telecom.use = #work
 * description = "Testing correct use of emergency admit and discharge"
-* copyright = "MedCom 2021"
 
 * origin.index = 1
 * origin.profile.system = "http://terminology.hl7.org/CodeSystem/testscript-profile-origin-types"
@@ -36,6 +26,9 @@ InstanceOf: TestScript
 * fixture[=].autocreate = false
 * fixture[=].autodelete = false
 * fixture[=].resource.reference = "/FHIRSandbox/MedCom/401-Hospitalnotification/receive/Userstory/_reference/resources/STAA_2.xml"
+
+//Only one ACK each testscipt
+* insert ACKFixture 
 
 * profile.id = "hospitalnotification-profile"
 * profile.reference = "http://medcomfhir.dk/fhir/core/1.0/StructureDefinition/medcom-hospitalNotification-message"  
@@ -109,6 +102,7 @@ InstanceOf: TestScript
 * test[=].action[=].assert.responseCode = "200"
 * test[=].action[=].assert.warningOnly = false
 
+* insert createAckTest(3, bundle-create-STAA, bundleResourceid, MessageHeaderIdentifier, ProvenanceID)
 
 * test[+].id = "02-STIN-admitted"
 * test[=].name = "HospitalNotification-STIN"
@@ -127,3 +121,4 @@ InstanceOf: TestScript
 * test[=].action[=].assert.responseCode = "200"
 * test[=].action[=].assert.warningOnly = false
 
+* insert createAckTest(4, bundle-create-STIN, bundleResourceid1, MessageHeaderIdentifier1, ProvenanceID1)

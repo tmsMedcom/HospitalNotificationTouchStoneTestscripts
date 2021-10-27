@@ -1,24 +1,14 @@
 //MORS
 
-Instance: TestinstanceUFHV13
+Instance: TestinstanceUFHV13-with-ACK
 InstanceOf: TestScript
 
 
-
-* id = "UFHV13"
-* meta.profile = "http://touchstone.aegis.net/touchstone/fhir/testing/StructureDefinition/testscript"
-* url = "http://build.fhir.org/ig/hl7dk/dk-medcom/"
+* insert Metadata
+* id = "UFHV13-with-ACK"
 * name = "Patient dies upon arrival at the hospital"
 * title = "Patient dies upon arrival at the hospital"
-* status = #active
-* date = 2021-07-07
-* publisher = "MedCom"
-* contact.name = "MedCom"
-* contact.telecom.system = #email
-* contact.telecom.value = "fhir@medcom.dk"
-* contact.telecom.use = #work
 * description = "Testing correct use of correction"
-* copyright = "MedCom 2021"
 
 * origin.index = 1
 * origin.profile.system = "http://terminology.hl7.org/CodeSystem/testscript-profile-origin-types"
@@ -28,17 +18,20 @@ InstanceOf: TestScript
 * destination.profile.system = "http://terminology.hl7.org/CodeSystem/testscript-profile-destination-types"
 * destination.profile.code = #FHIR-Server
 
-* fixture[+].id = $Fixture1STIN
+* fixture[+].id = "bundle-create-MORS"
 * fixture[=].autocreate = false
 * fixture[=].autodelete = false
 * fixture[=].resource.reference = "/FHIRSandbox/MedCom/401-Hospitalnotification/receive/Userstory/_reference/resources/MORS_1.xml"
+
+//Only one ACK each testscipt
+* insert ACKFixture 
 
 * profile.id = "hospitalnotification-profile"
 * profile.reference = "http://medcomfhir.dk/fhir/core/1.0/StructureDefinition/medcom-hospitalNotification-message"  
 
 * variable[+].name = "destinationUri"
 * variable[=].expression = "Bundle.entry.resource.ofType(MessageHeader).destination.endpoint"
-* variable[=].sourceId = $Fixture1STIN
+* variable[=].sourceId = "bundle-create-MORS"
 
 * setup.action[+].operation.type.system = "http://terminology.hl7.org/CodeSystem/testscript-operation-codes"
 * setup.action[=].operation.type.code = #delete
@@ -55,7 +48,7 @@ InstanceOf: TestScript
 * setup.action[=].operation.accept = #xml
 * setup.action[=].operation.contentType = #xml
 * setup.action[=].operation.encodeRequestUrl = true
-* setup.action[=].operation.sourceId = $Fixture1STIN
+* setup.action[=].operation.sourceId = "bundle-create-MORS"
 
 * setup.action[+].assert.description = "Confirm that the returned HTTP status is 201(Created)."
 * setup.action[=].assert.direction = #response
@@ -78,3 +71,5 @@ InstanceOf: TestScript
 * test[=].action[=].assert.direction = #response
 * test[=].action[=].assert.responseCode = "200"
 * test[=].action[=].assert.warningOnly = false
+
+* insert createAckTest(3, bundle-create-MORS, bundleResourceid, MessageHeaderIdentifier, ProvenanceID)

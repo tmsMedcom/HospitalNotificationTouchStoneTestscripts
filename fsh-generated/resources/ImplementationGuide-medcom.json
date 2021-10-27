@@ -125,9 +125,23 @@
       },
       {
         "reference": {
+          "reference": "TestScript/UFHV05-with-ACK"
+        },
+        "name": "TestinstanceUFHV5-with-ACK",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
           "reference": "TestScript/UFHV06"
         },
         "name": "TestinstanceUFHV6",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "TestScript/UFHV06-with-ACK"
+        },
+        "name": "TestinstanceUFHV6-with-ACK",
         "exampleBoolean": true
       },
       {
@@ -153,9 +167,23 @@
       },
       {
         "reference": {
+          "reference": "TestScript/UFHV09-with-ACK"
+        },
+        "name": "TestinstanceUFHV9-with-ACK",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
           "reference": "TestScript/UFHV10"
         },
         "name": "TestinstanceUFHV10",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "TestScript/UFHV10-with-ACK"
+        },
+        "name": "TestinstanceUFHV10-with-ACK",
         "exampleBoolean": true
       },
       {
@@ -167,9 +195,23 @@
       },
       {
         "reference": {
+          "reference": "TestScript/UFHV11-with-ACK"
+        },
+        "name": "TestinstanceUFHV11-with-ACK",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
           "reference": "TestScript/UFHV12"
         },
         "name": "TestinstanceUFHV12",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "TestScript/UFHV12-with-ACK"
+        },
+        "name": "TestinstanceUFHV12-with-ACK",
         "exampleBoolean": true
       },
       {
@@ -181,9 +223,23 @@
       },
       {
         "reference": {
+          "reference": "TestScript/UFHV13-with-ACK"
+        },
+        "name": "TestinstanceUFHV13-with-ACK",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
           "reference": "TestScript/UFHV14"
         },
         "name": "TestinstanceUFHV14",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "TestScript/UFHV14-with-ACK"
+        },
+        "name": "TestinstanceUFHV14-with-ACK",
         "exampleBoolean": true
       },
       {
@@ -195,9 +251,23 @@
       },
       {
         "reference": {
+          "reference": "TestScript/UFHV15-with-ACK"
+        },
+        "name": "TestinstanceUFHV15-with-ACK",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
           "reference": "TestScript/UFHV16"
         },
         "name": "TestinstanceUFHV16",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "TestScript/UFHV16-with-ACK"
+        },
+        "name": "TestinstanceUFHV16-with-ACK",
         "exampleBoolean": true
       }
     ],

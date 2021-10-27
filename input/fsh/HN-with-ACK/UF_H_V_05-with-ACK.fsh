@@ -1,10 +1,9 @@
-Instance: TestinstanceUFHV5
+Instance: TestinstanceUFHV5-with-ACK
 InstanceOf: TestScript
 
 
 * insert Metadata
-* id = "UFHV05"
-* url = "http://build.fhir.org/ig/hl7dk/dk-medcom/"
+* id = "UFHV05-with-ACK"
 * name = "receive-notification-admit and discharge to home"
 * title = "Patient is admitted at hospital, goes on leave from hospital, returns after leave, and is finally discharged to home"
 * description = "Testing correct use of admit and discharge"
@@ -33,7 +32,7 @@ InstanceOf: TestScript
 * fixture[=].autodelete = false
 * fixture[=].resource.reference = "/FHIRSandbox/MedCom/401-Hospitalnotification/send/Userstory/_reference/resources/HospitalNotificationMessage-SLOR-UF_H_V_10.xml"
 
-* fixture[+].id = "bundle-create-AN-SLHJ"
+* fixture[+].id = "bundle-create-SLHJ"
 * fixture[=].autocreate = false
 * fixture[=].autodelete = false
 * fixture[=].resource.reference = "/FHIRSandbox/MedCom/401-Hospitalnotification/send/Userstory/_reference/resources/HospitalNotificationMessage-SLHJ-UF_H_V_10.xml"
@@ -58,7 +57,7 @@ InstanceOf: TestScript
 
 * variable[+].name = "destinationUriSLHJ5"
 * variable[=].expression = "Bundle.entry.resource.ofType(MessageHeader).destination.endpoint"
-* variable[=].sourceId = "bundle-create-AN-SLHJ"
+* variable[=].sourceId = "bundle-create-SLHJ"
 
 
 //STIN
@@ -147,7 +146,7 @@ InstanceOf: TestScript
 * setup.action[=].operation.accept = #xml
 * setup.action[=].operation.contentType = #xml
 * setup.action[=].operation.encodeRequestUrl = true
-* setup.action[=].operation.sourceId = "bundle-create-AN-SLHJ"
+* setup.action[=].operation.sourceId = "bundle-create-SLHJ"
 
 * setup.action[+].assert.description = "Confirm that the returned HTTP status is 201(Created)."
 * setup.action[=].assert.direction = #response
@@ -191,7 +190,7 @@ InstanceOf: TestScript
 * test[=].action[=].assert.responseCode = "200"
 * test[=].action[=].assert.warningOnly = false
 
-* insert createAckTest(3, bundle-create-STOR, bundleResourceid, MessageHeaderIdentifier, ProvenanceID)
+* insert createAckTest(4, bundle-create-STOR, bundleResourceid1, MessageHeaderIdentifier1, ProvenanceID1)
 
 * test[2].id = "03-SLOR"
 * test[2].name = "HospitalNotification-SLOR"
@@ -210,6 +209,8 @@ InstanceOf: TestScript
 * test[2].action[1].assert.responseCode = "200"
 * test[2].action[1].assert.warningOnly = false
 
+* insert createAckTest(5, bundle-create-SLOR, bundleResourceid2, MessageHeaderIdentifier2, ProvenanceID2)
+
 * test[3].id = "04-SLHJ"
 * test[3].name = "HospitalNotification-SLHJ"
 * test[3].description = "GET a Hospital notification. The expected response is a 200(OK) with a payload of the Hospital notification resource in XML format."
@@ -226,3 +227,5 @@ InstanceOf: TestScript
 * test[3].action[1].assert.direction = #response
 * test[3].action[1].assert.responseCode = "200"
 * test[3].action[1].assert.warningOnly = false
+
+* insert createAckTest(6, bundle-create-SLHJ, bundleResourceid3, MessageHeaderIdentifier3, ProvenanceID3)

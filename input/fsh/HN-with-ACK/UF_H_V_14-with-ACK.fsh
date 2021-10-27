@@ -1,23 +1,13 @@
 //STIN+MORS
-Instance: TestinstanceUFHV14
+Instance: TestinstanceUFHV14-with-ACK
 InstanceOf: TestScript
 
 
-
-* id = "UFHV14"
-* meta.profile = "http://touchstone.aegis.net/touchstone/fhir/testing/StructureDefinition/testscript"
-* url = "http://build.fhir.org/ig/hl7dk/dk-medcom/"
+* insert Metadata
+* id = "UFHV14-with-ACK"
 * name = "Patient is admitted and dies at the hospital"
 * title = "Patient is admitted and dies at the hospital"
-* status = #active
-* date = 2021-07-07
-* publisher = "MedCom"
-* contact.name = "MedCom"
-* contact.telecom.system = #email
-* contact.telecom.value = "fhir@medcom.dk"
-* contact.telecom.use = #work
 * description = "Testing correct use of status admit-inpatient"
-* copyright = "MedCom 2021"
 
 * origin.index = 1
 * origin.profile.system = "http://terminology.hl7.org/CodeSystem/testscript-profile-origin-types"
@@ -36,6 +26,9 @@ InstanceOf: TestScript
 * fixture[=].autocreate = false
 * fixture[=].autodelete = false
 * fixture[=].resource.reference = "/FHIRSandbox/MedCom/401-Hospitalnotification/receive/Userstory/_reference/resources/MORS_2.xml"
+
+//Only one ACK each testscipt
+* insert ACKFixture 
 
 * profile.id = "hospitalnotification-profile"
 * profile.reference = "http://medcomfhir.dk/fhir/core/1.0/StructureDefinition/medcom-hospitalNotification-message"  
@@ -109,6 +102,8 @@ InstanceOf: TestScript
 * test[=].action[=].assert.responseCode = "200"
 * test[=].action[=].assert.warningOnly = false
 
+* insert createAckTest(3, bundle-create-STIN, bundleResourceid, MessageHeaderIdentifier, ProvenanceID)
+
 * test[+].id = "02-MORS-dies"
 * test[=].name = "HospitalNotification-MORS"
 * test[=].description = "GET a Hospital notification. The expected response is a 200(OK) with a payload of the Hospital notification resource in XML format."
@@ -125,3 +120,5 @@ InstanceOf: TestScript
 * test[=].action[=].assert.direction = #response
 * test[=].action[=].assert.responseCode = "200"
 * test[=].action[=].assert.warningOnly = false
+
+* insert createAckTest(4, bundle-create-MORS, bundleResourceid1, MessageHeaderIdentifier1, ProvenanceID1)

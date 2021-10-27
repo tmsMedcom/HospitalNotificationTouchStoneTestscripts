@@ -1,23 +1,13 @@
 //STIN+STIN+SLHJ
-Instance: TestinstanceUFHV10
+Instance: TestinstanceUFHV10-with-ACK
 InstanceOf: TestScript
 
 
-
-* id = "UFHV10"
-* meta.profile = "http://touchstone.aegis.net/touchstone/fhir/testing/StructureDefinition/testscript"
-* url = "http://build.fhir.org/ig/hl7dk/dk-medcom/"
+* insert Metadata
+* id = "UFHV10-with-ACK"
 * name = "Patient is admitted at hospital, transferred to another hospital (another region), and finally discharged to home"
 * title = "Patient is admitted at hospital, transferred to another hospital (another region), and finally discharged to home"
-* status = #active
-* date = 2021-07-05
-* publisher = "MedCom"
-* contact.name = "MedCom"
-* contact.telecom.system = #email
-* contact.telecom.value = "fhir@medcom.dk"
-* contact.telecom.use = #work
 * description = "Testing correct use of admit and discharge"
-* copyright = "MedCom 2021"
 
 * origin.index = 1
 * origin.profile.system = "http://terminology.hl7.org/CodeSystem/testscript-profile-origin-types"
@@ -41,6 +31,9 @@ InstanceOf: TestScript
 * fixture[=].autocreate = false
 * fixture[=].autodelete = false
 * fixture[=].resource.reference = "/FHIRSandbox/MedCom/401-Hospitalnotification/receive/Userstory/_reference/resources/SLHJ-UF_H_V_10.xml"
+
+//Only one ACK each testscipt
+* insert ACKFixture
 
 * profile.id = "hospitalnotification-profile"
 * profile.reference = "http://medcomfhir.dk/fhir/core/1.0/StructureDefinition/medcom-hospitalNotification-message"  
@@ -150,6 +143,8 @@ InstanceOf: TestScript
 * test[=].action[=].assert.responseCode = "200"
 * test[=].action[=].assert.warningOnly = false
 
+* insert createAckTest(3, bundle-create-STIN1, bundleResourceid, MessageHeaderIdentifier, ProvenanceID)
+
 * test[+].id = "02-STIN"
 * test[=].name = "HospitalNotification-STIN2"
 * test[=].description = "GET a Hospital notification. The expected response is a 200(OK) with a payload of the Hospital notification resource in XML format."
@@ -167,6 +162,8 @@ InstanceOf: TestScript
 * test[=].action[=].assert.responseCode = "200"
 * test[=].action[=].assert.warningOnly = false
 
+* insert createAckTest(4, bundle-create-STIN2, bundleResourceid1, MessageHeaderIdentifier1, ProvenanceID1)
+
 * test[+].id = "04-SLHJ"
 * test[=].name = "HospitalNotification-SLHJ"
 * test[=].description = "GET a Hospital notification. The expected response is a 200(OK) with a payload of the Hospital notification resource in XML format."
@@ -183,3 +180,5 @@ InstanceOf: TestScript
 * test[=].action[=].assert.direction = #response
 * test[=].action[=].assert.responseCode = "200"
 * test[=].action[=].assert.warningOnly = false
+
+* insert createAckTest(5,bundle-create-SLHJ, bundleResourceid2, MessageHeaderIdentifier2, ProvenanceID2)

@@ -10,7 +10,7 @@
   "name": "HospitalnotificationTestscripts",
   "title": "HospitalNotification Testscripts",
   "status": "draft",
-  "date": "2021-10-27T06:58:35+02:00",
+  "date": "2021-10-27T15:33:59+02:00",
   "contact": [
     {
       "name": "MedCom",
@@ -506,9 +506,37 @@
           }
         ],
         "reference": {
+          "reference": "TestScript/UFHV05-with-ACK"
+        },
+        "name": "TestinstanceUFHV5-with-ACK",
+        "description": "Testing correct use of admit and discharge",
+        "exampleBoolean": true
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "TestScript"
+          }
+        ],
+        "reference": {
           "reference": "TestScript/UFHV06"
         },
         "name": "TestinstanceUFHV6",
+        "description": "Testing correct use of admit and discharge",
+        "exampleBoolean": true
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "TestScript"
+          }
+        ],
+        "reference": {
+          "reference": "TestScript/UFHV06-with-ACK"
+        },
+        "name": "TestinstanceUFHV6-with-ACK",
         "description": "Testing correct use of admit and discharge",
         "exampleBoolean": true
       },
@@ -562,9 +590,37 @@
           }
         ],
         "reference": {
+          "reference": "TestScript/UFHV09-with-ACK"
+        },
+        "name": "TestinstanceUFHV9-with-ACK",
+        "description": "Testing correct use of admit and discharge",
+        "exampleBoolean": true
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "TestScript"
+          }
+        ],
+        "reference": {
           "reference": "TestScript/UFHV10"
         },
         "name": "TestinstanceUFHV10",
+        "description": "Testing correct use of admit and discharge",
+        "exampleBoolean": true
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "TestScript"
+          }
+        ],
+        "reference": {
+          "reference": "TestScript/UFHV10-with-ACK"
+        },
+        "name": "TestinstanceUFHV10-with-ACK",
         "description": "Testing correct use of admit and discharge",
         "exampleBoolean": true
       },
@@ -590,9 +646,37 @@
           }
         ],
         "reference": {
+          "reference": "TestScript/UFHV11-with-ACK"
+        },
+        "name": "TestinstanceUFHV11-with-ACK",
+        "description": "Testing correct use of admit and discharge",
+        "exampleBoolean": true
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "TestScript"
+          }
+        ],
+        "reference": {
           "reference": "TestScript/UFHV12"
         },
         "name": "TestinstanceUFHV12",
+        "description": "Testing correct use of emergency admit and discharge",
+        "exampleBoolean": true
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "TestScript"
+          }
+        ],
+        "reference": {
+          "reference": "TestScript/UFHV12-with-ACK"
+        },
+        "name": "TestinstanceUFHV12-with-ACK",
         "description": "Testing correct use of emergency admit and discharge",
         "exampleBoolean": true
       },
@@ -618,9 +702,37 @@
           }
         ],
         "reference": {
+          "reference": "TestScript/UFHV13-with-ACK"
+        },
+        "name": "TestinstanceUFHV13-with-ACK",
+        "description": "Testing correct use of correction",
+        "exampleBoolean": true
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "TestScript"
+          }
+        ],
+        "reference": {
           "reference": "TestScript/UFHV14"
         },
         "name": "TestinstanceUFHV14",
+        "description": "Testing correct use of status admit-inpatient",
+        "exampleBoolean": true
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "TestScript"
+          }
+        ],
+        "reference": {
+          "reference": "TestScript/UFHV14-with-ACK"
+        },
+        "name": "TestinstanceUFHV14-with-ACK",
         "description": "Testing correct use of status admit-inpatient",
         "exampleBoolean": true
       },
@@ -646,9 +758,37 @@
           }
         ],
         "reference": {
+          "reference": "TestScript/UFHV15-with-ACK"
+        },
+        "name": "TestinstanceUFHV15-with-ACK",
+        "description": "Testing correct use of admit and discharge",
+        "exampleBoolean": true
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "TestScript"
+          }
+        ],
+        "reference": {
           "reference": "TestScript/UFHV16"
         },
         "name": "TestinstanceUFHV16",
+        "description": "Testing correct use of correction",
+        "exampleBoolean": true
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "TestScript"
+          }
+        ],
+        "reference": {
+          "reference": "TestScript/UFHV16-with-ACK"
+        },
+        "name": "TestinstanceUFHV16-with-ACK",
         "description": "Testing correct use of correction",
         "exampleBoolean": true
       }

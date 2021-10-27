@@ -29,7 +29,7 @@ InstanceOf: TestScript
 * destination.profile.system = "http://terminology.hl7.org/CodeSystem/testscript-profile-destination-types"
 * destination.profile.code = #FHIR-Server
 
-* fixture[0].id = $Fixture1STIN
+* fixture[0].id = "bundle-create-MORS"
 * fixture[0].autocreate = false
 * fixture[0].autodelete = false
 * fixture[0].resource.reference = $Fixture1MORSRefference
@@ -39,7 +39,7 @@ InstanceOf: TestScript
 
 * variable[0].name = "destinationUri"
 * variable[0].expression = "Bundle.entry.resource.ofType(MessageHeader).destination.endpoint"
-* variable[0].sourceId = $Fixture1STIN
+* variable[0].sourceId = "bundle-create-MORS"
 
 * setup.action[0].operation.type.system = "http://terminology.hl7.org/CodeSystem/testscript-operation-codes"
 * setup.action[0].operation.type.code = #delete
@@ -56,7 +56,7 @@ InstanceOf: TestScript
 * setup.action[1].operation.accept = #xml
 * setup.action[1].operation.contentType = #xml
 * setup.action[1].operation.encodeRequestUrl = true
-* setup.action[1].operation.sourceId = $Fixture1STIN
+* setup.action[1].operation.sourceId = "bundle-create-MORS"
 
 * setup.action[2].assert.description = "Confirm that the returned HTTP status is 201(Created)."
 * setup.action[2].assert.direction = #response

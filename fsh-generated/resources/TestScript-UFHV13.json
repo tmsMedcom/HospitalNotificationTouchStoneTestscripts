@@ -46,7 +46,7 @@
   ],
   "fixture": [
     {
-      "id": "bundle-create-STIN",
+      "id": "bundle-create-MORS",
       "autocreate": false,
       "autodelete": false,
       "resource": {
@@ -64,7 +64,7 @@
     {
       "name": "destinationUri",
       "expression": "Bundle.entry.resource.ofType(MessageHeader).destination.endpoint",
-      "sourceId": "bundle-create-STIN"
+      "sourceId": "bundle-create-MORS"
     }
   ],
   "setup": {
@@ -93,7 +93,7 @@
           "accept": "xml",
           "contentType": "xml",
           "encodeRequestUrl": true,
-          "sourceId": "bundle-create-STIN"
+          "sourceId": "bundle-create-MORS"
         }
       },
       {

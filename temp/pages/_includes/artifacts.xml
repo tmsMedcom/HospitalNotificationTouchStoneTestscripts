@@ -129,7 +129,23 @@
             </tr>
             <tr>
                <td style="column-width:30%">
+                  <a href="TestScript-UFHV05-with-ACK.html"
+                     title="TestScript/UFHV05-with-ACK">TestinstanceUFHV5-with-ACK</a>
+               </td>
+               <td>{% capture desc %}Testing correct use of admit and discharge{% endcapture %}
+{{ desc | markdownify}}</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
                   <a href="TestScript-UFHV06.html" title="TestScript/UFHV06">TestinstanceUFHV6</a>
+               </td>
+               <td>{% capture desc %}Testing correct use of admit and discharge{% endcapture %}
+{{ desc | markdownify}}</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="TestScript-UFHV06-with-ACK.html"
+                     title="TestScript/UFHV06-with-ACK">TestinstanceUFHV6-with-ACK</a>
                </td>
                <td>{% capture desc %}Testing correct use of admit and discharge{% endcapture %}
 {{ desc | markdownify}}</td>
@@ -158,7 +174,23 @@
             </tr>
             <tr>
                <td style="column-width:30%">
+                  <a href="TestScript-UFHV09-with-ACK.html"
+                     title="TestScript/UFHV09-with-ACK">TestinstanceUFHV9-with-ACK</a>
+               </td>
+               <td>{% capture desc %}Testing correct use of admit and discharge{% endcapture %}
+{{ desc | markdownify}}</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
                   <a href="TestScript-UFHV10.html" title="TestScript/UFHV10">TestinstanceUFHV10</a>
+               </td>
+               <td>{% capture desc %}Testing correct use of admit and discharge{% endcapture %}
+{{ desc | markdownify}}</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="TestScript-UFHV10-with-ACK.html"
+                     title="TestScript/UFHV10-with-ACK">TestinstanceUFHV10-with-ACK</a>
                </td>
                <td>{% capture desc %}Testing correct use of admit and discharge{% endcapture %}
 {{ desc | markdownify}}</td>
@@ -172,7 +204,23 @@
             </tr>
             <tr>
                <td style="column-width:30%">
+                  <a href="TestScript-UFHV11-with-ACK.html"
+                     title="TestScript/UFHV11-with-ACK">TestinstanceUFHV11-with-ACK</a>
+               </td>
+               <td>{% capture desc %}Testing correct use of admit and discharge{% endcapture %}
+{{ desc | markdownify}}</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
                   <a href="TestScript-UFHV12.html" title="TestScript/UFHV12">TestinstanceUFHV12</a>
+               </td>
+               <td>{% capture desc %}Testing correct use of emergency admit and discharge{% endcapture %}
+{{ desc | markdownify}}</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="TestScript-UFHV12-with-ACK.html"
+                     title="TestScript/UFHV12-with-ACK">TestinstanceUFHV12-with-ACK</a>
                </td>
                <td>{% capture desc %}Testing correct use of emergency admit and discharge{% endcapture %}
 {{ desc | markdownify}}</td>
@@ -186,7 +234,23 @@
             </tr>
             <tr>
                <td style="column-width:30%">
+                  <a href="TestScript-UFHV13-with-ACK.html"
+                     title="TestScript/UFHV13-with-ACK">TestinstanceUFHV13-with-ACK</a>
+               </td>
+               <td>{% capture desc %}Testing correct use of correction{% endcapture %}
+{{ desc | markdownify}}</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
                   <a href="TestScript-UFHV14.html" title="TestScript/UFHV14">TestinstanceUFHV14</a>
+               </td>
+               <td>{% capture desc %}Testing correct use of status admit-inpatient{% endcapture %}
+{{ desc | markdownify}}</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="TestScript-UFHV14-with-ACK.html"
+                     title="TestScript/UFHV14-with-ACK">TestinstanceUFHV14-with-ACK</a>
                </td>
                <td>{% capture desc %}Testing correct use of status admit-inpatient{% endcapture %}
 {{ desc | markdownify}}</td>
@@ -200,7 +264,23 @@
             </tr>
             <tr>
                <td style="column-width:30%">
+                  <a href="TestScript-UFHV15-with-ACK.html"
+                     title="TestScript/UFHV15-with-ACK">TestinstanceUFHV15-with-ACK</a>
+               </td>
+               <td>{% capture desc %}Testing correct use of admit and discharge{% endcapture %}
+{{ desc | markdownify}}</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
                   <a href="TestScript-UFHV16.html" title="TestScript/UFHV16">TestinstanceUFHV16</a>
+               </td>
+               <td>{% capture desc %}Testing correct use of correction{% endcapture %}
+{{ desc | markdownify}}</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="TestScript-UFHV16-with-ACK.html"
+                     title="TestScript/UFHV16-with-ACK">TestinstanceUFHV16-with-ACK</a>
                </td>
                <td>{% capture desc %}Testing correct use of correction{% endcapture %}
 {{ desc | markdownify}}</td>

@@ -17,7 +17,7 @@
   fhir:ImplementationGuide.name [ fhir:value "HospitalnotificationTestscripts"];
   fhir:ImplementationGuide.title [ fhir:value "HospitalNotification Testscripts"];
   fhir:ImplementationGuide.status [ fhir:value "draft"];
-  fhir:ImplementationGuide.date [ fhir:value "2021-10-27T06:58:35+02:00"^^xsd:dateTime];
+  fhir:ImplementationGuide.date [ fhir:value "2021-10-27T15:33:59+02:00"^^xsd:dateTime];
   fhir:ImplementationGuide.contact [
      fhir:index 0;
      fhir:ContactDetail.name [ fhir:value "MedCom" ];
@@ -489,6 +489,20 @@
          fhir:Extension.valueString [ fhir:value "TestScript" ]
        ];
        fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <http://example.org/fhir/fish/TestScript/UFHV05-with-ACK>;
+         fhir:Reference.reference [ fhir:value "TestScript/UFHV05-with-ACK" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "TestinstanceUFHV5-with-ACK" ];
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Testing correct use of admit and discharge" ];
+       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "true"^^xsd:boolean ]
+     ], [
+       fhir:index 15;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
+         fhir:Extension.valueString [ fhir:value "TestScript" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.reference [
          fhir:link <http://example.org/fhir/fish/TestScript/UFHV06>;
          fhir:Reference.reference [ fhir:value "TestScript/UFHV06" ]
        ];
@@ -496,7 +510,21 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Testing correct use of admit and discharge" ];
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "true"^^xsd:boolean ]
      ], [
-       fhir:index 15;
+       fhir:index 16;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
+         fhir:Extension.valueString [ fhir:value "TestScript" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <http://example.org/fhir/fish/TestScript/UFHV06-with-ACK>;
+         fhir:Reference.reference [ fhir:value "TestScript/UFHV06-with-ACK" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "TestinstanceUFHV6-with-ACK" ];
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Testing correct use of admit and discharge" ];
+       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "true"^^xsd:boolean ]
+     ], [
+       fhir:index 17;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -510,7 +538,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Testing correct use of admit and discharge" ];
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "true"^^xsd:boolean ]
      ], [
-       fhir:index 16;
+       fhir:index 18;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -524,7 +552,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Testing correct use of admit and discharge" ];
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "true"^^xsd:boolean ]
      ], [
-       fhir:index 17;
+       fhir:index 19;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -538,7 +566,21 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Testing correct use of admit and discharge" ];
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "true"^^xsd:boolean ]
      ], [
-       fhir:index 18;
+       fhir:index 20;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
+         fhir:Extension.valueString [ fhir:value "TestScript" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <http://example.org/fhir/fish/TestScript/UFHV09-with-ACK>;
+         fhir:Reference.reference [ fhir:value "TestScript/UFHV09-with-ACK" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "TestinstanceUFHV9-with-ACK" ];
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Testing correct use of admit and discharge" ];
+       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "true"^^xsd:boolean ]
+     ], [
+       fhir:index 21;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -552,7 +594,21 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Testing correct use of admit and discharge" ];
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "true"^^xsd:boolean ]
      ], [
-       fhir:index 19;
+       fhir:index 22;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
+         fhir:Extension.valueString [ fhir:value "TestScript" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <http://example.org/fhir/fish/TestScript/UFHV10-with-ACK>;
+         fhir:Reference.reference [ fhir:value "TestScript/UFHV10-with-ACK" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "TestinstanceUFHV10-with-ACK" ];
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Testing correct use of admit and discharge" ];
+       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "true"^^xsd:boolean ]
+     ], [
+       fhir:index 23;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -566,7 +622,21 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Testing correct use of admit and discharge" ];
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "true"^^xsd:boolean ]
      ], [
-       fhir:index 20;
+       fhir:index 24;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
+         fhir:Extension.valueString [ fhir:value "TestScript" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <http://example.org/fhir/fish/TestScript/UFHV11-with-ACK>;
+         fhir:Reference.reference [ fhir:value "TestScript/UFHV11-with-ACK" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "TestinstanceUFHV11-with-ACK" ];
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Testing correct use of admit and discharge" ];
+       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "true"^^xsd:boolean ]
+     ], [
+       fhir:index 25;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -580,7 +650,21 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Testing correct use of emergency admit and discharge" ];
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "true"^^xsd:boolean ]
      ], [
-       fhir:index 21;
+       fhir:index 26;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
+         fhir:Extension.valueString [ fhir:value "TestScript" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <http://example.org/fhir/fish/TestScript/UFHV12-with-ACK>;
+         fhir:Reference.reference [ fhir:value "TestScript/UFHV12-with-ACK" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "TestinstanceUFHV12-with-ACK" ];
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Testing correct use of emergency admit and discharge" ];
+       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "true"^^xsd:boolean ]
+     ], [
+       fhir:index 27;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -594,7 +678,21 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Testing correct use of correction" ];
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "true"^^xsd:boolean ]
      ], [
-       fhir:index 22;
+       fhir:index 28;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
+         fhir:Extension.valueString [ fhir:value "TestScript" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <http://example.org/fhir/fish/TestScript/UFHV13-with-ACK>;
+         fhir:Reference.reference [ fhir:value "TestScript/UFHV13-with-ACK" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "TestinstanceUFHV13-with-ACK" ];
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Testing correct use of correction" ];
+       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "true"^^xsd:boolean ]
+     ], [
+       fhir:index 29;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -608,7 +706,21 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Testing correct use of status admit-inpatient" ];
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "true"^^xsd:boolean ]
      ], [
-       fhir:index 23;
+       fhir:index 30;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
+         fhir:Extension.valueString [ fhir:value "TestScript" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <http://example.org/fhir/fish/TestScript/UFHV14-with-ACK>;
+         fhir:Reference.reference [ fhir:value "TestScript/UFHV14-with-ACK" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "TestinstanceUFHV14-with-ACK" ];
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Testing correct use of status admit-inpatient" ];
+       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "true"^^xsd:boolean ]
+     ], [
+       fhir:index 31;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -622,7 +734,21 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Testing correct use of admit and discharge" ];
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "true"^^xsd:boolean ]
      ], [
-       fhir:index 24;
+       fhir:index 32;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
+         fhir:Extension.valueString [ fhir:value "TestScript" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <http://example.org/fhir/fish/TestScript/UFHV15-with-ACK>;
+         fhir:Reference.reference [ fhir:value "TestScript/UFHV15-with-ACK" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "TestinstanceUFHV15-with-ACK" ];
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Testing correct use of admit and discharge" ];
+       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "true"^^xsd:boolean ]
+     ], [
+       fhir:index 33;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -633,6 +759,20 @@
          fhir:Reference.reference [ fhir:value "TestScript/UFHV16" ]
        ];
        fhir:ImplementationGuide.definition.resource.name [ fhir:value "TestinstanceUFHV16" ];
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Testing correct use of correction" ];
+       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "true"^^xsd:boolean ]
+     ], [
+       fhir:index 34;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
+         fhir:Extension.valueString [ fhir:value "TestScript" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <http://example.org/fhir/fish/TestScript/UFHV16-with-ACK>;
+         fhir:Reference.reference [ fhir:value "TestScript/UFHV16-with-ACK" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "TestinstanceUFHV16-with-ACK" ];
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Testing correct use of correction" ];
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "true"^^xsd:boolean ]
      ];

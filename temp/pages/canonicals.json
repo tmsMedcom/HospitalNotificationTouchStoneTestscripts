@@ -91,11 +91,25 @@
     "name": "receive-notification-admitted and discharged"
   },
   {
+    "id": "UFHV05-with-ACK",
+    "type": "TestScript",
+    "url": "http://build.fhir.org/ig/hl7dk/dk-medcom/",
+    "version": "0.1.0",
+    "name": "receive-notification-admit and discharge to home"
+  },
+  {
     "id": "UFHV05",
     "type": "TestScript",
     "url": "http://build.fhir.org/ig/hl7dk/dk-medcom/",
     "version": "0.1.0",
     "name": "receive-notification-admit and discharge to home"
+  },
+  {
+    "id": "UFHV06-with-ACK",
+    "type": "TestScript",
+    "url": "http://build.fhir.org/ig/hl7dk/dk-medcom/",
+    "version": "0.1.0",
+    "name": "never returns after leave"
   },
   {
     "id": "UFHV06",
@@ -119,11 +133,25 @@
     "name": "Admitted, transferred and discharged to home"
   },
   {
+    "id": "UFHV09-with-ACK",
+    "type": "TestScript",
+    "url": "http://build.fhir.org/ig/hl7dk/dk-medcom/",
+    "version": "0.1.0",
+    "name": "Admitted, transferred and discharged to home"
+  },
+  {
     "id": "UFHV09",
     "type": "TestScript",
     "url": "http://build.fhir.org/ig/hl7dk/dk-medcom/",
     "version": "0.1.0",
     "name": "Admitted, transferred and discharged to home"
+  },
+  {
+    "id": "UFHV10-with-ACK",
+    "type": "TestScript",
+    "url": "http://build.fhir.org/ig/hl7dk/dk-medcom/",
+    "version": "0.1.0",
+    "name": "Patient is admitted at hospital, transferred to another hospital (another region), and finally discharged to home"
   },
   {
     "id": "UFHV10",
@@ -133,11 +161,25 @@
     "name": "Patient is admitted at hospital, transferred to another hospital (another region), and finally discharged to home"
   },
   {
+    "id": "UFHV11-with-ACK",
+    "type": "TestScript",
+    "url": "http://build.fhir.org/ig/hl7dk/dk-medcom/",
+    "version": "0.1.0",
+    "name": "Patient is admitted at hospital, transfers himself to another hospital (another region), and finally discharged to home"
+  },
+  {
     "id": "UFHV11",
     "type": "TestScript",
     "url": "http://build.fhir.org/ig/hl7dk/dk-medcom/",
     "version": "0.1.0",
     "name": "Patient is admitted at hospital, transfers himself to another hospital (another region), and finally discharged to home"
+  },
+  {
+    "id": "UFHV12-with-ACK",
+    "type": "TestScript",
+    "url": "http://build.fhir.org/ig/hl7dk/dk-medcom/",
+    "version": "0.1.0",
+    "name": "Patient is in an emergency outpatient setting ay hospital, but ends up being admitted"
   },
   {
     "id": "UFHV12",
@@ -147,11 +189,25 @@
     "name": "Patient is in an emergency outpatient setting ay hospital, but ends up being admitted"
   },
   {
+    "id": "UFHV13-with-ACK",
+    "type": "TestScript",
+    "url": "http://build.fhir.org/ig/hl7dk/dk-medcom/",
+    "version": "0.1.0",
+    "name": "Patient dies upon arrival at the hospital"
+  },
+  {
     "id": "UFHV13",
     "type": "TestScript",
     "url": "http://build.fhir.org/ig/hl7dk/dk-medcom/",
     "version": "0.1.0",
     "name": "Patient dies upon arrival at the hospital"
+  },
+  {
+    "id": "UFHV14-with-ACK",
+    "type": "TestScript",
+    "url": "http://build.fhir.org/ig/hl7dk/dk-medcom/",
+    "version": "0.1.0",
+    "name": "Patient is admitted and dies at the hospital"
   },
   {
     "id": "UFHV14",
@@ -161,11 +217,25 @@
     "name": "Patient is admitted and dies at the hospital"
   },
   {
+    "id": "UFHV15-with-ACK",
+    "type": "TestScript",
+    "url": "http://build.fhir.org/ig/hl7dk/dk-medcom/",
+    "version": "0.1.0",
+    "name": "Dies during leave"
+  },
+  {
     "id": "UFHV15",
     "type": "TestScript",
     "url": "http://build.fhir.org/ig/hl7dk/dk-medcom/",
     "version": "0.1.0",
     "name": "Dies during leave"
+  },
+  {
+    "id": "UFHV16-with-ACK",
+    "type": "TestScript",
+    "url": "http://build.fhir.org/ig/hl7dk/dk-medcom/",
+    "version": "0.1.0",
+    "name": "transferred to a private hospital"
   },
   {
     "id": "UFHV16",

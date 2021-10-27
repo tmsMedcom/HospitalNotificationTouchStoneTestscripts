@@ -7,10 +7,8 @@
     ]
   },
   "url": "http://build.fhir.org/ig/hl7dk/dk-medcom/",
-  "name": "Admitted, transferred and discharged to home",
-  "title": "Patient is admitted at hospital, transferred to another hospital (same region), and finally discharged to home",
   "status": "active",
-  "date": "2021-07-05",
+  "date": "2021-10-22",
   "publisher": "MedCom",
   "contact": [
     {
@@ -24,8 +22,10 @@
       ]
     }
   ],
-  "description": "Testing correct use of admit and discharge",
   "copyright": "MedCom 2021",
+  "name": "Admitted, transferred and discharged to home",
+  "title": "Patient is admitted at hospital, transferred to another hospital (same region), and finally discharged to home",
+  "description": "Testing correct use of admit and discharge",
   "origin": [
     {
       "index": 1,
@@ -62,11 +62,19 @@
       }
     },
     {
-      "id": "bundle-create-AN-SLHJ",
+      "id": "bundle-create-SLHJ",
       "autocreate": false,
       "autodelete": false,
       "resource": {
         "reference": "/FHIRSandbox/MedCom/401-Hospitalnotification/send/Userstory/_reference/resources/HospitalNotificationMessage-SLHJ-UF_H_V_15.xml"
+      }
+    },
+    {
+      "id": "bundle-create-ack-OK",
+      "autocreate": false,
+      "autodelete": false,
+      "resource": {
+        "reference": "/FHIRSandbox/MedCom/401-Acknowledgement/_reference/resources/Acknowledgement-ok.xml"
       }
     }
   ],
@@ -90,7 +98,7 @@
     {
       "name": "destinationUriSLHJ8",
       "expression": "Bundle.entry.resource.ofType(MessageHeader).destination.endpoint",
-      "sourceId": "bundle-create-AN-SLHJ"
+      "sourceId": "bundle-create-SLHJ"
     }
   ],
   "setup": {
@@ -197,7 +205,7 @@
           "accept": "xml",
           "contentType": "xml",
           "encodeRequestUrl": true,
-          "sourceId": "bundle-create-AN-SLHJ"
+          "sourceId": "bundle-create-SLHJ"
         }
       },
       {
