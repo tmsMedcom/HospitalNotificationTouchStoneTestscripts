@@ -17,7 +17,7 @@
    <name value="HospitalnotificationTestscripts"/>
    <title value="HospitalNotification Testscripts"/>
    <status value="draft"/>
-   <date value="2021-10-21T11:28:04+02:00"/>
+   <date value="2021-10-27T06:58:35+02:00"/>
    <contact>
       <name value="MedCom"/>
       <telecom>
@@ -150,6 +150,21 @@
             <valueString value="TestScript"/>
          </extension>
          <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+            <valueUri value="TestScript-UFHV01-with-ACK.html"/>
+         </extension>
+         <reference>
+            <reference value="TestScript/UFHV01-with-ACK"/>
+         </reference>
+         <name value="TestinstanceUFHV1-with-ACK"/>
+         <description value="Testing correct use of status admit-inpatient"/>
+         <exampleBoolean value="true"/>
+         <groupingId value="-ex-example"/>
+      </resource>
+      <resource>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+            <valueString value="TestScript"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
             <valueUri value="TestScript-UFHV02.html"/>
          </extension>
          <reference>
@@ -157,6 +172,20 @@
          </reference>
          <name value="TestinstanceUFHV2"/>
          <description value="Testing correct use of correction"/>
+         <exampleBoolean value="true"/>
+         <groupingId value="-ex-example"/>
+      </resource>
+      <resource>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+            <valueString value="TestScript"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+            <valueUri value="TestScript-UFHV02-with-ACK.html"/>
+         </extension>
+         <reference>
+            <reference value="TestScript/UFHV02-with-ACK"/>
+         </reference>
+         <name value="TestinstanceUFHV2-with-ACK"/>
          <exampleBoolean value="true"/>
          <groupingId value="-ex-example"/>
       </resource>
@@ -180,6 +209,20 @@
             <valueString value="TestScript"/>
          </extension>
          <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+            <valueUri value="TestScript-UFHV03-with-ACK.html"/>
+         </extension>
+         <reference>
+            <reference value="TestScript/UFHV03-with-ACK"/>
+         </reference>
+         <name value="TestinstanceUFHV3-with-ACK"/>
+         <exampleBoolean value="true"/>
+         <groupingId value="-ex-example"/>
+      </resource>
+      <resource>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+            <valueString value="TestScript"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
             <valueUri value="TestScript-UFHV04.html"/>
          </extension>
          <reference>
@@ -187,6 +230,20 @@
          </reference>
          <name value="TestinstanceUFHV4"/>
          <description value="Testing correct use of emergency admit and discharge"/>
+         <exampleBoolean value="true"/>
+         <groupingId value="-ex-example"/>
+      </resource>
+      <resource>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+            <valueString value="TestScript"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+            <valueUri value="TestScript-UFHV04-with-ACK.html"/>
+         </extension>
+         <reference>
+            <reference value="TestScript/UFHV04-with-ACK"/>
+         </reference>
+         <name value="TestinstanceUFHV4-with-ACK"/>
          <exampleBoolean value="true"/>
          <groupingId value="-ex-example"/>
       </resource>
@@ -231,6 +288,21 @@
             <reference value="TestScript/UFHV08"/>
          </reference>
          <name value="TestinstanceUFHV8"/>
+         <description value="Testing correct use of admit and discharge"/>
+         <exampleBoolean value="true"/>
+         <groupingId value="-ex-example"/>
+      </resource>
+      <resource>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+            <valueString value="TestScript"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+            <valueUri value="TestScript-UFHV08-with-ACK.html"/>
+         </extension>
+         <reference>
+            <reference value="TestScript/UFHV08-with-ACK"/>
+         </reference>
+         <name value="TestinstanceUFHV8-with-ACK"/>
          <description value="Testing correct use of admit and discharge"/>
          <exampleBoolean value="true"/>
          <groupingId value="-ex-example"/>
@@ -399,8 +471,18 @@
                <generation value="generated"/>
             </page>
             <page>
+               <nameUrl value="TestScript-UFHV01-with-ACK.html"/>
+               <title value="TestinstanceUFHV1-with-ACK"/>
+               <generation value="generated"/>
+            </page>
+            <page>
                <nameUrl value="TestScript-UFHV02.html"/>
                <title value="TestinstanceUFHV2"/>
+               <generation value="generated"/>
+            </page>
+            <page>
+               <nameUrl value="TestScript-UFHV02-with-ACK.html"/>
+               <title value="TestinstanceUFHV2-with-ACK"/>
                <generation value="generated"/>
             </page>
             <page>
@@ -409,8 +491,18 @@
                <generation value="generated"/>
             </page>
             <page>
+               <nameUrl value="TestScript-UFHV03-with-ACK.html"/>
+               <title value="TestinstanceUFHV3-with-ACK"/>
+               <generation value="generated"/>
+            </page>
+            <page>
                <nameUrl value="TestScript-UFHV04.html"/>
                <title value="TestinstanceUFHV4"/>
+               <generation value="generated"/>
+            </page>
+            <page>
+               <nameUrl value="TestScript-UFHV04-with-ACK.html"/>
+               <title value="TestinstanceUFHV4-with-ACK"/>
                <generation value="generated"/>
             </page>
             <page>
@@ -426,6 +518,11 @@
             <page>
                <nameUrl value="TestScript-UFHV08.html"/>
                <title value="TestinstanceUFHV8"/>
+               <generation value="generated"/>
+            </page>
+            <page>
+               <nameUrl value="TestScript-UFHV08-with-ACK.html"/>
+               <title value="TestinstanceUFHV8-with-ACK"/>
                <generation value="generated"/>
             </page>
             <page>

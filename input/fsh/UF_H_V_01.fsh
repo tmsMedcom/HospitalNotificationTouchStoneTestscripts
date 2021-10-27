@@ -39,41 +39,12 @@ InstanceOf: TestScript
 * variable[+].name = "destinationUri"
 * variable[=].expression = "Bundle.entry.resource.ofType(MessageHeader).destination.endpoint"
 * variable[=].sourceId = "bundle-create-STIN"
-/*
-// test1 ack - SKAL MED I TBD indvi
-* variable[+].name = "bundleResourceid"
-* variable[=].expression = "Bundle.id"
-* variable[=].sourceId = "bundle-create-STIN"
-// test1 ack - SKAL MED I TBD indvi
-* variable[+].name = "MessageHeaderIdentifier"
-* variable[=].expression = "Bundle.entry[0].fullUrl"
-* variable[=].sourceId = "bundle-create-STIN"
 
-// test1 ack - SKAL MED I TBD indvi
-* variable[+].name = "ProvenanceID"
-* variable[=].expression = "Bundle.entry.resource.ofType(Provenance).id"
-* variable[=].sourceId = "bundle-create-STIN"
-*/
-//Test2 HN
-
+//TEST2 HN
 * variable[+].name = "destinationUriK3"
 * variable[=].expression = "Bundle.entry.resource.ofType(MessageHeader).destination.endpoint"
 * variable[=].sourceId = "bundle-create-SLHJ"
-/*
-// test2 ack - SKAL MED I TBD indvi 
-* variable[+].name = "bundleResourceid2"
-* variable[=].expression = "Bundle.id"
-* variable[=].sourceId = "bundle-create-SLHJ"
-// test2 ack - SKAL MED I TBD indvi
-* variable[+].name = "MessageHeaderIdentifier2"
-* variable[=].expression = "Bundle.entry[0].fullUrl"
-* variable[=].sourceId = "bundle-create-SLHJ"
 
-// test1 ack - SKAL MED I TBD indvi
-* variable[+].name = "ProvenanceID2"
-* variable[=].expression = "Bundle.entry.resource.ofType(Provenance).id"
-* variable[=].sourceId = "bundle-create-SLHJ"
-*/
 
 * setup.action[+].operation.type.system = "http://terminology.hl7.org/CodeSystem/testscript-operation-codes"
 * setup.action[=].operation.type.code = #delete
@@ -136,7 +107,7 @@ InstanceOf: TestScript
 * test[=].action[=].assert.responseCode = "200"
 * test[=].action[=].assert.warningOnly = false
 
-* insert ufhv1tmp(3, STIN, bundleResourceid, MessageHeaderIdentifier, ProvenanceID)
+* insert createAckTest(3, STIN, bundleResourceid, MessageHeaderIdentifier, ProvenanceID)
 
 
 
@@ -160,4 +131,4 @@ InstanceOf: TestScript
 * test[=].action[=].assert.warningOnly = false
 
 //ACk2 SKal med TBD indv
-* insert ufhv1tmp(4,SLHJ, bundleResourceid2, MessageHeaderIdentifier2, ProvenanceID2)
+* insert createAckTest(4,SLHJ, bundleResourceid2, MessageHeaderIdentifier2, ProvenanceID2)

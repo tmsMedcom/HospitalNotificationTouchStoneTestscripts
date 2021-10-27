@@ -1,8 +1,8 @@
-RuleSet: ufhv1tmp(testId,type, bundleResourceid, MessageHeaderIdentifier, ProvenanceID)
-* insert CrateVariabels({type}, {bundleResourceid}, {MessageHeaderIdentifier}, {ProvenanceID} )
+RuleSet: createAckTest(testId,fixtureid, bundleResourceid, MessageHeaderIdentifier, ProvenanceID)
+* insert CrateVariabels({fixtureid}, {bundleResourceid}, {MessageHeaderIdentifier}, {ProvenanceID} )
 
-* test[+].id = "{testId}ACK-{type}" //Name change
-* test[=].name = "{testId} Post Acknowledgement-{type}" //Name change
+* test[+].id = "{testId}ACK-{fixtureid}" //Name change
+* test[=].name = "{testId} Post Acknowledgement-{fixtureid}" //Name change
 * test[=].description = "GET ACK" //Name change
 * test[=].action[+].operation.type.system = "http://terminology.hl7.org/CodeSystem/testscript-operation-codes"
 * test[=].action[=].operation.type.code = #create
@@ -63,17 +63,17 @@ RuleSet: ACKFixture
 * fixture[=].resource.reference = "/FHIRSandbox/MedCom/401-Acknowledgement/_reference/resources/Acknowledgement-ok.xml"
 
 //Type = e.g. SLHJ, STIn 
-RuleSet: CrateVariabels(type, bundleResourceid, MessageHeaderIdentifier, ProvenanceID)
+RuleSet: CrateVariabels(fixtureid, bundleResourceid, MessageHeaderIdentifier, ProvenanceID)
 // test2 ack - SKAL MED I TBD indvi 
 * variable[+].name = "{bundleResourceid}"
 * variable[=].expression = "Bundle.id"
-* variable[=].sourceId = "bundle-create-{type}"
+* variable[=].sourceId = "{fixtureid}"
 // test2 ack - SKAL MED I TBD indvi
 * variable[+].name = "{MessageHeaderIdentifier}"
 * variable[=].expression = "Bundle.entry[0].fullUrl"
-* variable[=].sourceId = "bundle-create-{type}"
+* variable[=].sourceId = "{fixtureid}"
 
 // test1 ack - SKAL MED I TBD indvi
 * variable[+].name = "{ProvenanceID}"
 * variable[=].expression = "Bundle.entry.resource.ofType(Provenance).id"
-* variable[=].sourceId = "bundle-create-{type}"
+* variable[=].sourceId = "{fixtureid}"

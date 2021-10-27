@@ -10,7 +10,7 @@
   "name": "HospitalnotificationTestscripts",
   "title": "HospitalNotification Testscripts",
   "status": "draft",
-  "date": "2021-10-21T11:28:04+02:00",
+  "date": "2021-10-27T06:58:35+02:00",
   "contact": [
     {
       "name": "MedCom",
@@ -397,10 +397,37 @@
           }
         ],
         "reference": {
+          "reference": "TestScript/UFHV01-with-ACK"
+        },
+        "name": "TestinstanceUFHV1-with-ACK",
+        "description": "Testing correct use of status admit-inpatient",
+        "exampleBoolean": true
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "TestScript"
+          }
+        ],
+        "reference": {
           "reference": "TestScript/UFHV02"
         },
         "name": "TestinstanceUFHV2",
         "description": "Testing correct use of correction",
+        "exampleBoolean": true
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "TestScript"
+          }
+        ],
+        "reference": {
+          "reference": "TestScript/UFHV02-with-ACK"
+        },
+        "name": "TestinstanceUFHV2-with-ACK",
         "exampleBoolean": true
       },
       {
@@ -425,10 +452,36 @@
           }
         ],
         "reference": {
+          "reference": "TestScript/UFHV03-with-ACK"
+        },
+        "name": "TestinstanceUFHV3-with-ACK",
+        "exampleBoolean": true
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "TestScript"
+          }
+        ],
+        "reference": {
           "reference": "TestScript/UFHV04"
         },
         "name": "TestinstanceUFHV4",
         "description": "Testing correct use of emergency admit and discharge",
+        "exampleBoolean": true
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "TestScript"
+          }
+        ],
+        "reference": {
+          "reference": "TestScript/UFHV04-with-ACK"
+        },
+        "name": "TestinstanceUFHV4-with-ACK",
         "exampleBoolean": true
       },
       {
@@ -470,6 +523,20 @@
           "reference": "TestScript/UFHV08"
         },
         "name": "TestinstanceUFHV8",
+        "description": "Testing correct use of admit and discharge",
+        "exampleBoolean": true
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "TestScript"
+          }
+        ],
+        "reference": {
+          "reference": "TestScript/UFHV08-with-ACK"
+        },
+        "name": "TestinstanceUFHV8-with-ACK",
         "description": "Testing correct use of admit and discharge",
         "exampleBoolean": true
       },

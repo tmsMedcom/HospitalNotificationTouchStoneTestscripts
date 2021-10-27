@@ -35,11 +35,25 @@
     "name": "medcom-Acknowledgement-ok-xml-json"
   },
   {
+    "id": "UFHV01-with-ACK",
+    "type": "TestScript",
+    "url": "http://build.fhir.org/ig/hl7dk/dk-medcom/",
+    "version": "0.1.0",
+    "name": "receive-notification-about-admission"
+  },
+  {
     "id": "UFHV01",
     "type": "TestScript",
     "url": "http://build.fhir.org/ig/hl7dk/dk-medcom/",
     "version": "0.1.0",
     "name": "receive-notification-about-admission"
+  },
+  {
+    "id": "UFHV02-with-ACK",
+    "type": "TestScript",
+    "url": "http://build.fhir.org/ig/hl7dk/dk-medcom/",
+    "version": "0.1.0",
+    "name": "receive-notification-correction"
   },
   {
     "id": "UFHV02",
@@ -49,11 +63,25 @@
     "name": "receive-notification-correction"
   },
   {
+    "id": "UFHV03-with-ACK",
+    "type": "TestScript",
+    "url": "http://build.fhir.org/ig/hl7dk/dk-medcom/",
+    "version": "0.1.0",
+    "name": "receive-notification-Cancellation"
+  },
+  {
     "id": "UFHV03",
     "type": "TestScript",
     "url": "http://build.fhir.org/ig/hl7dk/dk-medcom/",
     "version": "0.1.0",
     "name": "receive-notification-Cancellation"
+  },
+  {
+    "id": "UFHV04-with-ACK",
+    "type": "TestScript",
+    "url": "http://build.fhir.org/ig/hl7dk/dk-medcom/",
+    "version": "0.1.0",
+    "name": "receive-notification-admitted and discharged"
   },
   {
     "id": "UFHV04",
@@ -75,6 +103,13 @@
     "url": "http://build.fhir.org/ig/hl7dk/dk-medcom/",
     "version": "0.1.0",
     "name": "never returns after leave"
+  },
+  {
+    "id": "UFHV08-with-ACK",
+    "type": "TestScript",
+    "url": "http://build.fhir.org/ig/hl7dk/dk-medcom/",
+    "version": "0.1.0",
+    "name": "Admitted, transferred and discharged to home"
   },
   {
     "id": "UFHV08",

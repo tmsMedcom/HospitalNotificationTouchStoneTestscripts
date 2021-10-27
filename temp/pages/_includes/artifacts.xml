@@ -69,9 +69,25 @@
             </tr>
             <tr>
                <td style="column-width:30%">
+                  <a href="TestScript-UFHV01-with-ACK.html"
+                     title="TestScript/UFHV01-with-ACK">TestinstanceUFHV1-with-ACK</a>
+               </td>
+               <td>{% capture desc %}Testing correct use of status admit-inpatient{% endcapture %}
+{{ desc | markdownify}}</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
                   <a href="TestScript-UFHV02.html" title="TestScript/UFHV02">TestinstanceUFHV2</a>
                </td>
                <td>{% capture desc %}Testing correct use of correction{% endcapture %}
+{{ desc | markdownify}}</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="TestScript-UFHV02-with-ACK.html"
+                     title="TestScript/UFHV02-with-ACK">TestinstanceUFHV2-with-ACK</a>
+               </td>
+               <td>{% capture desc %}{% endcapture %}
 {{ desc | markdownify}}</td>
             </tr>
             <tr>
@@ -83,9 +99,25 @@
             </tr>
             <tr>
                <td style="column-width:30%">
+                  <a href="TestScript-UFHV03-with-ACK.html"
+                     title="TestScript/UFHV03-with-ACK">TestinstanceUFHV3-with-ACK</a>
+               </td>
+               <td>{% capture desc %}{% endcapture %}
+{{ desc | markdownify}}</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
                   <a href="TestScript-UFHV04.html" title="TestScript/UFHV04">TestinstanceUFHV4</a>
                </td>
                <td>{% capture desc %}Testing correct use of emergency admit and discharge{% endcapture %}
+{{ desc | markdownify}}</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="TestScript-UFHV04-with-ACK.html"
+                     title="TestScript/UFHV04-with-ACK">TestinstanceUFHV4-with-ACK</a>
+               </td>
+               <td>{% capture desc %}{% endcapture %}
 {{ desc | markdownify}}</td>
             </tr>
             <tr>
@@ -105,6 +137,14 @@
             <tr>
                <td style="column-width:30%">
                   <a href="TestScript-UFHV08.html" title="TestScript/UFHV08">TestinstanceUFHV8</a>
+               </td>
+               <td>{% capture desc %}Testing correct use of admit and discharge{% endcapture %}
+{{ desc | markdownify}}</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="TestScript-UFHV08-with-ACK.html"
+                     title="TestScript/UFHV08-with-ACK">TestinstanceUFHV8-with-ACK</a>
                </td>
                <td>{% capture desc %}Testing correct use of admit and discharge{% endcapture %}
 {{ desc | markdownify}}</td>

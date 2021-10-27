@@ -11,7 +11,7 @@
   <name value="HospitalnotificationTestscripts"/>
   <title value="HospitalNotification Testscripts"/>
   <status value="draft"/>
-  <date value="2021-10-21T11:28:04+02:00"/>
+  <date value="2021-10-27T06:58:35+02:00"/>
   <contact>
     <name value="MedCom"/>
     <telecom>
@@ -263,10 +263,31 @@
         <valueString value="TestScript"/>
       </extension>
       <reference>
+        <reference value="TestScript/UFHV01-with-ACK"/>
+      </reference>
+      <name value="TestinstanceUFHV1-with-ACK"/>
+      <description value="Testing correct use of status admit-inpatient"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="TestScript"/>
+      </extension>
+      <reference>
         <reference value="TestScript/UFHV02"/>
       </reference>
       <name value="TestinstanceUFHV2"/>
       <description value="Testing correct use of correction"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="TestScript"/>
+      </extension>
+      <reference>
+        <reference value="TestScript/UFHV02-with-ACK"/>
+      </reference>
+      <name value="TestinstanceUFHV2-with-ACK"/>
       <exampleBoolean value="true"/>
     </resource>
     <resource>
@@ -285,10 +306,30 @@
         <valueString value="TestScript"/>
       </extension>
       <reference>
+        <reference value="TestScript/UFHV03-with-ACK"/>
+      </reference>
+      <name value="TestinstanceUFHV3-with-ACK"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="TestScript"/>
+      </extension>
+      <reference>
         <reference value="TestScript/UFHV04"/>
       </reference>
       <name value="TestinstanceUFHV4"/>
       <description value="Testing correct use of emergency admit and discharge"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="TestScript"/>
+      </extension>
+      <reference>
+        <reference value="TestScript/UFHV04-with-ACK"/>
+      </reference>
+      <name value="TestinstanceUFHV4-with-ACK"/>
       <exampleBoolean value="true"/>
     </resource>
     <resource>
@@ -321,6 +362,17 @@
         <reference value="TestScript/UFHV08"/>
       </reference>
       <name value="TestinstanceUFHV8"/>
+      <description value="Testing correct use of admit and discharge"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="TestScript"/>
+      </extension>
+      <reference>
+        <reference value="TestScript/UFHV08-with-ACK"/>
+      </reference>
+      <name value="TestinstanceUFHV8-with-ACK"/>
       <description value="Testing correct use of admit and discharge"/>
       <exampleBoolean value="true"/>
     </resource>
