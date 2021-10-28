@@ -68,6 +68,14 @@
       "resource": {
         "reference": "/FHIRSandbox/MedCom/401-Hospitalnotification/send/Userstory/_reference/resources/HospitalNotificationMessage-SLHJ-UF_H_V_15.xml"
       }
+    },
+    {
+      "id": "bundle-create-ack-OK",
+      "autocreate": false,
+      "autodelete": false,
+      "resource": {
+        "reference": "/FHIRSandbox/MedCom/401-Acknowledgement/_reference/resources/Acknowledgement-ok.xml"
+      }
     }
   ],
   "profile": [

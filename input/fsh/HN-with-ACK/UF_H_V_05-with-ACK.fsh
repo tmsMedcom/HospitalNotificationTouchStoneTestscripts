@@ -157,19 +157,19 @@ InstanceOf: TestScript
 * test[+].id = "01-STIN-admitted"
 * test[=].name = "HospitalNotification-STIN"
 * test[=].description = "GET a Hospital notification. The expected response is a 200(OK) with a payload of the Hospital notification resource in XML format."
-* test[=].action[0].operation.type.system = "http://terminology.hl7.org/CodeSystem/testscript-operation-codes"
-* test[=].action[0].operation.type.code = #read
-* test[=].action[0].operation.resource = #Bundle
-* test[=].action[0].operation.description = "Receive notification about admission -STIN"
-* test[=].action[0].operation.accept = #xml
-* test[=].action[0].operation.destination = 1
-* test[=].action[0].operation.encodeRequestUrl = true
-* test[=].action[0].operation.origin = 1
-* test[=].action[0].operation.params = "?message.destination-uri=${destinationUri}"
-* test[=].action[1].assert.description = "Confirm that the returned HTTP status is 200(OK)."
-* test[=].action[1].assert.direction = #response
-* test[=].action[1].assert.responseCode = "200"
-* test[=].action[1].assert.warningOnly = false
+* test[=].action[+].operation.type.system = "http://terminology.hl7.org/CodeSystem/testscript-operation-codes"
+* test[=].action[=].operation.type.code = #read
+* test[=].action[=].operation.resource = #Bundle
+* test[=].action[=].operation.description = "Receive notification about admission -STIN"
+* test[=].action[=].operation.accept = #xml
+* test[=].action[=].operation.destination = 1
+* test[=].action[=].operation.encodeRequestUrl = true
+* test[=].action[=].operation.origin = 1
+* test[=].action[=].operation.params = "?message.destination-uri=${destinationUri}"
+* test[=].action[+].assert.description = "Confirm that the returned HTTP status is 200(OK)."
+* test[=].action[=].assert.direction = #response
+* test[=].action[=].assert.responseCode = "200"
+* test[=].action[=].assert.warningOnly = false
 
 * insert createAckTest(3, bundle-create-STIN, bundleResourceid, MessageHeaderIdentifier, ProvenanceID)
 
@@ -192,40 +192,40 @@ InstanceOf: TestScript
 
 * insert createAckTest(4, bundle-create-STOR, bundleResourceid1, MessageHeaderIdentifier1, ProvenanceID1)
 
-* test[2].id = "03-SLOR"
-* test[2].name = "HospitalNotification-SLOR"
-* test[2].description = "GET a Hospital notification. The expected response is a 200(OK) with a payload of the Hospital notification resource in XML format."
-* test[2].action[0].operation.type.system = "http://terminology.hl7.org/CodeSystem/testscript-operation-codes"
-* test[2].action[0].operation.type.code = #read
-* test[2].action[0].operation.resource = #Bundle
-* test[2].action[0].operation.description = "The patient does not show up after ended leave -SLHJ"
-* test[2].action[0].operation.accept = #xml
-* test[2].action[0].operation.destination = 1
-* test[2].action[0].operation.encodeRequestUrl = true
-* test[2].action[0].operation.origin = 1
-* test[2].action[0].operation.params = "?message.destination-uri=${destinationUriSLOR5}"
-* test[2].action[1].assert.description = "Confirm that the returned HTTP status is 200(OK)."
-* test[2].action[1].assert.direction = #response
-* test[2].action[1].assert.responseCode = "200"
-* test[2].action[1].assert.warningOnly = false
+* test[+].id = "03-SLOR"
+* test[=].name = "HospitalNotification-SLOR"
+* test[=].description = "GET a Hospital notification. The expected response is a 200(OK) with a payload of the Hospital notification resource in XML format."
+* test[=].action[+].operation.type.system = "http://terminology.hl7.org/CodeSystem/testscript-operation-codes"
+* test[=].action[=].operation.type.code = #read
+* test[=].action[=].operation.resource = #Bundle
+* test[=].action[=].operation.description = "The patient does not show up after ended leave -SLHJ"
+* test[=].action[=].operation.accept = #xml
+* test[=].action[=].operation.destination = 1
+* test[=].action[=].operation.encodeRequestUrl = true
+* test[=].action[=].operation.origin = 1
+* test[=].action[=].operation.params = "?message.destination-uri=${destinationUriSLOR5}"
+* test[=].action[+].assert.description = "Confirm that the returned HTTP status is 200(OK)."
+* test[=].action[=].assert.direction = #response
+* test[=].action[=].assert.responseCode = "200"
+* test[=].action[=].assert.warningOnly = false
 
 * insert createAckTest(5, bundle-create-SLOR, bundleResourceid2, MessageHeaderIdentifier2, ProvenanceID2)
 
-* test[3].id = "04-SLHJ"
-* test[3].name = "HospitalNotification-SLHJ"
-* test[3].description = "GET a Hospital notification. The expected response is a 200(OK) with a payload of the Hospital notification resource in XML format."
-* test[3].action[0].operation.type.system = "http://terminology.hl7.org/CodeSystem/testscript-operation-codes"
-* test[3].action[0].operation.type.code = #read
-* test[3].action[0].operation.resource = #Bundle
-* test[3].action[0].operation.description = "The patient does not show up after ended leave -SLHJ"
-* test[3].action[0].operation.accept = #xml
-* test[3].action[0].operation.destination = 1
-* test[3].action[0].operation.encodeRequestUrl = true
-* test[3].action[0].operation.origin = 1
-* test[3].action[0].operation.params = "?message.destination-uri=${destinationUriSLHJ5}"
-* test[3].action[1].assert.description = "Confirm that the returned HTTP status is 200(OK)."
-* test[3].action[1].assert.direction = #response
-* test[3].action[1].assert.responseCode = "200"
-* test[3].action[1].assert.warningOnly = false
+* test[+].id = "04-SLHJ"
+* test[=].name = "HospitalNotification-SLHJ"
+* test[=].description = "GET a Hospital notification. The expected response is a 200(OK) with a payload of the Hospital notification resource in XML format."
+* test[=].action[+].operation.type.system = "http://terminology.hl7.org/CodeSystem/testscript-operation-codes"
+* test[=].action[=].operation.type.code = #read
+* test[=].action[=].operation.resource = #Bundle
+* test[=].action[=].operation.description = "The patient does not show up after ended leave -SLHJ"
+* test[=].action[=].operation.accept = #xml
+* test[=].action[=].operation.destination = 1
+* test[=].action[=].operation.encodeRequestUrl = true
+* test[=].action[=].operation.origin = 1
+* test[=].action[=].operation.params = "?message.destination-uri=${destinationUriSLHJ5}"
+* test[=].action[+].assert.description = "Confirm that the returned HTTP status is 200(OK)."
+* test[=].action[=].assert.direction = #response
+* test[=].action[=].assert.responseCode = "200"
+* test[=].action[=].assert.warningOnly = false
 
 * insert createAckTest(6, bundle-create-SLHJ, bundleResourceid3, MessageHeaderIdentifier3, ProvenanceID3)

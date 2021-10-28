@@ -33,6 +33,9 @@ InstanceOf: TestScript
 * fixture[=].autodelete = false
 * fixture[=].resource.reference = "/FHIRSandbox/MedCom/401-Hospitalnotification/send/Userstory/_reference/resources/HospitalNotificationMessage-SLHJ-UF_H_V_15.xml"
 
+//Only one ACK each testscipt
+* insert ACKFixture 
+
 * profile.id = "hospitalnotification-profile"
 * profile.reference = "http://medcomfhir.dk/fhir/core/1.0/StructureDefinition/medcom-hospitalNotification-message"  
 

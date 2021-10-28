@@ -440,8 +440,8 @@
       ]
     },
     {
-      "id": "03-SLOR",
-      "name": "HospitalNotification-SLOR",
+      "id": "02-STOR",
+      "name": "HospitalNotification-STOR",
       "description": "GET a Hospital notification. The expected response is a 200(OK) with a payload of the Hospital notification resource in XML format.",
       "action": [
         {
@@ -456,7 +456,7 @@
             "destination": 1,
             "encodeRequestUrl": true,
             "origin": 1,
-            "params": "?message.destination-uri=${destinationUriSLOR5}"
+            "params": "?message.destination-uri=${destinationUriSTOR5}"
           }
         },
         {
@@ -470,33 +470,31 @@
       ]
     },
     {
-      "id": "04-SLHJ",
-      "name": "HospitalNotification-SLHJ",
-      "description": "GET a Hospital notification. The expected response is a 200(OK) with a payload of the Hospital notification resource in XML format.",
+      "id": "4ACK-bundle-create-STOR",
+      "name": "4 Post Acknowledgement-bundle-create-STOR",
+      "description": "GET ACK",
       "action": [
         {
           "operation": {
             "type": {
               "system": "http://terminology.hl7.org/CodeSystem/testscript-operation-codes",
-              "code": "read"
+              "code": "create"
             },
             "resource": "Bundle",
-            "description": "The patient does not show up after ended leave -SLHJ",
+            "description": "Post a acknowledgement",
             "accept": "xml",
             "destination": 1,
             "encodeRequestUrl": true,
             "origin": 1,
-            "sourceId": "bundle-create-ack-OK",
-            "params": "?message.destination-uri=${destinationUriSLHJ5}"
+            "sourceId": "bundle-create-ack-OK"
           }
         },
         {
           "assert": {
-            "description": "Confirm that the returned HTTP status is 200(OK).",
-            "direction": "response",
+            "description": "Confirm that the client request payload contains a Bundle resource type.",
+            "direction": "request",
             "resource": "Bundle",
-            "warningOnly": false,
-            "responseCode": "200"
+            "warningOnly": false
           }
         },
         {
@@ -558,7 +556,44 @@
             "expression": "Bundle.entry.resource.ofType(Provenance).where(id='${ProvenanceID1}').exists()",
             "warningOnly": false
           }
+        }
+      ]
+    },
+    {
+      "id": "03-SLOR",
+      "name": "HospitalNotification-SLOR",
+      "description": "GET a Hospital notification. The expected response is a 200(OK) with a payload of the Hospital notification resource in XML format.",
+      "action": [
+        {
+          "operation": {
+            "type": {
+              "system": "http://terminology.hl7.org/CodeSystem/testscript-operation-codes",
+              "code": "read"
+            },
+            "resource": "Bundle",
+            "description": "The patient does not show up after ended leave -SLHJ",
+            "accept": "xml",
+            "destination": 1,
+            "encodeRequestUrl": true,
+            "origin": 1,
+            "params": "?message.destination-uri=${destinationUriSLOR5}"
+          }
         },
+        {
+          "assert": {
+            "description": "Confirm that the returned HTTP status is 200(OK).",
+            "direction": "response",
+            "responseCode": "200",
+            "warningOnly": false
+          }
+        }
+      ]
+    },
+    {
+      "id": "5ACK-bundle-create-SLOR",
+      "name": "5 Post Acknowledgement-bundle-create-SLOR",
+      "description": "GET ACK",
+      "action": [
         {
           "operation": {
             "type": {
@@ -639,6 +674,36 @@
             "description": "Confirm that the id of the original message provenance exist in the ack",
             "direction": "request",
             "expression": "Bundle.entry.resource.ofType(Provenance).where(id='${ProvenanceID2}').exists()",
+            "warningOnly": false
+          }
+        }
+      ]
+    },
+    {
+      "id": "04-SLHJ",
+      "name": "HospitalNotification-SLHJ",
+      "description": "GET a Hospital notification. The expected response is a 200(OK) with a payload of the Hospital notification resource in XML format.",
+      "action": [
+        {
+          "operation": {
+            "type": {
+              "system": "http://terminology.hl7.org/CodeSystem/testscript-operation-codes",
+              "code": "read"
+            },
+            "resource": "Bundle",
+            "description": "The patient does not show up after ended leave -SLHJ",
+            "accept": "xml",
+            "destination": 1,
+            "encodeRequestUrl": true,
+            "origin": 1,
+            "params": "?message.destination-uri=${destinationUriSLHJ5}"
+          }
+        },
+        {
+          "assert": {
+            "description": "Confirm that the returned HTTP status is 200(OK).",
+            "direction": "response",
+            "responseCode": "200",
             "warningOnly": false
           }
         }
