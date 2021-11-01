@@ -8,7 +8,7 @@
   },
   "url": "http://build.fhir.org/ig/hl7dk/dk-medcom/",
   "status": "active",
-  "date": "2021-10-22",
+  "date": "2021-11-01",
   "publisher": "MedCom",
   "contact": [
     {
@@ -46,7 +46,7 @@
   ],
   "fixture": [
     {
-      "id": "bundle-create-STIN",
+      "id": "bundle-create-STIN1",
       "autocreate": false,
       "autodelete": false,
       "resource": {
@@ -70,24 +70,24 @@
   ],
   "variable": [
     {
-      "name": "destinationUri",
+      "name": "destinationUri1",
       "expression": "Bundle.entry.resource.ofType(MessageHeader).destination.endpoint",
-      "sourceId": "bundle-create-STIN"
+      "sourceId": "bundle-create-STIN1"
     },
     {
-      "name": "bundleResourceid",
-      "expression": "Bundle.id",
-      "sourceId": "bundle-create-STIN"
+      "name": "KorrektMHID1",
+      "expression": "Bundle.entry.resource.ofType(Bundle).id",
+      "sourceId": "bundle-get-STIN1"
     },
     {
-      "name": "MessageHeaderIdentifier",
+      "name": "MessageHeaderIdentifier1",
       "expression": "Bundle.entry[0].fullUrl",
-      "sourceId": "bundle-create-STIN"
+      "sourceId": "bundle-create-STIN1"
     },
     {
-      "name": "ProvenanceID",
+      "name": "ProvenanceID1",
       "expression": "Bundle.entry.resource.ofType(Provenance).id",
-      "sourceId": "bundle-create-STIN"
+      "sourceId": "bundle-create-STIN1"
     }
   ],
   "setup": {
@@ -102,7 +102,7 @@
           "description": "System-generated search and delete operations from conditional delete on Bundle MessageHeader).destination.endpoint",
           "accept": "xml",
           "encodeRequestUrl": true,
-          "params": "?message.destination-uri=${destinationUri}"
+          "params": "?message.destination-uri=${destinationUri1}"
         }
       },
       {
@@ -116,24 +116,16 @@
           "accept": "xml",
           "contentType": "xml",
           "encodeRequestUrl": true,
-          "sourceId": "bundle-create-STIN"
-        }
-      },
-      {
-        "assert": {
-          "description": "Confirm that the returned HTTP status is 201(Created).",
-          "direction": "response",
-          "responseCode": "201",
-          "warningOnly": false
+          "sourceId": "bundle-create-STIN1"
         }
       }
     ]
   },
   "test": [
     {
-      "id": "01-STIN-admitted",
+      "id": "1-STIN-admitted",
       "name": "HospitalNotification-STIN",
-      "description": "GET a Hospital notification. The expected response is a 200(OK) with a payload of the Hospital notification resource in XML format.",
+      "description": "GET a Hospital notification STIN. The expected response is a 200(OK) with a payload of the Hospital notification resource in XML format.",
       "action": [
         {
           "operation": {
@@ -142,12 +134,13 @@
               "code": "read"
             },
             "resource": "Bundle",
-            "description": "Receive notification about admission -STIN",
+            "description": "Receive notification-STIN",
             "accept": "xml",
             "destination": 1,
             "encodeRequestUrl": true,
             "origin": 1,
-            "params": "?message.destination-uri=${destinationUri}"
+            "params": "?message.destination-uri=${destinationUri1}",
+            "responseId": "bundle-get-STIN1"
           }
         },
         {
@@ -161,8 +154,8 @@
       ]
     },
     {
-      "id": "3ACK-bundle-create-STIN",
-      "name": "3 Post Acknowledgement-bundle-create-STIN",
+      "id": "1ACK-bundle-create-STIN1",
+      "name": "1 Post Acknowledgement-bundle-create-STIN1",
       "description": "GET ACK",
       "action": [
         {
@@ -220,7 +213,7 @@
             "direction": "request",
             "expression": "Bundle.entry.resource.ofType(MessageHeader).response.identifier",
             "operator": "equals",
-            "value": "${bundleResourceid}",
+            "value": "${KorrektMHID1}",
             "warningOnly": false
           }
         },
@@ -228,7 +221,7 @@
           "assert": {
             "description": "Confirm that the reference original Provenance.entity.what is equal to Id of original messageheader.identifier",
             "direction": "request",
-            "expression": "Bundle.entry.resource.ofType(Provenance).where(entity.what.reference ='${MessageHeaderIdentifier}')",
+            "expression": "Bundle.entry.resource.ofType(Provenance).where(entity.what.reference ='${MessageHeaderIdentifier1}')",
             "warningOnly": false
           }
         },
@@ -244,7 +237,7 @@
           "assert": {
             "description": "Confirm that the id of the original message provenance exist in the ack",
             "direction": "request",
-            "expression": "Bundle.entry.resource.ofType(Provenance).where(id='${ProvenanceID}').exists()",
+            "expression": "Bundle.entry.resource.ofType(Provenance).where(id='${ProvenanceID1}').exists()",
             "warningOnly": false
           }
         }

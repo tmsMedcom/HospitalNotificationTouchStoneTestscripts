@@ -14,7 +14,7 @@
   "toolingVersionFull": "4.6.0 (3)",
   "totalFiles": 36,
   "processedFiles": 45,
-  "genDate": "Thu, Oct 28, 2021 11:30+0200",
+  "genDate": "Thu, Oct 28, 2021 17:10+0200",
   "genDay": "28/10/2021",
   "ig": {
     "id": "medcom",
@@ -33,7 +33,7 @@
         ]
       }
     ],
-    "date": "2021-10-28T11:30:31+02:00",
+    "date": "2021-10-28T17:10:26+02:00",
     "description": "Testscripts for HospitalNotification",
     "fhirVersion": "4.0.1"
   }

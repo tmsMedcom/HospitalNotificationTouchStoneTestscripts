@@ -8,7 +8,7 @@
   },
   "url": "http://build.fhir.org/ig/hl7dk/dk-medcom/",
   "status": "active",
-  "date": "2021-10-22",
+  "date": "2021-11-01",
   "publisher": "MedCom",
   "contact": [
     {
@@ -88,11 +88,6 @@
       "sourceId": "bundle-create-SLHJ"
     },
     {
-      "name": "bundleResourceid",
-      "expression": "Bundle.id",
-      "sourceId": "STIN"
-    },
-    {
       "name": "MessageHeaderIdentifier",
       "expression": "Bundle.entry[0].fullUrl",
       "sourceId": "STIN"
@@ -101,11 +96,6 @@
       "name": "ProvenanceID",
       "expression": "Bundle.entry.resource.ofType(Provenance).id",
       "sourceId": "STIN"
-    },
-    {
-      "name": "bundleResourceid2",
-      "expression": "Bundle.id",
-      "sourceId": "SLHJ"
     },
     {
       "name": "MessageHeaderIdentifier2",

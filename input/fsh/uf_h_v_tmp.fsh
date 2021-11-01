@@ -65,9 +65,9 @@ RuleSet: ACKFixture
 //Type = e.g. SLHJ, STIn 
 RuleSet: CrateVariabels(fixtureid, bundleResourceid, MessageHeaderIdentifier, ProvenanceID)
 // test2 ack - SKAL MED I TBD indvi 
-* variable[+].name = "{bundleResourceid}"
+/** variable[+].name = "{bundleResourceid}"
 * variable[=].expression = "Bundle.id"
-* variable[=].sourceId = "{fixtureid}"
+* variable[=].sourceId = "{fixtureid}"*/
 // test2 ack - SKAL MED I TBD indvi
 * variable[+].name = "{MessageHeaderIdentifier}"
 * variable[=].expression = "Bundle.entry[0].fullUrl"
@@ -77,3 +77,4 @@ RuleSet: CrateVariabels(fixtureid, bundleResourceid, MessageHeaderIdentifier, Pr
 * variable[+].name = "{ProvenanceID}"
 * variable[=].expression = "Bundle.entry.resource.ofType(Provenance).id"
 * variable[=].sourceId = "{fixtureid}"
+
