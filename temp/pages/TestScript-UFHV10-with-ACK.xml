@@ -6,14 +6,14 @@
     <profile value="http://touchstone.aegis.net/touchstone/fhir/testing/StructureDefinition/testscript"/>
   </meta>
   <text>
-    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative</b></p><p><b>url</b>: <code>http://build.fhir.org/ig/hl7dk/dk-medcom/</code></p><p><b>version</b>: 0.1.0</p><p><b>name</b>: Patient is admitted at hospital, transferred to another hospital (another region), and finally discharged to home</p><p><b>title</b>: Patient is admitted at hospital, transferred to another hospital (another region), and finally discharged to home</p><p><b>status</b>: active</p><p><b>date</b>: 2021-10-22</p><p><b>publisher</b>: MedCom</p><p><b>contact</b>: MedCom: <a href="mailto:fhir@medcom.dk">fhir@medcom.dk</a></p><p><b>description</b>: Testing correct use of admit and discharge</p><p><b>copyright</b>: MedCom 2021</p><h3>Origins</h3><table class="grid"><tr><td>-</td><td><b>Index</b></td><td><b>Profile</b></td></tr><tr><td>*</td><td>1</td><td><span title="{http://terminology.hl7.org/CodeSystem/testscript-profile-origin-types FHIR-Client}">FHIR Client</span></td></tr></table><h3>Destinations</h3><table class="grid"><tr><td>-</td><td><b>Index</b></td><td><b>Profile</b></td></tr><tr><td>*</td><td>1</td><td><span title="{http://terminology.hl7.org/CodeSystem/testscript-profile-destination-types FHIR-Server}">FHIR Server</span></td></tr></table><blockquote><p><b>fixture</b></p><p><b>autocreate</b>: false</p><p><b>autodelete</b>: false</p><p><b>resource</b>: <a href="/FHIRSandbox/MedCom/401-Hospitalnotification/receive/Userstory/_reference/resources/STIN-UF_H_V_10.xml">/FHIRSandbox/MedCom/401-Hospitalnotification/receive/Userstory/_reference/resources/STIN-UF_H_V_10.xml</a></p></blockquote><blockquote><p><b>fixture</b></p><p><b>autocreate</b>: false</p><p><b>autodelete</b>: false</p><p><b>resource</b>: <a href="/FHIRSandbox/MedCom/401-Hospitalnotification/receive/Userstory/_reference/resources/STIN2-UF_H_V_10.xml">/FHIRSandbox/MedCom/401-Hospitalnotification/receive/Userstory/_reference/resources/STIN2-UF_H_V_10.xml</a></p></blockquote><blockquote><p><b>fixture</b></p><p><b>autocreate</b>: false</p><p><b>autodelete</b>: false</p><p><b>resource</b>: <a href="/FHIRSandbox/MedCom/401-Hospitalnotification/receive/Userstory/_reference/resources/SLHJ-UF_H_V_10.xml">/FHIRSandbox/MedCom/401-Hospitalnotification/receive/Userstory/_reference/resources/SLHJ-UF_H_V_10.xml</a></p></blockquote><blockquote><p><b>fixture</b></p><p><b>autocreate</b>: false</p><p><b>autodelete</b>: false</p><p><b>resource</b>: <a href="/FHIRSandbox/MedCom/401-Acknowledgement/_reference/resources/Acknowledgement-ok.xml">/FHIRSandbox/MedCom/401-Acknowledgement/_reference/resources/Acknowledgement-ok.xml</a></p></blockquote><p><b>profile</b>: <a href="http://medcomfhir.dk/fhir/core/1.0/StructureDefinition/medcom-hospitalNotification-message">http://medcomfhir.dk/fhir/core/1.0/StructureDefinition/medcom-hospitalNotification-message</a></p><blockquote><p><b>variable</b></p><p><b>name</b>: destinationUri</p><p><b>expression</b>: Bundle.entry.resource.ofType(MessageHeader).destination.endpoint</p><p><b>sourceId</b>: bundle-create-STIN1</p></blockquote><blockquote><p><b>variable</b></p><p><b>name</b>: destinationUriSTIN2</p><p><b>expression</b>: Bundle.entry.resource.ofType(MessageHeader).destination.endpoint</p><p><b>sourceId</b>: bundle-create-STIN2</p></blockquote><blockquote><p><b>variable</b></p><p><b>name</b>: destinationUriSLHJ8</p><p><b>expression</b>: Bundle.entry.resource.ofType(MessageHeader).destination.endpoint</p><p><b>sourceId</b>: bundle-create-SLHJ</p></blockquote><blockquote><p><b>variable</b></p><p><b>name</b>: bundleResourceid</p><p><b>expression</b>: Bundle.id</p><p><b>sourceId</b>: bundle-create-STIN1</p></blockquote><blockquote><p><b>variable</b></p><p><b>name</b>: MessageHeaderIdentifier</p><p><b>expression</b>: Bundle.entry[0].fullUrl</p><p><b>sourceId</b>: bundle-create-STIN1</p></blockquote><blockquote><p><b>variable</b></p><p><b>name</b>: ProvenanceID</p><p><b>expression</b>: Bundle.entry.resource.ofType(Provenance).id</p><p><b>sourceId</b>: bundle-create-STIN1</p></blockquote><blockquote><p><b>variable</b></p><p><b>name</b>: bundleResourceid1</p><p><b>expression</b>: Bundle.id</p><p><b>sourceId</b>: bundle-create-STIN2</p></blockquote><blockquote><p><b>variable</b></p><p><b>name</b>: MessageHeaderIdentifier1</p><p><b>expression</b>: Bundle.entry[0].fullUrl</p><p><b>sourceId</b>: bundle-create-STIN2</p></blockquote><blockquote><p><b>variable</b></p><p><b>name</b>: ProvenanceID1</p><p><b>expression</b>: Bundle.entry.resource.ofType(Provenance).id</p><p><b>sourceId</b>: bundle-create-STIN2</p></blockquote><blockquote><p><b>variable</b></p><p><b>name</b>: bundleResourceid2</p><p><b>expression</b>: Bundle.id</p><p><b>sourceId</b>: bundle-create-SLHJ</p></blockquote><blockquote><p><b>variable</b></p><p><b>name</b>: MessageHeaderIdentifier2</p><p><b>expression</b>: Bundle.entry[0].fullUrl</p><p><b>sourceId</b>: bundle-create-SLHJ</p></blockquote><blockquote><p><b>variable</b></p><p><b>name</b>: ProvenanceID2</p><p><b>expression</b>: Bundle.entry.resource.ofType(Provenance).id</p><p><b>sourceId</b>: bundle-create-SLHJ</p></blockquote><blockquote><p><b>setup</b></p><blockquote><p><b>action</b></p><h3>Operations</h3><table class="grid"><tr><td>-</td><td><b>Type</b></td><td><b>Resource</b></td><td><b>Description</b></td><td><b>Accept</b></td><td><b>EncodeRequestUrl</b></td><td><b>Params</b></td></tr><tr><td>*</td><td><span title="{http://terminology.hl7.org/CodeSystem/testscript-operation-codes delete}">Delete</span></td><td>Bundle</td><td>System-generated search and delete operations from conditional delete on Bundle MessageHeader).destination.endpoint</td><td>xml</td><td>true</td><td>?message.destination-uri=${destinationUri}</td></tr></table></blockquote><blockquote><p><b>action</b></p><h3>Operations</h3><table class="grid"><tr><td>-</td><td><b>Type</b></td><td><b>Resource</b></td><td><b>Description</b></td><td><b>Accept</b></td><td><b>ContentType</b></td><td><b>EncodeRequestUrl</b></td><td><b>SourceId</b></td></tr><tr><td>*</td><td><span title="{http://terminology.hl7.org/CodeSystem/testscript-operation-codes create}">Create</span></td><td>Bundle</td><td>Create the Bundle resource in XML format on the destination server.</td><td>xml</td><td>xml</td><td>true</td><td>bundle-create-STIN1</td></tr></table></blockquote><blockquote><p><b>action</b></p><h3>Asserts</h3><table class="grid"><tr><td>-</td><td><b>Description</b></td><td><b>Direction</b></td><td><b>ResponseCode</b></td><td><b>WarningOnly</b></td></tr><tr><td>*</td><td>Confirm that the returned HTTP status is 201(Created).</td><td>response</td><td>201</td><td>false</td></tr></table></blockquote><blockquote><p><b>action</b></p><h3>Operations</h3><table class="grid"><tr><td>-</td><td><b>Type</b></td><td><b>Resource</b></td><td><b>Description</b></td><td><b>Accept</b></td><td><b>EncodeRequestUrl</b></td><td><b>Params</b></td></tr><tr><td>*</td><td><span title="{http://terminology.hl7.org/CodeSystem/testscript-operation-codes delete}">Delete</span></td><td>Bundle</td><td>System-generated search and delete operations from conditional delete on Bundle MessageHeader).destination.endpoint</td><td>xml</td><td>true</td><td>?message.destination-uri=${destinationUriSTIN2}</td></tr></table></blockquote><blockquote><p><b>action</b></p><h3>Operations</h3><table class="grid"><tr><td>-</td><td><b>Type</b></td><td><b>Resource</b></td><td><b>Description</b></td><td><b>Accept</b></td><td><b>ContentType</b></td><td><b>EncodeRequestUrl</b></td><td><b>SourceId</b></td></tr><tr><td>*</td><td><span title="{http://terminology.hl7.org/CodeSystem/testscript-operation-codes create}">Create</span></td><td>Bundle</td><td>Create the Bundle resource in XML format on the destination server.</td><td>xml</td><td>xml</td><td>true</td><td>bundle-create-STIN2</td></tr></table></blockquote><blockquote><p><b>action</b></p><h3>Asserts</h3><table class="grid"><tr><td>-</td><td><b>Description</b></td><td><b>Direction</b></td><td><b>ResponseCode</b></td><td><b>WarningOnly</b></td></tr><tr><td>*</td><td>Confirm that the returned HTTP status is 201(Created).</td><td>response</td><td>201</td><td>false</td></tr></table></blockquote><blockquote><p><b>action</b></p><h3>Asserts</h3><table class="grid"><tr><td>-</td><td><b>Description</b></td><td><b>Direction</b></td><td><b>ResponseCode</b></td><td><b>WarningOnly</b></td></tr><tr><td>*</td><td>Confirm that the returned HTTP status is 201(Created).</td><td>response</td><td>201</td><td>false</td></tr></table></blockquote><blockquote><p><b>action</b></p><h3>Operations</h3><table class="grid"><tr><td>-</td><td><b>Type</b></td><td><b>Resource</b></td><td><b>Description</b></td><td><b>Accept</b></td><td><b>EncodeRequestUrl</b></td><td><b>Params</b></td></tr><tr><td>*</td><td><span title="{http://terminology.hl7.org/CodeSystem/testscript-operation-codes delete}">Delete</span></td><td>Bundle</td><td>System-generated search and delete operations from conditional delete on Bundle MessageHeader).destination.endpoint</td><td>xml</td><td>true</td><td>?message.destination-uri=${destinationUriSLHJ8}</td></tr></table></blockquote><blockquote><p><b>action</b></p><h3>Operations</h3><table class="grid"><tr><td>-</td><td><b>Type</b></td><td><b>Resource</b></td><td><b>Description</b></td><td><b>Accept</b></td><td><b>ContentType</b></td><td><b>EncodeRequestUrl</b></td><td><b>SourceId</b></td></tr><tr><td>*</td><td><span title="{http://terminology.hl7.org/CodeSystem/testscript-operation-codes create}">Create</span></td><td>Bundle</td><td>Create the Bundle resource in XML format on the destination server.</td><td>xml</td><td>xml</td><td>true</td><td>bundle-create-SLHJ</td></tr></table></blockquote><blockquote><p><b>action</b></p><h3>Asserts</h3><table class="grid"><tr><td>-</td><td><b>Description</b></td><td><b>Direction</b></td><td><b>ResponseCode</b></td><td><b>WarningOnly</b></td></tr><tr><td>*</td><td>Confirm that the returned HTTP status is 201(Created).</td><td>response</td><td>201</td><td>false</td></tr></table></blockquote></blockquote><blockquote><p><b>test</b></p><p><b>name</b>: HospitalNotification-STIN</p><p><b>description</b>: GET a Hospital notification. The expected response is a 200(OK) with a payload of the Hospital notification resource in XML format.</p><blockquote><p><b>action</b></p><h3>Operations</h3><table class="grid"><tr><td>-</td><td><b>Type</b></td><td><b>Resource</b></td><td><b>Description</b></td><td><b>Accept</b></td><td><b>Destination</b></td><td><b>EncodeRequestUrl</b></td><td><b>Origin</b></td><td><b>Params</b></td></tr><tr><td>*</td><td><span title="{http://terminology.hl7.org/CodeSystem/testscript-operation-codes read}">Read</span></td><td>Bundle</td><td>Receive notification about admission -STIN</td><td>xml</td><td>1</td><td>true</td><td>1</td><td>?message.destination-uri=${destinationUri}</td></tr></table></blockquote><blockquote><p><b>action</b></p><h3>Asserts</h3><table class="grid"><tr><td>-</td><td><b>Description</b></td><td><b>Direction</b></td><td><b>ResponseCode</b></td><td><b>WarningOnly</b></td></tr><tr><td>*</td><td>Confirm that the returned HTTP status is 200(OK).</td><td>response</td><td>200</td><td>false</td></tr></table></blockquote></blockquote><blockquote><p><b>test</b></p><p><b>name</b>: 3 Post Acknowledgement-bundle-create-STIN1</p><p><b>description</b>: GET ACK</p><blockquote><p><b>action</b></p><h3>Operations</h3><table class="grid"><tr><td>-</td><td><b>Type</b></td><td><b>Resource</b></td><td><b>Description</b></td><td><b>Accept</b></td><td><b>Destination</b></td><td><b>EncodeRequestUrl</b></td><td><b>Origin</b></td><td><b>SourceId</b></td></tr><tr><td>*</td><td><span title="{http://terminology.hl7.org/CodeSystem/testscript-operation-codes create}">Create</span></td><td>Bundle</td><td>Post a acknowledgement</td><td>xml</td><td>1</td><td>true</td><td>1</td><td>bundle-create-ack-OK</td></tr></table></blockquote><blockquote><p><b>action</b></p><h3>Asserts</h3><table class="grid"><tr><td>-</td><td><b>Description</b></td><td><b>Direction</b></td><td><b>Resource</b></td><td><b>WarningOnly</b></td></tr><tr><td>*</td><td>Confirm that the client request payload contains a Bundle resource type.</td><td>request</td><td>Bundle</td><td>false</td></tr></table></blockquote><blockquote><p><b>action</b></p><h3>Asserts</h3><table class="grid"><tr><td>-</td><td><b>Description</b></td><td><b>Direction</b></td><td><b>Expression</b></td><td><b>Operator</b></td><td><b>Value</b></td><td><b>WarningOnly</b></td></tr><tr><td>*</td><td>Confirm that the MessageHeader response code is OK</td><td>request</td><td>Bundle.entry.resource.ofType(MessageHeader).response.code</td><td>equals</td><td>ok</td><td>false</td></tr></table></blockquote><blockquote><p><b>action</b></p><h3>Asserts</h3><table class="grid"><tr><td>-</td><td><b>Description</b></td><td><b>Direction</b></td><td><b>Expression</b></td><td><b>WarningOnly</b></td></tr><tr><td>*</td><td>Confirm that the request resource contains the expected evetCoding code.</td><td>request</td><td>Bundle.entry.resource.ofType(MessageHeader).event.as(Coding).select(code = 'acknowledgment-message').allTrue()</td><td>false</td></tr></table></blockquote><blockquote><p><b>action</b></p><h3>Asserts</h3><table class="grid"><tr><td>-</td><td><b>Description</b></td><td><b>Direction</b></td><td><b>Expression</b></td><td><b>WarningOnly</b></td></tr><tr><td>*</td><td>Confirm that the Bundle not containing a OperationOutcome</td><td>request</td><td>Bundle.entry.resource.ofType(OperationOutcome).exists().not()</td><td>false</td></tr></table></blockquote><blockquote><p><b>action</b></p><h3>Asserts</h3><table class="grid"><tr><td>-</td><td><b>Description</b></td><td><b>Direction</b></td><td><b>Expression</b></td><td><b>Operator</b></td><td><b>Value</b></td><td><b>WarningOnly</b></td></tr><tr><td>*</td><td>Confirm that the MessageHeader.response.identifier is equal to Id of original message </td><td>request</td><td>Bundle.entry.resource.ofType(MessageHeader).response.identifier</td><td>equals</td><td>${bundleResourceid}</td><td>false</td></tr></table></blockquote><blockquote><p><b>action</b></p><h3>Asserts</h3><table class="grid"><tr><td>-</td><td><b>Description</b></td><td><b>Direction</b></td><td><b>Expression</b></td><td><b>WarningOnly</b></td></tr><tr><td>*</td><td>Confirm that the reference original Provenance.entity.what is equal to Id of original messageheader.identifier</td><td>request</td><td>Bundle.entry.resource.ofType(Provenance).where(entity.what.reference ='${MessageHeaderIdentifier}')</td><td>false</td></tr></table></blockquote><blockquote><p><b>action</b></p><h3>Asserts</h3><table class="grid"><tr><td>-</td><td><b>Description</b></td><td><b>Direction</b></td><td><b>Expression</b></td><td><b>WarningOnly</b></td></tr><tr><td>*</td><td>Confirm that the there are two Provenances</td><td>request</td><td>Bundle.entry.resource.ofType(Provenance).count() = 2</td><td>false</td></tr></table></blockquote><blockquote><p><b>action</b></p><h3>Asserts</h3><table class="grid"><tr><td>-</td><td><b>Description</b></td><td><b>Direction</b></td><td><b>Expression</b></td><td><b>WarningOnly</b></td></tr><tr><td>*</td><td>Confirm that the id of the original message provenance exist in the ack</td><td>request</td><td>Bundle.entry.resource.ofType(Provenance).where(id='${ProvenanceID}').exists()</td><td>false</td></tr></table></blockquote></blockquote><blockquote><p><b>test</b></p><p><b>name</b>: HospitalNotification-STIN2</p><p><b>description</b>: GET a Hospital notification. The expected response is a 200(OK) with a payload of the Hospital notification resource in XML format.</p><blockquote><p><b>action</b></p><h3>Operations</h3><table class="grid"><tr><td>-</td><td><b>Type</b></td><td><b>Resource</b></td><td><b>Description</b></td><td><b>Accept</b></td><td><b>Destination</b></td><td><b>EncodeRequestUrl</b></td><td><b>Origin</b></td><td><b>Params</b></td></tr><tr><td>*</td><td><span title="{http://terminology.hl7.org/CodeSystem/testscript-operation-codes read}">Read</span></td><td>Bundle</td><td>The patient does not show up after ended leave -SLHJ</td><td>xml</td><td>1</td><td>true</td><td>1</td><td>?message.destination-uri=${destinationUriSTIN2}</td></tr></table></blockquote><blockquote><p><b>action</b></p><h3>Asserts</h3><table class="grid"><tr><td>-</td><td><b>Description</b></td><td><b>Direction</b></td><td><b>ResponseCode</b></td><td><b>WarningOnly</b></td></tr><tr><td>*</td><td>Confirm that the returned HTTP status is 200(OK).</td><td>response</td><td>200</td><td>false</td></tr></table></blockquote></blockquote><blockquote><p><b>test</b></p><p><b>name</b>: 4 Post Acknowledgement-bundle-create-STIN2</p><p><b>description</b>: GET ACK</p><blockquote><p><b>action</b></p><h3>Operations</h3><table class="grid"><tr><td>-</td><td><b>Type</b></td><td><b>Resource</b></td><td><b>Description</b></td><td><b>Accept</b></td><td><b>Destination</b></td><td><b>EncodeRequestUrl</b></td><td><b>Origin</b></td><td><b>SourceId</b></td></tr><tr><td>*</td><td><span title="{http://terminology.hl7.org/CodeSystem/testscript-operation-codes create}">Create</span></td><td>Bundle</td><td>Post a acknowledgement</td><td>xml</td><td>1</td><td>true</td><td>1</td><td>bundle-create-ack-OK</td></tr></table></blockquote><blockquote><p><b>action</b></p><h3>Asserts</h3><table class="grid"><tr><td>-</td><td><b>Description</b></td><td><b>Direction</b></td><td><b>Resource</b></td><td><b>WarningOnly</b></td></tr><tr><td>*</td><td>Confirm that the client request payload contains a Bundle resource type.</td><td>request</td><td>Bundle</td><td>false</td></tr></table></blockquote><blockquote><p><b>action</b></p><h3>Asserts</h3><table class="grid"><tr><td>-</td><td><b>Description</b></td><td><b>Direction</b></td><td><b>Expression</b></td><td><b>Operator</b></td><td><b>Value</b></td><td><b>WarningOnly</b></td></tr><tr><td>*</td><td>Confirm that the MessageHeader response code is OK</td><td>request</td><td>Bundle.entry.resource.ofType(MessageHeader).response.code</td><td>equals</td><td>ok</td><td>false</td></tr></table></blockquote><blockquote><p><b>action</b></p><h3>Asserts</h3><table class="grid"><tr><td>-</td><td><b>Description</b></td><td><b>Direction</b></td><td><b>Expression</b></td><td><b>WarningOnly</b></td></tr><tr><td>*</td><td>Confirm that the request resource contains the expected evetCoding code.</td><td>request</td><td>Bundle.entry.resource.ofType(MessageHeader).event.as(Coding).select(code = 'acknowledgment-message').allTrue()</td><td>false</td></tr></table></blockquote><blockquote><p><b>action</b></p><h3>Asserts</h3><table class="grid"><tr><td>-</td><td><b>Description</b></td><td><b>Direction</b></td><td><b>Expression</b></td><td><b>WarningOnly</b></td></tr><tr><td>*</td><td>Confirm that the Bundle not containing a OperationOutcome</td><td>request</td><td>Bundle.entry.resource.ofType(OperationOutcome).exists().not()</td><td>false</td></tr></table></blockquote><blockquote><p><b>action</b></p><h3>Asserts</h3><table class="grid"><tr><td>-</td><td><b>Description</b></td><td><b>Direction</b></td><td><b>Expression</b></td><td><b>Operator</b></td><td><b>Value</b></td><td><b>WarningOnly</b></td></tr><tr><td>*</td><td>Confirm that the MessageHeader.response.identifier is equal to Id of original message </td><td>request</td><td>Bundle.entry.resource.ofType(MessageHeader).response.identifier</td><td>equals</td><td>${bundleResourceid1}</td><td>false</td></tr></table></blockquote><blockquote><p><b>action</b></p><h3>Asserts</h3><table class="grid"><tr><td>-</td><td><b>Description</b></td><td><b>Direction</b></td><td><b>Expression</b></td><td><b>WarningOnly</b></td></tr><tr><td>*</td><td>Confirm that the reference original Provenance.entity.what is equal to Id of original messageheader.identifier</td><td>request</td><td>Bundle.entry.resource.ofType(Provenance).where(entity.what.reference ='${MessageHeaderIdentifier1}')</td><td>false</td></tr></table></blockquote><blockquote><p><b>action</b></p><h3>Asserts</h3><table class="grid"><tr><td>-</td><td><b>Description</b></td><td><b>Direction</b></td><td><b>Expression</b></td><td><b>WarningOnly</b></td></tr><tr><td>*</td><td>Confirm that the there are two Provenances</td><td>request</td><td>Bundle.entry.resource.ofType(Provenance).count() = 2</td><td>false</td></tr></table></blockquote><blockquote><p><b>action</b></p><h3>Asserts</h3><table class="grid"><tr><td>-</td><td><b>Description</b></td><td><b>Direction</b></td><td><b>Expression</b></td><td><b>WarningOnly</b></td></tr><tr><td>*</td><td>Confirm that the id of the original message provenance exist in the ack</td><td>request</td><td>Bundle.entry.resource.ofType(Provenance).where(id='${ProvenanceID1}').exists()</td><td>false</td></tr></table></blockquote></blockquote><blockquote><p><b>test</b></p><p><b>name</b>: HospitalNotification-SLHJ</p><p><b>description</b>: GET a Hospital notification. The expected response is a 200(OK) with a payload of the Hospital notification resource in XML format.</p><blockquote><p><b>action</b></p><h3>Operations</h3><table class="grid"><tr><td>-</td><td><b>Type</b></td><td><b>Resource</b></td><td><b>Description</b></td><td><b>Accept</b></td><td><b>Destination</b></td><td><b>EncodeRequestUrl</b></td><td><b>Origin</b></td><td><b>Params</b></td></tr><tr><td>*</td><td><span title="{http://terminology.hl7.org/CodeSystem/testscript-operation-codes read}">Read</span></td><td>Bundle</td><td>The patient does not show up after ended leave -SLHJ</td><td>xml</td><td>1</td><td>true</td><td>1</td><td>?message.destination-uri=${destinationUriSLHJ8}</td></tr></table></blockquote><blockquote><p><b>action</b></p><h3>Asserts</h3><table class="grid"><tr><td>-</td><td><b>Description</b></td><td><b>Direction</b></td><td><b>ResponseCode</b></td><td><b>WarningOnly</b></td></tr><tr><td>*</td><td>Confirm that the returned HTTP status is 200(OK).</td><td>response</td><td>200</td><td>false</td></tr></table></blockquote></blockquote><blockquote><p><b>test</b></p><p><b>name</b>: 5 Post Acknowledgement-bundle-create-SLHJ</p><p><b>description</b>: GET ACK</p><blockquote><p><b>action</b></p><h3>Operations</h3><table class="grid"><tr><td>-</td><td><b>Type</b></td><td><b>Resource</b></td><td><b>Description</b></td><td><b>Accept</b></td><td><b>Destination</b></td><td><b>EncodeRequestUrl</b></td><td><b>Origin</b></td><td><b>SourceId</b></td></tr><tr><td>*</td><td><span title="{http://terminology.hl7.org/CodeSystem/testscript-operation-codes create}">Create</span></td><td>Bundle</td><td>Post a acknowledgement</td><td>xml</td><td>1</td><td>true</td><td>1</td><td>bundle-create-ack-OK</td></tr></table></blockquote><blockquote><p><b>action</b></p><h3>Asserts</h3><table class="grid"><tr><td>-</td><td><b>Description</b></td><td><b>Direction</b></td><td><b>Resource</b></td><td><b>WarningOnly</b></td></tr><tr><td>*</td><td>Confirm that the client request payload contains a Bundle resource type.</td><td>request</td><td>Bundle</td><td>false</td></tr></table></blockquote><blockquote><p><b>action</b></p><h3>Asserts</h3><table class="grid"><tr><td>-</td><td><b>Description</b></td><td><b>Direction</b></td><td><b>Expression</b></td><td><b>Operator</b></td><td><b>Value</b></td><td><b>WarningOnly</b></td></tr><tr><td>*</td><td>Confirm that the MessageHeader response code is OK</td><td>request</td><td>Bundle.entry.resource.ofType(MessageHeader).response.code</td><td>equals</td><td>ok</td><td>false</td></tr></table></blockquote><blockquote><p><b>action</b></p><h3>Asserts</h3><table class="grid"><tr><td>-</td><td><b>Description</b></td><td><b>Direction</b></td><td><b>Expression</b></td><td><b>WarningOnly</b></td></tr><tr><td>*</td><td>Confirm that the request resource contains the expected evetCoding code.</td><td>request</td><td>Bundle.entry.resource.ofType(MessageHeader).event.as(Coding).select(code = 'acknowledgment-message').allTrue()</td><td>false</td></tr></table></blockquote><blockquote><p><b>action</b></p><h3>Asserts</h3><table class="grid"><tr><td>-</td><td><b>Description</b></td><td><b>Direction</b></td><td><b>Expression</b></td><td><b>WarningOnly</b></td></tr><tr><td>*</td><td>Confirm that the Bundle not containing a OperationOutcome</td><td>request</td><td>Bundle.entry.resource.ofType(OperationOutcome).exists().not()</td><td>false</td></tr></table></blockquote><blockquote><p><b>action</b></p><h3>Asserts</h3><table class="grid"><tr><td>-</td><td><b>Description</b></td><td><b>Direction</b></td><td><b>Expression</b></td><td><b>Operator</b></td><td><b>Value</b></td><td><b>WarningOnly</b></td></tr><tr><td>*</td><td>Confirm that the MessageHeader.response.identifier is equal to Id of original message </td><td>request</td><td>Bundle.entry.resource.ofType(MessageHeader).response.identifier</td><td>equals</td><td>${bundleResourceid2}</td><td>false</td></tr></table></blockquote><blockquote><p><b>action</b></p><h3>Asserts</h3><table class="grid"><tr><td>-</td><td><b>Description</b></td><td><b>Direction</b></td><td><b>Expression</b></td><td><b>WarningOnly</b></td></tr><tr><td>*</td><td>Confirm that the reference original Provenance.entity.what is equal to Id of original messageheader.identifier</td><td>request</td><td>Bundle.entry.resource.ofType(Provenance).where(entity.what.reference ='${MessageHeaderIdentifier2}')</td><td>false</td></tr></table></blockquote><blockquote><p><b>action</b></p><h3>Asserts</h3><table class="grid"><tr><td>-</td><td><b>Description</b></td><td><b>Direction</b></td><td><b>Expression</b></td><td><b>WarningOnly</b></td></tr><tr><td>*</td><td>Confirm that the there are two Provenances</td><td>request</td><td>Bundle.entry.resource.ofType(Provenance).count() = 2</td><td>false</td></tr></table></blockquote><blockquote><p><b>action</b></p><h3>Asserts</h3><table class="grid"><tr><td>-</td><td><b>Description</b></td><td><b>Direction</b></td><td><b>Expression</b></td><td><b>WarningOnly</b></td></tr><tr><td>*</td><td>Confirm that the id of the original message provenance exist in the ack</td><td>request</td><td>Bundle.entry.resource.ofType(Provenance).where(id='${ProvenanceID2}').exists()</td><td>false</td></tr></table></blockquote></blockquote></div>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative</b></p><p><b>url</b>: <code>http://build.fhir.org/ig/hl7dk/dk-medcom/</code></p><p><b>version</b>: 0.1.0</p><p><b>name</b>: Patient is admitted at hospital, transferred to another hospital (another region), and finally discharged to home</p><p><b>title</b>: Patient is admitted at hospital, transferred to another hospital (another region), and finally discharged to home</p><p><b>status</b>: active</p><p><b>date</b>: 2021-11-01</p><p><b>publisher</b>: MedCom</p><p><b>contact</b>: MedCom: <a href="mailto:fhir@medcom.dk">fhir@medcom.dk</a></p><p><b>description</b>: Testing correct use of admit and discharge</p><p><b>copyright</b>: MedCom 2021</p><h3>Origins</h3><table class="grid"><tr><td>-</td><td><b>Index</b></td><td><b>Profile</b></td></tr><tr><td>*</td><td>1</td><td><span title="{http://terminology.hl7.org/CodeSystem/testscript-profile-origin-types FHIR-Client}">FHIR Client</span></td></tr></table><h3>Destinations</h3><table class="grid"><tr><td>-</td><td><b>Index</b></td><td><b>Profile</b></td></tr><tr><td>*</td><td>1</td><td><span title="{http://terminology.hl7.org/CodeSystem/testscript-profile-destination-types FHIR-Server}">FHIR Server</span></td></tr></table><blockquote><p><b>fixture</b></p><p><b>autocreate</b>: false</p><p><b>autodelete</b>: false</p><p><b>resource</b>: <a href="/FHIRSandbox/MedCom/401-Acknowledgement/_reference/resources/Acknowledgement-ok.xml">/FHIRSandbox/MedCom/401-Acknowledgement/_reference/resources/Acknowledgement-ok.xml</a></p></blockquote><blockquote><p><b>fixture</b></p><p><b>autocreate</b>: false</p><p><b>autodelete</b>: false</p><p><b>resource</b>: <a href="/FHIRSandbox/MedCom/401-Hospitalnotification/receive/Userstory/_reference/resources/STIN-UF_H_V_10.xml">/FHIRSandbox/MedCom/401-Hospitalnotification/receive/Userstory/_reference/resources/STIN-UF_H_V_10.xml</a></p></blockquote><blockquote><p><b>fixture</b></p><p><b>autocreate</b>: false</p><p><b>autodelete</b>: false</p><p><b>resource</b>: <a href="/FHIRSandbox/MedCom/401-Hospitalnotification/receive/Userstory/_reference/resources/STIN2-UF_H_V_10.xml">/FHIRSandbox/MedCom/401-Hospitalnotification/receive/Userstory/_reference/resources/STIN2-UF_H_V_10.xml</a></p></blockquote><blockquote><p><b>fixture</b></p><p><b>autocreate</b>: false</p><p><b>autodelete</b>: false</p><p><b>resource</b>: <a href="/FHIRSandbox/MedCom/401-Hospitalnotification/receive/Userstory/_reference/resources/SLHJ-UF_H_V_10.xml">/FHIRSandbox/MedCom/401-Hospitalnotification/receive/Userstory/_reference/resources/SLHJ-UF_H_V_10.xml</a></p></blockquote><p><b>profile</b>: <a href="http://medcomfhir.dk/fhir/core/1.0/StructureDefinition/medcom-hospitalNotification-message">http://medcomfhir.dk/fhir/core/1.0/StructureDefinition/medcom-hospitalNotification-message</a></p><blockquote><p><b>variable</b></p><p><b>name</b>: destinationUri1</p><p><b>expression</b>: Bundle.entry.resource.ofType(MessageHeader).destination.endpoint</p><p><b>sourceId</b>: bundle-create-STIN1</p></blockquote><blockquote><p><b>variable</b></p><p><b>name</b>: KorrektMHID1</p><p><b>expression</b>: Bundle.entry.resource.ofType(Bundle).id</p><p><b>sourceId</b>: bundle-get-STIN1</p></blockquote><blockquote><p><b>variable</b></p><p><b>name</b>: MessageHeaderIdentifier1</p><p><b>expression</b>: Bundle.entry[0].fullUrl</p><p><b>sourceId</b>: bundle-create-STIN1</p></blockquote><blockquote><p><b>variable</b></p><p><b>name</b>: ProvenanceID1</p><p><b>expression</b>: Bundle.entry.resource.ofType(Provenance).id</p><p><b>sourceId</b>: bundle-create-STIN1</p></blockquote><blockquote><p><b>variable</b></p><p><b>name</b>: destinationUri2</p><p><b>expression</b>: Bundle.entry.resource.ofType(MessageHeader).destination.endpoint</p><p><b>sourceId</b>: bundle-create-STIN2</p></blockquote><blockquote><p><b>variable</b></p><p><b>name</b>: KorrektMHID2</p><p><b>expression</b>: Bundle.entry.resource.ofType(Bundle).id</p><p><b>sourceId</b>: bundle-get-STIN2</p></blockquote><blockquote><p><b>variable</b></p><p><b>name</b>: MessageHeaderIdentifier2</p><p><b>expression</b>: Bundle.entry[0].fullUrl</p><p><b>sourceId</b>: bundle-create-STIN2</p></blockquote><blockquote><p><b>variable</b></p><p><b>name</b>: ProvenanceID2</p><p><b>expression</b>: Bundle.entry.resource.ofType(Provenance).id</p><p><b>sourceId</b>: bundle-create-STIN2</p></blockquote><blockquote><p><b>variable</b></p><p><b>name</b>: destinationUri3</p><p><b>expression</b>: Bundle.entry.resource.ofType(MessageHeader).destination.endpoint</p><p><b>sourceId</b>: bundle-create-SLHJ3</p></blockquote><blockquote><p><b>variable</b></p><p><b>name</b>: KorrektMHID3</p><p><b>expression</b>: Bundle.entry.resource.ofType(Bundle).id</p><p><b>sourceId</b>: bundle-get-SLHJ3</p></blockquote><blockquote><p><b>variable</b></p><p><b>name</b>: MessageHeaderIdentifier3</p><p><b>expression</b>: Bundle.entry[0].fullUrl</p><p><b>sourceId</b>: bundle-create-SLHJ3</p></blockquote><blockquote><p><b>variable</b></p><p><b>name</b>: ProvenanceID3</p><p><b>expression</b>: Bundle.entry.resource.ofType(Provenance).id</p><p><b>sourceId</b>: bundle-create-SLHJ3</p></blockquote><blockquote><p><b>setup</b></p><blockquote><p><b>action</b></p><h3>Operations</h3><table class="grid"><tr><td>-</td><td><b>Type</b></td><td><b>Resource</b></td><td><b>Description</b></td><td><b>Accept</b></td><td><b>EncodeRequestUrl</b></td><td><b>Params</b></td></tr><tr><td>*</td><td><span title="{http://terminology.hl7.org/CodeSystem/testscript-operation-codes delete}">Delete</span></td><td>Bundle</td><td>System-generated search and delete operations from conditional delete on Bundle MessageHeader).destination.endpoint</td><td>xml</td><td>true</td><td>?message.destination-uri=${destinationUri1}</td></tr></table></blockquote><blockquote><p><b>action</b></p><h3>Operations</h3><table class="grid"><tr><td>-</td><td><b>Type</b></td><td><b>Resource</b></td><td><b>Description</b></td><td><b>Accept</b></td><td><b>ContentType</b></td><td><b>EncodeRequestUrl</b></td><td><b>SourceId</b></td></tr><tr><td>*</td><td><span title="{http://terminology.hl7.org/CodeSystem/testscript-operation-codes create}">Create</span></td><td>Bundle</td><td>Create the Bundle resource in XML format on the destination server.</td><td>xml</td><td>xml</td><td>true</td><td>bundle-create-STIN1</td></tr></table></blockquote><blockquote><p><b>action</b></p><h3>Operations</h3><table class="grid"><tr><td>-</td><td><b>Type</b></td><td><b>Resource</b></td><td><b>Description</b></td><td><b>Accept</b></td><td><b>EncodeRequestUrl</b></td><td><b>Params</b></td></tr><tr><td>*</td><td><span title="{http://terminology.hl7.org/CodeSystem/testscript-operation-codes delete}">Delete</span></td><td>Bundle</td><td>System-generated search and delete operations from conditional delete on Bundle MessageHeader).destination.endpoint</td><td>xml</td><td>true</td><td>?message.destination-uri=${destinationUri2}</td></tr></table></blockquote><blockquote><p><b>action</b></p><h3>Operations</h3><table class="grid"><tr><td>-</td><td><b>Type</b></td><td><b>Resource</b></td><td><b>Description</b></td><td><b>Accept</b></td><td><b>ContentType</b></td><td><b>EncodeRequestUrl</b></td><td><b>SourceId</b></td></tr><tr><td>*</td><td><span title="{http://terminology.hl7.org/CodeSystem/testscript-operation-codes create}">Create</span></td><td>Bundle</td><td>Create the Bundle resource in XML format on the destination server.</td><td>xml</td><td>xml</td><td>true</td><td>bundle-create-STIN2</td></tr></table></blockquote><blockquote><p><b>action</b></p><h3>Operations</h3><table class="grid"><tr><td>-</td><td><b>Type</b></td><td><b>Resource</b></td><td><b>Description</b></td><td><b>Accept</b></td><td><b>EncodeRequestUrl</b></td><td><b>Params</b></td></tr><tr><td>*</td><td><span title="{http://terminology.hl7.org/CodeSystem/testscript-operation-codes delete}">Delete</span></td><td>Bundle</td><td>System-generated search and delete operations from conditional delete on Bundle MessageHeader).destination.endpoint</td><td>xml</td><td>true</td><td>?message.destination-uri=${destinationUri3}</td></tr></table></blockquote><blockquote><p><b>action</b></p><h3>Operations</h3><table class="grid"><tr><td>-</td><td><b>Type</b></td><td><b>Resource</b></td><td><b>Description</b></td><td><b>Accept</b></td><td><b>ContentType</b></td><td><b>EncodeRequestUrl</b></td><td><b>SourceId</b></td></tr><tr><td>*</td><td><span title="{http://terminology.hl7.org/CodeSystem/testscript-operation-codes create}">Create</span></td><td>Bundle</td><td>Create the Bundle resource in XML format on the destination server.</td><td>xml</td><td>xml</td><td>true</td><td>bundle-create-SLHJ3</td></tr></table></blockquote></blockquote><blockquote><p><b>test</b></p><p><b>name</b>: HospitalNotification-STIN</p><p><b>description</b>: GET a Hospital notification STIN. The expected response is a 200(OK) with a payload of the Hospital notification resource in XML format.</p><blockquote><p><b>action</b></p><h3>Operations</h3><table class="grid"><tr><td>-</td><td><b>Type</b></td><td><b>Resource</b></td><td><b>Description</b></td><td><b>Accept</b></td><td><b>Destination</b></td><td><b>EncodeRequestUrl</b></td><td><b>Origin</b></td><td><b>Params</b></td><td><b>ResponseId</b></td></tr><tr><td>*</td><td><span title="{http://terminology.hl7.org/CodeSystem/testscript-operation-codes read}">Read</span></td><td>Bundle</td><td>Receive notification-STIN</td><td>xml</td><td>1</td><td>true</td><td>1</td><td>?message.destination-uri=${destinationUri1}</td><td>bundle-get-STIN1</td></tr></table></blockquote><blockquote><p><b>action</b></p><h3>Asserts</h3><table class="grid"><tr><td>-</td><td><b>Description</b></td><td><b>Direction</b></td><td><b>ResponseCode</b></td><td><b>WarningOnly</b></td></tr><tr><td>*</td><td>Confirm that the returned HTTP status is 200(OK).</td><td>response</td><td>200</td><td>false</td></tr></table></blockquote></blockquote><blockquote><p><b>test</b></p><p><b>name</b>: 1 Post Acknowledgement-bundle-create-STIN1</p><p><b>description</b>: GET ACK</p><blockquote><p><b>action</b></p><h3>Operations</h3><table class="grid"><tr><td>-</td><td><b>Type</b></td><td><b>Resource</b></td><td><b>Description</b></td><td><b>Accept</b></td><td><b>Destination</b></td><td><b>EncodeRequestUrl</b></td><td><b>Origin</b></td><td><b>SourceId</b></td></tr><tr><td>*</td><td><span title="{http://terminology.hl7.org/CodeSystem/testscript-operation-codes create}">Create</span></td><td>Bundle</td><td>Post a acknowledgement</td><td>xml</td><td>1</td><td>true</td><td>1</td><td>bundle-create-ack-OK</td></tr></table></blockquote><blockquote><p><b>action</b></p><h3>Asserts</h3><table class="grid"><tr><td>-</td><td><b>Description</b></td><td><b>Direction</b></td><td><b>Resource</b></td><td><b>WarningOnly</b></td></tr><tr><td>*</td><td>Confirm that the client request payload contains a Bundle resource type.</td><td>request</td><td>Bundle</td><td>false</td></tr></table></blockquote><blockquote><p><b>action</b></p><h3>Asserts</h3><table class="grid"><tr><td>-</td><td><b>Description</b></td><td><b>Direction</b></td><td><b>Expression</b></td><td><b>Operator</b></td><td><b>Value</b></td><td><b>WarningOnly</b></td></tr><tr><td>*</td><td>Confirm that the MessageHeader response code is OK</td><td>request</td><td>Bundle.entry.resource.ofType(MessageHeader).response.code</td><td>equals</td><td>ok</td><td>false</td></tr></table></blockquote><blockquote><p><b>action</b></p><h3>Asserts</h3><table class="grid"><tr><td>-</td><td><b>Description</b></td><td><b>Direction</b></td><td><b>Expression</b></td><td><b>WarningOnly</b></td></tr><tr><td>*</td><td>Confirm that the request resource contains the expected evetCoding code.</td><td>request</td><td>Bundle.entry.resource.ofType(MessageHeader).event.as(Coding).select(code = 'acknowledgment-message').allTrue()</td><td>false</td></tr></table></blockquote><blockquote><p><b>action</b></p><h3>Asserts</h3><table class="grid"><tr><td>-</td><td><b>Description</b></td><td><b>Direction</b></td><td><b>Expression</b></td><td><b>WarningOnly</b></td></tr><tr><td>*</td><td>Confirm that the Bundle not containing a OperationOutcome</td><td>request</td><td>Bundle.entry.resource.ofType(OperationOutcome).exists().not()</td><td>false</td></tr></table></blockquote><blockquote><p><b>action</b></p><h3>Asserts</h3><table class="grid"><tr><td>-</td><td><b>Description</b></td><td><b>Direction</b></td><td><b>Expression</b></td><td><b>Operator</b></td><td><b>Value</b></td><td><b>WarningOnly</b></td></tr><tr><td>*</td><td>Confirm that the MessageHeader.response.identifier is equal to Id of original message </td><td>request</td><td>Bundle.entry.resource.ofType(MessageHeader).response.identifier</td><td>equals</td><td>${KorrektMHID1}</td><td>false</td></tr></table></blockquote><blockquote><p><b>action</b></p><h3>Asserts</h3><table class="grid"><tr><td>-</td><td><b>Description</b></td><td><b>Direction</b></td><td><b>Expression</b></td><td><b>WarningOnly</b></td></tr><tr><td>*</td><td>Confirm that the reference original Provenance.entity.what is equal to Id of original messageheader.identifier</td><td>request</td><td>Bundle.entry.resource.ofType(Provenance).where(entity.what.reference ='${MessageHeaderIdentifier1}')</td><td>false</td></tr></table></blockquote><blockquote><p><b>action</b></p><h3>Asserts</h3><table class="grid"><tr><td>-</td><td><b>Description</b></td><td><b>Direction</b></td><td><b>Expression</b></td><td><b>WarningOnly</b></td></tr><tr><td>*</td><td>Confirm that the there are two Provenances</td><td>request</td><td>Bundle.entry.resource.ofType(Provenance).count() = 2</td><td>false</td></tr></table></blockquote><blockquote><p><b>action</b></p><h3>Asserts</h3><table class="grid"><tr><td>-</td><td><b>Description</b></td><td><b>Direction</b></td><td><b>Expression</b></td><td><b>WarningOnly</b></td></tr><tr><td>*</td><td>Confirm that the id of the original message provenance exist in the ack</td><td>request</td><td>Bundle.entry.resource.ofType(Provenance).where(id='${ProvenanceID1}').exists()</td><td>false</td></tr></table></blockquote></blockquote><blockquote><p><b>test</b></p><p><b>name</b>: HospitalNotification-STIN</p><p><b>description</b>: GET a Hospital notification STIN. The expected response is a 200(OK) with a payload of the Hospital notification resource in XML format.</p><blockquote><p><b>action</b></p><h3>Operations</h3><table class="grid"><tr><td>-</td><td><b>Type</b></td><td><b>Resource</b></td><td><b>Description</b></td><td><b>Accept</b></td><td><b>Destination</b></td><td><b>EncodeRequestUrl</b></td><td><b>Origin</b></td><td><b>Params</b></td><td><b>ResponseId</b></td></tr><tr><td>*</td><td><span title="{http://terminology.hl7.org/CodeSystem/testscript-operation-codes read}">Read</span></td><td>Bundle</td><td>Receive notification-STIN</td><td>xml</td><td>1</td><td>true</td><td>1</td><td>?message.destination-uri=${destinationUri2}</td><td>bundle-get-STIN2</td></tr></table></blockquote><blockquote><p><b>action</b></p><h3>Asserts</h3><table class="grid"><tr><td>-</td><td><b>Description</b></td><td><b>Direction</b></td><td><b>ResponseCode</b></td><td><b>WarningOnly</b></td></tr><tr><td>*</td><td>Confirm that the returned HTTP status is 200(OK).</td><td>response</td><td>200</td><td>false</td></tr></table></blockquote></blockquote><blockquote><p><b>test</b></p><p><b>name</b>: 2 Post Acknowledgement-bundle-create-STIN2</p><p><b>description</b>: GET ACK</p><blockquote><p><b>action</b></p><h3>Operations</h3><table class="grid"><tr><td>-</td><td><b>Type</b></td><td><b>Resource</b></td><td><b>Description</b></td><td><b>Accept</b></td><td><b>Destination</b></td><td><b>EncodeRequestUrl</b></td><td><b>Origin</b></td><td><b>SourceId</b></td></tr><tr><td>*</td><td><span title="{http://terminology.hl7.org/CodeSystem/testscript-operation-codes create}">Create</span></td><td>Bundle</td><td>Post a acknowledgement</td><td>xml</td><td>1</td><td>true</td><td>1</td><td>bundle-create-ack-OK</td></tr></table></blockquote><blockquote><p><b>action</b></p><h3>Asserts</h3><table class="grid"><tr><td>-</td><td><b>Description</b></td><td><b>Direction</b></td><td><b>Resource</b></td><td><b>WarningOnly</b></td></tr><tr><td>*</td><td>Confirm that the client request payload contains a Bundle resource type.</td><td>request</td><td>Bundle</td><td>false</td></tr></table></blockquote><blockquote><p><b>action</b></p><h3>Asserts</h3><table class="grid"><tr><td>-</td><td><b>Description</b></td><td><b>Direction</b></td><td><b>Expression</b></td><td><b>Operator</b></td><td><b>Value</b></td><td><b>WarningOnly</b></td></tr><tr><td>*</td><td>Confirm that the MessageHeader response code is OK</td><td>request</td><td>Bundle.entry.resource.ofType(MessageHeader).response.code</td><td>equals</td><td>ok</td><td>false</td></tr></table></blockquote><blockquote><p><b>action</b></p><h3>Asserts</h3><table class="grid"><tr><td>-</td><td><b>Description</b></td><td><b>Direction</b></td><td><b>Expression</b></td><td><b>WarningOnly</b></td></tr><tr><td>*</td><td>Confirm that the request resource contains the expected evetCoding code.</td><td>request</td><td>Bundle.entry.resource.ofType(MessageHeader).event.as(Coding).select(code = 'acknowledgment-message').allTrue()</td><td>false</td></tr></table></blockquote><blockquote><p><b>action</b></p><h3>Asserts</h3><table class="grid"><tr><td>-</td><td><b>Description</b></td><td><b>Direction</b></td><td><b>Expression</b></td><td><b>WarningOnly</b></td></tr><tr><td>*</td><td>Confirm that the Bundle not containing a OperationOutcome</td><td>request</td><td>Bundle.entry.resource.ofType(OperationOutcome).exists().not()</td><td>false</td></tr></table></blockquote><blockquote><p><b>action</b></p><h3>Asserts</h3><table class="grid"><tr><td>-</td><td><b>Description</b></td><td><b>Direction</b></td><td><b>Expression</b></td><td><b>Operator</b></td><td><b>Value</b></td><td><b>WarningOnly</b></td></tr><tr><td>*</td><td>Confirm that the MessageHeader.response.identifier is equal to Id of original message </td><td>request</td><td>Bundle.entry.resource.ofType(MessageHeader).response.identifier</td><td>equals</td><td>${KorrektMHID2}</td><td>false</td></tr></table></blockquote><blockquote><p><b>action</b></p><h3>Asserts</h3><table class="grid"><tr><td>-</td><td><b>Description</b></td><td><b>Direction</b></td><td><b>Expression</b></td><td><b>WarningOnly</b></td></tr><tr><td>*</td><td>Confirm that the reference original Provenance.entity.what is equal to Id of original messageheader.identifier</td><td>request</td><td>Bundle.entry.resource.ofType(Provenance).where(entity.what.reference ='${MessageHeaderIdentifier2}')</td><td>false</td></tr></table></blockquote><blockquote><p><b>action</b></p><h3>Asserts</h3><table class="grid"><tr><td>-</td><td><b>Description</b></td><td><b>Direction</b></td><td><b>Expression</b></td><td><b>WarningOnly</b></td></tr><tr><td>*</td><td>Confirm that the there are two Provenances</td><td>request</td><td>Bundle.entry.resource.ofType(Provenance).count() = 2</td><td>false</td></tr></table></blockquote><blockquote><p><b>action</b></p><h3>Asserts</h3><table class="grid"><tr><td>-</td><td><b>Description</b></td><td><b>Direction</b></td><td><b>Expression</b></td><td><b>WarningOnly</b></td></tr><tr><td>*</td><td>Confirm that the id of the original message provenance exist in the ack</td><td>request</td><td>Bundle.entry.resource.ofType(Provenance).where(id='${ProvenanceID2}').exists()</td><td>false</td></tr></table></blockquote></blockquote><blockquote><p><b>test</b></p><p><b>name</b>: HospitalNotification-SLHJ</p><p><b>description</b>: GET a Hospital notification SLHJ. The expected response is a 200(OK) with a payload of the Hospital notification resource in XML format.</p><blockquote><p><b>action</b></p><h3>Operations</h3><table class="grid"><tr><td>-</td><td><b>Type</b></td><td><b>Resource</b></td><td><b>Description</b></td><td><b>Accept</b></td><td><b>Destination</b></td><td><b>EncodeRequestUrl</b></td><td><b>Origin</b></td><td><b>Params</b></td><td><b>ResponseId</b></td></tr><tr><td>*</td><td><span title="{http://terminology.hl7.org/CodeSystem/testscript-operation-codes read}">Read</span></td><td>Bundle</td><td>Receive notification-SLHJ</td><td>xml</td><td>1</td><td>true</td><td>1</td><td>?message.destination-uri=${destinationUri3}</td><td>bundle-get-SLHJ3</td></tr></table></blockquote><blockquote><p><b>action</b></p><h3>Asserts</h3><table class="grid"><tr><td>-</td><td><b>Description</b></td><td><b>Direction</b></td><td><b>ResponseCode</b></td><td><b>WarningOnly</b></td></tr><tr><td>*</td><td>Confirm that the returned HTTP status is 200(OK).</td><td>response</td><td>200</td><td>false</td></tr></table></blockquote></blockquote><blockquote><p><b>test</b></p><p><b>name</b>: 3 Post Acknowledgement-bundle-create-SLHJ3</p><p><b>description</b>: GET ACK</p><blockquote><p><b>action</b></p><h3>Operations</h3><table class="grid"><tr><td>-</td><td><b>Type</b></td><td><b>Resource</b></td><td><b>Description</b></td><td><b>Accept</b></td><td><b>Destination</b></td><td><b>EncodeRequestUrl</b></td><td><b>Origin</b></td><td><b>SourceId</b></td></tr><tr><td>*</td><td><span title="{http://terminology.hl7.org/CodeSystem/testscript-operation-codes create}">Create</span></td><td>Bundle</td><td>Post a acknowledgement</td><td>xml</td><td>1</td><td>true</td><td>1</td><td>bundle-create-ack-OK</td></tr></table></blockquote><blockquote><p><b>action</b></p><h3>Asserts</h3><table class="grid"><tr><td>-</td><td><b>Description</b></td><td><b>Direction</b></td><td><b>Resource</b></td><td><b>WarningOnly</b></td></tr><tr><td>*</td><td>Confirm that the client request payload contains a Bundle resource type.</td><td>request</td><td>Bundle</td><td>false</td></tr></table></blockquote><blockquote><p><b>action</b></p><h3>Asserts</h3><table class="grid"><tr><td>-</td><td><b>Description</b></td><td><b>Direction</b></td><td><b>Expression</b></td><td><b>Operator</b></td><td><b>Value</b></td><td><b>WarningOnly</b></td></tr><tr><td>*</td><td>Confirm that the MessageHeader response code is OK</td><td>request</td><td>Bundle.entry.resource.ofType(MessageHeader).response.code</td><td>equals</td><td>ok</td><td>false</td></tr></table></blockquote><blockquote><p><b>action</b></p><h3>Asserts</h3><table class="grid"><tr><td>-</td><td><b>Description</b></td><td><b>Direction</b></td><td><b>Expression</b></td><td><b>WarningOnly</b></td></tr><tr><td>*</td><td>Confirm that the request resource contains the expected evetCoding code.</td><td>request</td><td>Bundle.entry.resource.ofType(MessageHeader).event.as(Coding).select(code = 'acknowledgment-message').allTrue()</td><td>false</td></tr></table></blockquote><blockquote><p><b>action</b></p><h3>Asserts</h3><table class="grid"><tr><td>-</td><td><b>Description</b></td><td><b>Direction</b></td><td><b>Expression</b></td><td><b>WarningOnly</b></td></tr><tr><td>*</td><td>Confirm that the Bundle not containing a OperationOutcome</td><td>request</td><td>Bundle.entry.resource.ofType(OperationOutcome).exists().not()</td><td>false</td></tr></table></blockquote><blockquote><p><b>action</b></p><h3>Asserts</h3><table class="grid"><tr><td>-</td><td><b>Description</b></td><td><b>Direction</b></td><td><b>Expression</b></td><td><b>Operator</b></td><td><b>Value</b></td><td><b>WarningOnly</b></td></tr><tr><td>*</td><td>Confirm that the MessageHeader.response.identifier is equal to Id of original message </td><td>request</td><td>Bundle.entry.resource.ofType(MessageHeader).response.identifier</td><td>equals</td><td>${KorrektMHID3}</td><td>false</td></tr></table></blockquote><blockquote><p><b>action</b></p><h3>Asserts</h3><table class="grid"><tr><td>-</td><td><b>Description</b></td><td><b>Direction</b></td><td><b>Expression</b></td><td><b>WarningOnly</b></td></tr><tr><td>*</td><td>Confirm that the reference original Provenance.entity.what is equal to Id of original messageheader.identifier</td><td>request</td><td>Bundle.entry.resource.ofType(Provenance).where(entity.what.reference ='${MessageHeaderIdentifier3}')</td><td>false</td></tr></table></blockquote><blockquote><p><b>action</b></p><h3>Asserts</h3><table class="grid"><tr><td>-</td><td><b>Description</b></td><td><b>Direction</b></td><td><b>Expression</b></td><td><b>WarningOnly</b></td></tr><tr><td>*</td><td>Confirm that the there are two Provenances</td><td>request</td><td>Bundle.entry.resource.ofType(Provenance).count() = 2</td><td>false</td></tr></table></blockquote><blockquote><p><b>action</b></p><h3>Asserts</h3><table class="grid"><tr><td>-</td><td><b>Description</b></td><td><b>Direction</b></td><td><b>Expression</b></td><td><b>WarningOnly</b></td></tr><tr><td>*</td><td>Confirm that the id of the original message provenance exist in the ack</td><td>request</td><td>Bundle.entry.resource.ofType(Provenance).where(id='${ProvenanceID3}').exists()</td><td>false</td></tr></table></blockquote></blockquote></div>
   </text>
   <url value="http://build.fhir.org/ig/hl7dk/dk-medcom/"/>
   <version value="0.1.0"/>
   <name value="Patient is admitted at hospital, transferred to another hospital (another region), and finally discharged to home"/>
   <title value="Patient is admitted at hospital, transferred to another hospital (another region), and finally discharged to home"/>
   <status value="active"/>
-  <date value="2021-10-22"/>
+  <date value="2021-11-01"/>
   <publisher value="MedCom"/>
   <contact>
     <name value="MedCom"/>
@@ -38,6 +38,13 @@
       <code value="FHIR-Server"/>
     </profile>
   </destination>
+  <fixture id="bundle-create-ack-OK">
+    <autocreate value="false"/>
+    <autodelete value="false"/>
+    <resource>
+      <reference value="/FHIRSandbox/MedCom/401-Acknowledgement/_reference/resources/Acknowledgement-ok.xml"/>
+    </resource>
+  </fixture>
   <fixture id="bundle-create-STIN1">
     <autocreate value="false"/>
     <autodelete value="false"/>
@@ -52,82 +59,75 @@
       <reference value="/FHIRSandbox/MedCom/401-Hospitalnotification/receive/Userstory/_reference/resources/STIN2-UF_H_V_10.xml"/>
     </resource>
   </fixture>
-  <fixture id="bundle-create-SLHJ">
+  <fixture id="bundle-create-SLHJ3">
     <autocreate value="false"/>
     <autodelete value="false"/>
     <resource>
       <reference value="/FHIRSandbox/MedCom/401-Hospitalnotification/receive/Userstory/_reference/resources/SLHJ-UF_H_V_10.xml"/>
     </resource>
   </fixture>
-  <fixture id="bundle-create-ack-OK">
-    <autocreate value="false"/>
-    <autodelete value="false"/>
-    <resource>
-      <reference value="/FHIRSandbox/MedCom/401-Acknowledgement/_reference/resources/Acknowledgement-ok.xml"/>
-    </resource>
-  </fixture>
   <profile id="hospitalnotification-profile">
     <reference value="http://medcomfhir.dk/fhir/core/1.0/StructureDefinition/medcom-hospitalNotification-message"/>
   </profile>
   <variable>
-    <name value="destinationUri"/>
+    <name value="destinationUri1"/>
     <expression value="Bundle.entry.resource.ofType(MessageHeader).destination.endpoint"/>
     <sourceId value="bundle-create-STIN1"/>
   </variable>
   <variable>
-    <name value="destinationUriSTIN2"/>
-    <expression value="Bundle.entry.resource.ofType(MessageHeader).destination.endpoint"/>
-    <sourceId value="bundle-create-STIN2"/>
-  </variable>
-  <variable>
-    <name value="destinationUriSLHJ8"/>
-    <expression value="Bundle.entry.resource.ofType(MessageHeader).destination.endpoint"/>
-    <sourceId value="bundle-create-SLHJ"/>
-  </variable>
-  <variable>
-    <name value="bundleResourceid"/>
-    <expression value="Bundle.id"/>
-    <sourceId value="bundle-create-STIN1"/>
-  </variable>
-  <variable>
-    <name value="MessageHeaderIdentifier"/>
-    <expression value="Bundle.entry[0].fullUrl"/>
-    <sourceId value="bundle-create-STIN1"/>
-  </variable>
-  <variable>
-    <name value="ProvenanceID"/>
-    <expression value="Bundle.entry.resource.ofType(Provenance).id"/>
-    <sourceId value="bundle-create-STIN1"/>
-  </variable>
-  <variable>
-    <name value="bundleResourceid1"/>
-    <expression value="Bundle.id"/>
-    <sourceId value="bundle-create-STIN2"/>
+    <name value="KorrektMHID1"/>
+    <expression value="Bundle.entry.resource.ofType(Bundle).id"/>
+    <sourceId value="bundle-get-STIN1"/>
   </variable>
   <variable>
     <name value="MessageHeaderIdentifier1"/>
     <expression value="Bundle.entry[0].fullUrl"/>
-    <sourceId value="bundle-create-STIN2"/>
+    <sourceId value="bundle-create-STIN1"/>
   </variable>
   <variable>
     <name value="ProvenanceID1"/>
     <expression value="Bundle.entry.resource.ofType(Provenance).id"/>
+    <sourceId value="bundle-create-STIN1"/>
+  </variable>
+  <variable>
+    <name value="destinationUri2"/>
+    <expression value="Bundle.entry.resource.ofType(MessageHeader).destination.endpoint"/>
     <sourceId value="bundle-create-STIN2"/>
   </variable>
   <variable>
-    <name value="bundleResourceid2"/>
-    <expression value="Bundle.id"/>
-    <sourceId value="bundle-create-SLHJ"/>
+    <name value="KorrektMHID2"/>
+    <expression value="Bundle.entry.resource.ofType(Bundle).id"/>
+    <sourceId value="bundle-get-STIN2"/>
   </variable>
   <variable>
     <name value="MessageHeaderIdentifier2"/>
     <expression value="Bundle.entry[0].fullUrl"/>
-    <sourceId value="bundle-create-SLHJ"/>
+    <sourceId value="bundle-create-STIN2"/>
   </variable>
   <variable>
     <name value="ProvenanceID2"/>
     <expression value="Bundle.entry.resource.ofType(Provenance).id"/>
-    <sourceId value="bundle-create-SLHJ"/>
+    <sourceId value="bundle-create-STIN2"/>
+  </variable>
+  <variable>
+    <name value="destinationUri3"/>
+    <expression value="Bundle.entry.resource.ofType(MessageHeader).destination.endpoint"/>
+    <sourceId value="bundle-create-SLHJ3"/>
+  </variable>
+  <variable>
+    <name value="KorrektMHID3"/>
+    <expression value="Bundle.entry.resource.ofType(Bundle).id"/>
+    <sourceId value="bundle-get-SLHJ3"/>
+  </variable>
+  <variable>
+    <name value="MessageHeaderIdentifier3"/>
+    <expression value="Bundle.entry[0].fullUrl"/>
+    <sourceId value="bundle-create-SLHJ3"/>
+  </variable>
+  <variable>
+    <name value="ProvenanceID3"/>
+    <expression value="Bundle.entry.resource.ofType(Provenance).id"/>
+    <sourceId value="bundle-create-SLHJ3"/>
   </variable>
   <setup>
     <action>
@@ -140,7 +140,7 @@
         <description value="System-generated search and delete operations from conditional delete on Bundle MessageHeader).destination.endpoint"/>
         <accept value="xml"/>
         <encodeRequestUrl value="true"/>
-        <params value="?message.destination-uri=${destinationUri}"/>
+        <params value="?message.destination-uri=${destinationUri1}"/>
       </operation>
     </action>
     <action>
@@ -158,14 +158,6 @@
       </operation>
     </action>
     <action>
-      <assert>
-        <description value="Confirm that the returned HTTP status is 201(Created)."/>
-        <direction value="response"/>
-        <responseCode value="201"/>
-        <warningOnly value="false"/>
-      </assert>
-    </action>
-    <action>
       <operation>
         <type>
           <system value="http://terminology.hl7.org/CodeSystem/testscript-operation-codes"/>
@@ -175,7 +167,7 @@
         <description value="System-generated search and delete operations from conditional delete on Bundle MessageHeader).destination.endpoint"/>
         <accept value="xml"/>
         <encodeRequestUrl value="true"/>
-        <params value="?message.destination-uri=${destinationUriSTIN2}"/>
+        <params value="?message.destination-uri=${destinationUri2}"/>
       </operation>
     </action>
     <action>
@@ -193,22 +185,6 @@
       </operation>
     </action>
     <action>
-      <assert>
-        <description value="Confirm that the returned HTTP status is 201(Created)."/>
-        <direction value="response"/>
-        <responseCode value="201"/>
-        <warningOnly value="false"/>
-      </assert>
-    </action>
-    <action>
-      <assert>
-        <description value="Confirm that the returned HTTP status is 201(Created)."/>
-        <direction value="response"/>
-        <responseCode value="201"/>
-        <warningOnly value="false"/>
-      </assert>
-    </action>
-    <action>
       <operation>
         <type>
           <system value="http://terminology.hl7.org/CodeSystem/testscript-operation-codes"/>
@@ -218,7 +194,7 @@
         <description value="System-generated search and delete operations from conditional delete on Bundle MessageHeader).destination.endpoint"/>
         <accept value="xml"/>
         <encodeRequestUrl value="true"/>
-        <params value="?message.destination-uri=${destinationUriSLHJ8}"/>
+        <params value="?message.destination-uri=${destinationUri3}"/>
       </operation>
     </action>
     <action>
@@ -232,21 +208,13 @@
         <accept value="xml"/>
         <contentType value="xml"/>
         <encodeRequestUrl value="true"/>
-        <sourceId value="bundle-create-SLHJ"/>
+        <sourceId value="bundle-create-SLHJ3"/>
       </operation>
-    </action>
-    <action>
-      <assert>
-        <description value="Confirm that the returned HTTP status is 201(Created)."/>
-        <direction value="response"/>
-        <responseCode value="201"/>
-        <warningOnly value="false"/>
-      </assert>
     </action>
   </setup>
-  <test id="01-STIN-admitted">
+  <test id="1-STIN-admitted">
     <name value="HospitalNotification-STIN"/>
-    <description value="GET a Hospital notification. The expected response is a 200(OK) with a payload of the Hospital notification resource in XML format."/>
+    <description value="GET a Hospital notification STIN. The expected response is a 200(OK) with a payload of the Hospital notification resource in XML format."/>
     <action>
       <operation>
         <type>
@@ -254,12 +222,13 @@
           <code value="read"/>
         </type>
         <resource value="Bundle"/>
-        <description value="Receive notification about admission -STIN"/>
+        <description value="Receive notification-STIN"/>
         <accept value="xml"/>
         <destination value="1"/>
         <encodeRequestUrl value="true"/>
         <origin value="1"/>
-        <params value="?message.destination-uri=${destinationUri}"/>
+        <params value="?message.destination-uri=${destinationUri1}"/>
+        <responseId value="bundle-get-STIN1"/>
       </operation>
     </action>
     <action>
@@ -271,8 +240,8 @@
       </assert>
     </action>
   </test>
-  <test id="3ACK-bundle-create-STIN1">
-    <name value="3 Post Acknowledgement-bundle-create-STIN1"/>
+  <test id="1ACK-bundle-create-STIN1">
+    <name value="1 Post Acknowledgement-bundle-create-STIN1"/>
     <description value="GET ACK"/>
     <action>
       <operation>
@@ -329,121 +298,7 @@
         <direction value="request"/>
         <expression value="Bundle.entry.resource.ofType(MessageHeader).response.identifier"/>
         <operator value="equals"/>
-        <value value="${bundleResourceid}"/>
-        <warningOnly value="false"/>
-      </assert>
-    </action>
-    <action>
-      <assert>
-        <description value="Confirm that the reference original Provenance.entity.what is equal to Id of original messageheader.identifier"/>
-        <direction value="request"/>
-        <expression value="Bundle.entry.resource.ofType(Provenance).where(entity.what.reference =&#39;${MessageHeaderIdentifier}&#39;)"/>
-        <warningOnly value="false"/>
-      </assert>
-    </action>
-    <action>
-      <assert>
-        <description value="Confirm that the there are two Provenances"/>
-        <direction value="request"/>
-        <expression value="Bundle.entry.resource.ofType(Provenance).count() = 2"/>
-        <warningOnly value="false"/>
-      </assert>
-    </action>
-    <action>
-      <assert>
-        <description value="Confirm that the id of the original message provenance exist in the ack"/>
-        <direction value="request"/>
-        <expression value="Bundle.entry.resource.ofType(Provenance).where(id=&#39;${ProvenanceID}&#39;).exists()"/>
-        <warningOnly value="false"/>
-      </assert>
-    </action>
-  </test>
-  <test id="02-STIN">
-    <name value="HospitalNotification-STIN2"/>
-    <description value="GET a Hospital notification. The expected response is a 200(OK) with a payload of the Hospital notification resource in XML format."/>
-    <action>
-      <operation>
-        <type>
-          <system value="http://terminology.hl7.org/CodeSystem/testscript-operation-codes"/>
-          <code value="read"/>
-        </type>
-        <resource value="Bundle"/>
-        <description value="The patient does not show up after ended leave -SLHJ"/>
-        <accept value="xml"/>
-        <destination value="1"/>
-        <encodeRequestUrl value="true"/>
-        <origin value="1"/>
-        <params value="?message.destination-uri=${destinationUriSTIN2}"/>
-      </operation>
-    </action>
-    <action>
-      <assert>
-        <description value="Confirm that the returned HTTP status is 200(OK)."/>
-        <direction value="response"/>
-        <responseCode value="200"/>
-        <warningOnly value="false"/>
-      </assert>
-    </action>
-  </test>
-  <test id="4ACK-bundle-create-STIN2">
-    <name value="4 Post Acknowledgement-bundle-create-STIN2"/>
-    <description value="GET ACK"/>
-    <action>
-      <operation>
-        <type>
-          <system value="http://terminology.hl7.org/CodeSystem/testscript-operation-codes"/>
-          <code value="create"/>
-        </type>
-        <resource value="Bundle"/>
-        <description value="Post a acknowledgement"/>
-        <accept value="xml"/>
-        <destination value="1"/>
-        <encodeRequestUrl value="true"/>
-        <origin value="1"/>
-        <sourceId value="bundle-create-ack-OK"/>
-      </operation>
-    </action>
-    <action>
-      <assert>
-        <description value="Confirm that the client request payload contains a Bundle resource type."/>
-        <direction value="request"/>
-        <resource value="Bundle"/>
-        <warningOnly value="false"/>
-      </assert>
-    </action>
-    <action>
-      <assert>
-        <description value="Confirm that the MessageHeader response code is OK"/>
-        <direction value="request"/>
-        <expression value="Bundle.entry.resource.ofType(MessageHeader).response.code"/>
-        <operator value="equals"/>
-        <value value="ok"/>
-        <warningOnly value="false"/>
-      </assert>
-    </action>
-    <action>
-      <assert>
-        <description value="Confirm that the request resource contains the expected evetCoding code."/>
-        <direction value="request"/>
-        <expression value="Bundle.entry.resource.ofType(MessageHeader).event.as(Coding).select(code = &#39;acknowledgment-message&#39;).allTrue()"/>
-        <warningOnly value="false"/>
-      </assert>
-    </action>
-    <action>
-      <assert>
-        <description value="Confirm that the Bundle not containing a OperationOutcome"/>
-        <direction value="request"/>
-        <expression value="Bundle.entry.resource.ofType(OperationOutcome).exists().not()"/>
-        <warningOnly value="false"/>
-      </assert>
-    </action>
-    <action>
-      <assert>
-        <description value="Confirm that the MessageHeader.response.identifier is equal to Id of original message "/>
-        <direction value="request"/>
-        <expression value="Bundle.entry.resource.ofType(MessageHeader).response.identifier"/>
-        <operator value="equals"/>
-        <value value="${bundleResourceid1}"/>
+        <value value="${KorrektMHID1}"/>
         <warningOnly value="false"/>
       </assert>
     </action>
@@ -472,9 +327,9 @@
       </assert>
     </action>
   </test>
-  <test id="04-SLHJ">
-    <name value="HospitalNotification-SLHJ"/>
-    <description value="GET a Hospital notification. The expected response is a 200(OK) with a payload of the Hospital notification resource in XML format."/>
+  <test id="2-STIN-admitted">
+    <name value="HospitalNotification-STIN"/>
+    <description value="GET a Hospital notification STIN. The expected response is a 200(OK) with a payload of the Hospital notification resource in XML format."/>
     <action>
       <operation>
         <type>
@@ -482,12 +337,13 @@
           <code value="read"/>
         </type>
         <resource value="Bundle"/>
-        <description value="The patient does not show up after ended leave -SLHJ"/>
+        <description value="Receive notification-STIN"/>
         <accept value="xml"/>
         <destination value="1"/>
         <encodeRequestUrl value="true"/>
         <origin value="1"/>
-        <params value="?message.destination-uri=${destinationUriSLHJ8}"/>
+        <params value="?message.destination-uri=${destinationUri2}"/>
+        <responseId value="bundle-get-STIN2"/>
       </operation>
     </action>
     <action>
@@ -499,8 +355,8 @@
       </assert>
     </action>
   </test>
-  <test id="5ACK-bundle-create-SLHJ">
-    <name value="5 Post Acknowledgement-bundle-create-SLHJ"/>
+  <test id="2ACK-bundle-create-STIN2">
+    <name value="2 Post Acknowledgement-bundle-create-STIN2"/>
     <description value="GET ACK"/>
     <action>
       <operation>
@@ -557,7 +413,7 @@
         <direction value="request"/>
         <expression value="Bundle.entry.resource.ofType(MessageHeader).response.identifier"/>
         <operator value="equals"/>
-        <value value="${bundleResourceid2}"/>
+        <value value="${KorrektMHID2}"/>
         <warningOnly value="false"/>
       </assert>
     </action>
@@ -582,6 +438,121 @@
         <description value="Confirm that the id of the original message provenance exist in the ack"/>
         <direction value="request"/>
         <expression value="Bundle.entry.resource.ofType(Provenance).where(id=&#39;${ProvenanceID2}&#39;).exists()"/>
+        <warningOnly value="false"/>
+      </assert>
+    </action>
+  </test>
+  <test id="3-SLHJ-admitted">
+    <name value="HospitalNotification-SLHJ"/>
+    <description value="GET a Hospital notification SLHJ. The expected response is a 200(OK) with a payload of the Hospital notification resource in XML format."/>
+    <action>
+      <operation>
+        <type>
+          <system value="http://terminology.hl7.org/CodeSystem/testscript-operation-codes"/>
+          <code value="read"/>
+        </type>
+        <resource value="Bundle"/>
+        <description value="Receive notification-SLHJ"/>
+        <accept value="xml"/>
+        <destination value="1"/>
+        <encodeRequestUrl value="true"/>
+        <origin value="1"/>
+        <params value="?message.destination-uri=${destinationUri3}"/>
+        <responseId value="bundle-get-SLHJ3"/>
+      </operation>
+    </action>
+    <action>
+      <assert>
+        <description value="Confirm that the returned HTTP status is 200(OK)."/>
+        <direction value="response"/>
+        <responseCode value="200"/>
+        <warningOnly value="false"/>
+      </assert>
+    </action>
+  </test>
+  <test id="3ACK-bundle-create-SLHJ3">
+    <name value="3 Post Acknowledgement-bundle-create-SLHJ3"/>
+    <description value="GET ACK"/>
+    <action>
+      <operation>
+        <type>
+          <system value="http://terminology.hl7.org/CodeSystem/testscript-operation-codes"/>
+          <code value="create"/>
+        </type>
+        <resource value="Bundle"/>
+        <description value="Post a acknowledgement"/>
+        <accept value="xml"/>
+        <destination value="1"/>
+        <encodeRequestUrl value="true"/>
+        <origin value="1"/>
+        <sourceId value="bundle-create-ack-OK"/>
+      </operation>
+    </action>
+    <action>
+      <assert>
+        <description value="Confirm that the client request payload contains a Bundle resource type."/>
+        <direction value="request"/>
+        <resource value="Bundle"/>
+        <warningOnly value="false"/>
+      </assert>
+    </action>
+    <action>
+      <assert>
+        <description value="Confirm that the MessageHeader response code is OK"/>
+        <direction value="request"/>
+        <expression value="Bundle.entry.resource.ofType(MessageHeader).response.code"/>
+        <operator value="equals"/>
+        <value value="ok"/>
+        <warningOnly value="false"/>
+      </assert>
+    </action>
+    <action>
+      <assert>
+        <description value="Confirm that the request resource contains the expected evetCoding code."/>
+        <direction value="request"/>
+        <expression value="Bundle.entry.resource.ofType(MessageHeader).event.as(Coding).select(code = &#39;acknowledgment-message&#39;).allTrue()"/>
+        <warningOnly value="false"/>
+      </assert>
+    </action>
+    <action>
+      <assert>
+        <description value="Confirm that the Bundle not containing a OperationOutcome"/>
+        <direction value="request"/>
+        <expression value="Bundle.entry.resource.ofType(OperationOutcome).exists().not()"/>
+        <warningOnly value="false"/>
+      </assert>
+    </action>
+    <action>
+      <assert>
+        <description value="Confirm that the MessageHeader.response.identifier is equal to Id of original message "/>
+        <direction value="request"/>
+        <expression value="Bundle.entry.resource.ofType(MessageHeader).response.identifier"/>
+        <operator value="equals"/>
+        <value value="${KorrektMHID3}"/>
+        <warningOnly value="false"/>
+      </assert>
+    </action>
+    <action>
+      <assert>
+        <description value="Confirm that the reference original Provenance.entity.what is equal to Id of original messageheader.identifier"/>
+        <direction value="request"/>
+        <expression value="Bundle.entry.resource.ofType(Provenance).where(entity.what.reference =&#39;${MessageHeaderIdentifier3}&#39;)"/>
+        <warningOnly value="false"/>
+      </assert>
+    </action>
+    <action>
+      <assert>
+        <description value="Confirm that the there are two Provenances"/>
+        <direction value="request"/>
+        <expression value="Bundle.entry.resource.ofType(Provenance).count() = 2"/>
+        <warningOnly value="false"/>
+      </assert>
+    </action>
+    <action>
+      <assert>
+        <description value="Confirm that the id of the original message provenance exist in the ack"/>
+        <direction value="request"/>
+        <expression value="Bundle.entry.resource.ofType(Provenance).where(id=&#39;${ProvenanceID3}&#39;).exists()"/>
         <warningOnly value="false"/>
       </assert>
     </action>

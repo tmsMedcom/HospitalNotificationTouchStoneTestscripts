@@ -1,5 +1,5 @@
 RuleSet: createAckTest(testId,fixtureid, bundleResourceid, MessageHeaderIdentifier, ProvenanceID)
-* insert CrateVariabels({fixtureid}, {bundleResourceid}, {MessageHeaderIdentifier}, {ProvenanceID} )
+* insert CrateACKVariabels({fixtureid}, {MessageHeaderIdentifier}, {ProvenanceID} )
 
 * test[+].id = "{testId}ACK-{fixtureid}" //Name change
 * test[=].name = "{testId} Post Acknowledgement-{fixtureid}" //Name change
@@ -63,11 +63,7 @@ RuleSet: ACKFixture
 * fixture[=].resource.reference = "/FHIRSandbox/MedCom/401-Acknowledgement/_reference/resources/Acknowledgement-ok.xml"
 
 //Type = e.g. SLHJ, STIn 
-RuleSet: CrateVariabels(fixtureid, bundleResourceid, MessageHeaderIdentifier, ProvenanceID)
-// test2 ack - SKAL MED I TBD indvi 
-/** variable[+].name = "{bundleResourceid}"
-* variable[=].expression = "Bundle.id"
-* variable[=].sourceId = "{fixtureid}"*/
+RuleSet: CrateACKVariabels(fixtureid, MessageHeaderIdentifier, ProvenanceID)
 // test2 ack - SKAL MED I TBD indvi
 * variable[+].name = "{MessageHeaderIdentifier}"
 * variable[=].expression = "Bundle.entry[0].fullUrl"

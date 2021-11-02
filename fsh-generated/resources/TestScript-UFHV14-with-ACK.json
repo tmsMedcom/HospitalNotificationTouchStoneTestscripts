@@ -26,6 +26,32 @@
   "name": "Patient is admitted and dies at the hospital",
   "title": "Patient is admitted and dies at the hospital",
   "description": "Testing correct use of status admit-inpatient",
+  "fixture": [
+    {
+      "id": "bundle-create-ack-OK",
+      "autocreate": false,
+      "autodelete": false,
+      "resource": {
+        "reference": "/FHIRSandbox/MedCom/401-Acknowledgement/_reference/resources/Acknowledgement-ok.xml"
+      }
+    },
+    {
+      "id": "bundle-create-STIN1",
+      "autocreate": false,
+      "autodelete": false,
+      "resource": {
+        "reference": "/FHIRSandbox/MedCom/401-Hospitalnotification/receive/Userstory/_reference/resources/STIN_9.xml"
+      }
+    },
+    {
+      "id": "bundle-create-MORS2",
+      "autocreate": false,
+      "autodelete": false,
+      "resource": {
+        "reference": "/FHIRSandbox/MedCom/401-Hospitalnotification/receive/Userstory/_reference/resources/MORS_2.xml"
+      }
+    }
+  ],
   "origin": [
     {
       "index": 1,
@@ -44,32 +70,6 @@
       }
     }
   ],
-  "fixture": [
-    {
-      "id": "bundle-create-STIN",
-      "autocreate": false,
-      "autodelete": false,
-      "resource": {
-        "reference": "/FHIRSandbox/MedCom/401-Hospitalnotification/receive/Userstory/_reference/resources/STIN_9.xml"
-      }
-    },
-    {
-      "id": "bundle-create-MORS",
-      "autocreate": false,
-      "autodelete": false,
-      "resource": {
-        "reference": "/FHIRSandbox/MedCom/401-Hospitalnotification/receive/Userstory/_reference/resources/MORS_2.xml"
-      }
-    },
-    {
-      "id": "bundle-create-ack-OK",
-      "autocreate": false,
-      "autodelete": false,
-      "resource": {
-        "reference": "/FHIRSandbox/MedCom/401-Acknowledgement/_reference/resources/Acknowledgement-ok.xml"
-      }
-    }
-  ],
   "profile": [
     {
       "id": "hospitalnotification-profile",
@@ -78,34 +78,44 @@
   ],
   "variable": [
     {
-      "name": "destinationUri",
+      "name": "destinationUri1",
       "expression": "Bundle.entry.resource.ofType(MessageHeader).destination.endpoint",
-      "sourceId": "bundle-create-STIN"
+      "sourceId": "bundle-create-STIN1"
     },
     {
-      "name": "destinationUriMORS",
-      "expression": "Bundle.entry.resource.ofType(MessageHeader).destination.endpoint",
-      "sourceId": "bundle-create-MORS"
-    },
-    {
-      "name": "MessageHeaderIdentifier",
-      "expression": "Bundle.entry[0].fullUrl",
-      "sourceId": "bundle-create-STIN"
-    },
-    {
-      "name": "ProvenanceID",
-      "expression": "Bundle.entry.resource.ofType(Provenance).id",
-      "sourceId": "bundle-create-STIN"
+      "name": "KorrektMHID1",
+      "expression": "Bundle.entry.resource.ofType(Bundle).id",
+      "sourceId": "bundle-get-STIN1"
     },
     {
       "name": "MessageHeaderIdentifier1",
       "expression": "Bundle.entry[0].fullUrl",
-      "sourceId": "bundle-create-MORS"
+      "sourceId": "bundle-create-STIN1"
     },
     {
       "name": "ProvenanceID1",
       "expression": "Bundle.entry.resource.ofType(Provenance).id",
-      "sourceId": "bundle-create-MORS"
+      "sourceId": "bundle-create-STIN1"
+    },
+    {
+      "name": "destinationUri2",
+      "expression": "Bundle.entry.resource.ofType(MessageHeader).destination.endpoint",
+      "sourceId": "bundle-create-MORS2"
+    },
+    {
+      "name": "KorrektMHID2",
+      "expression": "Bundle.entry.resource.ofType(Bundle).id",
+      "sourceId": "bundle-get-MORS2"
+    },
+    {
+      "name": "MessageHeaderIdentifier2",
+      "expression": "Bundle.entry[0].fullUrl",
+      "sourceId": "bundle-create-MORS2"
+    },
+    {
+      "name": "ProvenanceID2",
+      "expression": "Bundle.entry.resource.ofType(Provenance).id",
+      "sourceId": "bundle-create-MORS2"
     }
   ],
   "setup": {
@@ -120,7 +130,7 @@
           "description": "System-generated search and delete operations from conditional delete on Bundle MessageHeader).destination.endpoint",
           "accept": "xml",
           "encodeRequestUrl": true,
-          "params": "?message.destination-uri=${destinationUri}"
+          "params": "?message.destination-uri=${destinationUri1}"
         }
       },
       {
@@ -134,15 +144,7 @@
           "accept": "xml",
           "contentType": "xml",
           "encodeRequestUrl": true,
-          "sourceId": "bundle-create-STIN"
-        }
-      },
-      {
-        "assert": {
-          "description": "Confirm that the returned HTTP status is 201(Created).",
-          "direction": "response",
-          "responseCode": "201",
-          "warningOnly": false
+          "sourceId": "bundle-create-STIN1"
         }
       },
       {
@@ -155,7 +157,7 @@
           "description": "System-generated search and delete operations from conditional delete on Bundle MessageHeader).destination.endpoint",
           "accept": "xml",
           "encodeRequestUrl": true,
-          "params": "?message.destination-uri=${destinationUriMORS}"
+          "params": "?message.destination-uri=${destinationUri2}"
         }
       },
       {
@@ -169,24 +171,16 @@
           "accept": "xml",
           "contentType": "xml",
           "encodeRequestUrl": true,
-          "sourceId": "bundle-create-MORS"
-        }
-      },
-      {
-        "assert": {
-          "description": "Confirm that the returned HTTP status is 201(Created).",
-          "direction": "response",
-          "responseCode": "201",
-          "warningOnly": false
+          "sourceId": "bundle-create-MORS2"
         }
       }
     ]
   },
   "test": [
     {
-      "id": "01-STIN-admitted",
-      "name": "HospitalNotification-STIN",
-      "description": "GET a Hospital notification. The expected response is a 200(OK) with a payload of the Hospital notification resource in XML format.",
+      "id": "1-STIN-admitted",
+      "name": "HospitalNotification-STIN1",
+      "description": "GET a Hospital notification STIN. The expected response is a 200(OK) with a payload of the Hospital notification resource in XML format.",
       "action": [
         {
           "operation": {
@@ -195,12 +189,13 @@
               "code": "read"
             },
             "resource": "Bundle",
-            "description": "Receive notification about admission -STIN",
+            "description": "Receive notification-STIN",
             "accept": "xml",
             "destination": 1,
             "encodeRequestUrl": true,
             "origin": 1,
-            "params": "?message.destination-uri=${destinationUri}"
+            "params": "?message.destination-uri=${destinationUri1}",
+            "responseId": "bundle-get-STIN1"
           }
         },
         {
@@ -214,8 +209,8 @@
       ]
     },
     {
-      "id": "3ACK-bundle-create-STIN",
-      "name": "3 Post Acknowledgement-bundle-create-STIN",
+      "id": "1ACK-bundle-create-STIN1",
+      "name": "1 Post Acknowledgement-bundle-create-STIN1",
       "description": "GET ACK",
       "action": [
         {
@@ -273,127 +268,7 @@
             "direction": "request",
             "expression": "Bundle.entry.resource.ofType(MessageHeader).response.identifier",
             "operator": "equals",
-            "value": "${bundleResourceid}",
-            "warningOnly": false
-          }
-        },
-        {
-          "assert": {
-            "description": "Confirm that the reference original Provenance.entity.what is equal to Id of original messageheader.identifier",
-            "direction": "request",
-            "expression": "Bundle.entry.resource.ofType(Provenance).where(entity.what.reference ='${MessageHeaderIdentifier}')",
-            "warningOnly": false
-          }
-        },
-        {
-          "assert": {
-            "description": "Confirm that the there are two Provenances",
-            "direction": "request",
-            "expression": "Bundle.entry.resource.ofType(Provenance).count() = 2",
-            "warningOnly": false
-          }
-        },
-        {
-          "assert": {
-            "description": "Confirm that the id of the original message provenance exist in the ack",
-            "direction": "request",
-            "expression": "Bundle.entry.resource.ofType(Provenance).where(id='${ProvenanceID}').exists()",
-            "warningOnly": false
-          }
-        }
-      ]
-    },
-    {
-      "id": "02-MORS-dies",
-      "name": "HospitalNotification-MORS",
-      "description": "GET a Hospital notification. The expected response is a 200(OK) with a payload of the Hospital notification resource in XML format.",
-      "action": [
-        {
-          "operation": {
-            "type": {
-              "system": "http://terminology.hl7.org/CodeSystem/testscript-operation-codes",
-              "code": "read"
-            },
-            "resource": "Bundle",
-            "description": "The patient does not show up after ended leave -SLHJ",
-            "accept": "xml",
-            "destination": 1,
-            "encodeRequestUrl": true,
-            "origin": 1,
-            "params": "?message.destination-uri=${destinationUriMORS}"
-          }
-        },
-        {
-          "assert": {
-            "description": "Confirm that the returned HTTP status is 200(OK).",
-            "direction": "response",
-            "responseCode": "200",
-            "warningOnly": false
-          }
-        }
-      ]
-    },
-    {
-      "id": "4ACK-bundle-create-MORS",
-      "name": "4 Post Acknowledgement-bundle-create-MORS",
-      "description": "GET ACK",
-      "action": [
-        {
-          "operation": {
-            "type": {
-              "system": "http://terminology.hl7.org/CodeSystem/testscript-operation-codes",
-              "code": "create"
-            },
-            "resource": "Bundle",
-            "description": "Post a acknowledgement",
-            "accept": "xml",
-            "destination": 1,
-            "encodeRequestUrl": true,
-            "origin": 1,
-            "sourceId": "bundle-create-ack-OK"
-          }
-        },
-        {
-          "assert": {
-            "description": "Confirm that the client request payload contains a Bundle resource type.",
-            "direction": "request",
-            "resource": "Bundle",
-            "warningOnly": false
-          }
-        },
-        {
-          "assert": {
-            "description": "Confirm that the MessageHeader response code is OK",
-            "direction": "request",
-            "expression": "Bundle.entry.resource.ofType(MessageHeader).response.code",
-            "operator": "equals",
-            "value": "ok",
-            "warningOnly": false
-          }
-        },
-        {
-          "assert": {
-            "description": "Confirm that the request resource contains the expected evetCoding code.",
-            "direction": "request",
-            "expression": "Bundle.entry.resource.ofType(MessageHeader).event.as(Coding).select(code = 'acknowledgment-message').allTrue()",
-            "warningOnly": false
-          }
-        },
-        {
-          "assert": {
-            "description": "Confirm that the Bundle not containing a OperationOutcome",
-            "direction": "request",
-            "expression": "Bundle.entry.resource.ofType(OperationOutcome).exists().not()",
-            "warningOnly": false
-          }
-        },
-        {
-          "assert": {
-            "description": "Confirm that the MessageHeader.response.identifier is equal to Id of original message ",
-            "direction": "request",
-            "expression": "Bundle.entry.resource.ofType(MessageHeader).response.identifier",
-            "operator": "equals",
-            "value": "${bundleResourceid1}",
+            "value": "${KorrektMHID1}",
             "warningOnly": false
           }
         },
@@ -418,6 +293,127 @@
             "description": "Confirm that the id of the original message provenance exist in the ack",
             "direction": "request",
             "expression": "Bundle.entry.resource.ofType(Provenance).where(id='${ProvenanceID1}').exists()",
+            "warningOnly": false
+          }
+        }
+      ]
+    },
+    {
+      "id": "2-MORS-admitted",
+      "name": "HospitalNotification-MORS2",
+      "description": "GET a Hospital notification MORS. The expected response is a 200(OK) with a payload of the Hospital notification resource in XML format.",
+      "action": [
+        {
+          "operation": {
+            "type": {
+              "system": "http://terminology.hl7.org/CodeSystem/testscript-operation-codes",
+              "code": "read"
+            },
+            "resource": "Bundle",
+            "description": "Receive notification-MORS",
+            "accept": "xml",
+            "destination": 1,
+            "encodeRequestUrl": true,
+            "origin": 1,
+            "params": "?message.destination-uri=${destinationUri2}",
+            "responseId": "bundle-get-MORS2"
+          }
+        },
+        {
+          "assert": {
+            "description": "Confirm that the returned HTTP status is 200(OK).",
+            "direction": "response",
+            "responseCode": "200",
+            "warningOnly": false
+          }
+        }
+      ]
+    },
+    {
+      "id": "2ACK-bundle-create-MORS2",
+      "name": "2 Post Acknowledgement-bundle-create-MORS2",
+      "description": "GET ACK",
+      "action": [
+        {
+          "operation": {
+            "type": {
+              "system": "http://terminology.hl7.org/CodeSystem/testscript-operation-codes",
+              "code": "create"
+            },
+            "resource": "Bundle",
+            "description": "Post a acknowledgement",
+            "accept": "xml",
+            "destination": 1,
+            "encodeRequestUrl": true,
+            "origin": 1,
+            "sourceId": "bundle-create-ack-OK"
+          }
+        },
+        {
+          "assert": {
+            "description": "Confirm that the client request payload contains a Bundle resource type.",
+            "direction": "request",
+            "resource": "Bundle",
+            "warningOnly": false
+          }
+        },
+        {
+          "assert": {
+            "description": "Confirm that the MessageHeader response code is OK",
+            "direction": "request",
+            "expression": "Bundle.entry.resource.ofType(MessageHeader).response.code",
+            "operator": "equals",
+            "value": "ok",
+            "warningOnly": false
+          }
+        },
+        {
+          "assert": {
+            "description": "Confirm that the request resource contains the expected evetCoding code.",
+            "direction": "request",
+            "expression": "Bundle.entry.resource.ofType(MessageHeader).event.as(Coding).select(code = 'acknowledgment-message').allTrue()",
+            "warningOnly": false
+          }
+        },
+        {
+          "assert": {
+            "description": "Confirm that the Bundle not containing a OperationOutcome",
+            "direction": "request",
+            "expression": "Bundle.entry.resource.ofType(OperationOutcome).exists().not()",
+            "warningOnly": false
+          }
+        },
+        {
+          "assert": {
+            "description": "Confirm that the MessageHeader.response.identifier is equal to Id of original message ",
+            "direction": "request",
+            "expression": "Bundle.entry.resource.ofType(MessageHeader).response.identifier",
+            "operator": "equals",
+            "value": "${KorrektMHID2}",
+            "warningOnly": false
+          }
+        },
+        {
+          "assert": {
+            "description": "Confirm that the reference original Provenance.entity.what is equal to Id of original messageheader.identifier",
+            "direction": "request",
+            "expression": "Bundle.entry.resource.ofType(Provenance).where(entity.what.reference ='${MessageHeaderIdentifier2}')",
+            "warningOnly": false
+          }
+        },
+        {
+          "assert": {
+            "description": "Confirm that the there are two Provenances",
+            "direction": "request",
+            "expression": "Bundle.entry.resource.ofType(Provenance).count() = 2",
+            "warningOnly": false
+          }
+        },
+        {
+          "assert": {
+            "description": "Confirm that the id of the original message provenance exist in the ack",
+            "direction": "request",
+            "expression": "Bundle.entry.resource.ofType(Provenance).where(id='${ProvenanceID2}').exists()",
             "warningOnly": false
           }
         }

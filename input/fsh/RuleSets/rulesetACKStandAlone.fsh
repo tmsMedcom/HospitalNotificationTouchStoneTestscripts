@@ -1,4 +1,4 @@
-RuleSet: ACKRule(id,MessageHeaderResponseCode, Metadata, OperationOutcome)
+/*RuleSet: ACKRule(id,MessageHeaderResponseCode, Metadata, OperationOutcome)
 * id = "{id}"
 * insert {Metadata}
 * name = "medcom-Acknowledgement-{MessageHeaderResponseCode}-xml-json"
@@ -121,7 +121,7 @@ RuleSet: ACKRule(id,MessageHeaderResponseCode, Metadata, OperationOutcome)
 * test[=].action[=].assert.expression = "Bundle.entry.resource.ofType(Provenance).where(entity.what.reference ='${MessageHeaderIdentifier}')"
 * test[=].action[=].assert.warningOnly = false
 
-
+*/
 RuleSet: OperationOutcomeNot
 * test[=].action[+].assert.description = "Confirm that the Bundle not containing a OperationOutcome"
 * test[=].action[=].assert.direction = #request
