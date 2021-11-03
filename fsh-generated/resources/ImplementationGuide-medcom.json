@@ -41,9 +41,170 @@
       },
       {
         "reference": {
-          "reference": "TestScript/HS-admit-imp-admit"
+          "reference": "TestScript/HS-Cancellation-of-deseased-emer"
         },
-        "name": "HS-send-IMP-Admit",
+        "name": "HS-send-cancel-discharge-emergency-home-an-mors",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "TestScript/HS-Cancellation-of-deseased-imp"
+        },
+        "name": "HS-send-cancel-discharge-inpatient-home-an-mors",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "TestScript/HS-admit-emergency"
+        },
+        "name": "HS-send-admit-emergency",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "TestScript/HS-admit-inpatient"
+        },
+        "name": "HS-send-admit-inpatient",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "TestScript/HS-cancel-admit-emergency"
+        },
+        "name": "HS-send-cancel-admit-emergency",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "TestScript/HS-cancel-admit-inpatient"
+        },
+        "name": "HS-send-cancel-admit-inpatient",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "TestScript/HS-cancel-discharge-emergency-home"
+        },
+        "name": "HS-send-cancel-discharge-emergency-home",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "TestScript/HS-cancel-discharge-emergency-home-deseased"
+        },
+        "name": "HS-send-cancel-discharge-emergency-home-mors",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "TestScript/HS-cancel-discharge-inpatient-home"
+        },
+        "name": "HS-send-cancel-discharge-inpatient-home",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "TestScript/HS-cancel-discharge-inpatient-home-deseased"
+        },
+        "name": "HS-send-cancel-discharge-inpatient-home-mors",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "TestScript/HS-cancel-end-leave-inpatient"
+        },
+        "name": "HS-send-cancel-end-leave-inpatient",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "TestScript/HS-cancel-start-leave-inpatient"
+        },
+        "name": "HS-send-cancel-start-leave-inpatient",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "TestScript/HS-discharge-emergency-home"
+        },
+        "name": "HS-send-discharge-emergency-home",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "TestScript/HS-discharge-inpatient-home"
+        },
+        "name": "HS-send-discharge-inpatient-home",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "TestScript/HS-end-leave-inpatient"
+        },
+        "name": "HS-send-end-leave-inpatient",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "TestScript/HS-revise-admit-emergency"
+        },
+        "name": "HS-send-revise-admit-emergency",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "TestScript/HS-revise-admit-inpatient"
+        },
+        "name": "HS-send-revise-admit-inpatient",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "TestScript/HS-revise-discharge-emergency-home"
+        },
+        "name": "HS-send-revise-discharge-emergency-home",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "TestScript/HS-revise-discharge-emergency-home-re-deseased"
+        },
+        "name": "HS-send-revise-discharge-emergency-home-mors",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "TestScript/HS-revise-discharge-inpatient-home"
+        },
+        "name": "HS-send-revise-discharge-inpatient-home",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "TestScript/HS-revise-discharge-inpatient-home-re-deseased"
+        },
+        "name": "HS-send-revise-discharge-inpatient-home-mors",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "TestScript/HS-revise-end-leave-inpatient"
+        },
+        "name": "HS-send-revise-end-leave-inpatient",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "TestScript/HS-revise-start-leave-inpatient"
+        },
+        "name": "HS-send-revise-start-leave-inpatient",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "TestScript/HS-start-leave-inpatient"
+        },
+        "name": "HS-send-start-leave-inpatient",
         "exampleBoolean": true
       },
       {

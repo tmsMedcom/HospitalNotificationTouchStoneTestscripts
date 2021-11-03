@@ -1,17 +1,3 @@
-Instance: HS-send-IMP-Admit
-InstanceOf: TestScript
-
-* insert Metadata
-* id = "HS-admit-imp-admit"
-* name = "receive-notification-about-admission"
-* title = "hospitalNotification-message admit-inpatient receiving XML"
-* description = "Testing correct use of status admit-inpatient"
-
-//Once per testscript whatRefference= first is NA efterwards preveious messageheader
-* insert createHNSendTest(STIN, 1, /FHIRSandbox/MedCom/401-Hospitalnotification/send/Userstory/_reference/resources/HospitalNotificationMessage-STIN-UF_H_V_1.xml,
- admit-inpatient, IMP, in-progress, NA, source) 
-
-
 RuleSet: createHNSendTest(type, number, fixture, activityCode, encounterClass, encounterStatus, whatRefference, role)
 * origin.index = 1
 * origin.profile.system = "http://terminology.hl7.org/CodeSystem/testscript-profile-origin-types"
@@ -108,4 +94,14 @@ RuleSet: createHNSendTest(type, number, fixture, activityCode, encounterClass, e
 * test[=].action[=].assert.expression = "Bundle.entry.resource.ofType(Provenance).entity.role"
 * test[=].action[=].assert.operator = #equals
 * test[=].action[=].assert.value = "{role}"
+* test[=].action[=].assert.warningOnly = false
+
+//Constructur for HN Sende with Decased value
+RuleSet: createHNSendTestDecased(type, number, fixture, activityCode, encounterClass, encounterStatus, whatRefference, role, decased)
+* insert createHNSendTest({type}, {number}, {fixture}, {activityCode}, {encounterClass}, {encounterStatus}, {whatRefference}, {role})
+* test[=].action[+].assert.description = "Confirm that the patient.Decased is set to {decased}"
+* test[=].action[=].assert.direction = #request
+* test[=].action[=].assert.expression = "Bundle.entry.resource.ofType(Patient).deceased"
+* test[=].action[=].assert.operator = #equals
+* test[=].action[=].assert.value = "{decased}"
 * test[=].action[=].assert.warningOnly = false

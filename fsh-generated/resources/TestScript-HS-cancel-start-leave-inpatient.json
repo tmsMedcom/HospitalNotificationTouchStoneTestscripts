@@ -1,6 +1,6 @@
 {
   "resourceType": "TestScript",
-  "id": "HS-admit-imp-admit",
+  "id": "HS-cancel-start-leave-inpatient",
   "meta": {
     "profile": [
       "http://touchstone.aegis.net/touchstone/fhir/testing/StructureDefinition/testscript"
@@ -23,9 +23,9 @@
     }
   ],
   "copyright": "MedCom 2021",
-  "name": "receive-notification-about-admission",
-  "title": "hospitalNotification-message admit-inpatient receiving XML",
-  "description": "Testing correct use of status admit-inpatient",
+  "name": "Update of Start leave",
+  "title": "hospitalNotification-message Update of Start leave send",
+  "description": "Testing correct use of Update of Start leave",
   "origin": [
     {
       "index": 1,
@@ -46,11 +46,11 @@
   ],
   "fixture": [
     {
-      "id": "bundle-create-STIN1",
+      "id": "bundle-create-AN-STOR1",
       "autocreate": false,
       "autodelete": false,
       "resource": {
-        "reference": "/FHIRSandbox/MedCom/401-Hospitalnotification/send/Userstory/_reference/resources/HospitalNotificationMessage-STIN-UF_H_V_1.xml"
+        "reference": "/FHIRSandbox/MedCom/401-Hospitalnotification/send/Userstory/_reference/resources/HospitalNotificationMessage-AN_STOR.xml"
       }
     }
   ],
@@ -62,24 +62,24 @@
   ],
   "variable": [
     {
-      "name": "encounterResourceIdentifierSTIN1",
+      "name": "encounterResourceIdentifierAN-STOR1",
       "expression": "Bundle.entry.resource.ofType(Encounter).identifier.value",
-      "sourceId": "bundle-create-STIN1"
+      "sourceId": "bundle-create-AN-STOR1"
     },
     {
-      "name": "headerResourceReferenceSTIN1",
+      "name": "headerResourceReferenceAN-STOR1",
       "expression": "Bundle.entry[0].fullUrl",
-      "sourceId": "bundle-create-STIN1"
+      "sourceId": "bundle-create-AN-STOR1"
     },
     {
-      "name": "firstEpisodeOfCareIdentifierSTIN1",
+      "name": "firstEpisodeOfCareIdentifierAN-STOR1",
       "expression": "Bundle.entry.resource.ofType(Encounter).episodeOfCare.identifier.value",
-      "sourceId": "bundle-create-STIN1"
+      "sourceId": "bundle-create-AN-STOR1"
     }
   ],
   "test": [
     {
-      "id": "HN-STIN-1",
+      "id": "HN-AN-STOR-1",
       "name": "1 Post Hospitalnotification",
       "description": "Post Hospitalnotification",
       "action": [
@@ -94,7 +94,7 @@
             "destination": 1,
             "encodeRequestUrl": true,
             "origin": 1,
-            "sourceId": "bundle-create-STIN1"
+            "sourceId": "bundle-create-AN-STOR1"
           }
         },
         {
@@ -119,7 +119,7 @@
             "direction": "request",
             "expression": "Bundle.entry.resource.ofType(Provenance).activity.coding.code",
             "operator": "equals",
-            "value": "admit-inpatient",
+            "value": "cancel-start-leave-inpatient",
             "warningOnly": false
           }
         },
@@ -157,7 +157,7 @@
           "assert": {
             "description": "Confirm that the taget refferece the MessageHeader",
             "direction": "request",
-            "expression": "Bundle.entry.resource.ofType(Provenance).where(target.reference = '${headerResourceReferenceSTIN1}')",
+            "expression": "Bundle.entry.resource.ofType(Provenance).where(target.reference = '${headerResourceReferenceAN-STOR1}')",
             "warningOnly": false
           }
         },
