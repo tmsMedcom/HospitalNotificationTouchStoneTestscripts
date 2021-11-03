@@ -152,6 +152,32 @@
             "value": "true",
             "warningOnly": false
           }
+        },
+        {
+          "assert": {
+            "description": "Confirm that the taget refferece the MessageHeader",
+            "direction": "request",
+            "expression": "Bundle.entry.resource.ofType(Provenance).where(target.reference = '${headerResourceReferenceSTIN1}')",
+            "warningOnly": false
+          }
+        },
+        {
+          "assert": {
+            "description": "Confirm that the WHAT refferece the MessageHeader. First message its own. Efterwards previous messageheader",
+            "direction": "request",
+            "expression": "Bundle.entry.resource.ofType(Provenance).where(entity.what.reference ='NA')",
+            "warningOnly": false
+          }
+        },
+        {
+          "assert": {
+            "description": "Confirm that the role is set to source",
+            "direction": "request",
+            "expression": "Bundle.entry.resource.ofType(Provenance).entity.role",
+            "operator": "equals",
+            "value": "source",
+            "warningOnly": false
+          }
         }
       ]
     }

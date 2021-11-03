@@ -7,12 +7,12 @@ InstanceOf: TestScript
 * title = "hospitalNotification-message admit-inpatient receiving XML"
 * description = "Testing correct use of status admit-inpatient"
 
-//Once per testscript
+//Once per testscript whatRefference= first is NA efterwards preveious messageheader
 * insert createHNSendTest(STIN, 1, /FHIRSandbox/MedCom/401-Hospitalnotification/send/Userstory/_reference/resources/HospitalNotificationMessage-STIN-UF_H_V_1.xml,
- admit-inpatient, IMP, in-progress) 
+ admit-inpatient, IMP, in-progress, NA, source) 
 
 
-RuleSet: createHNSendTest(type, number, fixture, activityCode, encounterClass, encounterStatus)
+RuleSet: createHNSendTest(type, number, fixture, activityCode, encounterClass, encounterStatus, whatRefference, role)
 * origin.index = 1
 * origin.profile.system = "http://terminology.hl7.org/CodeSystem/testscript-profile-origin-types"
 * origin.profile.code = #FHIR-Client
@@ -92,3 +92,20 @@ RuleSet: createHNSendTest(type, number, fixture, activityCode, encounterClass, e
 * test[=].action[=].assert.value = "true"
 * test[=].action[=].assert.warningOnly = false
 
+* test[=].action[+].assert.description = "Confirm that the taget refferece the MessageHeader"
+* test[=].action[=].assert.direction = #request
+* test[=].action[=].assert.expression = "Bundle.entry.resource.ofType(Provenance).where(target.reference = '${headerResourceReference{type}{number}}')"
+* test[=].action[=].assert.warningOnly = false
+
+//first what is "NA" efterwards previous messageheader
+* test[=].action[+].assert.description = "Confirm that the WHAT refferece the MessageHeader. First message its own. Efterwards previous messageheader"
+* test[=].action[=].assert.direction = #request
+* test[=].action[=].assert.expression = "Bundle.entry.resource.ofType(Provenance).where(entity.what.reference ='{whatRefference}')"
+* test[=].action[=].assert.warningOnly = false
+
+* test[=].action[+].assert.description = "Confirm that the role is set to {role}"
+* test[=].action[=].assert.direction = #request
+* test[=].action[=].assert.expression = "Bundle.entry.resource.ofType(Provenance).entity.role"
+* test[=].action[=].assert.operator = #equals
+* test[=].action[=].assert.value = "{role}"
+* test[=].action[=].assert.warningOnly = false
