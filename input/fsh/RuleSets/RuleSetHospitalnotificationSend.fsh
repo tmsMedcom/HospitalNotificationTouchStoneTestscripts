@@ -12,7 +12,7 @@ RuleSet: createHNSendTest(type, number, fixture, activityCode, encounterClass, e
 * fixture[=].autodelete = false
 * fixture[=].resource.reference = "{fixture}"
 
-* profile.id = "acknowledgment-profile"
+* profile.id = "hospitalnotification-profile"
 * profile.reference = "http://medcomfhir.dk/fhir/core/1.0/StructureDefinition/medcom-messaging-acknowledgement" 
 
 * variable[+].name = "encounterResourceIdentifier{type}{number}"
