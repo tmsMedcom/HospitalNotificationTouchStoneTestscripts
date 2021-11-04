@@ -7,7 +7,7 @@
     "name": "HospitalnotificationTestscripts",
     "title": "HospitalNotification Testscripts",
     "version": "0.1.0",
-    "date": "2021-10-28T17:10:26+02:00",
+    "date": "2021-11-01T16:43:12+01:00",
     "status": {
       "class": "colsd",
       "status": "Draft"
@@ -21,7 +21,7 @@
     "name": "medcom-Acknowledgement-fatal-error-xml-json",
     "title": "medcom-Acknowledgement-fatal-error",
     "version": "0.1.0",
-    "date": "2021-10-22",
+    "date": "2021-11-01",
     "status": {
       "class": "colstu",
       "owner": "MedCom",
@@ -51,7 +51,7 @@
     "name": "medcom-Acknowledgement-ok-xml-json",
     "title": "medcom-Acknowledgement-ok",
     "version": "0.1.0",
-    "date": "2021-10-22",
+    "date": "2021-11-01",
     "status": {
       "class": "colstu",
       "owner": "MedCom",
@@ -66,7 +66,7 @@
     "name": "medcom-Acknowledgement-transient-error-xml-json",
     "title": "medcom-Acknowledgement-transient-error",
     "version": "0.1.0",
-    "date": "2021-10-22",
+    "date": "2021-11-01",
     "status": {
       "class": "colstu",
       "owner": "MedCom",
@@ -96,7 +96,7 @@
     "name": "receive-notification-about-admission",
     "title": "hospitalNotification-message admit-inpatient receiving XML",
     "version": "0.1.0",
-    "date": "2021-10-22",
+    "date": "2021-11-01",
     "status": {
       "class": "colstu",
       "owner": "MedCom",
@@ -111,7 +111,7 @@
     "name": "receive-notification-about-admission",
     "title": "hospitalNotification-message admit-inpatient receiving XML",
     "version": "0.1.0",
-    "date": "2021-10-22",
+    "date": "2021-11-01",
     "status": {
       "class": "colstu",
       "owner": "MedCom",
@@ -126,7 +126,7 @@
     "name": "receive-notification-correction",
     "title": "Correction: Patient is admitted but the hospital department registered is incorrect ",
     "version": "0.1.0",
-    "date": "2021-10-22",
+    "date": "2021-11-01",
     "status": {
       "class": "colstu",
       "owner": "MedCom",
@@ -156,7 +156,7 @@
     "name": "receive-notification-Cancellation",
     "title": "Cancellation: Wrong patient has been admitted",
     "version": "0.1.0",
-    "date": "2021-10-22",
+    "date": "2021-11-01",
     "status": {
       "class": "colstu",
       "owner": "MedCom",
@@ -186,7 +186,7 @@
     "name": "receive-notification-admitted and discharged",
     "title": "Patient is admitted at hospital and a day after discharged (emergency)",
     "version": "0.1.0",
-    "date": "2021-10-22",
+    "date": "2021-11-01",
     "status": {
       "class": "colstu",
       "owner": "MedCom",
@@ -216,7 +216,7 @@
     "name": "receive-notification-admit and discharge to home",
     "title": "Patient is admitted at hospital, goes on leave from hospital, returns after leave, and is finally discharged to home",
     "version": "0.1.0",
-    "date": "2021-10-22",
+    "date": "2021-11-01",
     "status": {
       "class": "colstu",
       "owner": "MedCom",
@@ -246,7 +246,7 @@
     "name": "never returns after leave",
     "title": "Patient is admitted at hospital, goes on leave from hospital but never returns after leave",
     "version": "0.1.0",
-    "date": "2021-10-22",
+    "date": "2021-11-01",
     "status": {
       "class": "colstu",
       "owner": "MedCom",
@@ -276,7 +276,7 @@
     "name": "Admitted, transferred and discharged to home",
     "title": "Patient is admitted at hospital, transferred to another hospital (same region), and finally discharged to home",
     "version": "0.1.0",
-    "date": "2021-10-22",
+    "date": "2021-11-01",
     "status": {
       "class": "colstu",
       "owner": "MedCom",
@@ -291,7 +291,7 @@
     "name": "Admitted, transferred and discharged to home",
     "title": "Patient is admitted at hospital, transferred to another hospital (same region), and finally discharged to home",
     "version": "0.1.0",
-    "date": "2021-10-22",
+    "date": "2021-11-01",
     "status": {
       "class": "colstu",
       "owner": "MedCom",
@@ -306,7 +306,7 @@
     "name": "Admitted, transferred and discharged to home",
     "title": "Patient is admitted at hospital, transfers himself to another hospital (same region), and finally dicharged to home",
     "version": "0.1.0",
-    "date": "2021-10-22",
+    "date": "2021-11-01",
     "status": {
       "class": "colstu",
       "owner": "MedCom",
@@ -336,7 +336,7 @@
     "name": "Patient is admitted at hospital, transferred to another hospital (another region), and finally discharged to home",
     "title": "Patient is admitted at hospital, transferred to another hospital (another region), and finally discharged to home",
     "version": "0.1.0",
-    "date": "2021-10-22",
+    "date": "2021-11-01",
     "status": {
       "class": "colstu",
       "owner": "MedCom",
@@ -366,7 +366,7 @@
     "name": "Patient is admitted at hospital, transfers himself to another hospital (another region), and finally discharged to home",
     "title": "Patient is admitted at hospital, transfers himself to another hospital (another region), and finally discharged to home",
     "version": "0.1.0",
-    "date": "2021-10-22",
+    "date": "2021-11-01",
     "status": {
       "class": "colstu",
       "owner": "MedCom",
@@ -396,7 +396,7 @@
     "name": "Patient is in an emergency outpatient setting ay hospital, but ends up being admitted",
     "title": "Patient is in an emergency outpatient setting ay hospital, but ends up being admitted",
     "version": "0.1.0",
-    "date": "2021-10-22",
+    "date": "2021-11-01",
     "status": {
       "class": "colstu",
       "owner": "MedCom",
@@ -426,7 +426,7 @@
     "name": "Patient dies upon arrival at the hospital",
     "title": "Patient dies upon arrival at the hospital",
     "version": "0.1.0",
-    "date": "2021-10-22",
+    "date": "2021-11-01",
     "status": {
       "class": "colstu",
       "owner": "MedCom",
@@ -456,7 +456,7 @@
     "name": "Patient is admitted and dies at the hospital",
     "title": "Patient is admitted and dies at the hospital",
     "version": "0.1.0",
-    "date": "2021-10-22",
+    "date": "2021-11-01",
     "status": {
       "class": "colstu",
       "owner": "MedCom",
@@ -486,7 +486,7 @@
     "name": "Dies during leave",
     "title": "Patient is admitted, goes on leave from the hospital and dies during leave",
     "version": "0.1.0",
-    "date": "2021-10-22",
+    "date": "2021-11-01",
     "status": {
       "class": "colstu",
       "owner": "MedCom",
@@ -516,7 +516,7 @@
     "name": "transferred to a private hospital",
     "title": "Patient is admitted, transferred to a private hospital (or other department) not sending notifications, and finally discharged",
     "version": "0.1.0",
-    "date": "2021-10-22",
+    "date": "2021-11-01",
     "status": {
       "class": "colstu",
       "owner": "MedCom",

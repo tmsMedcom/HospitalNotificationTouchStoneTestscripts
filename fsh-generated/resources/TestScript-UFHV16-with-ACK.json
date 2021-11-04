@@ -26,6 +26,24 @@
   "name": "transferred to a private hospital",
   "title": "Patient is admitted, transferred to a private hospital (or other department) not sending notifications, and finally discharged",
   "description": "Testing correct use of correction",
+  "fixture": [
+    {
+      "id": "bundle-create-ack-OK",
+      "autocreate": false,
+      "autodelete": false,
+      "resource": {
+        "reference": "/FHIRSandbox/MedCom/401-Acknowledgement/_reference/resources/Acknowledgement-ok.xml"
+      }
+    },
+    {
+      "id": "bundle-create-STIN1",
+      "autocreate": false,
+      "autodelete": false,
+      "resource": {
+        "reference": "/FHIRSandbox/MedCom/401-Hospitalnotification/receive/Userstory/_reference/resources/STIN_16.xml"
+      }
+    }
+  ],
   "origin": [
     {
       "index": 1,
@@ -41,24 +59,6 @@
       "profile": {
         "system": "http://terminology.hl7.org/CodeSystem/testscript-profile-destination-types",
         "code": "FHIR-Server"
-      }
-    }
-  ],
-  "fixture": [
-    {
-      "id": "bundle-create-STIN1",
-      "autocreate": false,
-      "autodelete": false,
-      "resource": {
-        "reference": "/FHIRSandbox/MedCom/401-Hospitalnotification/receive/Userstory/_reference/resources/STIN_16.xml"
-      }
-    },
-    {
-      "id": "bundle-create-ack-OK",
-      "autocreate": false,
-      "autodelete": false,
-      "resource": {
-        "reference": "/FHIRSandbox/MedCom/401-Acknowledgement/_reference/resources/Acknowledgement-ok.xml"
       }
     }
   ],
@@ -124,7 +124,7 @@
   "test": [
     {
       "id": "1-STIN-admitted",
-      "name": "HospitalNotification-STIN",
+      "name": "HospitalNotification-STIN1",
       "description": "GET a Hospital notification STIN. The expected response is a 200(OK) with a payload of the Hospital notification resource in XML format.",
       "action": [
         {

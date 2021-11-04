@@ -26,6 +26,32 @@
   "name": "receive-notification-about-admission",
   "title": "hospitalNotification-message admit-inpatient receiving XML",
   "description": "Testing correct use of status admit-inpatient",
+  "fixture": [
+    {
+      "id": "bundle-create-ack-OK",
+      "autocreate": false,
+      "autodelete": false,
+      "resource": {
+        "reference": "/FHIRSandbox/MedCom/401-Acknowledgement/_reference/resources/Acknowledgement-ok.xml"
+      }
+    },
+    {
+      "id": "bundle-create-STIN1",
+      "autocreate": false,
+      "autodelete": false,
+      "resource": {
+        "reference": "/FHIRSandbox/MedCom/401-Hospitalnotification/receive/Userstory/_reference/resources/HospitalNotificationMessage-STIN-K1.xml"
+      }
+    },
+    {
+      "id": "bundle-create-SLHJ2",
+      "autocreate": false,
+      "autodelete": false,
+      "resource": {
+        "reference": "/FHIRSandbox/MedCom/401-Hospitalnotification/receive/Userstory/_reference/resources/HospitalNotificationMessage-SLHJ-K3.xml"
+      }
+    }
+  ],
   "origin": [
     {
       "index": 1,
@@ -44,32 +70,6 @@
       }
     }
   ],
-  "fixture": [
-    {
-      "id": "bundle-create-STIN",
-      "autocreate": false,
-      "autodelete": false,
-      "resource": {
-        "reference": "/FHIRSandbox/MedCom/401-Hospitalnotification/receive/Userstory/_reference/resources/HospitalNotificationMessage-STIN-K1.xml"
-      }
-    },
-    {
-      "id": "bundle-create-SLHJ",
-      "autocreate": false,
-      "autodelete": false,
-      "resource": {
-        "reference": "/FHIRSandbox/MedCom/401-Hospitalnotification/receive/Userstory/_reference/resources/HospitalNotificationMessage-SLHJ-K3.xml"
-      }
-    },
-    {
-      "id": "bundle-create-ack-OK",
-      "autocreate": false,
-      "autodelete": false,
-      "resource": {
-        "reference": "/FHIRSandbox/MedCom/401-Acknowledgement/_reference/resources/Acknowledgement-ok.xml"
-      }
-    }
-  ],
   "profile": [
     {
       "id": "hospitalnotification-profile",
@@ -78,34 +78,44 @@
   ],
   "variable": [
     {
-      "name": "destinationUri",
+      "name": "destinationUri1",
       "expression": "Bundle.entry.resource.ofType(MessageHeader).destination.endpoint",
-      "sourceId": "bundle-create-STIN"
+      "sourceId": "bundle-create-STIN1"
     },
     {
-      "name": "destinationUriK3",
-      "expression": "Bundle.entry.resource.ofType(MessageHeader).destination.endpoint",
-      "sourceId": "bundle-create-SLHJ"
+      "name": "KorrektMHID1",
+      "expression": "Bundle.entry.resource.ofType(Bundle).id",
+      "sourceId": "bundle-get-STIN1"
     },
     {
-      "name": "MessageHeaderIdentifier",
+      "name": "MessageHeaderIdentifier1",
       "expression": "Bundle.entry[0].fullUrl",
-      "sourceId": "bundle-create-STIN"
+      "sourceId": "bundle-create-STIN1"
     },
     {
-      "name": "ProvenanceID",
+      "name": "ProvenanceID1",
       "expression": "Bundle.entry.resource.ofType(Provenance).id",
-      "sourceId": "bundle-create-STIN"
+      "sourceId": "bundle-create-STIN1"
+    },
+    {
+      "name": "destinationUri2",
+      "expression": "Bundle.entry.resource.ofType(MessageHeader).destination.endpoint",
+      "sourceId": "bundle-create-SLHJ2"
+    },
+    {
+      "name": "KorrektMHID2",
+      "expression": "Bundle.entry.resource.ofType(Bundle).id",
+      "sourceId": "bundle-get-SLHJ2"
     },
     {
       "name": "MessageHeaderIdentifier2",
       "expression": "Bundle.entry[0].fullUrl",
-      "sourceId": "bundle-create-SLHJ"
+      "sourceId": "bundle-create-SLHJ2"
     },
     {
       "name": "ProvenanceID2",
       "expression": "Bundle.entry.resource.ofType(Provenance).id",
-      "sourceId": "bundle-create-SLHJ"
+      "sourceId": "bundle-create-SLHJ2"
     }
   ],
   "setup": {
@@ -120,7 +130,7 @@
           "description": "System-generated search and delete operations from conditional delete on Bundle MessageHeader).destination.endpoint",
           "accept": "xml",
           "encodeRequestUrl": true,
-          "params": "?message.destination-uri=${destinationUri}"
+          "params": "?message.destination-uri=${destinationUri1}"
         }
       },
       {
@@ -134,15 +144,7 @@
           "accept": "xml",
           "contentType": "xml",
           "encodeRequestUrl": true,
-          "sourceId": "bundle-create-STIN"
-        }
-      },
-      {
-        "assert": {
-          "description": "Confirm that the returned HTTP status is 201(Created).",
-          "direction": "response",
-          "responseCode": "201",
-          "warningOnly": false
+          "sourceId": "bundle-create-STIN1"
         }
       },
       {
@@ -155,7 +157,7 @@
           "description": "System-generated search and delete operations from conditional delete on Bundle MessageHeader).destination.endpoint",
           "accept": "xml",
           "encodeRequestUrl": true,
-          "params": "?message.destination-uri=${destinationUriK3}"
+          "params": "?message.destination-uri=${destinationUri2}"
         }
       },
       {
@@ -169,24 +171,16 @@
           "accept": "xml",
           "contentType": "xml",
           "encodeRequestUrl": true,
-          "sourceId": "bundle-create-SLHJ"
-        }
-      },
-      {
-        "assert": {
-          "description": "Confirm that the returned HTTP status is 201(Created).",
-          "direction": "response",
-          "responseCode": "201",
-          "warningOnly": false
+          "sourceId": "bundle-create-SLHJ2"
         }
       }
     ]
   },
   "test": [
     {
-      "id": "01-STIN-admitted",
-      "name": "HospitalNotification-STIN",
-      "description": "GET a Hospital notification. The expected response is a 200(OK) with a payload of the Hospital notification resource in XML format.",
+      "id": "1-STIN-admitted",
+      "name": "HospitalNotification-STIN1",
+      "description": "GET a Hospital notification STIN. The expected response is a 200(OK) with a payload of the Hospital notification resource in XML format.",
       "action": [
         {
           "operation": {
@@ -195,12 +189,13 @@
               "code": "read"
             },
             "resource": "Bundle",
-            "description": "Receive notification about admission -STIN",
+            "description": "Receive notification-STIN",
             "accept": "xml",
             "destination": 1,
             "encodeRequestUrl": true,
             "origin": 1,
-            "params": "?message.destination-uri=${destinationUri}"
+            "params": "?message.destination-uri=${destinationUri1}",
+            "responseId": "bundle-get-STIN1"
           }
         },
         {
@@ -214,8 +209,8 @@
       ]
     },
     {
-      "id": "3ACK-bundle-create-STIN",
-      "name": "3 Post Acknowledgement-bundle-create-STIN",
+      "id": "1ACK-bundle-create-STIN1",
+      "name": "1 Post Acknowledgement-bundle-create-STIN1",
       "description": "GET ACK",
       "action": [
         {
@@ -273,7 +268,7 @@
             "direction": "request",
             "expression": "Bundle.entry.resource.ofType(MessageHeader).response.identifier",
             "operator": "equals",
-            "value": "${bundleResourceid}",
+            "value": "${KorrektMHID1}",
             "warningOnly": false
           }
         },
@@ -281,7 +276,7 @@
           "assert": {
             "description": "Confirm that the reference original Provenance.entity.what is equal to Id of original messageheader.identifier",
             "direction": "request",
-            "expression": "Bundle.entry.resource.ofType(Provenance).where(entity.what.reference ='${MessageHeaderIdentifier}')",
+            "expression": "Bundle.entry.resource.ofType(Provenance).where(entity.what.reference ='${MessageHeaderIdentifier1}')",
             "warningOnly": false
           }
         },
@@ -297,16 +292,16 @@
           "assert": {
             "description": "Confirm that the id of the original message provenance exist in the ack",
             "direction": "request",
-            "expression": "Bundle.entry.resource.ofType(Provenance).where(id='${ProvenanceID}').exists()",
+            "expression": "Bundle.entry.resource.ofType(Provenance).where(id='${ProvenanceID1}').exists()",
             "warningOnly": false
           }
         }
       ]
     },
     {
-      "id": "02-SLHJ-end-leave",
-      "name": "HospitalNotification-SLHJ",
-      "description": "GET a Hospital notification. The expected response is a 200(OK) with a payload of the Hospital notification resource in XML format.",
+      "id": "2-SLHJ-admitted",
+      "name": "HospitalNotification-SLHJ2",
+      "description": "GET a Hospital notification SLHJ. The expected response is a 200(OK) with a payload of the Hospital notification resource in XML format.",
       "action": [
         {
           "operation": {
@@ -315,12 +310,13 @@
               "code": "read"
             },
             "resource": "Bundle",
-            "description": "The patient does not show up after ended leave -SLHJ",
+            "description": "Receive notification-SLHJ",
             "accept": "xml",
             "destination": 1,
             "encodeRequestUrl": true,
             "origin": 1,
-            "params": "?message.destination-uri=${destinationUriK3}"
+            "params": "?message.destination-uri=${destinationUri2}",
+            "responseId": "bundle-get-SLHJ2"
           }
         },
         {
@@ -334,8 +330,8 @@
       ]
     },
     {
-      "id": "4ACK-bundle-create-SLHJ",
-      "name": "4 Post Acknowledgement-bundle-create-SLHJ",
+      "id": "2ACK-bundle-create-SLHJ2",
+      "name": "2 Post Acknowledgement-bundle-create-SLHJ2",
       "description": "GET ACK",
       "action": [
         {
@@ -393,7 +389,7 @@
             "direction": "request",
             "expression": "Bundle.entry.resource.ofType(MessageHeader).response.identifier",
             "operator": "equals",
-            "value": "${bundleResourceid2}",
+            "value": "${KorrektMHID2}",
             "warningOnly": false
           }
         },

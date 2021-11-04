@@ -26,6 +26,24 @@
   "name": "Patient dies upon arrival at the hospital",
   "title": "Patient dies upon arrival at the hospital",
   "description": "Testing correct use of correction",
+  "fixture": [
+    {
+      "id": "bundle-create-ack-OK",
+      "autocreate": false,
+      "autodelete": false,
+      "resource": {
+        "reference": "/FHIRSandbox/MedCom/401-Acknowledgement/_reference/resources/Acknowledgement-ok.xml"
+      }
+    },
+    {
+      "id": "bundle-create-MORS1",
+      "autocreate": false,
+      "autodelete": false,
+      "resource": {
+        "reference": "/FHIRSandbox/MedCom/401-Hospitalnotification/receive/Userstory/_reference/resources/MORS_1.xml"
+      }
+    }
+  ],
   "origin": [
     {
       "index": 1,
@@ -44,24 +62,6 @@
       }
     }
   ],
-  "fixture": [
-    {
-      "id": "bundle-create-MORS",
-      "autocreate": false,
-      "autodelete": false,
-      "resource": {
-        "reference": "/FHIRSandbox/MedCom/401-Hospitalnotification/receive/Userstory/_reference/resources/MORS_1.xml"
-      }
-    },
-    {
-      "id": "bundle-create-ack-OK",
-      "autocreate": false,
-      "autodelete": false,
-      "resource": {
-        "reference": "/FHIRSandbox/MedCom/401-Acknowledgement/_reference/resources/Acknowledgement-ok.xml"
-      }
-    }
-  ],
   "profile": [
     {
       "id": "hospitalnotification-profile",
@@ -70,19 +70,24 @@
   ],
   "variable": [
     {
-      "name": "destinationUri",
+      "name": "destinationUri1",
       "expression": "Bundle.entry.resource.ofType(MessageHeader).destination.endpoint",
-      "sourceId": "bundle-create-MORS"
+      "sourceId": "bundle-create-MORS1"
     },
     {
-      "name": "MessageHeaderIdentifier",
+      "name": "KorrektMHID1",
+      "expression": "Bundle.entry.resource.ofType(Bundle).id",
+      "sourceId": "bundle-get-MORS1"
+    },
+    {
+      "name": "MessageHeaderIdentifier1",
       "expression": "Bundle.entry[0].fullUrl",
-      "sourceId": "bundle-create-MORS"
+      "sourceId": "bundle-create-MORS1"
     },
     {
-      "name": "ProvenanceID",
+      "name": "ProvenanceID1",
       "expression": "Bundle.entry.resource.ofType(Provenance).id",
-      "sourceId": "bundle-create-MORS"
+      "sourceId": "bundle-create-MORS1"
     }
   ],
   "setup": {
@@ -97,7 +102,7 @@
           "description": "System-generated search and delete operations from conditional delete on Bundle MessageHeader).destination.endpoint",
           "accept": "xml",
           "encodeRequestUrl": true,
-          "params": "?message.destination-uri=${destinationUri}"
+          "params": "?message.destination-uri=${destinationUri1}"
         }
       },
       {
@@ -111,24 +116,16 @@
           "accept": "xml",
           "contentType": "xml",
           "encodeRequestUrl": true,
-          "sourceId": "bundle-create-MORS"
-        }
-      },
-      {
-        "assert": {
-          "description": "Confirm that the returned HTTP status is 201(Created).",
-          "direction": "response",
-          "responseCode": "201",
-          "warningOnly": false
+          "sourceId": "bundle-create-MORS1"
         }
       }
     ]
   },
   "test": [
     {
-      "id": "01-MORS-arrival",
-      "name": "HospitalNotification-MORS",
-      "description": "GET a Hospital notification. The expected response is a 200(OK) with a payload of the Hospital notification resource in XML format.",
+      "id": "1-MORS-admitted",
+      "name": "HospitalNotification-MORS1",
+      "description": "GET a Hospital notification MORS. The expected response is a 200(OK) with a payload of the Hospital notification resource in XML format.",
       "action": [
         {
           "operation": {
@@ -137,12 +134,13 @@
               "code": "read"
             },
             "resource": "Bundle",
-            "description": "Patient dies upon arrival at the hospital",
+            "description": "Receive notification-MORS",
             "accept": "xml",
             "destination": 1,
             "encodeRequestUrl": true,
             "origin": 1,
-            "params": "?message.destination-uri=${destinationUri}"
+            "params": "?message.destination-uri=${destinationUri1}",
+            "responseId": "bundle-get-MORS1"
           }
         },
         {
@@ -156,8 +154,8 @@
       ]
     },
     {
-      "id": "3ACK-bundle-create-MORS",
-      "name": "3 Post Acknowledgement-bundle-create-MORS",
+      "id": "1ACK-bundle-create-MORS1",
+      "name": "1 Post Acknowledgement-bundle-create-MORS1",
       "description": "GET ACK",
       "action": [
         {
@@ -215,7 +213,7 @@
             "direction": "request",
             "expression": "Bundle.entry.resource.ofType(MessageHeader).response.identifier",
             "operator": "equals",
-            "value": "${bundleResourceid}",
+            "value": "${KorrektMHID1}",
             "warningOnly": false
           }
         },
@@ -223,7 +221,7 @@
           "assert": {
             "description": "Confirm that the reference original Provenance.entity.what is equal to Id of original messageheader.identifier",
             "direction": "request",
-            "expression": "Bundle.entry.resource.ofType(Provenance).where(entity.what.reference ='${MessageHeaderIdentifier}')",
+            "expression": "Bundle.entry.resource.ofType(Provenance).where(entity.what.reference ='${MessageHeaderIdentifier1}')",
             "warningOnly": false
           }
         },
@@ -239,7 +237,7 @@
           "assert": {
             "description": "Confirm that the id of the original message provenance exist in the ack",
             "direction": "request",
-            "expression": "Bundle.entry.resource.ofType(Provenance).where(id='${ProvenanceID}').exists()",
+            "expression": "Bundle.entry.resource.ofType(Provenance).where(id='${ProvenanceID1}').exists()",
             "warningOnly": false
           }
         }
