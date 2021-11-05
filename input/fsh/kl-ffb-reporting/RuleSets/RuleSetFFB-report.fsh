@@ -29,8 +29,7 @@ RuleSet:  createFfbReportCaseinsightTest(number, fixture)
 * insert testPatientIdentifierExists
 * insert testMunicipalityCaseNumberExists
 * insert testClinicalImpressionContainsRefMunicipalityCaseNumber
-
-//Onlyrelevant for n+1 test
+//Only relevant for n+1 test
 * insert testPatientIdentifierSameAsFirst
 * insert testMunicipalityCaseNumberSameAsFirst
 * insert testServiceRequestSameAsFirst
@@ -58,6 +57,31 @@ RuleSet:  createFfbReportCaseinsightTest(number, fixture)
 * insert testSeverityMatchSpeceficCode(464a2ab6-a7df-4b3a-b74d-7873f4cfe668, cae545f5-2813-4d79-98fc-0a7d770af3cd)
 * insert testSeverityMatchSpeceficCode(01770afa-cd17-41fe-a966-b8895e4d55d8, 5bdde847-2837-416b-ab63-bbff8b7aa531)
 * insert testSeverityMatchSpeceficCode(eff3385d-01fa-4c9c-9850-52e179243f21, cae545f5-2813-4d79-98fc-0a7d770af3cd)
+
+
+//Third documentation phase 
+RuleSet:  createFfbReportCaseinsightTest(number, fixture)
+* insert originClient
+* insert destinationServer
+* insert fixtureFfb({number}, {fixture})
+* insert variableClinicalImpressionCountFindings({number}) //only for 2end test
+* insert actionOperationFfb({number})
+* insert testResourceIsBundle
+* insert testBundleType
+* insert testPatientIdentifierExists
+* insert testMunicipalityCaseNumberExists
+* insert testClinicalImpressionContainsRefMunicipalityCaseNumber
+//Only relevant for n+1 test
+* insert testPatientIdentifierSameAsFirst
+* insert testMunicipalityCaseNumberSameAsFirst
+* insert testServiceRequestSameAsFirst
+* insert testConditionsExists
+* insert testSameNoOfFindingRefAndCondition
+* insert testCarePlanEvaluationCode(code) //dd628e73-d6c9-4837-a2b8-aa62d73bd6ae
+
+
+
+
 
 
 
@@ -145,6 +169,14 @@ RuleSet: testConditionCode(code)
 //Bundle.entry.resource.ofType('Condition').where(code.coding.code = '3f9da5ac-9686-4eeb-b517-b46e17fcb1d7' ).severity.coding.code
 RuleSet: testSeverityMatchSpeceficCode(code, severity)
 * test[=].action[+].assert.description = "Confirm that the Condition {code} exist where severity is {severity} in Bundle.Condition"
+* test[=].action[=].assert.direction = #request
+* test[=].action[=].assert.expression = "Bundle.entry.resource.ofType(Condition).where(code.coding.code = '{code}').severity.coding.code"
+* test[=].action[=].assert.operator = #equals
+* test[=].action[=].assert.value = "{severity}"
+* test[=].action[=].assert.warningOnly = false
+
+RuleSet: testCarePlanEvaluationCode(code)
+* test[=].action[+].assert.description = "Confirm that the CarePlanEvaluationCode is equal to {code}"
 * test[=].action[=].assert.direction = #request
 * test[=].action[=].assert.expression = "Bundle.entry.resource.ofType(Condition).where(code.coding.code = '{code}').severity.coding.code"
 * test[=].action[=].assert.operator = #equals
