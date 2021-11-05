@@ -36,7 +36,28 @@ RuleSet:  createFfbReportCaseinsightTest(number, fixture)
 * insert testServiceRequestSameAsFirst
 * insert testConditionsExists
 * insert testSameNoOfFindingRefAndCondition
+
+* insert testConditionCode(4934e45a-0f93-4c23-a767-2b681378700b)
+* insert testConditionCode(ef4271c4-f942-4194-a2b0-e9a7045eab22)
+* insert testConditionCode(b93216fa-3843-4a7e-85bc-e3ef35a1967f)
+* insert testConditionCode(9959e779-e8ee-47e8-989b-bbff4aae2883)
+* insert testConditionCode(e6f82424-da5a-41d1-bd1a-5796aa79d5f2)
+* insert testConditionCode(f5b8e809-7689-4952-838c-a069c99408b3)
+* insert testConditionCode(52efa2e9-e0dc-41eb-8c01-9865e2fdebae)
+* insert testConditionCode(7a8f247b-baf8-4552-95bb-acf8ef004b74)
+* insert testConditionCode(83342ff3-5f2e-4914-b045-e98357685866)
+* insert testConditionCode(df194a84-6e4b-4f14-a194-d8d9d9a1fcad)
+* insert testConditionCode(3f9da5ac-9686-4eeb-b517-b46e17fcb1d7)
+* insert testConditionCode(685e8517-2f5c-4ef8-a7c4-fa2d008fdd9d)
+* insert testConditionCode(464a2ab6-a7df-4b3a-b74d-7873f4cfe668)
+* insert testConditionCode(01770afa-cd17-41fe-a966-b8895e4d55d8)
 * insert testConditionCode(eff3385d-01fa-4c9c-9850-52e179243f21)
+
+* insert testSeverityMatchSpeceficCode(3f9da5ac-9686-4eeb-b517-b46e17fcb1d7, 5bdde847-2837-416b-ab63-bbff8b7aa531)
+* insert testSeverityMatchSpeceficCode(685e8517-2f5c-4ef8-a7c4-fa2d008fdd9d, 8328ce4a-6238-4f73-bf1a-74aadb68eff8)
+* insert testSeverityMatchSpeceficCode(464a2ab6-a7df-4b3a-b74d-7873f4cfe668, cae545f5-2813-4d79-98fc-0a7d770af3cd)
+* insert testSeverityMatchSpeceficCode(01770afa-cd17-41fe-a966-b8895e4d55d8, 5bdde847-2837-416b-ab63-bbff8b7aa531)
+* insert testSeverityMatchSpeceficCode(eff3385d-01fa-4c9c-9850-52e179243f21, cae545f5-2813-4d79-98fc-0a7d770af3cd)
 
 
 
@@ -113,6 +134,23 @@ RuleSet: testSameNoOfFindingRefAndCondition
 * test[=].action[=].assert.value = "${clinicalImpressionFindingsAmount}"
 * test[=].action[=].assert.warningOnly = false
 
+//Check for specific Condition.codes 
+RuleSet: testConditionCode(code)
+* test[=].action[+].assert.description = "Confirm that the Condition {code} exist in Bundle"
+* test[=].action[=].assert.direction = #request
+* test[=].action[=].assert.expression = "Bundle.entry.resource.ofType(Condition).code.coding.where(code ='{code}').exists()"
+* test[=].action[=].assert.warningOnly = false
+
+//Check that Condition severity match specefic code
+//Bundle.entry.resource.ofType('Condition').where(code.coding.code = '3f9da5ac-9686-4eeb-b517-b46e17fcb1d7' ).severity.coding.code
+RuleSet: testSeverityMatchSpeceficCode(code, severity)
+* test[=].action[+].assert.description = "Confirm that the Condition {code} exist where severity is {severity} in Bundle.Condition"
+* test[=].action[=].assert.direction = #request
+* test[=].action[=].assert.expression = "Bundle.entry.resource.ofType(Condition).where(code.coding.code = '{code}').severity.coding.code"
+* test[=].action[=].assert.operator = #equals
+* test[=].action[=].assert.value = "{severity}"
+* test[=].action[=].assert.warningOnly = false
+
 
 RuleSet: actionOperationFfb(number)
 * test[+].id = "ffb-{number}" 
@@ -174,9 +212,3 @@ RuleSet: destinationServer
 * destination.profile.code = #FHIR-Server
 
 
-//Check for specific Condition.codes 
-RuleSet: testConditionCode(code)
-* test[=].action[+].assert.description = "Confirm that the Condition {code} exist in Bundle"
-* test[=].action[=].assert.direction = #request
-* test[=].action[=].assert.expression = "Bundle.entry.resource.ofType('Condition').code.coding.where(code ='{code}').exists()"
-* test[=].action[=].assert.warningOnly = false

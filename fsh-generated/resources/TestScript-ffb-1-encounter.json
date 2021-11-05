@@ -147,14 +147,6 @@
             "value": "${ServiceRequestFullUrl}",
             "warningOnly": false
           }
-        },
-        {
-          "assert": {
-            "description": "Confirm that the Condition eff3385d-01fa-4c9c-9850-52e179243f21 exist in Bundle",
-            "direction": "request",
-            "expression": "Bundle.entry.resource.ofType('Condition').code.coding.where(code ='eff3385d-01fa-4c9c-9850-52e179243f21').exists()",
-            "warningOnly": false
-          }
         }
       ]
     },
@@ -266,6 +258,176 @@
             "expression": "Bundle.entry.resource.ofType(Condition).count()",
             "operator": "equals",
             "value": "${clinicalImpressionFindingsAmount}",
+            "warningOnly": false
+          }
+        },
+        {
+          "assert": {
+            "description": "Confirm that the Condition 4934e45a-0f93-4c23-a767-2b681378700b exist in Bundle",
+            "direction": "request",
+            "expression": "Bundle.entry.resource.ofType(Condition).code.coding.where(code ='4934e45a-0f93-4c23-a767-2b681378700b').exists()",
+            "warningOnly": false
+          }
+        },
+        {
+          "assert": {
+            "description": "Confirm that the Condition ef4271c4-f942-4194-a2b0-e9a7045eab22 exist in Bundle",
+            "direction": "request",
+            "expression": "Bundle.entry.resource.ofType(Condition).code.coding.where(code ='ef4271c4-f942-4194-a2b0-e9a7045eab22').exists()",
+            "warningOnly": false
+          }
+        },
+        {
+          "assert": {
+            "description": "Confirm that the Condition b93216fa-3843-4a7e-85bc-e3ef35a1967f exist in Bundle",
+            "direction": "request",
+            "expression": "Bundle.entry.resource.ofType(Condition).code.coding.where(code ='b93216fa-3843-4a7e-85bc-e3ef35a1967f').exists()",
+            "warningOnly": false
+          }
+        },
+        {
+          "assert": {
+            "description": "Confirm that the Condition 9959e779-e8ee-47e8-989b-bbff4aae2883 exist in Bundle",
+            "direction": "request",
+            "expression": "Bundle.entry.resource.ofType(Condition).code.coding.where(code ='9959e779-e8ee-47e8-989b-bbff4aae2883').exists()",
+            "warningOnly": false
+          }
+        },
+        {
+          "assert": {
+            "description": "Confirm that the Condition e6f82424-da5a-41d1-bd1a-5796aa79d5f2 exist in Bundle",
+            "direction": "request",
+            "expression": "Bundle.entry.resource.ofType(Condition).code.coding.where(code ='e6f82424-da5a-41d1-bd1a-5796aa79d5f2').exists()",
+            "warningOnly": false
+          }
+        },
+        {
+          "assert": {
+            "description": "Confirm that the Condition f5b8e809-7689-4952-838c-a069c99408b3 exist in Bundle",
+            "direction": "request",
+            "expression": "Bundle.entry.resource.ofType(Condition).code.coding.where(code ='f5b8e809-7689-4952-838c-a069c99408b3').exists()",
+            "warningOnly": false
+          }
+        },
+        {
+          "assert": {
+            "description": "Confirm that the Condition 52efa2e9-e0dc-41eb-8c01-9865e2fdebae exist in Bundle",
+            "direction": "request",
+            "expression": "Bundle.entry.resource.ofType(Condition).code.coding.where(code ='52efa2e9-e0dc-41eb-8c01-9865e2fdebae').exists()",
+            "warningOnly": false
+          }
+        },
+        {
+          "assert": {
+            "description": "Confirm that the Condition 7a8f247b-baf8-4552-95bb-acf8ef004b74 exist in Bundle",
+            "direction": "request",
+            "expression": "Bundle.entry.resource.ofType(Condition).code.coding.where(code ='7a8f247b-baf8-4552-95bb-acf8ef004b74').exists()",
+            "warningOnly": false
+          }
+        },
+        {
+          "assert": {
+            "description": "Confirm that the Condition 83342ff3-5f2e-4914-b045-e98357685866 exist in Bundle",
+            "direction": "request",
+            "expression": "Bundle.entry.resource.ofType(Condition).code.coding.where(code ='83342ff3-5f2e-4914-b045-e98357685866').exists()",
+            "warningOnly": false
+          }
+        },
+        {
+          "assert": {
+            "description": "Confirm that the Condition df194a84-6e4b-4f14-a194-d8d9d9a1fcad exist in Bundle",
+            "direction": "request",
+            "expression": "Bundle.entry.resource.ofType(Condition).code.coding.where(code ='df194a84-6e4b-4f14-a194-d8d9d9a1fcad').exists()",
+            "warningOnly": false
+          }
+        },
+        {
+          "assert": {
+            "description": "Confirm that the Condition 3f9da5ac-9686-4eeb-b517-b46e17fcb1d7 exist in Bundle",
+            "direction": "request",
+            "expression": "Bundle.entry.resource.ofType(Condition).code.coding.where(code ='3f9da5ac-9686-4eeb-b517-b46e17fcb1d7').exists()",
+            "warningOnly": false
+          }
+        },
+        {
+          "assert": {
+            "description": "Confirm that the Condition 685e8517-2f5c-4ef8-a7c4-fa2d008fdd9d exist in Bundle",
+            "direction": "request",
+            "expression": "Bundle.entry.resource.ofType(Condition).code.coding.where(code ='685e8517-2f5c-4ef8-a7c4-fa2d008fdd9d').exists()",
+            "warningOnly": false
+          }
+        },
+        {
+          "assert": {
+            "description": "Confirm that the Condition 464a2ab6-a7df-4b3a-b74d-7873f4cfe668 exist in Bundle",
+            "direction": "request",
+            "expression": "Bundle.entry.resource.ofType(Condition).code.coding.where(code ='464a2ab6-a7df-4b3a-b74d-7873f4cfe668').exists()",
+            "warningOnly": false
+          }
+        },
+        {
+          "assert": {
+            "description": "Confirm that the Condition 01770afa-cd17-41fe-a966-b8895e4d55d8 exist in Bundle",
+            "direction": "request",
+            "expression": "Bundle.entry.resource.ofType(Condition).code.coding.where(code ='01770afa-cd17-41fe-a966-b8895e4d55d8').exists()",
+            "warningOnly": false
+          }
+        },
+        {
+          "assert": {
+            "description": "Confirm that the Condition eff3385d-01fa-4c9c-9850-52e179243f21 exist in Bundle",
+            "direction": "request",
+            "expression": "Bundle.entry.resource.ofType(Condition).code.coding.where(code ='eff3385d-01fa-4c9c-9850-52e179243f21').exists()",
+            "warningOnly": false
+          }
+        },
+        {
+          "assert": {
+            "description": "Confirm that the Condition 3f9da5ac-9686-4eeb-b517-b46e17fcb1d7 exist in Bundle",
+            "direction": "request",
+            "expression": "Bundle.entry.resource.ofType(Condition).where(code.coding.code = '3f9da5ac-9686-4eeb-b517-b46e17fcb1d7').severity.coding.code",
+            "operator": "equals",
+            "value": "5bdde847-2837-416b-ab63-bbff8b7aa531",
+            "warningOnly": false
+          }
+        },
+        {
+          "assert": {
+            "description": "Confirm that the Condition 685e8517-2f5c-4ef8-a7c4-fa2d008fdd9d exist in Bundle",
+            "direction": "request",
+            "expression": "Bundle.entry.resource.ofType(Condition).where(code.coding.code = '685e8517-2f5c-4ef8-a7c4-fa2d008fdd9d').severity.coding.code",
+            "operator": "equals",
+            "value": "8328ce4a-6238-4f73-bf1a-74aadb68eff8",
+            "warningOnly": false
+          }
+        },
+        {
+          "assert": {
+            "description": "Confirm that the Condition 464a2ab6-a7df-4b3a-b74d-7873f4cfe668 exist in Bundle",
+            "direction": "request",
+            "expression": "Bundle.entry.resource.ofType(Condition).where(code.coding.code = '464a2ab6-a7df-4b3a-b74d-7873f4cfe668').severity.coding.code",
+            "operator": "equals",
+            "value": "cae545f5-2813-4d79-98fc-0a7d770af3cd",
+            "warningOnly": false
+          }
+        },
+        {
+          "assert": {
+            "description": "Confirm that the Condition 01770afa-cd17-41fe-a966-b8895e4d55d8 exist in Bundle",
+            "direction": "request",
+            "expression": "Bundle.entry.resource.ofType(Condition).where(code.coding.code = '01770afa-cd17-41fe-a966-b8895e4d55d8').severity.coding.code",
+            "operator": "equals",
+            "value": "5bdde847-2837-416b-ab63-bbff8b7aa531",
+            "warningOnly": false
+          }
+        },
+        {
+          "assert": {
+            "description": "Confirm that the Condition eff3385d-01fa-4c9c-9850-52e179243f21 exist in Bundle",
+            "direction": "request",
+            "expression": "Bundle.entry.resource.ofType(Condition).where(code.coding.code = 'eff3385d-01fa-4c9c-9850-52e179243f21').severity.coding.code",
+            "operator": "equals",
+            "value": "cae545f5-2813-4d79-98fc-0a7d770af3cd",
             "warningOnly": false
           }
         }
