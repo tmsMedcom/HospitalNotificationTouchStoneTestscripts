@@ -60,6 +60,14 @@
       "resource": {
         "reference": "/FHIRSandbox/MedCom/401-ffb-reporting/send/Userstory/_reference/resources/02Encounter.xml"
       }
+    },
+    {
+      "id": "bundle-create-3",
+      "autocreate": false,
+      "autodelete": false,
+      "resource": {
+        "reference": "/FHIRSandbox/MedCom/401-ffb-reporting/send/Userstory/_reference/resources/03Encounter.xml"
+      }
     }
   ],
   "variable": [
@@ -82,6 +90,16 @@
       "name": "clinicalImpressionFindingsAmount",
       "expression": "Bundle.entry.resource.ofType(ClinicalImpression).finding.count()",
       "sourceId": "bundle-create-2"
+    },
+    {
+      "name": "clinicalImpressionFindingsAmount",
+      "expression": "Bundle.entry.resource.ofType(ClinicalImpression).finding.count()",
+      "sourceId": "bundle-create-3"
+    },
+    {
+      "name": "observationFullUrl3",
+      "expression": "Bundle.entry.where(resource.ofType(Observation)).fullUrl",
+      "sourceId": "bundle-create-3"
     }
   ],
   "test": [
@@ -184,14 +202,6 @@
             "expression": "Bundle.type",
             "operator": "equals",
             "value": "collection",
-            "warningOnly": false
-          }
-        },
-        {
-          "assert": {
-            "description": "Confirm that the Patient contains an Identifier",
-            "direction": "request",
-            "expression": "Bundle.entry.resource.ofType(Patient).identifier.exists()",
             "warningOnly": false
           }
         },
@@ -383,7 +393,7 @@
         },
         {
           "assert": {
-            "description": "Confirm that the Condition 3f9da5ac-9686-4eeb-b517-b46e17fcb1d7 exist in Bundle",
+            "description": "Confirm that the Condition 3f9da5ac-9686-4eeb-b517-b46e17fcb1d7 exist where severity is 5bdde847-2837-416b-ab63-bbff8b7aa531 in Bundle.Condition",
             "direction": "request",
             "expression": "Bundle.entry.resource.ofType(Condition).where(code.coding.code = '3f9da5ac-9686-4eeb-b517-b46e17fcb1d7').severity.coding.code",
             "operator": "equals",
@@ -393,7 +403,7 @@
         },
         {
           "assert": {
-            "description": "Confirm that the Condition 685e8517-2f5c-4ef8-a7c4-fa2d008fdd9d exist in Bundle",
+            "description": "Confirm that the Condition 685e8517-2f5c-4ef8-a7c4-fa2d008fdd9d exist where severity is 8328ce4a-6238-4f73-bf1a-74aadb68eff8 in Bundle.Condition",
             "direction": "request",
             "expression": "Bundle.entry.resource.ofType(Condition).where(code.coding.code = '685e8517-2f5c-4ef8-a7c4-fa2d008fdd9d').severity.coding.code",
             "operator": "equals",
@@ -403,7 +413,7 @@
         },
         {
           "assert": {
-            "description": "Confirm that the Condition 464a2ab6-a7df-4b3a-b74d-7873f4cfe668 exist in Bundle",
+            "description": "Confirm that the Condition 464a2ab6-a7df-4b3a-b74d-7873f4cfe668 exist where severity is cae545f5-2813-4d79-98fc-0a7d770af3cd in Bundle.Condition",
             "direction": "request",
             "expression": "Bundle.entry.resource.ofType(Condition).where(code.coding.code = '464a2ab6-a7df-4b3a-b74d-7873f4cfe668').severity.coding.code",
             "operator": "equals",
@@ -413,7 +423,7 @@
         },
         {
           "assert": {
-            "description": "Confirm that the Condition 01770afa-cd17-41fe-a966-b8895e4d55d8 exist in Bundle",
+            "description": "Confirm that the Condition 01770afa-cd17-41fe-a966-b8895e4d55d8 exist where severity is 5bdde847-2837-416b-ab63-bbff8b7aa531 in Bundle.Condition",
             "direction": "request",
             "expression": "Bundle.entry.resource.ofType(Condition).where(code.coding.code = '01770afa-cd17-41fe-a966-b8895e4d55d8').severity.coding.code",
             "operator": "equals",
@@ -423,11 +433,166 @@
         },
         {
           "assert": {
-            "description": "Confirm that the Condition eff3385d-01fa-4c9c-9850-52e179243f21 exist in Bundle",
+            "description": "Confirm that the Condition eff3385d-01fa-4c9c-9850-52e179243f21 exist where severity is cae545f5-2813-4d79-98fc-0a7d770af3cd in Bundle.Condition",
             "direction": "request",
             "expression": "Bundle.entry.resource.ofType(Condition).where(code.coding.code = 'eff3385d-01fa-4c9c-9850-52e179243f21').severity.coding.code",
             "operator": "equals",
             "value": "cae545f5-2813-4d79-98fc-0a7d770af3cd",
+            "warningOnly": false
+          }
+        }
+      ]
+    },
+    {
+      "id": "ffb-3",
+      "name": "3 Post ffb-report",
+      "description": "Post ffb-report",
+      "action": [
+        {
+          "operation": {
+            "type": {
+              "system": "http://terminology.hl7.org/CodeSystem/testscript-operation-codes",
+              "code": "create"
+            },
+            "resource": "Bundle",
+            "description": "Post a ffb-report",
+            "destination": 1,
+            "encodeRequestUrl": true,
+            "origin": 1,
+            "sourceId": "bundle-create-3"
+          }
+        },
+        {
+          "assert": {
+            "description": "Confirm that the client request payload contains a Bundle resource type.",
+            "direction": "request",
+            "resource": "Bundle",
+            "warningOnly": false
+          }
+        },
+        {
+          "assert": {
+            "description": "Confirm that the Bundle is of type collection",
+            "direction": "request",
+            "expression": "Bundle.type",
+            "operator": "equals",
+            "value": "collection",
+            "warningOnly": false
+          }
+        },
+        {
+          "assert": {
+            "description": "Confirm that the Bundle contains a ServiceRequest MunicipalityCaseNumber",
+            "direction": "request",
+            "expression": "Bundle.entry.resource.ofType(ServiceRequest).extension.where(url= 'http://ffb/reporting/kl.dk/1.0/StructureDefinition/kl-reporting-ffb-municipalityCaseNumber').extension.where(url= 'municipalitySpecific').value.value.exists()",
+            "warningOnly": false
+          }
+        },
+        {
+          "assert": {
+            "description": "Confirm that the ClinicalImpression contains reference to the ServiceRequest MunicipalityCaseNumber",
+            "direction": "request",
+            "expression": "Bundle.entry.resource.ofType(ClinicalImpression).extension.where(url= 'http://kl.dk/fhir/common/caresocial/StructureDefinition/BasedOnServiceRequest').value.reference",
+            "operator": "equals",
+            "value": "${ServiceRequestFullUrl}",
+            "warningOnly": false
+          }
+        },
+        {
+          "assert": {
+            "description": "Confirm that the Patient Identifier is same as Previous",
+            "direction": "request",
+            "expression": "Bundle.entry.resource.ofType(Patient).identifier.value",
+            "operator": "equals",
+            "value": "${patientIdentifier}",
+            "warningOnly": false
+          }
+        },
+        {
+          "assert": {
+            "description": "Confirm that the Bundle contains a ServiceRequest MunicipalityCaseNumber",
+            "direction": "request",
+            "expression": "Bundle.entry.resource.ofType(ServiceRequest).extension.where(url= 'http://ffb/reporting/kl.dk/1.0/StructureDefinition/kl-reporting-ffb-municipalityCaseNumber').extension.where(url= 'municipalitySpecific').value.value",
+            "operator": "equals",
+            "value": "${municipalityCaseNumber}",
+            "warningOnly": false
+          }
+        },
+        {
+          "assert": {
+            "description": "Confirm that the ServiceRequest is the same as the first",
+            "direction": "request",
+            "expression": "Bundle.entry.where(resource.ofType(ServiceRequest)).fullUrl",
+            "operator": "equals",
+            "value": "${ServiceRequestFullUrl}",
+            "warningOnly": false
+          }
+        },
+        {
+          "assert": {
+            "description": "Test that there exists at least 1 Condition in the bundle ",
+            "direction": "request",
+            "expression": "Bundle.entry.resource.ofType(Condition).count() > 0",
+            "warningOnly": false
+          }
+        },
+        {
+          "assert": {
+            "description": "Make sure the numbers of ClinicalImpression.finding and Conditions is equal ",
+            "direction": "request",
+            "expression": "Bundle.entry.resource.ofType(Condition).count()",
+            "operator": "equals",
+            "value": "${clinicalImpressionFindingsAmount}",
+            "warningOnly": false
+          }
+        },
+        {
+          "assert": {
+            "description": "Confirm that the CarePlanEvaluationCode is equal to dd628e73-d6c9-4837-a2b8-aa62d73bd6ae",
+            "direction": "request",
+            "expression": "Bundle.entry.resource.ofType(Observation).value.where(coding.system = 'http://kl.dk/fhir/common/caresocial/CodeSystem/FFB').coding.code",
+            "operator": "equals",
+            "value": "dd628e73-d6c9-4837-a2b8-aa62d73bd6ae",
+            "warningOnly": false
+          }
+        },
+        {
+          "assert": {
+            "description": "Confirm that the Careplan outcomeReference refference CarePlanEvalution",
+            "direction": "request",
+            "expression": "Bundle.entry.resource.ofType(CarePlan).activity.outcomeReference.reference",
+            "operator": "equals",
+            "value": "${observationFullUrl3}",
+            "warningOnly": false
+          }
+        },
+        {
+          "assert": {
+            "description": "Confirm that the changevalue is of taget type funktionsevneniveau",
+            "direction": "request",
+            "expression": "Bundle.entry.resource.ofType(Goal).target.where(detail.coding.code = '8328ce4a-6238-4f73-bf1a-74aadb68eff8').measure.coding.code",
+            "operator": "equals",
+            "value": "66959f77-6e2a-4574-8423-3ff097f8b9fa",
+            "warningOnly": false
+          }
+        },
+        {
+          "assert": {
+            "description": "Confirm that the changevalue is of taget type funktionsevneniveau",
+            "direction": "request",
+            "expression": "Bundle.entry.resource.ofType(Goal).target.where(detail.coding.code = 'b508ff66-6326-4862-a6d7-7bbf184c9823').measure.coding.code",
+            "operator": "equals",
+            "value": "66959f77-6e2a-4574-8423-3ff097f8b9fa",
+            "warningOnly": false
+          }
+        },
+        {
+          "assert": {
+            "description": "Confirm that the changevalue is of taget type funktionsevneniveau",
+            "direction": "request",
+            "expression": "Bundle.entry.resource.ofType(Goal).target.where(detail.coding.code = 'cae545f5-2813-4d79-98fc-0a7d770af3cd').measure.coding.code",
+            "operator": "equals",
+            "value": "66959f77-6e2a-4574-8423-3ff097f8b9fa",
             "warningOnly": false
           }
         }

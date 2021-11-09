@@ -8,5 +8,8 @@ InstanceOf: TestScript
 * description = "Testing correct use of First documentation phase"
 * insert  createFfbReportCaseOpeningTest( 1, /FHIRSandbox/MedCom/401-ffb-reporting/send/Userstory/_reference/resources/01Encounter.xml)
 
-/**/
+/*Second documentation phase.*/
 * insert  createFfbReportCaseinsightTest( 2, /FHIRSandbox/MedCom/401-ffb-reporting/send/Userstory/_reference/resources/02Encounter.xml)
+
+//Third documentation phase 
+* insert createFfbReportCaseassesment(3, /FHIRSandbox/MedCom/401-ffb-reporting/send/Userstory/_reference/resources/03Encounter.xml)

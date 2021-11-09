@@ -18,15 +18,14 @@ RuleSet:  createFfbReportCaseOpeningTest(number, fixture)
 
 
 //Second documentation phase. Check: citizen, same CaseNumber
-RuleSet:  createFfbReportCaseinsightTest(number, fixture)
+RuleSet: createFfbReportCaseinsightTest(number, fixture)
 * insert originClient
 * insert destinationServer
-* insert fixtureFfb({number}, {fixture})
+* insert fixtureFfb({number}, {fixture}) //Fixture is equal to example instans. 
 * insert variableClinicalImpressionCountFindings({number}) //only for 2end test
 * insert actionOperationFfb({number})
 * insert testResourceIsBundle
 * insert testBundleType
-* insert testPatientIdentifierExists
 * insert testMunicipalityCaseNumberExists
 * insert testClinicalImpressionContainsRefMunicipalityCaseNumber
 //Only relevant for n+1 test
@@ -60,15 +59,15 @@ RuleSet:  createFfbReportCaseinsightTest(number, fixture)
 
 
 //Third documentation phase 
-RuleSet:  createFfbReportCaseinsightTest(number, fixture)
+RuleSet: createFfbReportCaseassesment(number, fixture)
 * insert originClient
 * insert destinationServer
 * insert fixtureFfb({number}, {fixture})
 * insert variableClinicalImpressionCountFindings({number}) //only for 2end test
+* insert variableObservationFullUrl({number})
 * insert actionOperationFfb({number})
 * insert testResourceIsBundle
 * insert testBundleType
-* insert testPatientIdentifierExists
 * insert testMunicipalityCaseNumberExists
 * insert testClinicalImpressionContainsRefMunicipalityCaseNumber
 //Only relevant for n+1 test
@@ -77,8 +76,12 @@ RuleSet:  createFfbReportCaseinsightTest(number, fixture)
 * insert testServiceRequestSameAsFirst
 * insert testConditionsExists
 * insert testSameNoOfFindingRefAndCondition
-* insert testCarePlanEvaluationCode(code) //dd628e73-d6c9-4837-a2b8-aa62d73bd6ae
-
+* insert testCarePlanEvaluationCode(dd628e73-d6c9-4837-a2b8-aa62d73bd6ae) //Let støttebehov
+* insert testCarePlanRefEvalution({number})
+* insert testGoalTargetTypeValueIsFunktionsevneniveau(8328ce4a-6238-4f73-bf1a-74aadb68eff8) 
+* insert testGoalTargetTypeValueIsFunktionsevneniveau(b508ff66-6326-4862-a6d7-7bbf184c9823) 
+* insert testGoalTargetTypeValueIsFunktionsevneniveau(cae545f5-2813-4d79-98fc-0a7d770af3cd) 
+* insert testGoalConditionRankCount(5)
 
 
 
@@ -175,14 +178,39 @@ RuleSet: testSeverityMatchSpeceficCode(code, severity)
 * test[=].action[=].assert.value = "{severity}"
 * test[=].action[=].assert.warningOnly = false
 
+//Due to 3rd encounter check that the CarePlanEvaluation Observation code is equal to the code in exampel encounter 3.
 RuleSet: testCarePlanEvaluationCode(code)
 * test[=].action[+].assert.description = "Confirm that the CarePlanEvaluationCode is equal to {code}"
 * test[=].action[=].assert.direction = #request
-* test[=].action[=].assert.expression = "Bundle.entry.resource.ofType(Condition).where(code.coding.code = '{code}').severity.coding.code"
+* test[=].action[=].assert.expression = "Bundle.entry.resource.ofType(Observation).value.where(coding.system = 'http://kl.dk/fhir/common/caresocial/CodeSystem/FFB').coding.code"
 * test[=].action[=].assert.operator = #equals
-* test[=].action[=].assert.value = "{severity}"
+* test[=].action[=].assert.value = "{code}"
 * test[=].action[=].assert.warningOnly = false
 
+RuleSet: testCarePlanRefEvalution(number)
+* test[=].action[+].assert.description = "Confirm that the Careplan outcomeReference refference CarePlanEvalution"
+* test[=].action[=].assert.direction = #request
+* test[=].action[=].assert.expression = "Bundle.entry.resource.ofType(CarePlan).activity.outcomeReference.reference"
+* test[=].action[=].assert.operator = #equals
+* test[=].action[=].assert.value = "${observationFullUrl{number}}"
+* test[=].action[=].assert.warningOnly = false
+
+//Used for 3ed encounter
+RuleSet: testGoalTargetTypeValueIsFunktionsevneniveau(code) 
+* test[=].action[+].assert.description = "Confirm that the changevalue is of taget type funktionsevneniveau"
+* test[=].action[=].assert.direction = #request
+* test[=].action[=].assert.expression = "Bundle.entry.resource.ofType(Goal).target.where(detail.coding.code = '{code}').measure.coding.code"
+* test[=].action[=].assert.operator = #equals
+* test[=].action[=].assert.value = "66959f77-6e2a-4574-8423-3ff097f8b9fa"
+* test[=].action[=].assert.warningOnly = false
+
+RuleSet: testGoalConditionRankCount(expectedNo)
+* test[=].action[+].assert.description = "Confirm that the changevalue is of taget type funktionsevneniveau"
+* test[=].action[=].assert.direction = #request
+* test[=].action[=].assert.expression = "Bundle.entry.resource.ofType(Goal).addresses.extension.where(url = 'http://kl.dk/fhir/common/caresocial/StructureDefinition/ConditionRank').count()"
+* test[=].action[=].assert.operator = #equals
+* test[=].action[=].assert.value = "{expectedNo}"
+* test[=].action[=].assert.warningOnly = false
 
 RuleSet: actionOperationFfb(number)
 * test[+].id = "ffb-{number}" 
@@ -220,6 +248,12 @@ RuleSet: variableServiceRequestFullUrl(number)
 RuleSet: variableClinicalImpressionCountFindings(number)
 * variable[+].name = "clinicalImpressionFindingsAmount"
 * variable[=].expression = "Bundle.entry.resource.ofType(ClinicalImpression).finding.count()"
+* variable[=].sourceId = "bundle-create-{number}"
+
+//For the 3th test to compare ref to observation
+RuleSet: variableObservationFullUrl(number)
+* variable[+].name = "observationFullUrl{number}"
+* variable[=].expression = "Bundle.entry.where(resource.ofType(Observation)).fullUrl"
 * variable[=].sourceId = "bundle-create-{number}"
 
 
