@@ -7,12 +7,24 @@ RuleSet:  CreateFfbReportCaseOpeningTest(number, fixture)
 * insert variableMunicipalityCaseNumber({number})
 * insert variablePatientIdentifier({number})
 * insert variableServiceRequestFullUrl({number}) //Only assign in first test
+
 //* insert profileFfb //only add once
 * insert actionOperationFfb({number})
+
+//Test: Is it a bundle
 * insert testResourceIsBundle
+
+//Test: is bundle.Type equal collection
 * insert testBundleType
+
+//Test: Is Patient.Identifier existing 
 * insert testPatientIdentifierExists
+
+//Test: Is MunicipalityCaseNumber existsing
 * insert testMunicipalityCaseNumberExists
+
+//Test: Is ClinicalImpression containing a refference to 
+//MunicipalityCaseNumber
 * insert testClinicalImpressionContainsRefMunicipalityCaseNumber
 
 
@@ -21,20 +33,33 @@ RuleSet:  CreateFfbReportCaseOpeningTest(number, fixture)
 RuleSet: CreateFfbReportCaseinsightTest(number, fixture)
 * insert originClient
 * insert destinationServer
-* insert fixtureFfb({number}, {fixture}) //Fixture is equal to example instans. 
+* insert fixtureFfb({number}, {fixture})
 * insert variableClinicalImpressionCountFindings({number}) //only for 2end test
 * insert actionOperationFfb({number})
 * insert testResourceIsBundle
 * insert testBundleType
 * insert testMunicipalityCaseNumberExists
 * insert testClinicalImpressionContainsRefMunicipalityCaseNumber
+
 //Only relevant for n+1 test
-* insert testPatientIdentifierSameAsFirst
-* insert testMunicipalityCaseNumberSameAsFirst
-* insert testServiceRequestSameAsFirst
+
+//Test: Is the Patient.Identifier equal to First patient 
+* insert testPatientIdentifirEqualsFirst
+
+//Test: Is MunicipalityCaseNumber equal to Fist MunicipalityCaseNumber
+* insert testMunicipalityCaseNumberEqualsFist
+
+//Test: Is ServiceRequest Equal to first ServiceRequest
+* insert testServiceRequestEqualsFirst
+
+//Test: Is Conditions Existing in the bundle
 * insert testConditionsExists
+
+//Test: is the number of FindingRefferences and Conditions the same. 
 * insert testSameNoOfFindingRefAndCondition
 
+//Test: is the ConditinCodes from the 2nd Encounter 
+//https://build.fhir.org/ig/hl7dk/kl-ffb-reporting/example.html#2nd-encounter--second-documentation-phase--case-insight in the bundle
 * insert testConditionCode(4934e45a-0f93-4c23-a767-2b681378700b)
 * insert testConditionCode(ef4271c4-f942-4194-a2b0-e9a7045eab22)
 * insert testConditionCode(b93216fa-3843-4a7e-85bc-e3ef35a1967f)
@@ -51,6 +76,8 @@ RuleSet: CreateFfbReportCaseinsightTest(number, fixture)
 * insert testConditionCode(01770afa-cd17-41fe-a966-b8895e4d55d8)
 * insert testConditionCode(eff3385d-01fa-4c9c-9850-52e179243f21)
 
+//Test: Is the Severity.code matching the expected Condition code.
+// from 2en encounter https://build.fhir.org/ig/hl7dk/kl-ffb-reporting/example.html#2nd-encounter--second-documentation-phase--case-insight 
 * insert testSeverityMatchSpeceficCode(3f9da5ac-9686-4eeb-b517-b46e17fcb1d7, 5bdde847-2837-416b-ab63-bbff8b7aa531)
 * insert testSeverityMatchSpeceficCode(685e8517-2f5c-4ef8-a7c4-fa2d008fdd9d, 8328ce4a-6238-4f73-bf1a-74aadb68eff8)
 * insert testSeverityMatchSpeceficCode(464a2ab6-a7df-4b3a-b74d-7873f4cfe668, cae545f5-2813-4d79-98fc-0a7d770af3cd)
@@ -71,16 +98,30 @@ RuleSet: CreateFfbReportCaseassesment(number, fixture)
 * insert testMunicipalityCaseNumberExists
 * insert testClinicalImpressionContainsRefMunicipalityCaseNumber
 //Only relevant for n+1 test
-* insert testPatientIdentifierSameAsFirst
-* insert testMunicipalityCaseNumberSameAsFirst
-* insert testServiceRequestSameAsFirst
+* insert testPatientIdentifirEqualsFirst
+* insert testMunicipalityCaseNumberEqualsFist
+* insert testServiceRequestEqualsFirst
 * insert testConditionsExists
 * insert testSameNoOfFindingRefAndCondition
-* insert testCarePlanEvaluationCode(dd628e73-d6c9-4837-a2b8-aa62d73bd6ae) //Let støttebehov
+
+//below specific tests for 3rd encounter.
+
+//Test: that the CarePlanEvalutionCode Let støttebehov exists
+* insert testCarePlanEvaluationCode(dd628e73-d6c9-4837-a2b8-aa62d73bd6ae) 
+
+//Test: Careplan outcomeReference refference CarePlanEvalution
 * insert testCarePlanRefEvalution({number})
+
+//Test: changevalue: Let nedsat funktionsevne  is of taget.type funktionsevneniveau (66959f77-6e2a-4574-8423-3ff097f8b9fa) 
 * insert testGoalTargetTypeValueIsFunktionsevneniveau(8328ce4a-6238-4f73-bf1a-74aadb68eff8) 
+
+//Test: changevalue: Ingen nedsat funktionsevne is of taget.type funktionsevneniveau (66959f77-6e2a-4574-8423-3ff097f8b9fa) 
 * insert testGoalTargetTypeValueIsFunktionsevneniveau(b508ff66-6326-4862-a6d7-7bbf184c9823) 
+
+//Test: changevalue: Svært nedsat funktionsevne is of taget.type funktionsevneniveau (66959f77-6e2a-4574-8423-3ff097f8b9fa) 
 * insert testGoalTargetTypeValueIsFunktionsevneniveau(cae545f5-2813-4d79-98fc-0a7d770af3cd) 
+
+//Test: The numbers of Ranked GoalConditions is 5 according to DeliveryReport-3rd-Encounter
 * insert testGoalConditionRankCount(5)
 
 
@@ -103,7 +144,7 @@ RuleSet: testMunicipalityCaseNumberExists
 * test[=].action[=].assert.expression = "Bundle.entry.resource.ofType(ServiceRequest).extension.where(url= 'http://ffb/reporting/kl.dk/1.0/StructureDefinition/kl-reporting-ffb-municipalityCaseNumber').extension.where(url= 'municipalitySpecific').value.value.exists()"
 * test[=].action[=].assert.warningOnly = false
 
-RuleSet: testMunicipalityCaseNumberSameAsFirst
+RuleSet: testMunicipalityCaseNumberEqualsFist
 * test[=].action[+].assert.description = "Confirm that the Bundle contains a ServiceRequest MunicipalityCaseNumber"
 * test[=].action[=].assert.direction = #request
 * test[=].action[=].assert.expression = "Bundle.entry.resource.ofType(ServiceRequest).extension.where(url= 'http://ffb/reporting/kl.dk/1.0/StructureDefinition/kl-reporting-ffb-municipalityCaseNumber').extension.where(url= 'municipalitySpecific').value.value"
@@ -117,7 +158,7 @@ RuleSet: testPatientIdentifierExists
 * test[=].action[=].assert.expression = "Bundle.entry.resource.ofType(Patient).identifier.exists()"
 * test[=].action[=].assert.warningOnly = false
 
-RuleSet: testPatientIdentifierSameAsFirst
+RuleSet: testPatientIdentifirEqualsFirst
 * test[=].action[+].assert.description = "Confirm that the Patient Identifier is same as Previous"
 * test[=].action[=].assert.direction = #request
 * test[=].action[=].assert.expression = "Bundle.entry.resource.ofType(Patient).identifier.value"
@@ -139,7 +180,7 @@ RuleSet: testResourceIsBundle
 * test[=].action[=].assert.resource = #Bundle
 * test[=].action[=].assert.warningOnly = false
 
-RuleSet: testServiceRequestSameAsFirst
+RuleSet: testServiceRequestEqualsFirst
 * test[=].action[+].assert.description = "Confirm that the ServiceRequest is the same as the first"
 * test[=].action[=].assert.direction = #request
 * test[=].action[=].assert.expression = "Bundle.entry.where(resource.ofType(ServiceRequest)).fullUrl"
@@ -169,7 +210,6 @@ RuleSet: testConditionCode(code)
 * test[=].action[=].assert.warningOnly = false
 
 //Check that Condition severity match specefic code
-//Bundle.entry.resource.ofType('Condition').where(code.coding.code = '3f9da5ac-9686-4eeb-b517-b46e17fcb1d7' ).severity.coding.code
 RuleSet: testSeverityMatchSpeceficCode(code, severity)
 * test[=].action[+].assert.description = "Confirm that the Condition {code} exist where severity is {severity} in Bundle.Condition"
 * test[=].action[=].assert.direction = #request
@@ -205,7 +245,7 @@ RuleSet: testGoalTargetTypeValueIsFunktionsevneniveau(code)
 * test[=].action[=].assert.warningOnly = false
 
 RuleSet: testGoalConditionRankCount(expectedNo)
-* test[=].action[+].assert.description = "Confirm that the changevalue is of taget type funktionsevneniveau"
+* test[=].action[+].assert.description = "Confirm that the numbers of GoalConditionRank is equal to {expectedNo}"
 * test[=].action[=].assert.direction = #request
 * test[=].action[=].assert.expression = "Bundle.entry.resource.ofType(Goal).addresses.extension.where(url = 'http://kl.dk/fhir/common/caresocial/StructureDefinition/ConditionRank').count()"
 * test[=].action[=].assert.operator = #equals
