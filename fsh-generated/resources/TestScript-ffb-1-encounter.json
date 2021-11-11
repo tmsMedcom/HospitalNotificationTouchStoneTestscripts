@@ -595,6 +595,16 @@
             "value": "66959f77-6e2a-4574-8423-3ff097f8b9fa",
             "warningOnly": false
           }
+        },
+        {
+          "assert": {
+            "description": "Confirm that the changevalue is of taget type funktionsevneniveau",
+            "direction": "request",
+            "expression": "Bundle.entry.resource.ofType(Goal).addresses.extension.where(url = 'http://kl.dk/fhir/common/caresocial/StructureDefinition/ConditionRank').count()",
+            "operator": "equals",
+            "value": "5",
+            "warningOnly": false
+          }
         }
       ]
     }

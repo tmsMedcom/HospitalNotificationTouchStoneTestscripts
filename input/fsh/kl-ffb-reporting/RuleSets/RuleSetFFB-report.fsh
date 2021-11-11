@@ -1,6 +1,6 @@
 
 //1stFirst documentation phase
-RuleSet:  createFfbReportCaseOpeningTest(number, fixture)
+RuleSet:  CreateFfbReportCaseOpeningTest(number, fixture)
 * insert originClient
 * insert destinationServer
 * insert fixtureFfb({number}, {fixture})
@@ -18,7 +18,7 @@ RuleSet:  createFfbReportCaseOpeningTest(number, fixture)
 
 
 //Second documentation phase. Check: citizen, same CaseNumber
-RuleSet: createFfbReportCaseinsightTest(number, fixture)
+RuleSet: CreateFfbReportCaseinsightTest(number, fixture)
 * insert originClient
 * insert destinationServer
 * insert fixtureFfb({number}, {fixture}) //Fixture is equal to example instans. 
@@ -59,7 +59,7 @@ RuleSet: createFfbReportCaseinsightTest(number, fixture)
 
 
 //Third documentation phase 
-RuleSet: createFfbReportCaseassesment(number, fixture)
+RuleSet: CreateFfbReportCaseassesment(number, fixture)
 * insert originClient
 * insert destinationServer
 * insert fixtureFfb({number}, {fixture})
