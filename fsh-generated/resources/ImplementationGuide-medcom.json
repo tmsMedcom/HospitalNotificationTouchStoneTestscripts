@@ -416,6 +416,13 @@
         },
         "name": "TestinstanceUFHV16-with-ACK",
         "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "TestScript/ffb-1-encounter"
+        },
+        "name": "ffb-1st-encounter",
+        "exampleBoolean": true
       }
     ],
     "page": {
