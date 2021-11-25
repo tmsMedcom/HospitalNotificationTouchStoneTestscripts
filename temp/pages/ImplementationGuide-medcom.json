@@ -10,7 +10,7 @@
   "name": "HospitalnotificationTestscripts",
   "title": "HospitalNotification Testscripts",
   "status": "draft",
-  "date": "2021-11-01T16:43:12+01:00",
+  "date": "2021-11-19T10:31:09+01:00",
   "contact": [
     {
       "name": "MedCom",
@@ -313,20 +313,6 @@
           }
         ],
         "reference": {
-          "reference": "TestScript/3e345dfd-32bb-4b0f-92f4-b5798f7c27e4"
-        },
-        "name": "TestinstanceACKfatal-error",
-        "description": "Testing correct use of acknowledgment",
-        "exampleBoolean": true
-      },
-      {
-        "extension": [
-          {
-            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-            "valueString": "TestScript"
-          }
-        ],
-        "reference": {
           "reference": "TestScript/5e657b1f-060e-423f-b198-fa8ffee77b87"
         },
         "name": "GeneratedHNrecScript",
@@ -341,38 +327,346 @@
           }
         ],
         "reference": {
-          "reference": "TestScript/83e8e271-ced4-4ca7-ad4b-256ca00ed07f"
-        },
-        "name": "TestinstanceACKOK",
-        "description": "Testing correct use of acknowledgment",
-        "exampleBoolean": true
-      },
-      {
-        "extension": [
-          {
-            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-            "valueString": "TestScript"
-          }
-        ],
-        "reference": {
-          "reference": "TestScript/92446d93-ec60-4151-b550-3ef6a1b37e08"
-        },
-        "name": "TestinstanceACKtransient-error",
-        "description": "Testing correct use of acknowledgment",
-        "exampleBoolean": true
-      },
-      {
-        "extension": [
-          {
-            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-            "valueString": "TestScript"
-          }
-        ],
-        "reference": {
           "reference": "TestScript/ACK01-ok"
         },
         "name": "TestinstanceACK-OK",
         "description": "Testing correct use of acknowledgment",
+        "exampleBoolean": true
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "TestScript"
+          }
+        ],
+        "reference": {
+          "reference": "TestScript/HS-Cancellation-of-deseased-emer"
+        },
+        "name": "HS-send-cancel-discharge-emergency-home-an-mors",
+        "description": "Testing correct use of Cancellation-of-deseased",
+        "exampleBoolean": true
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "TestScript"
+          }
+        ],
+        "reference": {
+          "reference": "TestScript/HS-Cancellation-of-deseased-imp"
+        },
+        "name": "HS-send-cancel-discharge-inpatient-home-an-mors",
+        "description": "Testing correct use of Cancellation-of-deseased-imp",
+        "exampleBoolean": true
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "TestScript"
+          }
+        ],
+        "reference": {
+          "reference": "TestScript/HS-admit-emergency"
+        },
+        "name": "HS-send-admit-emergency",
+        "description": "Testing correct use of status admit-emergency",
+        "exampleBoolean": true
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "TestScript"
+          }
+        ],
+        "reference": {
+          "reference": "TestScript/HS-admit-inpatient"
+        },
+        "name": "HS-send-admit-inpatient",
+        "description": "Testing correct use of status admit-inpatient",
+        "exampleBoolean": true
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "TestScript"
+          }
+        ],
+        "reference": {
+          "reference": "TestScript/HS-cancel-admit-emergency"
+        },
+        "name": "HS-send-cancel-admit-emergency",
+        "description": "Testing correct use of status stay-acute ambulant",
+        "exampleBoolean": true
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "TestScript"
+          }
+        ],
+        "reference": {
+          "reference": "TestScript/HS-cancel-admit-inpatient"
+        },
+        "name": "HS-send-cancel-admit-inpatient",
+        "description": "Testing correct use of status Update of Cancellation of start hospital stayadmission",
+        "exampleBoolean": true
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "TestScript"
+          }
+        ],
+        "reference": {
+          "reference": "TestScript/HS-cancel-discharge-emergency-home"
+        },
+        "name": "HS-send-cancel-discharge-emergency-home",
+        "description": "Testing correct use of Cancellation of End hospital Stay",
+        "exampleBoolean": true
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "TestScript"
+          }
+        ],
+        "reference": {
+          "reference": "TestScript/HS-cancel-discharge-emergency-home-deseased"
+        },
+        "name": "HS-send-cancel-discharge-emergency-home-mors",
+        "description": "Testing correct use of Cancellation of End hospital Stay-deseased",
+        "exampleBoolean": true
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "TestScript"
+          }
+        ],
+        "reference": {
+          "reference": "TestScript/HS-cancel-discharge-inpatient-home"
+        },
+        "name": "HS-send-cancel-discharge-inpatient-home",
+        "description": "Testing correct use of Cancellation of End hospital Stay",
+        "exampleBoolean": true
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "TestScript"
+          }
+        ],
+        "reference": {
+          "reference": "TestScript/HS-cancel-discharge-inpatient-home-deseased"
+        },
+        "name": "HS-send-cancel-discharge-inpatient-home-mors",
+        "description": "Testing correct use of Cancellation of End hospital Stay-deseased",
+        "exampleBoolean": true
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "TestScript"
+          }
+        ],
+        "reference": {
+          "reference": "TestScript/HS-cancel-end-leave-inpatient"
+        },
+        "name": "HS-send-cancel-end-leave-inpatient",
+        "description": "Testing correct use of cancel-end-leave-inpatient",
+        "exampleBoolean": true
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "TestScript"
+          }
+        ],
+        "reference": {
+          "reference": "TestScript/HS-cancel-start-leave-inpatient"
+        },
+        "name": "HS-send-cancel-start-leave-inpatient",
+        "description": "Testing correct use of Update of Start leave",
+        "exampleBoolean": true
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "TestScript"
+          }
+        ],
+        "reference": {
+          "reference": "TestScript/HS-discharge-emergency-home"
+        },
+        "name": "HS-send-discharge-emergency-home",
+        "description": "Testing correct use of End hospital Stay- patient dischargedto home/primary sector",
+        "exampleBoolean": true
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "TestScript"
+          }
+        ],
+        "reference": {
+          "reference": "TestScript/HS-discharge-inpatient-home"
+        },
+        "name": "HS-send-discharge-inpatient-home",
+        "description": "Testing correct use of End hospital Stay- patient dischargedto home/primary sector",
+        "exampleBoolean": true
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "TestScript"
+          }
+        ],
+        "reference": {
+          "reference": "TestScript/HS-end-leave-inpatient"
+        },
+        "name": "HS-send-end-leave-inpatient",
+        "description": "Testing correct use of end-leave-inpatient",
+        "exampleBoolean": true
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "TestScript"
+          }
+        ],
+        "reference": {
+          "reference": "TestScript/HS-revise-admit-emergency"
+        },
+        "name": "HS-send-revise-admit-emergency",
+        "description": "Testing correct use of status stay-acute ambulant",
+        "exampleBoolean": true
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "TestScript"
+          }
+        ],
+        "reference": {
+          "reference": "TestScript/HS-revise-admit-inpatient"
+        },
+        "name": "HS-send-revise-admit-inpatient",
+        "description": "Testing correct use of status Update of start hospital stay-admission",
+        "exampleBoolean": true
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "TestScript"
+          }
+        ],
+        "reference": {
+          "reference": "TestScript/HS-revise-discharge-emergency-home"
+        },
+        "name": "HS-send-revise-discharge-emergency-home",
+        "description": "Testing correct use of Update of End hospital Stay",
+        "exampleBoolean": true
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "TestScript"
+          }
+        ],
+        "reference": {
+          "reference": "TestScript/HS-revise-discharge-emergency-home-re-deseased"
+        },
+        "name": "HS-send-revise-discharge-emergency-home-mors",
+        "description": "Testing correct use of Update of End hospital Stay",
+        "exampleBoolean": true
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "TestScript"
+          }
+        ],
+        "reference": {
+          "reference": "TestScript/HS-revise-discharge-inpatient-home"
+        },
+        "name": "HS-send-revise-discharge-inpatient-home",
+        "description": "Testing correct use of Update of End hospital Stay",
+        "exampleBoolean": true
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "TestScript"
+          }
+        ],
+        "reference": {
+          "reference": "TestScript/HS-revise-discharge-inpatient-home-re-deseased"
+        },
+        "name": "HS-send-revise-discharge-inpatient-home-mors",
+        "description": "Testing correct use of Update of deseased",
+        "exampleBoolean": true
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "TestScript"
+          }
+        ],
+        "reference": {
+          "reference": "TestScript/HS-revise-end-leave-inpatient"
+        },
+        "name": "HS-send-revise-end-leave-inpatient",
+        "description": "Testing correct use of revise-end-leave-inpatient",
+        "exampleBoolean": true
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "TestScript"
+          }
+        ],
+        "reference": {
+          "reference": "TestScript/HS-revise-start-leave-inpatient"
+        },
+        "name": "HS-send-revise-start-leave-inpatient",
+        "description": "Testing correct use of Update of Start leave",
+        "exampleBoolean": true
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "TestScript"
+          }
+        ],
+        "reference": {
+          "reference": "TestScript/HS-start-leave-inpatient"
+        },
+        "name": "HS-send-start-leave-inpatient",
+        "description": "Testing correct use of status Start leave",
         "exampleBoolean": true
       },
       {
@@ -790,6 +1084,20 @@
         },
         "name": "TestinstanceUFHV16-with-ACK",
         "description": "Testing correct use of correction",
+        "exampleBoolean": true
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "TestScript"
+          }
+        ],
+        "reference": {
+          "reference": "TestScript/ffb-1-encounter"
+        },
+        "name": "ffb-1st-encounter",
+        "description": "Testing correct use of First documentation phase",
         "exampleBoolean": true
       }
     ],

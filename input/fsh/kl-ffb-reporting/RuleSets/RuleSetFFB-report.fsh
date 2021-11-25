@@ -1,6 +1,6 @@
 
 //1stFirst documentation phase
-RuleSet:  CreateFfbReportCaseOpeningTest(number, fixture)
+RuleSet: CreateFfbReportCaseOpeningTest(number, fixture)
 * insert originClient
 * insert destinationServer
 * insert fixtureFfb({number}, {fixture})
