@@ -1,0 +1,625 @@
+﻿<html>
+<head>
+  <title>TestScript-ffb-1-encounter-json-html</title>
+  <link rel="stylesheet" href="fhir.css"/>
+</head>
+<body>
+<pre class="json"><code>
+{
+  "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript">resourceType</a>" : "TestScript",
+  "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.id">id</a>" : "ffb-1-encounter",
+  "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.meta">meta</a>" : {
+    "<a href="http://hl7.org/fhir/R4/datatypes.html#Meta#Meta.profile">profile</a>" : [
+      "http://touchstone.aegis.net/touchstone/fhir/testing/StructureDefinition/testscript"
+    ]
+  },
+  "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.text">text</a>" : {
+    "<a href="http://hl7.org/fhir/R4/datatypes.html#Narrative#Narrative.status">status</a>" : "generated",
+    "<a href="http://hl7.org/fhir/R4/datatypes.html#Narrative#Narrative.div">div</a>" : "&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;&lt;p&gt;&lt;b&gt;Generated Narrative&lt;/b&gt;&lt;/p&gt;&lt;div style=\&quot;display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\&quot;&gt;&lt;p style=\&quot;margin-bottom: 0px\&quot;&gt;Resource \&quot;ffb-1-encounter\&quot; &lt;/p&gt;&lt;p style=\&quot;margin-bottom: 0px\&quot;&gt;Profile: &lt;code&gt;http://touchstone.aegis.net/touchstone/fhir/testing/StructureDefinition/testscript&lt;/code&gt;&lt;/p&gt;&lt;/div&gt;&lt;p&gt;&lt;b&gt;url&lt;/b&gt;: &lt;code&gt;http://build.fhir.org/ig/hl7dk/dk-medcom/&lt;/code&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;version&lt;/b&gt;: 0.1.0&lt;/p&gt;&lt;p&gt;&lt;b&gt;name&lt;/b&gt;: First documentation phase&lt;/p&gt;&lt;p&gt;&lt;b&gt;title&lt;/b&gt;: First documentation phase&lt;/p&gt;&lt;p&gt;&lt;b&gt;status&lt;/b&gt;: active&lt;/p&gt;&lt;p&gt;&lt;b&gt;date&lt;/b&gt;: 2021-11-01&lt;/p&gt;&lt;p&gt;&lt;b&gt;publisher&lt;/b&gt;: MedCom&lt;/p&gt;&lt;p&gt;&lt;b&gt;contact&lt;/b&gt;: MedCom: &lt;a href=\&quot;mailto:fhir@medcom.dk\&quot;&gt;fhir@medcom.dk&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;description&lt;/b&gt;: Testing correct use of First documentation phase&lt;/p&gt;&lt;p&gt;&lt;b&gt;copyright&lt;/b&gt;: MedCom 2021&lt;/p&gt;&lt;h3&gt;Origins&lt;/h3&gt;&lt;table class=\&quot;grid\&quot;&gt;&lt;tr&gt;&lt;td&gt;-&lt;/td&gt;&lt;td&gt;&lt;b&gt;Index&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Profile&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;*&lt;/td&gt;&lt;td&gt;1&lt;/td&gt;&lt;td&gt;FHIR Client (Details: http://terminology.hl7.org/CodeSystem/testscript-profile-origin-types code FHIR-Client = 'FHIR Client', stated as 'null')&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;h3&gt;Destinations&lt;/h3&gt;&lt;table class=\&quot;grid\&quot;&gt;&lt;tr&gt;&lt;td&gt;-&lt;/td&gt;&lt;td&gt;&lt;b&gt;Index&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Profile&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;*&lt;/td&gt;&lt;td&gt;1&lt;/td&gt;&lt;td&gt;FHIR Server (Details: http://terminology.hl7.org/CodeSystem/testscript-profile-destination-types code FHIR-Server = 'FHIR Server', stated as 'null')&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;fixture&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;autocreate&lt;/b&gt;: false&lt;/p&gt;&lt;p&gt;&lt;b&gt;autodelete&lt;/b&gt;: false&lt;/p&gt;&lt;p&gt;&lt;b&gt;resource&lt;/b&gt;: &lt;a href=\&quot;/FHIRSandbox/MedCom/401-ffb-reporting/send/Userstory/_reference/resources/01Encounter.xml\&quot;&gt;/FHIRSandbox/MedCom/401-ffb-reporting/send/Userstory/_reference/resources/01Encounter.xml&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;fixture&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;autocreate&lt;/b&gt;: false&lt;/p&gt;&lt;p&gt;&lt;b&gt;autodelete&lt;/b&gt;: false&lt;/p&gt;&lt;p&gt;&lt;b&gt;resource&lt;/b&gt;: &lt;a href=\&quot;/FHIRSandbox/MedCom/401-ffb-reporting/send/Userstory/_reference/resources/02Encounter.xml\&quot;&gt;/FHIRSandbox/MedCom/401-ffb-reporting/send/Userstory/_reference/resources/02Encounter.xml&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;fixture&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;autocreate&lt;/b&gt;: false&lt;/p&gt;&lt;p&gt;&lt;b&gt;autodelete&lt;/b&gt;: false&lt;/p&gt;&lt;p&gt;&lt;b&gt;resource&lt;/b&gt;: &lt;a href=\&quot;/FHIRSandbox/MedCom/401-ffb-reporting/send/Userstory/_reference/resources/03Encounter.xml\&quot;&gt;/FHIRSandbox/MedCom/401-ffb-reporting/send/Userstory/_reference/resources/03Encounter.xml&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;variable&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;name&lt;/b&gt;: municipalityCaseNumber&lt;/p&gt;&lt;p&gt;&lt;b&gt;expression&lt;/b&gt;: Bundle.entry.resource.ofType(ServiceRequest).extension.where(url= 'http://ffb/reporting/kl.dk/1.0/StructureDefinition/kl-reporting-ffb-municipalityCaseNumber').extension.where(url= 'municipalitySpecific').value.value&lt;/p&gt;&lt;p&gt;&lt;b&gt;sourceId&lt;/b&gt;: bundle-create-1&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;variable&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;name&lt;/b&gt;: patientIdentifier&lt;/p&gt;&lt;p&gt;&lt;b&gt;expression&lt;/b&gt;: Bundle.entry.resource.ofType(Patient).identifier.value&lt;/p&gt;&lt;p&gt;&lt;b&gt;sourceId&lt;/b&gt;: bundle-create-1&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;variable&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;name&lt;/b&gt;: ServiceRequestFullUrl&lt;/p&gt;&lt;p&gt;&lt;b&gt;expression&lt;/b&gt;: Bundle.entry.where(resource.ofType(ServiceRequest)).fullUrl&lt;/p&gt;&lt;p&gt;&lt;b&gt;sourceId&lt;/b&gt;: bundle-create-1&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;variable&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;name&lt;/b&gt;: clinicalImpressionFindingsAmount&lt;/p&gt;&lt;p&gt;&lt;b&gt;expression&lt;/b&gt;: Bundle.entry.resource.ofType(ClinicalImpression).finding.count()&lt;/p&gt;&lt;p&gt;&lt;b&gt;sourceId&lt;/b&gt;: bundle-create-2&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;variable&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;name&lt;/b&gt;: clinicalImpressionFindingsAmount&lt;/p&gt;&lt;p&gt;&lt;b&gt;expression&lt;/b&gt;: Bundle.entry.resource.ofType(ClinicalImpression).finding.count()&lt;/p&gt;&lt;p&gt;&lt;b&gt;sourceId&lt;/b&gt;: bundle-create-3&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;variable&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;name&lt;/b&gt;: observationFullUrl3&lt;/p&gt;&lt;p&gt;&lt;b&gt;expression&lt;/b&gt;: Bundle.entry.where(resource.ofType(Observation)).fullUrl&lt;/p&gt;&lt;p&gt;&lt;b&gt;sourceId&lt;/b&gt;: bundle-create-3&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;test&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;name&lt;/b&gt;: 1 Post ffb-report&lt;/p&gt;&lt;p&gt;&lt;b&gt;description&lt;/b&gt;: Post ffb-report&lt;/p&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;action&lt;/b&gt;&lt;/p&gt;&lt;h3&gt;Operations&lt;/h3&gt;&lt;table class=\&quot;grid\&quot;&gt;&lt;tr&gt;&lt;td&gt;-&lt;/td&gt;&lt;td&gt;&lt;b&gt;Type&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Resource&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Description&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Destination&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;EncodeRequestUrl&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Origin&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;SourceId&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;*&lt;/td&gt;&lt;td&gt;Create (Details: http://terminology.hl7.org/CodeSystem/testscript-operation-codes code create = 'Create', stated as 'null')&lt;/td&gt;&lt;td&gt;Bundle&lt;/td&gt;&lt;td&gt;Post a ffb-report&lt;/td&gt;&lt;td&gt;1&lt;/td&gt;&lt;td&gt;true&lt;/td&gt;&lt;td&gt;1&lt;/td&gt;&lt;td&gt;bundle-create-1&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;action&lt;/b&gt;&lt;/p&gt;&lt;h3&gt;Asserts&lt;/h3&gt;&lt;table class=\&quot;grid\&quot;&gt;&lt;tr&gt;&lt;td&gt;-&lt;/td&gt;&lt;td&gt;&lt;b&gt;Description&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Direction&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Resource&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;WarningOnly&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;*&lt;/td&gt;&lt;td&gt;Confirm that the client request payload contains a Bundle resource type.&lt;/td&gt;&lt;td&gt;request&lt;/td&gt;&lt;td&gt;Bundle&lt;/td&gt;&lt;td&gt;false&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;action&lt;/b&gt;&lt;/p&gt;&lt;h3&gt;Asserts&lt;/h3&gt;&lt;table class=\&quot;grid\&quot;&gt;&lt;tr&gt;&lt;td&gt;-&lt;/td&gt;&lt;td&gt;&lt;b&gt;Description&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Direction&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Expression&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Operator&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Value&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;WarningOnly&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;*&lt;/td&gt;&lt;td&gt;Confirm that the Bundle is of type collection&lt;/td&gt;&lt;td&gt;request&lt;/td&gt;&lt;td&gt;Bundle.type&lt;/td&gt;&lt;td&gt;equals&lt;/td&gt;&lt;td&gt;collection&lt;/td&gt;&lt;td&gt;false&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;action&lt;/b&gt;&lt;/p&gt;&lt;h3&gt;Asserts&lt;/h3&gt;&lt;table class=\&quot;grid\&quot;&gt;&lt;tr&gt;&lt;td&gt;-&lt;/td&gt;&lt;td&gt;&lt;b&gt;Description&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Direction&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Expression&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;WarningOnly&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;*&lt;/td&gt;&lt;td&gt;Confirm that the Patient contains an Identifier&lt;/td&gt;&lt;td&gt;request&lt;/td&gt;&lt;td&gt;Bundle.entry.resource.ofType(Patient).identifier.exists()&lt;/td&gt;&lt;td&gt;false&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;action&lt;/b&gt;&lt;/p&gt;&lt;h3&gt;Asserts&lt;/h3&gt;&lt;table class=\&quot;grid\&quot;&gt;&lt;tr&gt;&lt;td&gt;-&lt;/td&gt;&lt;td&gt;&lt;b&gt;Description&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Direction&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Expression&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;WarningOnly&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;*&lt;/td&gt;&lt;td&gt;Confirm that the Bundle contains a ServiceRequest MunicipalityCaseNumber&lt;/td&gt;&lt;td&gt;request&lt;/td&gt;&lt;td&gt;Bundle.entry.resource.ofType(ServiceRequest).extension.where(url= 'http://ffb/reporting/kl.dk/1.0/StructureDefinition/kl-reporting-ffb-municipalityCaseNumber').extension.where(url= 'municipalitySpecific').value.value.exists()&lt;/td&gt;&lt;td&gt;false&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;action&lt;/b&gt;&lt;/p&gt;&lt;h3&gt;Asserts&lt;/h3&gt;&lt;table class=\&quot;grid\&quot;&gt;&lt;tr&gt;&lt;td&gt;-&lt;/td&gt;&lt;td&gt;&lt;b&gt;Description&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Direction&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Expression&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Operator&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Value&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;WarningOnly&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;*&lt;/td&gt;&lt;td&gt;Confirm that the ClinicalImpression contains reference to the ServiceRequest MunicipalityCaseNumber&lt;/td&gt;&lt;td&gt;request&lt;/td&gt;&lt;td&gt;Bundle.entry.resource.ofType(ClinicalImpression).extension.where(url= 'http://kl.dk/fhir/common/caresocial/StructureDefinition/BasedOnServiceRequest').value.reference&lt;/td&gt;&lt;td&gt;equals&lt;/td&gt;&lt;td&gt;${ServiceRequestFullUrl}&lt;/td&gt;&lt;td&gt;false&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/blockquote&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;test&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;name&lt;/b&gt;: 2 Post ffb-report&lt;/p&gt;&lt;p&gt;&lt;b&gt;description&lt;/b&gt;: Post ffb-report&lt;/p&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;action&lt;/b&gt;&lt;/p&gt;&lt;h3&gt;Operations&lt;/h3&gt;&lt;table class=\&quot;grid\&quot;&gt;&lt;tr&gt;&lt;td&gt;-&lt;/td&gt;&lt;td&gt;&lt;b&gt;Type&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Resource&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Description&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Destination&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;EncodeRequestUrl&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Origin&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;SourceId&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;*&lt;/td&gt;&lt;td&gt;Create (Details: http://terminology.hl7.org/CodeSystem/testscript-operation-codes code create = 'Create', stated as 'null')&lt;/td&gt;&lt;td&gt;Bundle&lt;/td&gt;&lt;td&gt;Post a ffb-report&lt;/td&gt;&lt;td&gt;1&lt;/td&gt;&lt;td&gt;true&lt;/td&gt;&lt;td&gt;1&lt;/td&gt;&lt;td&gt;bundle-create-2&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;action&lt;/b&gt;&lt;/p&gt;&lt;h3&gt;Asserts&lt;/h3&gt;&lt;table class=\&quot;grid\&quot;&gt;&lt;tr&gt;&lt;td&gt;-&lt;/td&gt;&lt;td&gt;&lt;b&gt;Description&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Direction&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Resource&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;WarningOnly&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;*&lt;/td&gt;&lt;td&gt;Confirm that the client request payload contains a Bundle resource type.&lt;/td&gt;&lt;td&gt;request&lt;/td&gt;&lt;td&gt;Bundle&lt;/td&gt;&lt;td&gt;false&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;action&lt;/b&gt;&lt;/p&gt;&lt;h3&gt;Asserts&lt;/h3&gt;&lt;table class=\&quot;grid\&quot;&gt;&lt;tr&gt;&lt;td&gt;-&lt;/td&gt;&lt;td&gt;&lt;b&gt;Description&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Direction&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Expression&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Operator&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Value&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;WarningOnly&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;*&lt;/td&gt;&lt;td&gt;Confirm that the Bundle is of type collection&lt;/td&gt;&lt;td&gt;request&lt;/td&gt;&lt;td&gt;Bundle.type&lt;/td&gt;&lt;td&gt;equals&lt;/td&gt;&lt;td&gt;collection&lt;/td&gt;&lt;td&gt;false&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;action&lt;/b&gt;&lt;/p&gt;&lt;h3&gt;Asserts&lt;/h3&gt;&lt;table class=\&quot;grid\&quot;&gt;&lt;tr&gt;&lt;td&gt;-&lt;/td&gt;&lt;td&gt;&lt;b&gt;Description&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Direction&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Expression&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;WarningOnly&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;*&lt;/td&gt;&lt;td&gt;Confirm that the Bundle contains a ServiceRequest MunicipalityCaseNumber&lt;/td&gt;&lt;td&gt;request&lt;/td&gt;&lt;td&gt;Bundle.entry.resource.ofType(ServiceRequest).extension.where(url= 'http://ffb/reporting/kl.dk/1.0/StructureDefinition/kl-reporting-ffb-municipalityCaseNumber').extension.where(url= 'municipalitySpecific').value.value.exists()&lt;/td&gt;&lt;td&gt;false&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;action&lt;/b&gt;&lt;/p&gt;&lt;h3&gt;Asserts&lt;/h3&gt;&lt;table class=\&quot;grid\&quot;&gt;&lt;tr&gt;&lt;td&gt;-&lt;/td&gt;&lt;td&gt;&lt;b&gt;Description&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Direction&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Expression&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Operator&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Value&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;WarningOnly&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;*&lt;/td&gt;&lt;td&gt;Confirm that the ClinicalImpression contains reference to the ServiceRequest MunicipalityCaseNumber&lt;/td&gt;&lt;td&gt;request&lt;/td&gt;&lt;td&gt;Bundle.entry.resource.ofType(ClinicalImpression).extension.where(url= 'http://kl.dk/fhir/common/caresocial/StructureDefinition/BasedOnServiceRequest').value.reference&lt;/td&gt;&lt;td&gt;equals&lt;/td&gt;&lt;td&gt;${ServiceRequestFullUrl}&lt;/td&gt;&lt;td&gt;false&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;action&lt;/b&gt;&lt;/p&gt;&lt;h3&gt;Asserts&lt;/h3&gt;&lt;table class=\&quot;grid\&quot;&gt;&lt;tr&gt;&lt;td&gt;-&lt;/td&gt;&lt;td&gt;&lt;b&gt;Description&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Direction&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Expression&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Operator&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Value&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;WarningOnly&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;*&lt;/td&gt;&lt;td&gt;Confirm that the Patient Identifier is same as Previous&lt;/td&gt;&lt;td&gt;request&lt;/td&gt;&lt;td&gt;Bundle.entry.resource.ofType(Patient).identifier.value&lt;/td&gt;&lt;td&gt;equals&lt;/td&gt;&lt;td&gt;${patientIdentifier}&lt;/td&gt;&lt;td&gt;false&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;action&lt;/b&gt;&lt;/p&gt;&lt;h3&gt;Asserts&lt;/h3&gt;&lt;table class=\&quot;grid\&quot;&gt;&lt;tr&gt;&lt;td&gt;-&lt;/td&gt;&lt;td&gt;&lt;b&gt;Description&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Direction&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Expression&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Operator&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Value&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;WarningOnly&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;*&lt;/td&gt;&lt;td&gt;Confirm that the Bundle contains a ServiceRequest MunicipalityCaseNumber&lt;/td&gt;&lt;td&gt;request&lt;/td&gt;&lt;td&gt;Bundle.entry.resource.ofType(ServiceRequest).extension.where(url= 'http://ffb/reporting/kl.dk/1.0/StructureDefinition/kl-reporting-ffb-municipalityCaseNumber').extension.where(url= 'municipalitySpecific').value.value&lt;/td&gt;&lt;td&gt;equals&lt;/td&gt;&lt;td&gt;${municipalityCaseNumber}&lt;/td&gt;&lt;td&gt;false&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;action&lt;/b&gt;&lt;/p&gt;&lt;h3&gt;Asserts&lt;/h3&gt;&lt;table class=\&quot;grid\&quot;&gt;&lt;tr&gt;&lt;td&gt;-&lt;/td&gt;&lt;td&gt;&lt;b&gt;Description&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Direction&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Expression&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Operator&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Value&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;WarningOnly&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;*&lt;/td&gt;&lt;td&gt;Confirm that the ServiceRequest is the same as the first&lt;/td&gt;&lt;td&gt;request&lt;/td&gt;&lt;td&gt;Bundle.entry.where(resource.ofType(ServiceRequest)).fullUrl&lt;/td&gt;&lt;td&gt;equals&lt;/td&gt;&lt;td&gt;${ServiceRequestFullUrl}&lt;/td&gt;&lt;td&gt;false&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;action&lt;/b&gt;&lt;/p&gt;&lt;h3&gt;Asserts&lt;/h3&gt;&lt;table class=\&quot;grid\&quot;&gt;&lt;tr&gt;&lt;td&gt;-&lt;/td&gt;&lt;td&gt;&lt;b&gt;Description&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Direction&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Expression&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;WarningOnly&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;*&lt;/td&gt;&lt;td&gt;Test that there exists at least 1 Condition in the bundle &lt;/td&gt;&lt;td&gt;request&lt;/td&gt;&lt;td&gt;Bundle.entry.resource.ofType(Condition).count() &amp;gt; 0&lt;/td&gt;&lt;td&gt;false&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;action&lt;/b&gt;&lt;/p&gt;&lt;h3&gt;Asserts&lt;/h3&gt;&lt;table class=\&quot;grid\&quot;&gt;&lt;tr&gt;&lt;td&gt;-&lt;/td&gt;&lt;td&gt;&lt;b&gt;Description&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Direction&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Expression&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Operator&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Value&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;WarningOnly&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;*&lt;/td&gt;&lt;td&gt;Make sure the numbers of ClinicalImpression.finding and Conditions is equal &lt;/td&gt;&lt;td&gt;request&lt;/td&gt;&lt;td&gt;Bundle.entry.resource.ofType(Condition).count()&lt;/td&gt;&lt;td&gt;equals&lt;/td&gt;&lt;td&gt;${clinicalImpressionFindingsAmount}&lt;/td&gt;&lt;td&gt;false&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;action&lt;/b&gt;&lt;/p&gt;&lt;h3&gt;Asserts&lt;/h3&gt;&lt;table class=\&quot;grid\&quot;&gt;&lt;tr&gt;&lt;td&gt;-&lt;/td&gt;&lt;td&gt;&lt;b&gt;Description&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Direction&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Expression&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;WarningOnly&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;*&lt;/td&gt;&lt;td&gt;Confirm that the Condition 4934e45a-0f93-4c23-a767-2b681378700b exist in Bundle&lt;/td&gt;&lt;td&gt;request&lt;/td&gt;&lt;td&gt;Bundle.entry.resource.ofType(Condition).code.coding.where(code ='4934e45a-0f93-4c23-a767-2b681378700b').exists()&lt;/td&gt;&lt;td&gt;false&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;action&lt;/b&gt;&lt;/p&gt;&lt;h3&gt;Asserts&lt;/h3&gt;&lt;table class=\&quot;grid\&quot;&gt;&lt;tr&gt;&lt;td&gt;-&lt;/td&gt;&lt;td&gt;&lt;b&gt;Description&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Direction&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Expression&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;WarningOnly&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;*&lt;/td&gt;&lt;td&gt;Confirm that the Condition ef4271c4-f942-4194-a2b0-e9a7045eab22 exist in Bundle&lt;/td&gt;&lt;td&gt;request&lt;/td&gt;&lt;td&gt;Bundle.entry.resource.ofType(Condition).code.coding.where(code ='ef4271c4-f942-4194-a2b0-e9a7045eab22').exists()&lt;/td&gt;&lt;td&gt;false&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;action&lt;/b&gt;&lt;/p&gt;&lt;h3&gt;Asserts&lt;/h3&gt;&lt;table class=\&quot;grid\&quot;&gt;&lt;tr&gt;&lt;td&gt;-&lt;/td&gt;&lt;td&gt;&lt;b&gt;Description&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Direction&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Expression&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;WarningOnly&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;*&lt;/td&gt;&lt;td&gt;Confirm that the Condition b93216fa-3843-4a7e-85bc-e3ef35a1967f exist in Bundle&lt;/td&gt;&lt;td&gt;request&lt;/td&gt;&lt;td&gt;Bundle.entry.resource.ofType(Condition).code.coding.where(code ='b93216fa-3843-4a7e-85bc-e3ef35a1967f').exists()&lt;/td&gt;&lt;td&gt;false&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;action&lt;/b&gt;&lt;/p&gt;&lt;h3&gt;Asserts&lt;/h3&gt;&lt;table class=\&quot;grid\&quot;&gt;&lt;tr&gt;&lt;td&gt;-&lt;/td&gt;&lt;td&gt;&lt;b&gt;Description&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Direction&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Expression&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;WarningOnly&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;*&lt;/td&gt;&lt;td&gt;Confirm that the Condition 9959e779-e8ee-47e8-989b-bbff4aae2883 exist in Bundle&lt;/td&gt;&lt;td&gt;request&lt;/td&gt;&lt;td&gt;Bundle.entry.resource.ofType(Condition).code.coding.where(code ='9959e779-e8ee-47e8-989b-bbff4aae2883').exists()&lt;/td&gt;&lt;td&gt;false&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;action&lt;/b&gt;&lt;/p&gt;&lt;h3&gt;Asserts&lt;/h3&gt;&lt;table class=\&quot;grid\&quot;&gt;&lt;tr&gt;&lt;td&gt;-&lt;/td&gt;&lt;td&gt;&lt;b&gt;Description&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Direction&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Expression&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;WarningOnly&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;*&lt;/td&gt;&lt;td&gt;Confirm that the Condition e6f82424-da5a-41d1-bd1a-5796aa79d5f2 exist in Bundle&lt;/td&gt;&lt;td&gt;request&lt;/td&gt;&lt;td&gt;Bundle.entry.resource.ofType(Condition).code.coding.where(code ='e6f82424-da5a-41d1-bd1a-5796aa79d5f2').exists()&lt;/td&gt;&lt;td&gt;false&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;action&lt;/b&gt;&lt;/p&gt;&lt;h3&gt;Asserts&lt;/h3&gt;&lt;table class=\&quot;grid\&quot;&gt;&lt;tr&gt;&lt;td&gt;-&lt;/td&gt;&lt;td&gt;&lt;b&gt;Description&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Direction&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Expression&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;WarningOnly&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;*&lt;/td&gt;&lt;td&gt;Confirm that the Condition f5b8e809-7689-4952-838c-a069c99408b3 exist in Bundle&lt;/td&gt;&lt;td&gt;request&lt;/td&gt;&lt;td&gt;Bundle.entry.resource.ofType(Condition).code.coding.where(code ='f5b8e809-7689-4952-838c-a069c99408b3').exists()&lt;/td&gt;&lt;td&gt;false&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;action&lt;/b&gt;&lt;/p&gt;&lt;h3&gt;Asserts&lt;/h3&gt;&lt;table class=\&quot;grid\&quot;&gt;&lt;tr&gt;&lt;td&gt;-&lt;/td&gt;&lt;td&gt;&lt;b&gt;Description&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Direction&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Expression&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;WarningOnly&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;*&lt;/td&gt;&lt;td&gt;Confirm that the Condition 52efa2e9-e0dc-41eb-8c01-9865e2fdebae exist in Bundle&lt;/td&gt;&lt;td&gt;request&lt;/td&gt;&lt;td&gt;Bundle.entry.resource.ofType(Condition).code.coding.where(code ='52efa2e9-e0dc-41eb-8c01-9865e2fdebae').exists()&lt;/td&gt;&lt;td&gt;false&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;action&lt;/b&gt;&lt;/p&gt;&lt;h3&gt;Asserts&lt;/h3&gt;&lt;table class=\&quot;grid\&quot;&gt;&lt;tr&gt;&lt;td&gt;-&lt;/td&gt;&lt;td&gt;&lt;b&gt;Description&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Direction&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Expression&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;WarningOnly&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;*&lt;/td&gt;&lt;td&gt;Confirm that the Condition 7a8f247b-baf8-4552-95bb-acf8ef004b74 exist in Bundle&lt;/td&gt;&lt;td&gt;request&lt;/td&gt;&lt;td&gt;Bundle.entry.resource.ofType(Condition).code.coding.where(code ='7a8f247b-baf8-4552-95bb-acf8ef004b74').exists()&lt;/td&gt;&lt;td&gt;false&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;action&lt;/b&gt;&lt;/p&gt;&lt;h3&gt;Asserts&lt;/h3&gt;&lt;table class=\&quot;grid\&quot;&gt;&lt;tr&gt;&lt;td&gt;-&lt;/td&gt;&lt;td&gt;&lt;b&gt;Description&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Direction&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Expression&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;WarningOnly&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;*&lt;/td&gt;&lt;td&gt;Confirm that the Condition 83342ff3-5f2e-4914-b045-e98357685866 exist in Bundle&lt;/td&gt;&lt;td&gt;request&lt;/td&gt;&lt;td&gt;Bundle.entry.resource.ofType(Condition).code.coding.where(code ='83342ff3-5f2e-4914-b045-e98357685866').exists()&lt;/td&gt;&lt;td&gt;false&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;action&lt;/b&gt;&lt;/p&gt;&lt;h3&gt;Asserts&lt;/h3&gt;&lt;table class=\&quot;grid\&quot;&gt;&lt;tr&gt;&lt;td&gt;-&lt;/td&gt;&lt;td&gt;&lt;b&gt;Description&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Direction&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Expression&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;WarningOnly&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;*&lt;/td&gt;&lt;td&gt;Confirm that the Condition df194a84-6e4b-4f14-a194-d8d9d9a1fcad exist in Bundle&lt;/td&gt;&lt;td&gt;request&lt;/td&gt;&lt;td&gt;Bundle.entry.resource.ofType(Condition).code.coding.where(code ='df194a84-6e4b-4f14-a194-d8d9d9a1fcad').exists()&lt;/td&gt;&lt;td&gt;false&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;action&lt;/b&gt;&lt;/p&gt;&lt;h3&gt;Asserts&lt;/h3&gt;&lt;table class=\&quot;grid\&quot;&gt;&lt;tr&gt;&lt;td&gt;-&lt;/td&gt;&lt;td&gt;&lt;b&gt;Description&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Direction&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Expression&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;WarningOnly&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;*&lt;/td&gt;&lt;td&gt;Confirm that the Condition 3f9da5ac-9686-4eeb-b517-b46e17fcb1d7 exist in Bundle&lt;/td&gt;&lt;td&gt;request&lt;/td&gt;&lt;td&gt;Bundle.entry.resource.ofType(Condition).code.coding.where(code ='3f9da5ac-9686-4eeb-b517-b46e17fcb1d7').exists()&lt;/td&gt;&lt;td&gt;false&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;action&lt;/b&gt;&lt;/p&gt;&lt;h3&gt;Asserts&lt;/h3&gt;&lt;table class=\&quot;grid\&quot;&gt;&lt;tr&gt;&lt;td&gt;-&lt;/td&gt;&lt;td&gt;&lt;b&gt;Description&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Direction&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Expression&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;WarningOnly&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;*&lt;/td&gt;&lt;td&gt;Confirm that the Condition 685e8517-2f5c-4ef8-a7c4-fa2d008fdd9d exist in Bundle&lt;/td&gt;&lt;td&gt;request&lt;/td&gt;&lt;td&gt;Bundle.entry.resource.ofType(Condition).code.coding.where(code ='685e8517-2f5c-4ef8-a7c4-fa2d008fdd9d').exists()&lt;/td&gt;&lt;td&gt;false&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;action&lt;/b&gt;&lt;/p&gt;&lt;h3&gt;Asserts&lt;/h3&gt;&lt;table class=\&quot;grid\&quot;&gt;&lt;tr&gt;&lt;td&gt;-&lt;/td&gt;&lt;td&gt;&lt;b&gt;Description&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Direction&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Expression&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;WarningOnly&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;*&lt;/td&gt;&lt;td&gt;Confirm that the Condition 464a2ab6-a7df-4b3a-b74d-7873f4cfe668 exist in Bundle&lt;/td&gt;&lt;td&gt;request&lt;/td&gt;&lt;td&gt;Bundle.entry.resource.ofType(Condition).code.coding.where(code ='464a2ab6-a7df-4b3a-b74d-7873f4cfe668').exists()&lt;/td&gt;&lt;td&gt;false&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;action&lt;/b&gt;&lt;/p&gt;&lt;h3&gt;Asserts&lt;/h3&gt;&lt;table class=\&quot;grid\&quot;&gt;&lt;tr&gt;&lt;td&gt;-&lt;/td&gt;&lt;td&gt;&lt;b&gt;Description&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Direction&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Expression&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;WarningOnly&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;*&lt;/td&gt;&lt;td&gt;Confirm that the Condition 01770afa-cd17-41fe-a966-b8895e4d55d8 exist in Bundle&lt;/td&gt;&lt;td&gt;request&lt;/td&gt;&lt;td&gt;Bundle.entry.resource.ofType(Condition).code.coding.where(code ='01770afa-cd17-41fe-a966-b8895e4d55d8').exists()&lt;/td&gt;&lt;td&gt;false&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;action&lt;/b&gt;&lt;/p&gt;&lt;h3&gt;Asserts&lt;/h3&gt;&lt;table class=\&quot;grid\&quot;&gt;&lt;tr&gt;&lt;td&gt;-&lt;/td&gt;&lt;td&gt;&lt;b&gt;Description&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Direction&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Expression&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;WarningOnly&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;*&lt;/td&gt;&lt;td&gt;Confirm that the Condition eff3385d-01fa-4c9c-9850-52e179243f21 exist in Bundle&lt;/td&gt;&lt;td&gt;request&lt;/td&gt;&lt;td&gt;Bundle.entry.resource.ofType(Condition).code.coding.where(code ='eff3385d-01fa-4c9c-9850-52e179243f21').exists()&lt;/td&gt;&lt;td&gt;false&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;action&lt;/b&gt;&lt;/p&gt;&lt;h3&gt;Asserts&lt;/h3&gt;&lt;table class=\&quot;grid\&quot;&gt;&lt;tr&gt;&lt;td&gt;-&lt;/td&gt;&lt;td&gt;&lt;b&gt;Description&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Direction&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Expression&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Operator&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Value&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;WarningOnly&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;*&lt;/td&gt;&lt;td&gt;Confirm that the Condition 3f9da5ac-9686-4eeb-b517-b46e17fcb1d7 exist where severity is 5bdde847-2837-416b-ab63-bbff8b7aa531 in Bundle.Condition&lt;/td&gt;&lt;td&gt;request&lt;/td&gt;&lt;td&gt;Bundle.entry.resource.ofType(Condition).where(code.coding.code = '3f9da5ac-9686-4eeb-b517-b46e17fcb1d7').severity.coding.code&lt;/td&gt;&lt;td&gt;equals&lt;/td&gt;&lt;td&gt;5bdde847-2837-416b-ab63-bbff8b7aa531&lt;/td&gt;&lt;td&gt;false&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;action&lt;/b&gt;&lt;/p&gt;&lt;h3&gt;Asserts&lt;/h3&gt;&lt;table class=\&quot;grid\&quot;&gt;&lt;tr&gt;&lt;td&gt;-&lt;/td&gt;&lt;td&gt;&lt;b&gt;Description&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Direction&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Expression&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Operator&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Value&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;WarningOnly&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;*&lt;/td&gt;&lt;td&gt;Confirm that the Condition 685e8517-2f5c-4ef8-a7c4-fa2d008fdd9d exist where severity is 8328ce4a-6238-4f73-bf1a-74aadb68eff8 in Bundle.Condition&lt;/td&gt;&lt;td&gt;request&lt;/td&gt;&lt;td&gt;Bundle.entry.resource.ofType(Condition).where(code.coding.code = '685e8517-2f5c-4ef8-a7c4-fa2d008fdd9d').severity.coding.code&lt;/td&gt;&lt;td&gt;equals&lt;/td&gt;&lt;td&gt;8328ce4a-6238-4f73-bf1a-74aadb68eff8&lt;/td&gt;&lt;td&gt;false&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;action&lt;/b&gt;&lt;/p&gt;&lt;h3&gt;Asserts&lt;/h3&gt;&lt;table class=\&quot;grid\&quot;&gt;&lt;tr&gt;&lt;td&gt;-&lt;/td&gt;&lt;td&gt;&lt;b&gt;Description&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Direction&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Expression&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Operator&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Value&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;WarningOnly&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;*&lt;/td&gt;&lt;td&gt;Confirm that the Condition 464a2ab6-a7df-4b3a-b74d-7873f4cfe668 exist where severity is cae545f5-2813-4d79-98fc-0a7d770af3cd in Bundle.Condition&lt;/td&gt;&lt;td&gt;request&lt;/td&gt;&lt;td&gt;Bundle.entry.resource.ofType(Condition).where(code.coding.code = '464a2ab6-a7df-4b3a-b74d-7873f4cfe668').severity.coding.code&lt;/td&gt;&lt;td&gt;equals&lt;/td&gt;&lt;td&gt;cae545f5-2813-4d79-98fc-0a7d770af3cd&lt;/td&gt;&lt;td&gt;false&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;action&lt;/b&gt;&lt;/p&gt;&lt;h3&gt;Asserts&lt;/h3&gt;&lt;table class=\&quot;grid\&quot;&gt;&lt;tr&gt;&lt;td&gt;-&lt;/td&gt;&lt;td&gt;&lt;b&gt;Description&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Direction&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Expression&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Operator&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Value&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;WarningOnly&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;*&lt;/td&gt;&lt;td&gt;Confirm that the Condition 01770afa-cd17-41fe-a966-b8895e4d55d8 exist where severity is 5bdde847-2837-416b-ab63-bbff8b7aa531 in Bundle.Condition&lt;/td&gt;&lt;td&gt;request&lt;/td&gt;&lt;td&gt;Bundle.entry.resource.ofType(Condition).where(code.coding.code = '01770afa-cd17-41fe-a966-b8895e4d55d8').severity.coding.code&lt;/td&gt;&lt;td&gt;equals&lt;/td&gt;&lt;td&gt;5bdde847-2837-416b-ab63-bbff8b7aa531&lt;/td&gt;&lt;td&gt;false&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;action&lt;/b&gt;&lt;/p&gt;&lt;h3&gt;Asserts&lt;/h3&gt;&lt;table class=\&quot;grid\&quot;&gt;&lt;tr&gt;&lt;td&gt;-&lt;/td&gt;&lt;td&gt;&lt;b&gt;Description&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Direction&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Expression&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Operator&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Value&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;WarningOnly&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;*&lt;/td&gt;&lt;td&gt;Confirm that the Condition eff3385d-01fa-4c9c-9850-52e179243f21 exist where severity is cae545f5-2813-4d79-98fc-0a7d770af3cd in Bundle.Condition&lt;/td&gt;&lt;td&gt;request&lt;/td&gt;&lt;td&gt;Bundle.entry.resource.ofType(Condition).where(code.coding.code = 'eff3385d-01fa-4c9c-9850-52e179243f21').severity.coding.code&lt;/td&gt;&lt;td&gt;equals&lt;/td&gt;&lt;td&gt;cae545f5-2813-4d79-98fc-0a7d770af3cd&lt;/td&gt;&lt;td&gt;false&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/blockquote&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;test&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;name&lt;/b&gt;: 3 Post ffb-report&lt;/p&gt;&lt;p&gt;&lt;b&gt;description&lt;/b&gt;: Post ffb-report&lt;/p&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;action&lt;/b&gt;&lt;/p&gt;&lt;h3&gt;Operations&lt;/h3&gt;&lt;table class=\&quot;grid\&quot;&gt;&lt;tr&gt;&lt;td&gt;-&lt;/td&gt;&lt;td&gt;&lt;b&gt;Type&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Resource&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Description&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Destination&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;EncodeRequestUrl&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Origin&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;SourceId&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;*&lt;/td&gt;&lt;td&gt;Create (Details: http://terminology.hl7.org/CodeSystem/testscript-operation-codes code create = 'Create', stated as 'null')&lt;/td&gt;&lt;td&gt;Bundle&lt;/td&gt;&lt;td&gt;Post a ffb-report&lt;/td&gt;&lt;td&gt;1&lt;/td&gt;&lt;td&gt;true&lt;/td&gt;&lt;td&gt;1&lt;/td&gt;&lt;td&gt;bundle-create-3&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;action&lt;/b&gt;&lt;/p&gt;&lt;h3&gt;Asserts&lt;/h3&gt;&lt;table class=\&quot;grid\&quot;&gt;&lt;tr&gt;&lt;td&gt;-&lt;/td&gt;&lt;td&gt;&lt;b&gt;Description&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Direction&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Resource&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;WarningOnly&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;*&lt;/td&gt;&lt;td&gt;Confirm that the client request payload contains a Bundle resource type.&lt;/td&gt;&lt;td&gt;request&lt;/td&gt;&lt;td&gt;Bundle&lt;/td&gt;&lt;td&gt;false&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;action&lt;/b&gt;&lt;/p&gt;&lt;h3&gt;Asserts&lt;/h3&gt;&lt;table class=\&quot;grid\&quot;&gt;&lt;tr&gt;&lt;td&gt;-&lt;/td&gt;&lt;td&gt;&lt;b&gt;Description&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Direction&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Expression&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Operator&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Value&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;WarningOnly&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;*&lt;/td&gt;&lt;td&gt;Confirm that the Bundle is of type collection&lt;/td&gt;&lt;td&gt;request&lt;/td&gt;&lt;td&gt;Bundle.type&lt;/td&gt;&lt;td&gt;equals&lt;/td&gt;&lt;td&gt;collection&lt;/td&gt;&lt;td&gt;false&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;action&lt;/b&gt;&lt;/p&gt;&lt;h3&gt;Asserts&lt;/h3&gt;&lt;table class=\&quot;grid\&quot;&gt;&lt;tr&gt;&lt;td&gt;-&lt;/td&gt;&lt;td&gt;&lt;b&gt;Description&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Direction&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Expression&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;WarningOnly&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;*&lt;/td&gt;&lt;td&gt;Confirm that the Bundle contains a ServiceRequest MunicipalityCaseNumber&lt;/td&gt;&lt;td&gt;request&lt;/td&gt;&lt;td&gt;Bundle.entry.resource.ofType(ServiceRequest).extension.where(url= 'http://ffb/reporting/kl.dk/1.0/StructureDefinition/kl-reporting-ffb-municipalityCaseNumber').extension.where(url= 'municipalitySpecific').value.value.exists()&lt;/td&gt;&lt;td&gt;false&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;action&lt;/b&gt;&lt;/p&gt;&lt;h3&gt;Asserts&lt;/h3&gt;&lt;table class=\&quot;grid\&quot;&gt;&lt;tr&gt;&lt;td&gt;-&lt;/td&gt;&lt;td&gt;&lt;b&gt;Description&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Direction&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Expression&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Operator&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Value&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;WarningOnly&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;*&lt;/td&gt;&lt;td&gt;Confirm that the ClinicalImpression contains reference to the ServiceRequest MunicipalityCaseNumber&lt;/td&gt;&lt;td&gt;request&lt;/td&gt;&lt;td&gt;Bundle.entry.resource.ofType(ClinicalImpression).extension.where(url= 'http://kl.dk/fhir/common/caresocial/StructureDefinition/BasedOnServiceRequest').value.reference&lt;/td&gt;&lt;td&gt;equals&lt;/td&gt;&lt;td&gt;${ServiceRequestFullUrl}&lt;/td&gt;&lt;td&gt;false&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;action&lt;/b&gt;&lt;/p&gt;&lt;h3&gt;Asserts&lt;/h3&gt;&lt;table class=\&quot;grid\&quot;&gt;&lt;tr&gt;&lt;td&gt;-&lt;/td&gt;&lt;td&gt;&lt;b&gt;Description&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Direction&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Expression&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Operator&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Value&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;WarningOnly&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;*&lt;/td&gt;&lt;td&gt;Confirm that the Patient Identifier is same as Previous&lt;/td&gt;&lt;td&gt;request&lt;/td&gt;&lt;td&gt;Bundle.entry.resource.ofType(Patient).identifier.value&lt;/td&gt;&lt;td&gt;equals&lt;/td&gt;&lt;td&gt;${patientIdentifier}&lt;/td&gt;&lt;td&gt;false&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;action&lt;/b&gt;&lt;/p&gt;&lt;h3&gt;Asserts&lt;/h3&gt;&lt;table class=\&quot;grid\&quot;&gt;&lt;tr&gt;&lt;td&gt;-&lt;/td&gt;&lt;td&gt;&lt;b&gt;Description&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Direction&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Expression&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Operator&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Value&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;WarningOnly&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;*&lt;/td&gt;&lt;td&gt;Confirm that the Bundle contains a ServiceRequest MunicipalityCaseNumber&lt;/td&gt;&lt;td&gt;request&lt;/td&gt;&lt;td&gt;Bundle.entry.resource.ofType(ServiceRequest).extension.where(url= 'http://ffb/reporting/kl.dk/1.0/StructureDefinition/kl-reporting-ffb-municipalityCaseNumber').extension.where(url= 'municipalitySpecific').value.value&lt;/td&gt;&lt;td&gt;equals&lt;/td&gt;&lt;td&gt;${municipalityCaseNumber}&lt;/td&gt;&lt;td&gt;false&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;action&lt;/b&gt;&lt;/p&gt;&lt;h3&gt;Asserts&lt;/h3&gt;&lt;table class=\&quot;grid\&quot;&gt;&lt;tr&gt;&lt;td&gt;-&lt;/td&gt;&lt;td&gt;&lt;b&gt;Description&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Direction&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Expression&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Operator&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Value&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;WarningOnly&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;*&lt;/td&gt;&lt;td&gt;Confirm that the ServiceRequest is the same as the first&lt;/td&gt;&lt;td&gt;request&lt;/td&gt;&lt;td&gt;Bundle.entry.where(resource.ofType(ServiceRequest)).fullUrl&lt;/td&gt;&lt;td&gt;equals&lt;/td&gt;&lt;td&gt;${ServiceRequestFullUrl}&lt;/td&gt;&lt;td&gt;false&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;action&lt;/b&gt;&lt;/p&gt;&lt;h3&gt;Asserts&lt;/h3&gt;&lt;table class=\&quot;grid\&quot;&gt;&lt;tr&gt;&lt;td&gt;-&lt;/td&gt;&lt;td&gt;&lt;b&gt;Description&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Direction&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Expression&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;WarningOnly&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;*&lt;/td&gt;&lt;td&gt;Test that there exists at least 1 Condition in the bundle &lt;/td&gt;&lt;td&gt;request&lt;/td&gt;&lt;td&gt;Bundle.entry.resource.ofType(Condition).count() &amp;gt; 0&lt;/td&gt;&lt;td&gt;false&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;action&lt;/b&gt;&lt;/p&gt;&lt;h3&gt;Asserts&lt;/h3&gt;&lt;table class=\&quot;grid\&quot;&gt;&lt;tr&gt;&lt;td&gt;-&lt;/td&gt;&lt;td&gt;&lt;b&gt;Description&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Direction&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Expression&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Operator&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Value&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;WarningOnly&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;*&lt;/td&gt;&lt;td&gt;Make sure the numbers of ClinicalImpression.finding and Conditions is equal &lt;/td&gt;&lt;td&gt;request&lt;/td&gt;&lt;td&gt;Bundle.entry.resource.ofType(Condition).count()&lt;/td&gt;&lt;td&gt;equals&lt;/td&gt;&lt;td&gt;${clinicalImpressionFindingsAmount}&lt;/td&gt;&lt;td&gt;false&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;action&lt;/b&gt;&lt;/p&gt;&lt;h3&gt;Asserts&lt;/h3&gt;&lt;table class=\&quot;grid\&quot;&gt;&lt;tr&gt;&lt;td&gt;-&lt;/td&gt;&lt;td&gt;&lt;b&gt;Description&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Direction&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Expression&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Operator&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Value&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;WarningOnly&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;*&lt;/td&gt;&lt;td&gt;Confirm that the CarePlanEvaluationCode is equal to dd628e73-d6c9-4837-a2b8-aa62d73bd6ae&lt;/td&gt;&lt;td&gt;request&lt;/td&gt;&lt;td&gt;Bundle.entry.resource.ofType(Observation).value.where(coding.system = 'http://kl.dk/fhir/common/caresocial/CodeSystem/FFB').coding.code&lt;/td&gt;&lt;td&gt;equals&lt;/td&gt;&lt;td&gt;dd628e73-d6c9-4837-a2b8-aa62d73bd6ae&lt;/td&gt;&lt;td&gt;false&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;action&lt;/b&gt;&lt;/p&gt;&lt;h3&gt;Asserts&lt;/h3&gt;&lt;table class=\&quot;grid\&quot;&gt;&lt;tr&gt;&lt;td&gt;-&lt;/td&gt;&lt;td&gt;&lt;b&gt;Description&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Direction&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Expression&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Operator&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Value&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;WarningOnly&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;*&lt;/td&gt;&lt;td&gt;Confirm that the Careplan outcomeReference refference CarePlanEvalution&lt;/td&gt;&lt;td&gt;request&lt;/td&gt;&lt;td&gt;Bundle.entry.resource.ofType(CarePlan).activity.outcomeReference.reference&lt;/td&gt;&lt;td&gt;equals&lt;/td&gt;&lt;td&gt;${observationFullUrl3}&lt;/td&gt;&lt;td&gt;false&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;action&lt;/b&gt;&lt;/p&gt;&lt;h3&gt;Asserts&lt;/h3&gt;&lt;table class=\&quot;grid\&quot;&gt;&lt;tr&gt;&lt;td&gt;-&lt;/td&gt;&lt;td&gt;&lt;b&gt;Description&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Direction&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Expression&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Operator&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Value&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;WarningOnly&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;*&lt;/td&gt;&lt;td&gt;Confirm that the changevalue is of taget type funktionsevneniveau&lt;/td&gt;&lt;td&gt;request&lt;/td&gt;&lt;td&gt;Bundle.entry.resource.ofType(Goal).target.where(detail.coding.code = '8328ce4a-6238-4f73-bf1a-74aadb68eff8').measure.coding.code&lt;/td&gt;&lt;td&gt;equals&lt;/td&gt;&lt;td&gt;66959f77-6e2a-4574-8423-3ff097f8b9fa&lt;/td&gt;&lt;td&gt;false&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;action&lt;/b&gt;&lt;/p&gt;&lt;h3&gt;Asserts&lt;/h3&gt;&lt;table class=\&quot;grid\&quot;&gt;&lt;tr&gt;&lt;td&gt;-&lt;/td&gt;&lt;td&gt;&lt;b&gt;Description&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Direction&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Expression&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Operator&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Value&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;WarningOnly&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;*&lt;/td&gt;&lt;td&gt;Confirm that the changevalue is of taget type funktionsevneniveau&lt;/td&gt;&lt;td&gt;request&lt;/td&gt;&lt;td&gt;Bundle.entry.resource.ofType(Goal).target.where(detail.coding.code = 'b508ff66-6326-4862-a6d7-7bbf184c9823').measure.coding.code&lt;/td&gt;&lt;td&gt;equals&lt;/td&gt;&lt;td&gt;66959f77-6e2a-4574-8423-3ff097f8b9fa&lt;/td&gt;&lt;td&gt;false&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;action&lt;/b&gt;&lt;/p&gt;&lt;h3&gt;Asserts&lt;/h3&gt;&lt;table class=\&quot;grid\&quot;&gt;&lt;tr&gt;&lt;td&gt;-&lt;/td&gt;&lt;td&gt;&lt;b&gt;Description&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Direction&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Expression&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Operator&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Value&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;WarningOnly&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;*&lt;/td&gt;&lt;td&gt;Confirm that the changevalue is of taget type funktionsevneniveau&lt;/td&gt;&lt;td&gt;request&lt;/td&gt;&lt;td&gt;Bundle.entry.resource.ofType(Goal).target.where(detail.coding.code = 'cae545f5-2813-4d79-98fc-0a7d770af3cd').measure.coding.code&lt;/td&gt;&lt;td&gt;equals&lt;/td&gt;&lt;td&gt;66959f77-6e2a-4574-8423-3ff097f8b9fa&lt;/td&gt;&lt;td&gt;false&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;action&lt;/b&gt;&lt;/p&gt;&lt;h3&gt;Asserts&lt;/h3&gt;&lt;table class=\&quot;grid\&quot;&gt;&lt;tr&gt;&lt;td&gt;-&lt;/td&gt;&lt;td&gt;&lt;b&gt;Description&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Direction&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Expression&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Operator&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Value&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;WarningOnly&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;*&lt;/td&gt;&lt;td&gt;Confirm that the numbers of GoalConditionRank is equal to 5&lt;/td&gt;&lt;td&gt;request&lt;/td&gt;&lt;td&gt;Bundle.entry.resource.ofType(Goal).addresses.extension.where(url = 'http://kl.dk/fhir/common/caresocial/StructureDefinition/ConditionRank').count()&lt;/td&gt;&lt;td&gt;equals&lt;/td&gt;&lt;td&gt;5&lt;/td&gt;&lt;td&gt;false&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/blockquote&gt;&lt;/blockquote&gt;&lt;/div&gt;"<a name="end-xhtml"></a>
+  },
+  "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.url">url</a>" : "http://build.fhir.org/ig/hl7dk/dk-medcom/",
+  "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.version">version</a>" : "0.1.0",
+  "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.name">name</a>" : "First documentation phase",
+  "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.title">title</a>" : "First documentation phase",
+  "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.status">status</a>" : "active",
+  "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.date">date</a>" : "2021-11-01",
+  "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.publisher">publisher</a>" : "MedCom",
+  "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.contact">contact</a>" : [
+    {
+      "<a href="http://hl7.org/fhir/R4/metadatatypes.html#ContactDetail#ContactDetail.name">name</a>" : "MedCom",
+      "<a href="http://hl7.org/fhir/R4/metadatatypes.html#ContactDetail#ContactDetail.telecom">telecom</a>" : [
+        {
+          "<a href="http://hl7.org/fhir/R4/datatypes.html#ContactPoint#ContactPoint.system">system</a>" : "email",
+          "<a href="http://hl7.org/fhir/R4/datatypes.html#ContactPoint#ContactPoint.value">value</a>" : "fhir@medcom.dk"
+        }
+      ]
+    }
+  ],
+  "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.description">description</a>" : "Testing correct use of First documentation phase",
+  "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.copyright">copyright</a>" : "MedCom 2021",
+  "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.origin">origin</a>" : [
+    {
+      "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.origin.index">index</a>" : 1,
+      "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.origin.profile">profile</a>" : {
+        "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a>" : "http://terminology.hl7.org/CodeSystem/testscript-profile-origin-types",
+        "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a>" : "FHIR-Client"
+      }
+    }
+  ],
+  "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.destination">destination</a>" : [
+    {
+      "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.destination.index">index</a>" : 1,
+      "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.destination.profile">profile</a>" : {
+        "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a>" : "http://terminology.hl7.org/CodeSystem/testscript-profile-destination-types",
+        "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a>" : "FHIR-Server"
+      }
+    }
+  ],
+  "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.fixture">fixture</a>" : [
+    {
+      "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.fixture.id">id</a>" : "bundle-create-1",
+      "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.fixture.autocreate">autocreate</a>" : false,
+      "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.fixture.autodelete">autodelete</a>" : false,
+      "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.fixture.resource">resource</a>" : {
+        "<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.reference">reference</a>" : "/FHIRSandbox/MedCom/401-ffb-reporting/send/Userstory/_reference/resources/01Encounter.xml"
+      }
+    },
+    {
+      "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.fixture.id">id</a>" : "bundle-create-2",
+      "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.fixture.autocreate">autocreate</a>" : false,
+      "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.fixture.autodelete">autodelete</a>" : false,
+      "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.fixture.resource">resource</a>" : {
+        "<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.reference">reference</a>" : "/FHIRSandbox/MedCom/401-ffb-reporting/send/Userstory/_reference/resources/02Encounter.xml"
+      }
+    },
+    {
+      "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.fixture.id">id</a>" : "bundle-create-3",
+      "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.fixture.autocreate">autocreate</a>" : false,
+      "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.fixture.autodelete">autodelete</a>" : false,
+      "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.fixture.resource">resource</a>" : {
+        "<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.reference">reference</a>" : "/FHIRSandbox/MedCom/401-ffb-reporting/send/Userstory/_reference/resources/03Encounter.xml"
+      }
+    }
+  ],
+  "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.variable">variable</a>" : [
+    {
+      "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.variable.name">name</a>" : "municipalityCaseNumber",
+      "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.variable.expression">expression</a>" : "Bundle.entry.resource.ofType(ServiceRequest).extension.where(url= 'http://ffb/reporting/kl.dk/1.0/StructureDefinition/kl-reporting-ffb-municipalityCaseNumber').extension.where(url= 'municipalitySpecific').value.value",
+      "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.variable.sourceId">sourceId</a>" : "bundle-create-1"
+    },
+    {
+      "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.variable.name">name</a>" : "patientIdentifier",
+      "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.variable.expression">expression</a>" : "Bundle.entry.resource.ofType(Patient).identifier.value",
+      "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.variable.sourceId">sourceId</a>" : "bundle-create-1"
+    },
+    {
+      "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.variable.name">name</a>" : "ServiceRequestFullUrl",
+      "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.variable.expression">expression</a>" : "Bundle.entry.where(resource.ofType(ServiceRequest)).fullUrl",
+      "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.variable.sourceId">sourceId</a>" : "bundle-create-1"
+    },
+    {
+      "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.variable.name">name</a>" : "clinicalImpressionFindingsAmount",
+      "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.variable.expression">expression</a>" : "Bundle.entry.resource.ofType(ClinicalImpression).finding.count()",
+      "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.variable.sourceId">sourceId</a>" : "bundle-create-2"
+    },
+    {
+      "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.variable.name">name</a>" : "clinicalImpressionFindingsAmount",
+      "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.variable.expression">expression</a>" : "Bundle.entry.resource.ofType(ClinicalImpression).finding.count()",
+      "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.variable.sourceId">sourceId</a>" : "bundle-create-3"
+    },
+    {
+      "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.variable.name">name</a>" : "observationFullUrl3",
+      "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.variable.expression">expression</a>" : "Bundle.entry.where(resource.ofType(Observation)).fullUrl",
+      "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.variable.sourceId">sourceId</a>" : "bundle-create-3"
+    }
+  ],
+  "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.test">test</a>" : [
+    {
+      "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.test.id">id</a>" : "ffb-1",
+      "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.test.name">name</a>" : "1 Post ffb-report",
+      "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.test.description">description</a>" : "Post ffb-report",
+      "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.test.action">action</a>" : [
+        {
+          "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.test.action.operation">operation</a>" : {
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.operation.type">type</a>" : {
+              "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a>" : "http://terminology.hl7.org/CodeSystem/testscript-operation-codes",
+              "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a>" : "create"
+            },
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.operation.resource">resource</a>" : "Bundle",
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.operation.description">description</a>" : "Post a ffb-report",
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.operation.destination">destination</a>" : 1,
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.operation.encodeRequestUrl">encodeRequestUrl</a>" : true,
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.operation.origin">origin</a>" : 1,
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.operation.sourceId">sourceId</a>" : "bundle-create-1"
+          }
+        },
+        {
+          "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.test.action.assert">assert</a>" : {
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.description">description</a>" : "Confirm that the client request payload contains a Bundle resource type.",
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.direction">direction</a>" : "request",
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.resource">resource</a>" : "Bundle",
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.warningOnly">warningOnly</a>" : false
+          }
+        },
+        {
+          "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.test.action.assert">assert</a>" : {
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.description">description</a>" : "Confirm that the Bundle is of type collection",
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.direction">direction</a>" : "request",
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.expression">expression</a>" : "Bundle.type",
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.operator">operator</a>" : "equals",
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.value">value</a>" : "collection",
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.warningOnly">warningOnly</a>" : false
+          }
+        },
+        {
+          "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.test.action.assert">assert</a>" : {
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.description">description</a>" : "Confirm that the Patient contains an Identifier",
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.direction">direction</a>" : "request",
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.expression">expression</a>" : "Bundle.entry.resource.ofType(Patient).identifier.exists()",
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.warningOnly">warningOnly</a>" : false
+          }
+        },
+        {
+          "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.test.action.assert">assert</a>" : {
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.description">description</a>" : "Confirm that the Bundle contains a ServiceRequest MunicipalityCaseNumber",
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.direction">direction</a>" : "request",
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.expression">expression</a>" : "Bundle.entry.resource.ofType(ServiceRequest).extension.where(url= 'http://ffb/reporting/kl.dk/1.0/StructureDefinition/kl-reporting-ffb-municipalityCaseNumber').extension.where(url= 'municipalitySpecific').value.value.exists()",
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.warningOnly">warningOnly</a>" : false
+          }
+        },
+        {
+          "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.test.action.assert">assert</a>" : {
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.description">description</a>" : "Confirm that the ClinicalImpression contains reference to the ServiceRequest MunicipalityCaseNumber",
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.direction">direction</a>" : "request",
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.expression">expression</a>" : "Bundle.entry.resource.ofType(ClinicalImpression).extension.where(url= 'http://kl.dk/fhir/common/caresocial/StructureDefinition/BasedOnServiceRequest').value.reference",
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.operator">operator</a>" : "equals",
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.value">value</a>" : "${ServiceRequestFullUrl}",
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.warningOnly">warningOnly</a>" : false
+          }
+        }
+      ]
+    },
+    {
+      "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.test.id">id</a>" : "ffb-2",
+      "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.test.name">name</a>" : "2 Post ffb-report",
+      "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.test.description">description</a>" : "Post ffb-report",
+      "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.test.action">action</a>" : [
+        {
+          "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.test.action.operation">operation</a>" : {
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.operation.type">type</a>" : {
+              "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a>" : "http://terminology.hl7.org/CodeSystem/testscript-operation-codes",
+              "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a>" : "create"
+            },
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.operation.resource">resource</a>" : "Bundle",
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.operation.description">description</a>" : "Post a ffb-report",
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.operation.destination">destination</a>" : 1,
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.operation.encodeRequestUrl">encodeRequestUrl</a>" : true,
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.operation.origin">origin</a>" : 1,
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.operation.sourceId">sourceId</a>" : "bundle-create-2"
+          }
+        },
+        {
+          "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.test.action.assert">assert</a>" : {
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.description">description</a>" : "Confirm that the client request payload contains a Bundle resource type.",
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.direction">direction</a>" : "request",
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.resource">resource</a>" : "Bundle",
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.warningOnly">warningOnly</a>" : false
+          }
+        },
+        {
+          "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.test.action.assert">assert</a>" : {
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.description">description</a>" : "Confirm that the Bundle is of type collection",
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.direction">direction</a>" : "request",
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.expression">expression</a>" : "Bundle.type",
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.operator">operator</a>" : "equals",
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.value">value</a>" : "collection",
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.warningOnly">warningOnly</a>" : false
+          }
+        },
+        {
+          "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.test.action.assert">assert</a>" : {
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.description">description</a>" : "Confirm that the Bundle contains a ServiceRequest MunicipalityCaseNumber",
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.direction">direction</a>" : "request",
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.expression">expression</a>" : "Bundle.entry.resource.ofType(ServiceRequest).extension.where(url= 'http://ffb/reporting/kl.dk/1.0/StructureDefinition/kl-reporting-ffb-municipalityCaseNumber').extension.where(url= 'municipalitySpecific').value.value.exists()",
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.warningOnly">warningOnly</a>" : false
+          }
+        },
+        {
+          "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.test.action.assert">assert</a>" : {
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.description">description</a>" : "Confirm that the ClinicalImpression contains reference to the ServiceRequest MunicipalityCaseNumber",
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.direction">direction</a>" : "request",
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.expression">expression</a>" : "Bundle.entry.resource.ofType(ClinicalImpression).extension.where(url= 'http://kl.dk/fhir/common/caresocial/StructureDefinition/BasedOnServiceRequest').value.reference",
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.operator">operator</a>" : "equals",
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.value">value</a>" : "${ServiceRequestFullUrl}",
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.warningOnly">warningOnly</a>" : false
+          }
+        },
+        {
+          "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.test.action.assert">assert</a>" : {
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.description">description</a>" : "Confirm that the Patient Identifier is same as Previous",
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.direction">direction</a>" : "request",
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.expression">expression</a>" : "Bundle.entry.resource.ofType(Patient).identifier.value",
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.operator">operator</a>" : "equals",
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.value">value</a>" : "${patientIdentifier}",
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.warningOnly">warningOnly</a>" : false
+          }
+        },
+        {
+          "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.test.action.assert">assert</a>" : {
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.description">description</a>" : "Confirm that the Bundle contains a ServiceRequest MunicipalityCaseNumber",
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.direction">direction</a>" : "request",
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.expression">expression</a>" : "Bundle.entry.resource.ofType(ServiceRequest).extension.where(url= 'http://ffb/reporting/kl.dk/1.0/StructureDefinition/kl-reporting-ffb-municipalityCaseNumber').extension.where(url= 'municipalitySpecific').value.value",
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.operator">operator</a>" : "equals",
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.value">value</a>" : "${municipalityCaseNumber}",
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.warningOnly">warningOnly</a>" : false
+          }
+        },
+        {
+          "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.test.action.assert">assert</a>" : {
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.description">description</a>" : "Confirm that the ServiceRequest is the same as the first",
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.direction">direction</a>" : "request",
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.expression">expression</a>" : "Bundle.entry.where(resource.ofType(ServiceRequest)).fullUrl",
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.operator">operator</a>" : "equals",
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.value">value</a>" : "${ServiceRequestFullUrl}",
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.warningOnly">warningOnly</a>" : false
+          }
+        },
+        {
+          "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.test.action.assert">assert</a>" : {
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.description">description</a>" : "Test that there exists at least 1 Condition in the bundle ",
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.direction">direction</a>" : "request",
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.expression">expression</a>" : "Bundle.entry.resource.ofType(Condition).count() &gt; 0",
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.warningOnly">warningOnly</a>" : false
+          }
+        },
+        {
+          "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.test.action.assert">assert</a>" : {
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.description">description</a>" : "Make sure the numbers of ClinicalImpression.finding and Conditions is equal ",
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.direction">direction</a>" : "request",
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.expression">expression</a>" : "Bundle.entry.resource.ofType(Condition).count()",
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.operator">operator</a>" : "equals",
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.value">value</a>" : "${clinicalImpressionFindingsAmount}",
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.warningOnly">warningOnly</a>" : false
+          }
+        },
+        {
+          "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.test.action.assert">assert</a>" : {
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.description">description</a>" : "Confirm that the Condition 4934e45a-0f93-4c23-a767-2b681378700b exist in Bundle",
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.direction">direction</a>" : "request",
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.expression">expression</a>" : "Bundle.entry.resource.ofType(Condition).code.coding.where(code ='4934e45a-0f93-4c23-a767-2b681378700b').exists()",
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.warningOnly">warningOnly</a>" : false
+          }
+        },
+        {
+          "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.test.action.assert">assert</a>" : {
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.description">description</a>" : "Confirm that the Condition ef4271c4-f942-4194-a2b0-e9a7045eab22 exist in Bundle",
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.direction">direction</a>" : "request",
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.expression">expression</a>" : "Bundle.entry.resource.ofType(Condition).code.coding.where(code ='ef4271c4-f942-4194-a2b0-e9a7045eab22').exists()",
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.warningOnly">warningOnly</a>" : false
+          }
+        },
+        {
+          "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.test.action.assert">assert</a>" : {
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.description">description</a>" : "Confirm that the Condition b93216fa-3843-4a7e-85bc-e3ef35a1967f exist in Bundle",
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.direction">direction</a>" : "request",
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.expression">expression</a>" : "Bundle.entry.resource.ofType(Condition).code.coding.where(code ='b93216fa-3843-4a7e-85bc-e3ef35a1967f').exists()",
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.warningOnly">warningOnly</a>" : false
+          }
+        },
+        {
+          "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.test.action.assert">assert</a>" : {
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.description">description</a>" : "Confirm that the Condition 9959e779-e8ee-47e8-989b-bbff4aae2883 exist in Bundle",
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.direction">direction</a>" : "request",
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.expression">expression</a>" : "Bundle.entry.resource.ofType(Condition).code.coding.where(code ='9959e779-e8ee-47e8-989b-bbff4aae2883').exists()",
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.warningOnly">warningOnly</a>" : false
+          }
+        },
+        {
+          "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.test.action.assert">assert</a>" : {
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.description">description</a>" : "Confirm that the Condition e6f82424-da5a-41d1-bd1a-5796aa79d5f2 exist in Bundle",
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.direction">direction</a>" : "request",
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.expression">expression</a>" : "Bundle.entry.resource.ofType(Condition).code.coding.where(code ='e6f82424-da5a-41d1-bd1a-5796aa79d5f2').exists()",
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.warningOnly">warningOnly</a>" : false
+          }
+        },
+        {
+          "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.test.action.assert">assert</a>" : {
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.description">description</a>" : "Confirm that the Condition f5b8e809-7689-4952-838c-a069c99408b3 exist in Bundle",
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.direction">direction</a>" : "request",
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.expression">expression</a>" : "Bundle.entry.resource.ofType(Condition).code.coding.where(code ='f5b8e809-7689-4952-838c-a069c99408b3').exists()",
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.warningOnly">warningOnly</a>" : false
+          }
+        },
+        {
+          "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.test.action.assert">assert</a>" : {
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.description">description</a>" : "Confirm that the Condition 52efa2e9-e0dc-41eb-8c01-9865e2fdebae exist in Bundle",
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.direction">direction</a>" : "request",
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.expression">expression</a>" : "Bundle.entry.resource.ofType(Condition).code.coding.where(code ='52efa2e9-e0dc-41eb-8c01-9865e2fdebae').exists()",
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.warningOnly">warningOnly</a>" : false
+          }
+        },
+        {
+          "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.test.action.assert">assert</a>" : {
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.description">description</a>" : "Confirm that the Condition 7a8f247b-baf8-4552-95bb-acf8ef004b74 exist in Bundle",
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.direction">direction</a>" : "request",
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.expression">expression</a>" : "Bundle.entry.resource.ofType(Condition).code.coding.where(code ='7a8f247b-baf8-4552-95bb-acf8ef004b74').exists()",
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.warningOnly">warningOnly</a>" : false
+          }
+        },
+        {
+          "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.test.action.assert">assert</a>" : {
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.description">description</a>" : "Confirm that the Condition 83342ff3-5f2e-4914-b045-e98357685866 exist in Bundle",
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.direction">direction</a>" : "request",
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.expression">expression</a>" : "Bundle.entry.resource.ofType(Condition).code.coding.where(code ='83342ff3-5f2e-4914-b045-e98357685866').exists()",
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.warningOnly">warningOnly</a>" : false
+          }
+        },
+        {
+          "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.test.action.assert">assert</a>" : {
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.description">description</a>" : "Confirm that the Condition df194a84-6e4b-4f14-a194-d8d9d9a1fcad exist in Bundle",
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.direction">direction</a>" : "request",
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.expression">expression</a>" : "Bundle.entry.resource.ofType(Condition).code.coding.where(code ='df194a84-6e4b-4f14-a194-d8d9d9a1fcad').exists()",
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.warningOnly">warningOnly</a>" : false
+          }
+        },
+        {
+          "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.test.action.assert">assert</a>" : {
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.description">description</a>" : "Confirm that the Condition 3f9da5ac-9686-4eeb-b517-b46e17fcb1d7 exist in Bundle",
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.direction">direction</a>" : "request",
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.expression">expression</a>" : "Bundle.entry.resource.ofType(Condition).code.coding.where(code ='3f9da5ac-9686-4eeb-b517-b46e17fcb1d7').exists()",
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.warningOnly">warningOnly</a>" : false
+          }
+        },
+        {
+          "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.test.action.assert">assert</a>" : {
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.description">description</a>" : "Confirm that the Condition 685e8517-2f5c-4ef8-a7c4-fa2d008fdd9d exist in Bundle",
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.direction">direction</a>" : "request",
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.expression">expression</a>" : "Bundle.entry.resource.ofType(Condition).code.coding.where(code ='685e8517-2f5c-4ef8-a7c4-fa2d008fdd9d').exists()",
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.warningOnly">warningOnly</a>" : false
+          }
+        },
+        {
+          "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.test.action.assert">assert</a>" : {
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.description">description</a>" : "Confirm that the Condition 464a2ab6-a7df-4b3a-b74d-7873f4cfe668 exist in Bundle",
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.direction">direction</a>" : "request",
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.expression">expression</a>" : "Bundle.entry.resource.ofType(Condition).code.coding.where(code ='464a2ab6-a7df-4b3a-b74d-7873f4cfe668').exists()",
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.warningOnly">warningOnly</a>" : false
+          }
+        },
+        {
+          "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.test.action.assert">assert</a>" : {
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.description">description</a>" : "Confirm that the Condition 01770afa-cd17-41fe-a966-b8895e4d55d8 exist in Bundle",
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.direction">direction</a>" : "request",
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.expression">expression</a>" : "Bundle.entry.resource.ofType(Condition).code.coding.where(code ='01770afa-cd17-41fe-a966-b8895e4d55d8').exists()",
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.warningOnly">warningOnly</a>" : false
+          }
+        },
+        {
+          "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.test.action.assert">assert</a>" : {
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.description">description</a>" : "Confirm that the Condition eff3385d-01fa-4c9c-9850-52e179243f21 exist in Bundle",
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.direction">direction</a>" : "request",
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.expression">expression</a>" : "Bundle.entry.resource.ofType(Condition).code.coding.where(code ='eff3385d-01fa-4c9c-9850-52e179243f21').exists()",
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.warningOnly">warningOnly</a>" : false
+          }
+        },
+        {
+          "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.test.action.assert">assert</a>" : {
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.description">description</a>" : "Confirm that the Condition 3f9da5ac-9686-4eeb-b517-b46e17fcb1d7 exist where severity is 5bdde847-2837-416b-ab63-bbff8b7aa531 in Bundle.Condition",
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.direction">direction</a>" : "request",
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.expression">expression</a>" : "Bundle.entry.resource.ofType(Condition).where(code.coding.code = '3f9da5ac-9686-4eeb-b517-b46e17fcb1d7').severity.coding.code",
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.operator">operator</a>" : "equals",
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.value">value</a>" : "5bdde847-2837-416b-ab63-bbff8b7aa531",
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.warningOnly">warningOnly</a>" : false
+          }
+        },
+        {
+          "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.test.action.assert">assert</a>" : {
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.description">description</a>" : "Confirm that the Condition 685e8517-2f5c-4ef8-a7c4-fa2d008fdd9d exist where severity is 8328ce4a-6238-4f73-bf1a-74aadb68eff8 in Bundle.Condition",
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.direction">direction</a>" : "request",
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.expression">expression</a>" : "Bundle.entry.resource.ofType(Condition).where(code.coding.code = '685e8517-2f5c-4ef8-a7c4-fa2d008fdd9d').severity.coding.code",
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.operator">operator</a>" : "equals",
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.value">value</a>" : "8328ce4a-6238-4f73-bf1a-74aadb68eff8",
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.warningOnly">warningOnly</a>" : false
+          }
+        },
+        {
+          "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.test.action.assert">assert</a>" : {
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.description">description</a>" : "Confirm that the Condition 464a2ab6-a7df-4b3a-b74d-7873f4cfe668 exist where severity is cae545f5-2813-4d79-98fc-0a7d770af3cd in Bundle.Condition",
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.direction">direction</a>" : "request",
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.expression">expression</a>" : "Bundle.entry.resource.ofType(Condition).where(code.coding.code = '464a2ab6-a7df-4b3a-b74d-7873f4cfe668').severity.coding.code",
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.operator">operator</a>" : "equals",
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.value">value</a>" : "cae545f5-2813-4d79-98fc-0a7d770af3cd",
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.warningOnly">warningOnly</a>" : false
+          }
+        },
+        {
+          "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.test.action.assert">assert</a>" : {
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.description">description</a>" : "Confirm that the Condition 01770afa-cd17-41fe-a966-b8895e4d55d8 exist where severity is 5bdde847-2837-416b-ab63-bbff8b7aa531 in Bundle.Condition",
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.direction">direction</a>" : "request",
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.expression">expression</a>" : "Bundle.entry.resource.ofType(Condition).where(code.coding.code = '01770afa-cd17-41fe-a966-b8895e4d55d8').severity.coding.code",
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.operator">operator</a>" : "equals",
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.value">value</a>" : "5bdde847-2837-416b-ab63-bbff8b7aa531",
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.warningOnly">warningOnly</a>" : false
+          }
+        },
+        {
+          "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.test.action.assert">assert</a>" : {
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.description">description</a>" : "Confirm that the Condition eff3385d-01fa-4c9c-9850-52e179243f21 exist where severity is cae545f5-2813-4d79-98fc-0a7d770af3cd in Bundle.Condition",
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.direction">direction</a>" : "request",
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.expression">expression</a>" : "Bundle.entry.resource.ofType(Condition).where(code.coding.code = 'eff3385d-01fa-4c9c-9850-52e179243f21').severity.coding.code",
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.operator">operator</a>" : "equals",
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.value">value</a>" : "cae545f5-2813-4d79-98fc-0a7d770af3cd",
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.warningOnly">warningOnly</a>" : false
+          }
+        }
+      ]
+    },
+    {
+      "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.test.id">id</a>" : "ffb-3",
+      "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.test.name">name</a>" : "3 Post ffb-report",
+      "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.test.description">description</a>" : "Post ffb-report",
+      "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.test.action">action</a>" : [
+        {
+          "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.test.action.operation">operation</a>" : {
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.operation.type">type</a>" : {
+              "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a>" : "http://terminology.hl7.org/CodeSystem/testscript-operation-codes",
+              "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a>" : "create"
+            },
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.operation.resource">resource</a>" : "Bundle",
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.operation.description">description</a>" : "Post a ffb-report",
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.operation.destination">destination</a>" : 1,
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.operation.encodeRequestUrl">encodeRequestUrl</a>" : true,
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.operation.origin">origin</a>" : 1,
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.operation.sourceId">sourceId</a>" : "bundle-create-3"
+          }
+        },
+        {
+          "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.test.action.assert">assert</a>" : {
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.description">description</a>" : "Confirm that the client request payload contains a Bundle resource type.",
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.direction">direction</a>" : "request",
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.resource">resource</a>" : "Bundle",
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.warningOnly">warningOnly</a>" : false
+          }
+        },
+        {
+          "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.test.action.assert">assert</a>" : {
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.description">description</a>" : "Confirm that the Bundle is of type collection",
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.direction">direction</a>" : "request",
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.expression">expression</a>" : "Bundle.type",
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.operator">operator</a>" : "equals",
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.value">value</a>" : "collection",
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.warningOnly">warningOnly</a>" : false
+          }
+        },
+        {
+          "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.test.action.assert">assert</a>" : {
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.description">description</a>" : "Confirm that the Bundle contains a ServiceRequest MunicipalityCaseNumber",
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.direction">direction</a>" : "request",
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.expression">expression</a>" : "Bundle.entry.resource.ofType(ServiceRequest).extension.where(url= 'http://ffb/reporting/kl.dk/1.0/StructureDefinition/kl-reporting-ffb-municipalityCaseNumber').extension.where(url= 'municipalitySpecific').value.value.exists()",
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.warningOnly">warningOnly</a>" : false
+          }
+        },
+        {
+          "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.test.action.assert">assert</a>" : {
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.description">description</a>" : "Confirm that the ClinicalImpression contains reference to the ServiceRequest MunicipalityCaseNumber",
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.direction">direction</a>" : "request",
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.expression">expression</a>" : "Bundle.entry.resource.ofType(ClinicalImpression).extension.where(url= 'http://kl.dk/fhir/common/caresocial/StructureDefinition/BasedOnServiceRequest').value.reference",
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.operator">operator</a>" : "equals",
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.value">value</a>" : "${ServiceRequestFullUrl}",
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.warningOnly">warningOnly</a>" : false
+          }
+        },
+        {
+          "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.test.action.assert">assert</a>" : {
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.description">description</a>" : "Confirm that the Patient Identifier is same as Previous",
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.direction">direction</a>" : "request",
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.expression">expression</a>" : "Bundle.entry.resource.ofType(Patient).identifier.value",
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.operator">operator</a>" : "equals",
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.value">value</a>" : "${patientIdentifier}",
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.warningOnly">warningOnly</a>" : false
+          }
+        },
+        {
+          "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.test.action.assert">assert</a>" : {
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.description">description</a>" : "Confirm that the Bundle contains a ServiceRequest MunicipalityCaseNumber",
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.direction">direction</a>" : "request",
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.expression">expression</a>" : "Bundle.entry.resource.ofType(ServiceRequest).extension.where(url= 'http://ffb/reporting/kl.dk/1.0/StructureDefinition/kl-reporting-ffb-municipalityCaseNumber').extension.where(url= 'municipalitySpecific').value.value",
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.operator">operator</a>" : "equals",
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.value">value</a>" : "${municipalityCaseNumber}",
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.warningOnly">warningOnly</a>" : false
+          }
+        },
+        {
+          "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.test.action.assert">assert</a>" : {
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.description">description</a>" : "Confirm that the ServiceRequest is the same as the first",
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.direction">direction</a>" : "request",
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.expression">expression</a>" : "Bundle.entry.where(resource.ofType(ServiceRequest)).fullUrl",
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.operator">operator</a>" : "equals",
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.value">value</a>" : "${ServiceRequestFullUrl}",
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.warningOnly">warningOnly</a>" : false
+          }
+        },
+        {
+          "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.test.action.assert">assert</a>" : {
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.description">description</a>" : "Test that there exists at least 1 Condition in the bundle ",
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.direction">direction</a>" : "request",
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.expression">expression</a>" : "Bundle.entry.resource.ofType(Condition).count() &gt; 0",
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.warningOnly">warningOnly</a>" : false
+          }
+        },
+        {
+          "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.test.action.assert">assert</a>" : {
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.description">description</a>" : "Make sure the numbers of ClinicalImpression.finding and Conditions is equal ",
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.direction">direction</a>" : "request",
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.expression">expression</a>" : "Bundle.entry.resource.ofType(Condition).count()",
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.operator">operator</a>" : "equals",
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.value">value</a>" : "${clinicalImpressionFindingsAmount}",
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.warningOnly">warningOnly</a>" : false
+          }
+        },
+        {
+          "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.test.action.assert">assert</a>" : {
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.description">description</a>" : "Confirm that the CarePlanEvaluationCode is equal to dd628e73-d6c9-4837-a2b8-aa62d73bd6ae",
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.direction">direction</a>" : "request",
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.expression">expression</a>" : "Bundle.entry.resource.ofType(Observation).value.where(coding.system = 'http://kl.dk/fhir/common/caresocial/CodeSystem/FFB').coding.code",
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.operator">operator</a>" : "equals",
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.value">value</a>" : "dd628e73-d6c9-4837-a2b8-aa62d73bd6ae",
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.warningOnly">warningOnly</a>" : false
+          }
+        },
+        {
+          "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.test.action.assert">assert</a>" : {
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.description">description</a>" : "Confirm that the Careplan outcomeReference refference CarePlanEvalution",
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.direction">direction</a>" : "request",
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.expression">expression</a>" : "Bundle.entry.resource.ofType(CarePlan).activity.outcomeReference.reference",
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.operator">operator</a>" : "equals",
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.value">value</a>" : "${observationFullUrl3}",
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.warningOnly">warningOnly</a>" : false
+          }
+        },
+        {
+          "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.test.action.assert">assert</a>" : {
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.description">description</a>" : "Confirm that the changevalue is of taget type funktionsevneniveau",
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.direction">direction</a>" : "request",
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.expression">expression</a>" : "Bundle.entry.resource.ofType(Goal).target.where(detail.coding.code = '8328ce4a-6238-4f73-bf1a-74aadb68eff8').measure.coding.code",
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.operator">operator</a>" : "equals",
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.value">value</a>" : "66959f77-6e2a-4574-8423-3ff097f8b9fa",
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.warningOnly">warningOnly</a>" : false
+          }
+        },
+        {
+          "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.test.action.assert">assert</a>" : {
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.description">description</a>" : "Confirm that the changevalue is of taget type funktionsevneniveau",
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.direction">direction</a>" : "request",
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.expression">expression</a>" : "Bundle.entry.resource.ofType(Goal).target.where(detail.coding.code = 'b508ff66-6326-4862-a6d7-7bbf184c9823').measure.coding.code",
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.operator">operator</a>" : "equals",
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.value">value</a>" : "66959f77-6e2a-4574-8423-3ff097f8b9fa",
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.warningOnly">warningOnly</a>" : false
+          }
+        },
+        {
+          "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.test.action.assert">assert</a>" : {
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.description">description</a>" : "Confirm that the changevalue is of taget type funktionsevneniveau",
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.direction">direction</a>" : "request",
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.expression">expression</a>" : "Bundle.entry.resource.ofType(Goal).target.where(detail.coding.code = 'cae545f5-2813-4d79-98fc-0a7d770af3cd').measure.coding.code",
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.operator">operator</a>" : "equals",
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.value">value</a>" : "66959f77-6e2a-4574-8423-3ff097f8b9fa",
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.warningOnly">warningOnly</a>" : false
+          }
+        },
+        {
+          "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.test.action.assert">assert</a>" : {
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.description">description</a>" : "Confirm that the numbers of GoalConditionRank is equal to 5",
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.direction">direction</a>" : "request",
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.expression">expression</a>" : "Bundle.entry.resource.ofType(Goal).addresses.extension.where(url = 'http://kl.dk/fhir/common/caresocial/StructureDefinition/ConditionRank').count()",
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.operator">operator</a>" : "equals",
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.value">value</a>" : "5",
+            "<a href="http://hl7.org/fhir/R4/testscript.html#TestScript.setup.action.assert.warningOnly">warningOnly</a>" : false
+          }
+        }
+      ]
+    }
+  ]
+}</code></pre>
+</body>
+</html>

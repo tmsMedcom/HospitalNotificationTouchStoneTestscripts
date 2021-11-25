@@ -1,12 +1,5 @@
 [
   {
-    "id": "3e345dfd-32bb-4b0f-92f4-b5798f7c27e4",
-    "type": "TestScript",
-    "url": "http://build.fhir.org/ig/hl7dk/dk-medcom/",
-    "version": "0.1.0",
-    "name": "medcom-Acknowledgement-fatal-error-xml-json"
-  },
-  {
     "id": "5e657b1f-060e-423f-b198-fa8ffee77b87",
     "type": "TestScript",
     "url": "http://build.fhir.org/ig/hl7dk/dk-medcom/",
@@ -14,25 +7,186 @@
     "name": "re111ceive-notification-about-admission"
   },
   {
-    "id": "83e8e271-ced4-4ca7-ad4b-256ca00ed07f",
-    "type": "TestScript",
-    "url": "http://build.fhir.org/ig/hl7dk/dk-medcom/",
-    "version": "0.1.0",
-    "name": "medcom-Acknowledgement-ok-xml-json"
-  },
-  {
-    "id": "92446d93-ec60-4151-b550-3ef6a1b37e08",
-    "type": "TestScript",
-    "url": "http://build.fhir.org/ig/hl7dk/dk-medcom/",
-    "version": "0.1.0",
-    "name": "medcom-Acknowledgement-transient-error-xml-json"
-  },
-  {
     "id": "ACK01-ok",
     "type": "TestScript",
     "url": "http://build.fhir.org/ig/hl7dk/dk-medcom/",
     "version": "0.1.0",
     "name": "medcom-Acknowledgement-ok-xml-json"
+  },
+  {
+    "id": "ffb-1-encounter",
+    "type": "TestScript",
+    "url": "http://build.fhir.org/ig/hl7dk/dk-medcom/",
+    "version": "0.1.0",
+    "name": "First documentation phase"
+  },
+  {
+    "id": "HS-admit-emergency",
+    "type": "TestScript",
+    "url": "http://build.fhir.org/ig/hl7dk/dk-medcom/",
+    "version": "0.1.0",
+    "name": "Start hospital admit-emergency"
+  },
+  {
+    "id": "HS-admit-inpatient",
+    "type": "TestScript",
+    "url": "http://build.fhir.org/ig/hl7dk/dk-medcom/",
+    "version": "0.1.0",
+    "name": "Start hospital stay-admission"
+  },
+  {
+    "id": "HS-cancel-admit-emergency",
+    "type": "TestScript",
+    "url": "http://build.fhir.org/ig/hl7dk/dk-medcom/",
+    "version": "0.1.0",
+    "name": "Cancellation of start hospital stayacute ambulant"
+  },
+  {
+    "id": "HS-cancel-admit-inpatient",
+    "type": "TestScript",
+    "url": "http://build.fhir.org/ig/hl7dk/dk-medcom/",
+    "version": "0.1.0",
+    "name": "Cancellation of start hospital stayadmission"
+  },
+  {
+    "id": "HS-cancel-discharge-emergency-home-deseased",
+    "type": "TestScript",
+    "url": "http://build.fhir.org/ig/hl7dk/dk-medcom/",
+    "version": "0.1.0",
+    "name": "cancel-discharge-emergency-home-deseased"
+  },
+  {
+    "id": "HS-cancel-discharge-emergency-home",
+    "type": "TestScript",
+    "url": "http://build.fhir.org/ig/hl7dk/dk-medcom/",
+    "version": "0.1.0",
+    "name": "cancel-discharge-emergency-home"
+  },
+  {
+    "id": "HS-cancel-discharge-inpatient-home-deseased",
+    "type": "TestScript",
+    "url": "http://build.fhir.org/ig/hl7dk/dk-medcom/",
+    "version": "0.1.0",
+    "name": "cancel-discharge-inpatient-home-deseased"
+  },
+  {
+    "id": "HS-cancel-discharge-inpatient-home",
+    "type": "TestScript",
+    "url": "http://build.fhir.org/ig/hl7dk/dk-medcom/",
+    "version": "0.1.0",
+    "name": "cancel-discharge-inpatient-home"
+  },
+  {
+    "id": "HS-cancel-end-leave-inpatient",
+    "type": "TestScript",
+    "url": "http://build.fhir.org/ig/hl7dk/dk-medcom/",
+    "version": "0.1.0",
+    "name": "cancel-end-leave-inpatient"
+  },
+  {
+    "id": "HS-cancel-start-leave-inpatient",
+    "type": "TestScript",
+    "url": "http://build.fhir.org/ig/hl7dk/dk-medcom/",
+    "version": "0.1.0",
+    "name": "Update of Start leave"
+  },
+  {
+    "id": "HS-Cancellation-of-deseased-emer",
+    "type": "TestScript",
+    "url": "http://build.fhir.org/ig/hl7dk/dk-medcom/",
+    "version": "0.1.0",
+    "name": "Cancellation-of-deseased-emer"
+  },
+  {
+    "id": "HS-Cancellation-of-deseased-imp",
+    "type": "TestScript",
+    "url": "http://build.fhir.org/ig/hl7dk/dk-medcom/",
+    "version": "0.1.0",
+    "name": "Cancellation-of-deseased-imp"
+  },
+  {
+    "id": "HS-discharge-emergency-home",
+    "type": "TestScript",
+    "url": "http://build.fhir.org/ig/hl7dk/dk-medcom/",
+    "version": "0.1.0",
+    "name": "discharge-emergency-home"
+  },
+  {
+    "id": "HS-discharge-inpatient-home",
+    "type": "TestScript",
+    "url": "http://build.fhir.org/ig/hl7dk/dk-medcom/",
+    "version": "0.1.0",
+    "name": "discharge-inpatient-home"
+  },
+  {
+    "id": "HS-end-leave-inpatient",
+    "type": "TestScript",
+    "url": "http://build.fhir.org/ig/hl7dk/dk-medcom/",
+    "version": "0.1.0",
+    "name": "end-leave-inpatient"
+  },
+  {
+    "id": "HS-revise-admit-emergency",
+    "type": "TestScript",
+    "url": "http://build.fhir.org/ig/hl7dk/dk-medcom/",
+    "version": "0.1.0",
+    "name": "Update of start hospital stay-acute ambulant"
+  },
+  {
+    "id": "HS-revise-admit-inpatient",
+    "type": "TestScript",
+    "url": "http://build.fhir.org/ig/hl7dk/dk-medcom/",
+    "version": "0.1.0",
+    "name": "Update of start hospital stay-admission"
+  },
+  {
+    "id": "HS-revise-discharge-emergency-home-re-deseased",
+    "type": "TestScript",
+    "url": "http://build.fhir.org/ig/hl7dk/dk-medcom/",
+    "version": "0.1.0",
+    "name": "revise-discharge-emergency-home-re-deseased"
+  },
+  {
+    "id": "HS-revise-discharge-emergency-home",
+    "type": "TestScript",
+    "url": "http://build.fhir.org/ig/hl7dk/dk-medcom/",
+    "version": "0.1.0",
+    "name": "revise-discharge-emergency-home"
+  },
+  {
+    "id": "HS-revise-discharge-inpatient-home-re-deseased",
+    "type": "TestScript",
+    "url": "http://build.fhir.org/ig/hl7dk/dk-medcom/",
+    "version": "0.1.0",
+    "name": "revise-discharge-inpatient-home-re-deseased"
+  },
+  {
+    "id": "HS-revise-discharge-inpatient-home",
+    "type": "TestScript",
+    "url": "http://build.fhir.org/ig/hl7dk/dk-medcom/",
+    "version": "0.1.0",
+    "name": "revise-discharge-inpatient-home"
+  },
+  {
+    "id": "HS-revise-end-leave-inpatient",
+    "type": "TestScript",
+    "url": "http://build.fhir.org/ig/hl7dk/dk-medcom/",
+    "version": "0.1.0",
+    "name": "revise-end-leave-inpatient"
+  },
+  {
+    "id": "HS-revise-start-leave-inpatient",
+    "type": "TestScript",
+    "url": "http://build.fhir.org/ig/hl7dk/dk-medcom/",
+    "version": "0.1.0",
+    "name": "Update of Start leave"
+  },
+  {
+    "id": "HS-start-leave-inpatient",
+    "type": "TestScript",
+    "url": "http://build.fhir.org/ig/hl7dk/dk-medcom/",
+    "version": "0.1.0",
+    "name": "Start leave"
   },
   {
     "id": "UFHV01-with-ACK",

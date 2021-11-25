@@ -11,7 +11,7 @@
   <name value="HospitalnotificationTestscripts"/>
   <title value="HospitalNotification Testscripts"/>
   <status value="draft"/>
-  <date value="2021-11-01T16:43:12+01:00"/>
+  <date value="2021-11-19T10:31:09+01:00"/>
   <contact>
     <name value="MedCom"/>
     <telecom>
@@ -197,17 +197,6 @@
         <valueString value="TestScript"/>
       </extension>
       <reference>
-        <reference value="TestScript/3e345dfd-32bb-4b0f-92f4-b5798f7c27e4"/>
-      </reference>
-      <name value="TestinstanceACKfatal-error"/>
-      <description value="Testing correct use of acknowledgment"/>
-      <exampleBoolean value="true"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="TestScript"/>
-      </extension>
-      <reference>
         <reference value="TestScript/5e657b1f-060e-423f-b198-fa8ffee77b87"/>
       </reference>
       <name value="GeneratedHNrecScript"/>
@@ -219,32 +208,274 @@
         <valueString value="TestScript"/>
       </extension>
       <reference>
-        <reference value="TestScript/83e8e271-ced4-4ca7-ad4b-256ca00ed07f"/>
-      </reference>
-      <name value="TestinstanceACKOK"/>
-      <description value="Testing correct use of acknowledgment"/>
-      <exampleBoolean value="true"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="TestScript"/>
-      </extension>
-      <reference>
-        <reference value="TestScript/92446d93-ec60-4151-b550-3ef6a1b37e08"/>
-      </reference>
-      <name value="TestinstanceACKtransient-error"/>
-      <description value="Testing correct use of acknowledgment"/>
-      <exampleBoolean value="true"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="TestScript"/>
-      </extension>
-      <reference>
         <reference value="TestScript/ACK01-ok"/>
       </reference>
       <name value="TestinstanceACK-OK"/>
       <description value="Testing correct use of acknowledgment"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="TestScript"/>
+      </extension>
+      <reference>
+        <reference value="TestScript/HS-Cancellation-of-deseased-emer"/>
+      </reference>
+      <name value="HS-send-cancel-discharge-emergency-home-an-mors"/>
+      <description value="Testing correct use of Cancellation-of-deseased"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="TestScript"/>
+      </extension>
+      <reference>
+        <reference value="TestScript/HS-Cancellation-of-deseased-imp"/>
+      </reference>
+      <name value="HS-send-cancel-discharge-inpatient-home-an-mors"/>
+      <description value="Testing correct use of Cancellation-of-deseased-imp"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="TestScript"/>
+      </extension>
+      <reference>
+        <reference value="TestScript/HS-admit-emergency"/>
+      </reference>
+      <name value="HS-send-admit-emergency"/>
+      <description value="Testing correct use of status admit-emergency"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="TestScript"/>
+      </extension>
+      <reference>
+        <reference value="TestScript/HS-admit-inpatient"/>
+      </reference>
+      <name value="HS-send-admit-inpatient"/>
+      <description value="Testing correct use of status admit-inpatient"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="TestScript"/>
+      </extension>
+      <reference>
+        <reference value="TestScript/HS-cancel-admit-emergency"/>
+      </reference>
+      <name value="HS-send-cancel-admit-emergency"/>
+      <description value="Testing correct use of status stay-acute ambulant"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="TestScript"/>
+      </extension>
+      <reference>
+        <reference value="TestScript/HS-cancel-admit-inpatient"/>
+      </reference>
+      <name value="HS-send-cancel-admit-inpatient"/>
+      <description value="Testing correct use of status Update of Cancellation of start hospital stayadmission"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="TestScript"/>
+      </extension>
+      <reference>
+        <reference value="TestScript/HS-cancel-discharge-emergency-home"/>
+      </reference>
+      <name value="HS-send-cancel-discharge-emergency-home"/>
+      <description value="Testing correct use of Cancellation of End hospital Stay"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="TestScript"/>
+      </extension>
+      <reference>
+        <reference value="TestScript/HS-cancel-discharge-emergency-home-deseased"/>
+      </reference>
+      <name value="HS-send-cancel-discharge-emergency-home-mors"/>
+      <description value="Testing correct use of Cancellation of End hospital Stay-deseased"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="TestScript"/>
+      </extension>
+      <reference>
+        <reference value="TestScript/HS-cancel-discharge-inpatient-home"/>
+      </reference>
+      <name value="HS-send-cancel-discharge-inpatient-home"/>
+      <description value="Testing correct use of Cancellation of End hospital Stay"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="TestScript"/>
+      </extension>
+      <reference>
+        <reference value="TestScript/HS-cancel-discharge-inpatient-home-deseased"/>
+      </reference>
+      <name value="HS-send-cancel-discharge-inpatient-home-mors"/>
+      <description value="Testing correct use of Cancellation of End hospital Stay-deseased"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="TestScript"/>
+      </extension>
+      <reference>
+        <reference value="TestScript/HS-cancel-end-leave-inpatient"/>
+      </reference>
+      <name value="HS-send-cancel-end-leave-inpatient"/>
+      <description value="Testing correct use of cancel-end-leave-inpatient"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="TestScript"/>
+      </extension>
+      <reference>
+        <reference value="TestScript/HS-cancel-start-leave-inpatient"/>
+      </reference>
+      <name value="HS-send-cancel-start-leave-inpatient"/>
+      <description value="Testing correct use of Update of Start leave"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="TestScript"/>
+      </extension>
+      <reference>
+        <reference value="TestScript/HS-discharge-emergency-home"/>
+      </reference>
+      <name value="HS-send-discharge-emergency-home"/>
+      <description value="Testing correct use of End hospital Stay- patient dischargedto home/primary sector"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="TestScript"/>
+      </extension>
+      <reference>
+        <reference value="TestScript/HS-discharge-inpatient-home"/>
+      </reference>
+      <name value="HS-send-discharge-inpatient-home"/>
+      <description value="Testing correct use of End hospital Stay- patient dischargedto home/primary sector"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="TestScript"/>
+      </extension>
+      <reference>
+        <reference value="TestScript/HS-end-leave-inpatient"/>
+      </reference>
+      <name value="HS-send-end-leave-inpatient"/>
+      <description value="Testing correct use of end-leave-inpatient"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="TestScript"/>
+      </extension>
+      <reference>
+        <reference value="TestScript/HS-revise-admit-emergency"/>
+      </reference>
+      <name value="HS-send-revise-admit-emergency"/>
+      <description value="Testing correct use of status stay-acute ambulant"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="TestScript"/>
+      </extension>
+      <reference>
+        <reference value="TestScript/HS-revise-admit-inpatient"/>
+      </reference>
+      <name value="HS-send-revise-admit-inpatient"/>
+      <description value="Testing correct use of status Update of start hospital stay-admission"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="TestScript"/>
+      </extension>
+      <reference>
+        <reference value="TestScript/HS-revise-discharge-emergency-home"/>
+      </reference>
+      <name value="HS-send-revise-discharge-emergency-home"/>
+      <description value="Testing correct use of Update of End hospital Stay"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="TestScript"/>
+      </extension>
+      <reference>
+        <reference value="TestScript/HS-revise-discharge-emergency-home-re-deseased"/>
+      </reference>
+      <name value="HS-send-revise-discharge-emergency-home-mors"/>
+      <description value="Testing correct use of Update of End hospital Stay"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="TestScript"/>
+      </extension>
+      <reference>
+        <reference value="TestScript/HS-revise-discharge-inpatient-home"/>
+      </reference>
+      <name value="HS-send-revise-discharge-inpatient-home"/>
+      <description value="Testing correct use of Update of End hospital Stay"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="TestScript"/>
+      </extension>
+      <reference>
+        <reference value="TestScript/HS-revise-discharge-inpatient-home-re-deseased"/>
+      </reference>
+      <name value="HS-send-revise-discharge-inpatient-home-mors"/>
+      <description value="Testing correct use of Update of deseased"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="TestScript"/>
+      </extension>
+      <reference>
+        <reference value="TestScript/HS-revise-end-leave-inpatient"/>
+      </reference>
+      <name value="HS-send-revise-end-leave-inpatient"/>
+      <description value="Testing correct use of revise-end-leave-inpatient"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="TestScript"/>
+      </extension>
+      <reference>
+        <reference value="TestScript/HS-revise-start-leave-inpatient"/>
+      </reference>
+      <name value="HS-send-revise-start-leave-inpatient"/>
+      <description value="Testing correct use of Update of Start leave"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="TestScript"/>
+      </extension>
+      <reference>
+        <reference value="TestScript/HS-start-leave-inpatient"/>
+      </reference>
+      <name value="HS-send-start-leave-inpatient"/>
+      <description value="Testing correct use of status Start leave"/>
       <exampleBoolean value="true"/>
     </resource>
     <resource>
@@ -572,6 +803,17 @@
       </reference>
       <name value="TestinstanceUFHV16-with-ACK"/>
       <description value="Testing correct use of correction"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="TestScript"/>
+      </extension>
+      <reference>
+        <reference value="TestScript/ffb-1-encounter"/>
+      </reference>
+      <name value="ffb-1st-encounter"/>
+      <description value="Testing correct use of First documentation phase"/>
       <exampleBoolean value="true"/>
     </resource>
     <page>

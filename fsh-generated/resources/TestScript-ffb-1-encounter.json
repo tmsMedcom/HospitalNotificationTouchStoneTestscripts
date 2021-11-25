@@ -598,7 +598,7 @@
         },
         {
           "assert": {
-            "description": "Confirm that the changevalue is of taget type funktionsevneniveau",
+            "description": "Confirm that the numbers of GoalConditionRank is equal to 5",
             "direction": "request",
             "expression": "Bundle.entry.resource.ofType(Goal).addresses.extension.where(url = 'http://kl.dk/fhir/common/caresocial/StructureDefinition/ConditionRank').count()",
             "operator": "equals",

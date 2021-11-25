@@ -5,17 +5,17 @@
   "igName": "HospitalnotificationTestscripts",
   "packageId": "medcom",
   "igVer": "0.1.0",
-  "errorCount": 134,
+  "errorCount": 178,
   "version": "4.0.1",
   "revision": "a53ec6ee1b",
   "versionFull": "4.0.1-a53ec6ee1b",
   "toolingVersion": "4.6.0",
   "toolingRevision": "3",
   "toolingVersionFull": "4.6.0 (3)",
-  "totalFiles": 36,
-  "processedFiles": 45,
-  "genDate": "Mon, Nov 1, 2021 16:43+0100",
-  "genDay": "01/11/2021",
+  "totalFiles": 58,
+  "processedFiles": 67,
+  "genDate": "Fri, Nov 19, 2021 10:31+0100",
+  "genDay": "19/11/2021",
   "ig": {
     "id": "medcom",
     "name": "HospitalnotificationTestscripts",
@@ -24,7 +24,7 @@
     "version": "0.1.0",
     "status": "draft",
     "experimental": false,
-    "gitstatus": "HNCreateMethod",
+    "gitstatus": "kl-ffb-reporting",
     "contact": [
       {
         "name": "MedCom",
@@ -33,7 +33,7 @@
         ]
       }
     ],
-    "date": "2021-11-01T16:43:12+01:00",
+    "date": "2021-11-19T10:31:09+01:00",
     "description": "Testscripts for HospitalNotification",
     "fhirVersion": "4.0.1"
   }
