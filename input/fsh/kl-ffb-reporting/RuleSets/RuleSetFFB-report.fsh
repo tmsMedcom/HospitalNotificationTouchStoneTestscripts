@@ -7,26 +7,30 @@ RuleSet: CreateFfbReportCaseOpeningTest(number, fixture)
 * insert variableMunicipalityCaseNumber({number})
 * insert variablePatientIdentifier({number})
 * insert variableServiceRequestFullUrl({number}) //Only assign in first test
+* insert variableClinicalImpressionId({number})
+* insert variableClinicalImpressionEffectiveDatetime({number})
 
-//* insert profileFfb //only add once
+* insert profileFfb //only add once
+
 * insert actionOperationFfb({number})
 
-//Test: Is it a bundle
-* insert testResourceIsBundle
+* insert testPatientExists
 
-//Test: is bundle.Type equal collection
-* insert testBundleType
+//validation
+* insert validation
 
-//Test: Is Patient.Identifier existing 
-* insert testPatientIdentifierExists
+/* Torbens test forslag.
+test:
+ gem variable:
+     informationgathering (ClinicalImpression) til senere.
+     ClinicalImpression.EffectiveDatetime  Skal være den samme gennem hele forløbet.  
+      ClinicalImpression.EffectiveDatetime  skal være før nu. 
+      Resource.ofType.exists Patient ClinicalIMpression 
 
-//Test: Is MunicipalityCaseNumber existsing
-* insert testMunicipalityCaseNumberExists
+informationgathering har status = in-progress
+resource.ofType(Finding).not.Exists()
 
-//Test: Is ClinicalImpression containing a refference to 
-//MunicipalityCaseNumber
-* insert testClinicalImpressionContainsRefMunicipalityCaseNumber
-
+*/
 
 
 //Second documentation phase. Check: citizen, same CaseNumber
@@ -36,10 +40,10 @@ RuleSet: CreateFfbReportCaseinsightTest(number, fixture)
 * insert fixtureFfb({number}, {fixture})
 * insert variableClinicalImpressionCountFindings({number}) //only for 2end test
 * insert actionOperationFfb({number})
-* insert testResourceIsBundle
-* insert testBundleType
-* insert testMunicipalityCaseNumberExists
-* insert testClinicalImpressionContainsRefMunicipalityCaseNumber
+//* insert testResourceIsBundle
+//* insert testBundleType
+//* insert testMunicipalityCaseNumberExists
+//* insert testClinicalImpressionContainsRefMunicipalityCaseNumber
 
 //Only relevant for n+1 test
 
@@ -85,6 +89,17 @@ RuleSet: CreateFfbReportCaseinsightTest(number, fixture)
 * insert testSeverityMatchSpeceficCode(eff3385d-01fa-4c9c-9850-52e179243f21, cae545f5-2813-4d79-98fc-0a7d770af3cd)
 
 
+/*TOrbens forslag
+    Bundle.timestamp > Bundle[n-1].Timestamp
+    Condition...RecordedDAte <= bundle.timestamp 
+    Condition.ClinicalStatus.code = "active"
+    Condition.vertificationstatus = "confirmed"
+    InformationsGathring[n-1].id == informationGAthring[n].id
+    ClinicalInpression.status = "in-progress"
+      ClinicalInpression.[n-1].EffectiveDateTime == ClinicalInpression.[n].EffectiveDateTime
+*/
+
+
 //Third documentation phase 
 RuleSet: CreateFfbReportCaseassesment(number, fixture)
 * insert originClient
@@ -93,9 +108,9 @@ RuleSet: CreateFfbReportCaseassesment(number, fixture)
 * insert variableClinicalImpressionCountFindings({number}) //only for 2end test
 * insert variableObservationFullUrl({number})
 * insert actionOperationFfb({number})
-* insert testResourceIsBundle
-* insert testBundleType
-* insert testMunicipalityCaseNumberExists
+//* insert testResourceIsBundle
+//* insert testBundleType
+//* insert testMunicipalityCaseNumberExists
 * insert testClinicalImpressionContainsRefMunicipalityCaseNumber
 //Only relevant for n+1 test
 * insert testPatientIdentifirEqualsFirst
@@ -124,7 +139,24 @@ RuleSet: CreateFfbReportCaseassesment(number, fixture)
 //Test: The numbers of Ranked GoalConditions is 5 according to DeliveryReport-3rd-Encounter
 * insert testGoalConditionRankCount(5)
 
+/*
+Torben forslg
+Mangeler fastholde funktions evne.
+Severity og change value samme array men forskellige mesure se test testGoalTargetTypeValueIsFunktionsevneniveau
 
+Se narativ for at lave exist test mellem Measure og detail
+goalLifecyclusStatus = "active"
+samme conditions som encounter 2. 
+Goal.addresses  = condition.code.KORREKTVÆRDI test af condittion er den rigtige. Goal 2 og 3 skal kun have Primær address.ref(condition)
+Goal.addresses.rank = Se værdier (1,2) fra encounter 3. (test antal og det er den rigtige der har 1.)
+Støttebehov skal være let støttebehov -> evaluation. kode dd62.. status final effective < bundle.timestamp 
+Careplan
+ .period.start
+ .intent = "plan"
+ .status = "Active"
+ .municipalityCasenumber = samme som encounter1
+ .activity.outcome.reference refferere Observation (af typen let støttebehov).
+*/
 
 
 
@@ -153,13 +185,13 @@ RuleSet: testMunicipalityCaseNumberEqualsFist
 * test[=].action[=].assert.warningOnly = false
 
 RuleSet: testPatientIdentifierExists
-* test[=].action[+].assert.description = "Confirm that the Patient contains an Identifier"
+* test[=].action[+].assert.description = "Confirm that the Citizen contains an Identifier"
 * test[=].action[=].assert.direction = #request
 * test[=].action[=].assert.expression = "Bundle.entry.resource.ofType(Patient).identifier.exists()"
 * test[=].action[=].assert.warningOnly = false
 
 RuleSet: testPatientIdentifirEqualsFirst
-* test[=].action[+].assert.description = "Confirm that the Patient Identifier is same as Previous"
+* test[=].action[+].assert.description = "Confirm that the Citizen Identifier is same as Previous"
 * test[=].action[=].assert.direction = #request
 * test[=].action[=].assert.expression = "Bundle.entry.resource.ofType(Patient).identifier.value"
 * test[=].action[=].assert.operator = #equals
@@ -252,6 +284,14 @@ RuleSet: testGoalConditionRankCount(expectedNo)
 * test[=].action[=].assert.value = "{expectedNo}"
 * test[=].action[=].assert.warningOnly = false
 
+RuleSet: testPatientExists
+* test[=].action[+].assert.description = "Confirm that the bundle contains one patient resource"
+* test[=].action[=].assert.direction = #request
+* test[=].action[=].assert.expression = "Bundle.entry.resource.ofType(Patient).count()"
+* test[=].action[=].assert.operator = #equals
+* test[=].action[=].assert.value = "1"
+* test[=].action[=].assert.warningOnly = false
+
 RuleSet: actionOperationFfb(number)
 * test[+].id = "ffb-{number}" 
 * test[=].name = "{number} Post ffb-report" 
@@ -296,6 +336,17 @@ RuleSet: variableObservationFullUrl(number)
 * variable[=].expression = "Bundle.entry.where(resource.ofType(Observation)).fullUrl"
 * variable[=].sourceId = "bundle-create-{number}"
 
+//For ClinicalImpression.id
+RuleSet: variableClinicalImpressionId(number)
+* variable[+].name = "clinicalImpressionId{number}"
+* variable[=].expression = "Bundle.entry.resource.ofType(ClinicalImpression).id"
+* variable[=].sourceId = "bundle-create-{number}"
+
+//For ClinicalImpression EffectiveDatetime
+RuleSet: variableClinicalImpressionEffectiveDatetime(number)
+* variable[+].name = "clinicalImpressionEffectiveDatetime{number}"
+* variable[=].expression = "Bundle.entry.resource.ofType(ClinicalImpression).effective"
+* variable[=].sourceId = "bundle-create-{number}"
 
 RuleSet: profileFfb
 * profile.id = "kl-ffb-reporting-profile"
@@ -316,5 +367,11 @@ RuleSet: destinationServer
 * destination.index = 1
 * destination.profile.system = "http://terminology.hl7.org/CodeSystem/testscript-profile-destination-types"
 * destination.profile.code = #FHIR-Server
+
+RuleSet:  validation
+* test[=].action[+].assert.description = "Validate the ffb message"
+* test[=].action[=].assert.direction = #request
+* test[=].action[=].assert.validateProfileId  = "kl-ffb-reporting-profile"
+* test[=].action[=].assert.warningOnly = false
 
 
