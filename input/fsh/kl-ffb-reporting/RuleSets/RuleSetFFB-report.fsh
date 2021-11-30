@@ -9,29 +9,20 @@ RuleSet: CreateFfbReportCaseOpeningTest(number, fixture)
 * insert variableServiceRequestFullUrl({number}) //Only assign in first test
 * insert variableClinicalImpressionId({number})
 * insert variableClinicalImpressionEffectiveDatetime({number})
+* insert variableBundleTime({number})
 
 * insert profileFfb //only add once
 
 * insert actionOperationFfb({number})
 
 * insert testPatientExists
+* insert testClinicalImpressionExists
+* insert testEffectiveDateTimeLtBundleTime
+* insert testEffectiveDateTimeBeforeNow
+* insert testClinicalImpressionStatus(in-progress)
 
 //validation
-* insert validation
-
-/* Torbens test forslag.
-test:
- gem variable:
-     -informationgathering (ClinicalImpression) til senere.
-     -ClinicalImpression.EffectiveDatetime  Skal være den samme gennem hele forløbet.  
-      ClinicalImpression.EffectiveDatetime  skal være før nu. 
-      Resource.ofType.exists Patient ClinicalIMpression 
-
-informationgathering har status = in-progress
-resource.ofType(Finding).not.Exists()
-
-*/
-
+//* insert validation
 
 //Second documentation phase. Check: citizen, same CaseNumber
 RuleSet: CreateFfbReportCaseinsightTest(number, fixture)
@@ -40,10 +31,7 @@ RuleSet: CreateFfbReportCaseinsightTest(number, fixture)
 * insert fixtureFfb({number}, {fixture})
 * insert variableClinicalImpressionCountFindings({number}) //only for 2end test
 * insert actionOperationFfb({number})
-//* insert testResourceIsBundle
-//* insert testBundleType
-//* insert testMunicipalityCaseNumberExists
-//* insert testClinicalImpressionContainsRefMunicipalityCaseNumber
+
 
 //Only relevant for n+1 test
 
@@ -88,12 +76,18 @@ RuleSet: CreateFfbReportCaseinsightTest(number, fixture)
 * insert testSeverityMatchSpeceficCode(01770afa-cd17-41fe-a966-b8895e4d55d8, 5bdde847-2837-416b-ab63-bbff8b7aa531)
 * insert testSeverityMatchSpeceficCode(eff3385d-01fa-4c9c-9850-52e179243f21, cae545f5-2813-4d79-98fc-0a7d770af3cd)
 
+* insert testBundleTimestampGtPreviousBundle(1) 
+* insert testConditionRecordedDateLtBundleTime
+* insert testConditionClinicalStatusActive
+* insert testConditionVerificationStatusEqConfirmed
+* insert testClinicalImpressionIdEqPrevious(1)
+
 
 /*TOrbens forslag
-    Bundle.timestamp > Bundle[n-1].Timestamp
-    Condition...RecordedDAte <= bundle.timestamp 
-    Condition.ClinicalStatus.code = "active"
-    Condition.vertificationstatus = "confirmed"
+    -Bundle.timestamp > Bundle[n-1].Timestamp
+    -Condition...RecordedDAte <= bundle.timestamp 
+    -Condition.ClinicalStatus.code = "active"
+    -Condition.vertificationstatus = "confirmed"
     InformationsGathring[n-1].id == informationGAthring[n].id
     ClinicalInpression.status = "in-progress"
       ClinicalInpression.[n-1].EffectiveDateTime == ClinicalInpression.[n].EffectiveDateTime
@@ -292,6 +286,69 @@ RuleSet: testPatientExists
 * test[=].action[=].assert.value = "1"
 * test[=].action[=].assert.warningOnly = false
 
+RuleSet: testClinicalImpressionExists
+* test[=].action[+].assert.description = "Confirm that the bundle contains at least one ClinicalImpression resource"
+* test[=].action[=].assert.direction = #request
+* test[=].action[=].assert.expression = "Bundle.entry.resource.ofType(ClinicalImpression).count() > 0"
+* test[=].action[=].assert.warningOnly = false
+
+RuleSet: testEffectiveDateTimeLtBundleTime
+* test[=].action[+].assert.description = "Confirm that the ClinicalImpression.effectiveDateTime is less than or equal to the bundle.timestamp"
+* test[=].action[=].assert.direction = #request
+* test[=].action[=].assert.expression = "Bundle.entry.resource.ofType(ClinicalImpression).effective  <= Bundle.timestamp"
+* test[=].action[=].assert.warningOnly = false
+
+RuleSet: testEffectiveDateTimeBeforeNow
+* test[=].action[+].assert.description = "Confirm that the ClinicalImpression.effectiveDateTime less than or equal to now"
+* test[=].action[=].assert.direction = #request
+* test[=].action[=].assert.expression = "Bundle.entry.resource.ofType(ClinicalImpression).effective"
+* test[=].action[=].assert.operator = #lessThan
+* test[=].action[=].assert.value = "${CURRENTDATETIME}"
+* test[=].action[=].assert.warningOnly = false
+
+RuleSet: testClinicalImpressionStatus(status)
+* test[=].action[+].assert.description = "Confirm that the ClinicalImpression.status is equal to {status}"
+* test[=].action[=].assert.direction = #request
+* test[=].action[=].assert.expression = "Bundle.entry.resource.ofType(ClinicalImpression).status"
+* test[=].action[=].assert.operator = #equals
+* test[=].action[=].assert.value = "{status}"
+* test[=].action[=].assert.warningOnly = false
+
+RuleSet: testBundleTimestampGtPreviousBundle(number)
+* test[=].action[+].assert.description = "Confirm that the bundle.timestamp is greater than the previousBundle"
+* test[=].action[=].assert.direction = #request
+* test[=].action[=].assert.expression = "Bundle.timestamp"
+* test[=].action[=].assert.operator = #greaterThan
+* test[=].action[=].assert.value = "${BundleTimestamp{number}}"
+* test[=].action[=].assert.warningOnly = false
+
+RuleSet: testConditionClinicalStatusActive
+* test[=].action[+].assert.description = "Confirm that the Condition clinicalStatus is active"
+* test[=].action[=].assert.direction = #request
+* test[=].action[=].assert.expression = "Bundle.entry.resource.ofType(Condition).all(clinicalStatus.coding.code = 'active')"
+* test[=].action[=].assert.warningOnly = false
+
+RuleSet: testConditionRecordedDateLtBundleTime
+* test[=].action[+].assert.description = "Confirm that the Condition recordedDate is less than or equal to bundle.timestamp"
+* test[=].action[=].assert.direction = #request
+* test[=].action[=].assert.expression = "Bundle.entry.resource.ofType(Condition).all(recordedDate <= %resource.timestamp)"
+* test[=].action[=].assert.warningOnly = false
+
+RuleSet: testConditionVerificationStatusEqConfirmed
+* test[=].action[+].assert.description = "Confirm that the Condition verification Status is Confirmed"
+* test[=].action[=].assert.direction = #request
+* test[=].action[=].assert.expression = "Bundle.entry.resource.ofType(Condition).all(verificationStatus.coding.code = 'confirmed')"
+* test[=].action[=].assert.warningOnly = false
+
+RuleSet: testClinicalImpressionIdEqPrevious(number)
+* test[=].action[+].assert.description = "Confirm that the ClinicalImpression Id  is the same ad previous"
+* test[=].action[=].assert.direction = #request
+* test[=].action[=].assert.expression = "Bundle.entry.resource.ofType(ClinicalImpression).id"
+* test[=].action[=].assert.operator = #equals
+* test[=].action[=].assert.value = "${clinicalImpressionId{number}}"
+* test[=].action[=].assert.warningOnly = false
+
+
 RuleSet: actionOperationFfb(number)
 * test[+].id = "ffb-{number}" 
 * test[=].name = "{number} Post ffb-report" 
@@ -346,6 +403,12 @@ RuleSet: variableClinicalImpressionId(number)
 RuleSet: variableClinicalImpressionEffectiveDatetime(number)
 * variable[+].name = "clinicalImpressionEffectiveDatetime{number}"
 * variable[=].expression = "Bundle.entry.resource.ofType(ClinicalImpression).effective"
+* variable[=].sourceId = "bundle-create-{number}"
+
+//For Bundle timestamp
+RuleSet: variableBundleTime(number)
+* variable[+].name = "BundleTimestamp{number}"
+* variable[=].expression = "Bundle.timestamp"
 * variable[=].sourceId = "bundle-create-{number}"
 
 RuleSet: profileFfb

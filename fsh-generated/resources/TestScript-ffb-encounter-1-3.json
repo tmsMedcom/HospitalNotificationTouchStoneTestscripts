@@ -50,7 +50,7 @@
       "autocreate": false,
       "autodelete": false,
       "resource": {
-        "reference": "/FHIRSandbox/MedCom/401-ffb-reporting/send/Userstory/_reference/resources/01Encounter.xml"
+        "reference": "/FHIRSandbox/MedCom/401-ffb-reporting/_reference/resources/01Encounter.xml"
       }
     },
     {
@@ -58,7 +58,7 @@
       "autocreate": false,
       "autodelete": false,
       "resource": {
-        "reference": "/FHIRSandbox/MedCom/401-ffb-reporting/send/Userstory/_reference/resources/02Encounter.xml"
+        "reference": "/FHIRSandbox/MedCom/401-ffb-reporting/_reference/resources/02Encounter.xml"
       }
     },
     {
@@ -66,7 +66,7 @@
       "autocreate": false,
       "autodelete": false,
       "resource": {
-        "reference": "/FHIRSandbox/MedCom/401-ffb-reporting/send/Userstory/_reference/resources/03Encounter.xml"
+        "reference": "/FHIRSandbox/MedCom/401-ffb-reporting/_reference/resources/03Encounter.xml"
       }
     }
   ],
@@ -94,6 +94,11 @@
     {
       "name": "clinicalImpressionEffectiveDatetime1",
       "expression": "Bundle.entry.resource.ofType(ClinicalImpression).effective",
+      "sourceId": "bundle-create-1"
+    },
+    {
+      "name": "BundleTimestamp1",
+      "expression": "Bundle.timestamp",
       "sourceId": "bundle-create-1"
     },
     {
@@ -150,9 +155,37 @@
         },
         {
           "assert": {
-            "description": "Validate the ffb message",
+            "description": "Confirm that the bundle contains at least one ClinicalImpression resource",
             "direction": "request",
-            "validateProfileId": "kl-ffb-reporting-profile",
+            "expression": "Bundle.entry.resource.ofType(ClinicalImpression).count() > 0",
+            "warningOnly": false
+          }
+        },
+        {
+          "assert": {
+            "description": "Confirm that the ClinicalImpression.effectiveDateTime is less than or equal to the bundle.timestamp",
+            "direction": "request",
+            "expression": "Bundle.entry.resource.ofType(ClinicalImpression).effective  <= Bundle.timestamp",
+            "warningOnly": false
+          }
+        },
+        {
+          "assert": {
+            "description": "Confirm that the ClinicalImpression.effectiveDateTime less than or equal to now",
+            "direction": "request",
+            "expression": "Bundle.entry.resource.ofType(ClinicalImpression).effective",
+            "operator": "lessThan",
+            "value": "${CURRENTDATETIME}",
+            "warningOnly": false
+          }
+        },
+        {
+          "assert": {
+            "description": "Confirm that the ClinicalImpression.status is equal to in-progress",
+            "direction": "request",
+            "expression": "Bundle.entry.resource.ofType(ClinicalImpression).status",
+            "operator": "equals",
+            "value": "in-progress",
             "warningOnly": false
           }
         }
@@ -392,6 +425,50 @@
             "expression": "Bundle.entry.resource.ofType(Condition).where(code.coding.code = 'eff3385d-01fa-4c9c-9850-52e179243f21').severity.coding.code",
             "operator": "equals",
             "value": "cae545f5-2813-4d79-98fc-0a7d770af3cd",
+            "warningOnly": false
+          }
+        },
+        {
+          "assert": {
+            "description": "Confirm that the bundle.timestamp is greater than the previousBundle",
+            "direction": "request",
+            "expression": "Bundle.timestamp",
+            "operator": "greaterThan",
+            "value": "${BundleTimestamp1}",
+            "warningOnly": false
+          }
+        },
+        {
+          "assert": {
+            "description": "Confirm that the Condition recordedDate is less than or equal to bundle.timestamp",
+            "direction": "request",
+            "expression": "Bundle.entry.resource.ofType(Condition).all(recordedDate <= %resource.timestamp)",
+            "warningOnly": false
+          }
+        },
+        {
+          "assert": {
+            "description": "Confirm that the Condition clinicalStatus is active",
+            "direction": "request",
+            "expression": "Bundle.entry.resource.ofType(Condition).all(clinicalStatus.coding.code = 'active')",
+            "warningOnly": false
+          }
+        },
+        {
+          "assert": {
+            "description": "Confirm that the Condition verification Status is Confirmed",
+            "direction": "request",
+            "expression": "Bundle.entry.resource.ofType(Condition).all(verificationStatus.coding.code = 'confirmed')",
+            "warningOnly": false
+          }
+        },
+        {
+          "assert": {
+            "description": "Confirm that the ClinicalImpression Id  is the same ad previous",
+            "direction": "request",
+            "expression": "Bundle.entry.resource.ofType(ClinicalImpression).id",
+            "operator": "equals",
+            "value": "${clinicalImpressionId1}",
             "warningOnly": false
           }
         }

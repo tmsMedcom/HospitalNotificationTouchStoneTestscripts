@@ -6,10 +6,10 @@ InstanceOf: TestScript
 * name = "Encounter phase 1-3"
 * title = "Encounter phase 1-3"
 * description = "Testing correct use of encounter phase 1-3"
-* insert  CreateFfbReportCaseOpeningTest( 1, /FHIRSandbox/MedCom/401-ffb-reporting/send/Userstory/_reference/resources/01Encounter.xml)
+* insert  CreateFfbReportCaseOpeningTest( 1, /FHIRSandbox/MedCom/401-ffb-reporting/_reference/resources/01Encounter.xml)
 
 /*Second documentation phase*/
-* insert  CreateFfbReportCaseinsightTest( 2, /FHIRSandbox/MedCom/401-ffb-reporting/send/Userstory/_reference/resources/02Encounter.xml)
+* insert  CreateFfbReportCaseinsightTest( 2, /FHIRSandbox/MedCom/401-ffb-reporting/_reference/resources/02Encounter.xml)
 
 //Third documentation phase 
-* insert CreateFfbReportCaseassesment(3, /FHIRSandbox/MedCom/401-ffb-reporting/send/Userstory/_reference/resources/03Encounter.xml)
+* insert CreateFfbReportCaseassesment(3, /FHIRSandbox/MedCom/401-ffb-reporting/_reference/resources/03Encounter.xml)
