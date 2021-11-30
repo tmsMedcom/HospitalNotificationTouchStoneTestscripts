@@ -22,8 +22,8 @@ RuleSet: CreateFfbReportCaseOpeningTest(number, fixture)
 /* Torbens test forslag.
 test:
  gem variable:
-     informationgathering (ClinicalImpression) til senere.
-     ClinicalImpression.EffectiveDatetime  Skal være den samme gennem hele forløbet.  
+     -informationgathering (ClinicalImpression) til senere.
+     -ClinicalImpression.EffectiveDatetime  Skal være den samme gennem hele forløbet.  
       ClinicalImpression.EffectiveDatetime  skal være før nu. 
       Resource.ofType.exists Patient ClinicalIMpression 
 
