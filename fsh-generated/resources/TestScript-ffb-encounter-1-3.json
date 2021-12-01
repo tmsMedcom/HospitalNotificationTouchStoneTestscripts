@@ -471,6 +471,26 @@
             "value": "${clinicalImpressionId1}",
             "warningOnly": false
           }
+        },
+        {
+          "assert": {
+            "description": "Confirm that the ClinicalImpression status  is in-progress",
+            "direction": "request",
+            "expression": "Bundle.entry.resource.ofType(ClinicalImpression).status",
+            "operator": "equals",
+            "value": "in-progress",
+            "warningOnly": false
+          }
+        },
+        {
+          "assert": {
+            "description": "Confirm that the effective dateTime is equal to previous",
+            "direction": "request",
+            "expression": "Bundle.entry.resource.ofType(ClinicalImpression).effective",
+            "operator": "equals",
+            "value": "${clinicalImpressionEffectiveDatetime1}",
+            "warningOnly": false
+          }
         }
       ]
     },

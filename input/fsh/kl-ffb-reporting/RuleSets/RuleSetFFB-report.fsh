@@ -81,16 +81,17 @@ RuleSet: CreateFfbReportCaseinsightTest(number, fixture)
 * insert testConditionClinicalStatusActive
 * insert testConditionVerificationStatusEqConfirmed
 * insert testClinicalImpressionIdEqPrevious(1)
-
+* insert testClinicalImpressionStatusInProgress
+* insert testClinicalImpressionEffectiveDateTimeEqPrevious(1)
 
 /*TOrbens forslag
     -Bundle.timestamp > Bundle[n-1].Timestamp
     -Condition...RecordedDAte <= bundle.timestamp 
     -Condition.ClinicalStatus.code = "active"
     -Condition.vertificationstatus = "confirmed"
-    InformationsGathring[n-1].id == informationGAthring[n].id
-    ClinicalInpression.status = "in-progress"
-      ClinicalInpression.[n-1].EffectiveDateTime == ClinicalInpression.[n].EffectiveDateTime
+    -InformationsGathring[n-1].id == informationGAthring[n].id
+    -ClinicalInpression.status = "in-progress"
+    -ClinicalInpression.[n-1].EffectiveDateTime == ClinicalInpression.[n].EffectiveDateTime
 */
 
 
@@ -346,6 +347,22 @@ RuleSet: testClinicalImpressionIdEqPrevious(number)
 * test[=].action[=].assert.expression = "Bundle.entry.resource.ofType(ClinicalImpression).id"
 * test[=].action[=].assert.operator = #equals
 * test[=].action[=].assert.value = "${clinicalImpressionId{number}}"
+* test[=].action[=].assert.warningOnly = false
+
+RuleSet: testClinicalImpressionStatusInProgress
+* test[=].action[+].assert.description = "Confirm that the ClinicalImpression status  is in-progress"
+* test[=].action[=].assert.direction = #request
+* test[=].action[=].assert.expression = "Bundle.entry.resource.ofType(ClinicalImpression).status"
+* test[=].action[=].assert.operator = #equals
+* test[=].action[=].assert.value = "in-progress"
+* test[=].action[=].assert.warningOnly = false
+
+RuleSet: testClinicalImpressionEffectiveDateTimeEqPrevious(number)
+* test[=].action[+].assert.description = "Confirm that the effective dateTime is equal to previous"
+* test[=].action[=].assert.direction = #request
+* test[=].action[=].assert.expression = "Bundle.entry.resource.ofType(ClinicalImpression).effective"
+* test[=].action[=].assert.operator = #equals
+* test[=].action[=].assert.value = "${clinicalImpressionEffectiveDatetime{number}}"
 * test[=].action[=].assert.warningOnly = false
 
 
