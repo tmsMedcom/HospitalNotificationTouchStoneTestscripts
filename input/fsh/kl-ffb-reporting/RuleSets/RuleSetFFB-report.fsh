@@ -50,23 +50,7 @@ RuleSet: CreateFfbReportCaseinsightTest(number, fixture)
 //Test: is the number of FindingRefferences and Conditions the same. 
 * insert testSameNoOfFindingRefAndCondition
 
-//Test: is the ConditinCodes from the 2nd Encounter 
-//https://build.fhir.org/ig/hl7dk/kl-ffb-reporting/example.html#2nd-encounter--second-documentation-phase--case-insight in the bundle
-* insert testConditionCode(4934e45a-0f93-4c23-a767-2b681378700b)
-* insert testConditionCode(ef4271c4-f942-4194-a2b0-e9a7045eab22)
-* insert testConditionCode(b93216fa-3843-4a7e-85bc-e3ef35a1967f)
-* insert testConditionCode(9959e779-e8ee-47e8-989b-bbff4aae2883)
-* insert testConditionCode(e6f82424-da5a-41d1-bd1a-5796aa79d5f2)
-* insert testConditionCode(f5b8e809-7689-4952-838c-a069c99408b3)
-* insert testConditionCode(52efa2e9-e0dc-41eb-8c01-9865e2fdebae)
-* insert testConditionCode(7a8f247b-baf8-4552-95bb-acf8ef004b74)
-* insert testConditionCode(83342ff3-5f2e-4914-b045-e98357685866)
-* insert testConditionCode(df194a84-6e4b-4f14-a194-d8d9d9a1fcad)
-* insert testConditionCode(3f9da5ac-9686-4eeb-b517-b46e17fcb1d7)
-* insert testConditionCode(685e8517-2f5c-4ef8-a7c4-fa2d008fdd9d)
-* insert testConditionCode(464a2ab6-a7df-4b3a-b74d-7873f4cfe668)
-* insert testConditionCode(01770afa-cd17-41fe-a966-b8895e4d55d8)
-* insert testConditionCode(eff3385d-01fa-4c9c-9850-52e179243f21)
+* insert testconditionCodesExists
 
 //Test: Is the Severity.code matching the expected Condition code.
 // from 2en encounter https://build.fhir.org/ig/hl7dk/kl-ffb-reporting/example.html#2nd-encounter--second-documentation-phase--case-insight 
@@ -84,16 +68,6 @@ RuleSet: CreateFfbReportCaseinsightTest(number, fixture)
 * insert testClinicalImpressionStatusInProgress
 * insert testClinicalImpressionEffectiveDateTimeEqPrevious(1)
 
-/*TOrbens forslag
-    -Bundle.timestamp > Bundle[n-1].Timestamp
-    -Condition...RecordedDAte <= bundle.timestamp 
-    -Condition.ClinicalStatus.code = "active"
-    -Condition.vertificationstatus = "confirmed"
-    -InformationsGathring[n-1].id == informationGAthring[n].id
-    -ClinicalInpression.status = "in-progress"
-    -ClinicalInpression.[n-1].EffectiveDateTime == ClinicalInpression.[n].EffectiveDateTime
-*/
-
 
 //Third documentation phase 
 RuleSet: CreateFfbReportCaseassesment(number, fixture)
@@ -103,9 +77,6 @@ RuleSet: CreateFfbReportCaseassesment(number, fixture)
 * insert variableClinicalImpressionCountFindings({number}) //only for 2end test
 * insert variableObservationFullUrl({number})
 * insert actionOperationFfb({number})
-//* insert testResourceIsBundle
-//* insert testBundleType
-//* insert testMunicipalityCaseNumberExists
 * insert testClinicalImpressionContainsRefMunicipalityCaseNumber
 //Only relevant for n+1 test
 * insert testPatientIdentifirEqualsFirst
@@ -131,28 +102,32 @@ RuleSet: CreateFfbReportCaseassesment(number, fixture)
 //Test: changevalue: Svært nedsat funktionsevne is of taget.type funktionsevneniveau (66959f77-6e2a-4574-8423-3ff097f8b9fa) 
 * insert testGoalTargetTypeValueIsFunktionsevneniveau(cae545f5-2813-4d79-98fc-0a7d770af3cd) 
 
+//Test: changevalue: Fastholde funktionsevne is of taget.type funktionsevneniveau (66959f77-6e2a-4574-8423-3ff097f8b9fa) 
+* insert testGoalTargetTypeValueIsFunktionsevneniveau(cae545f5-2813-4d79-98fc-0a7d770af3cd) 
+
 //Test: The numbers of Ranked GoalConditions is 5 according to DeliveryReport-3rd-Encounter
 * insert testGoalConditionRankCount(5)
 
-/*
-Torben forslg
-Mangeler fastholde funktions evne.
-Severity og change value samme array men forskellige mesure se test testGoalTargetTypeValueIsFunktionsevneniveau
+//Goal can be found in the 3th encounter instance
+* insert testGoal83fdfed2-f182-4a11-8ea1-de8181e6eab9
 
-Se narativ for at lave exist test mellem Measure og detail
-goalLifecyclusStatus = "active"
-samme conditions som encounter 2. 
-Goal.addresses  = condition.code.KORREKTVÆRDI test af condittion er den rigtige. Goal 2 og 3 skal kun have Primær address.ref(condition)
-Goal.addresses.rank = Se værdier (1,2) fra encounter 3. (test antal og det er den rigtige der har 1.)
-Støttebehov skal være let støttebehov -> evaluation. kode dd62.. status final effective < bundle.timestamp 
-Careplan
- .period.start
- .intent = "plan"
- .status = "Active"
- .municipalityCasenumber = samme som encounter1
- .activity.outcome.reference refferere Observation (af typen let støttebehov).
-*/
+//Goal can be found in the 3th encounter instance
+* insert testGoalfcbf670a-f310-485b-b717-07c027c3c808
 
+//Goal can be found in the 3th encounter instance
+* insert testGoal90fa089a-1f80-40d0-96db-8e875e241b06
+
+* insert testGoallifecycleStatusActive
+
+* insert testCareplanStartbeforeBundletime
+
+* insert testCareplanIntentPLAN
+
+* insert testCareplanStatusActive
+
+* insert testMunicipalityCaseNumberEqualsFist
+
+* insert testconditionCodesExists
 
 
 
@@ -365,6 +340,58 @@ RuleSet: testClinicalImpressionEffectiveDateTimeEqPrevious(number)
 * test[=].action[=].assert.value = "${clinicalImpressionEffectiveDatetime{number}}"
 * test[=].action[=].assert.warningOnly = false
 
+//Goal can be found in the 3th instans example entry 18
+RuleSet: testGoal83fdfed2-f182-4a11-8ea1-de8181e6eab9
+* test[=].action[+].assert.description = "Confirm that the Goal contains the correct target and addresses combinations"
+* test[=].action[=].assert.direction = #request
+* test[=].action[=].assert.expression = "Bundle.entry.resource.ofType(Goal).where((('66959f77-6e2a-4574-8423-3ff097f8b9fa' in target.measure.coding.code) and ('90c48f03-f194-4b2f-ad7d-6cba1069ae48' in target.measure.coding.code)) and (target.where(measure.coding.code = '66959f77-6e2a-4574-8423-3ff097f8b9fa').detail.coding.code = '8328ce4a-6238-4f73-bf1a-74aadb68eff8') and (target.where(measure.coding.code = '90c48f03-f194-4b2f-ad7d-6cba1069ae48').detail.coding.code = '10752a63-00b4-4958-b7f4-9f3a18f74266') and (%resource.entry.where(resource.ofType(Condition).code.coding.code = '3f9da5ac-9686-4eeb-b517-b46e17fcb1d7' and resource.ofType(Condition).severity.coding.code = '5bdde847-2837-416b-ab63-bbff8b7aa531').fullUrl.replace('url','') in addresses.reference) and (%resource.entry.where(resource.ofType(Condition).code.coding.code = '685e8517-2f5c-4ef8-a7c4-fa2d008fdd9d' and resource.ofType(Condition).severity.coding.code = '8328ce4a-6238-4f73-bf1a-74aadb68eff8').fullUrl.replace('url','') in addresses.reference) and (%resource.entry.where(resource.ofType(Condition).code.coding.code = 'eff3385d-01fa-4c9c-9850-52e179243f21' and resource.ofType(Condition).severity.coding.code = 'cae545f5-2813-4d79-98fc-0a7d770af3cd').fullUrl.replace('url','') in addresses.reference)).count()"
+* test[=].action[=].assert.operator = #equals
+* test[=].action[=].assert.value = "1"
+* test[=].action[=].assert.warningOnly = false
+
+//Goal can be found in the 3th instans example entry 19
+RuleSet: testGoalfcbf670a-f310-485b-b717-07c027c3c808
+* test[=].action[+].assert.description = "Confirm that the Goal contains the correct target and addresses combinations"
+* test[=].action[=].assert.direction = #request
+* test[=].action[=].assert.expression = "Bundle.entry.resource.ofType(Goal).where((('66959f77-6e2a-4574-8423-3ff097f8b9fa' in target.measure.coding.code) and ('90c48f03-f194-4b2f-ad7d-6cba1069ae48' in target.measure.coding.code)) and (target.where(measure.coding.code = '66959f77-6e2a-4574-8423-3ff097f8b9fa').detail.coding.code = 'b508ff66-6326-4862-a6d7-7bbf184c9823') and (target.where(measure.coding.code = '90c48f03-f194-4b2f-ad7d-6cba1069ae48').detail.coding.code = 'd41c8072-52f8-42b5-9375-ddbea454d27f') and (%resource.entry.where(resource.ofType(Condition).code.coding.code = '01770afa-cd17-41fe-a966-b8895e4d55d8' and resource.ofType(Condition).severity.coding.code = '5bdde847-2837-416b-ab63-bbff8b7aa531').fullUrl.replace('url','') in addresses.reference)).count()"
+* test[=].action[=].assert.operator = #equals
+* test[=].action[=].assert.value = "1"
+* test[=].action[=].assert.warningOnly = false
+
+//Goal can be found in the 3th instans example entry 20
+RuleSet: testGoal90fa089a-1f80-40d0-96db-8e875e241b06
+* test[=].action[+].assert.description = "Confirm that the Goal contains the correct target and addresses combinations"
+* test[=].action[=].assert.direction = #request
+* test[=].action[=].assert.expression = "Bundle.entry.resource.ofType(Goal).where((('66959f77-6e2a-4574-8423-3ff097f8b9fa' in target.measure.coding.code) and ('90c48f03-f194-4b2f-ad7d-6cba1069ae48' in target.measure.coding.code)) and (target.where(measure.coding.code = '66959f77-6e2a-4574-8423-3ff097f8b9fa').detail.coding.code = 'cae545f5-2813-4d79-98fc-0a7d770af3cd') and (target.where(measure.coding.code = '90c48f03-f194-4b2f-ad7d-6cba1069ae48').detail.coding.code = 'e47c22bd-d88d-48ab-882b-419923e1f44e') and (%resource.entry.where(resource.ofType(Condition).code.coding.code = '464a2ab6-a7df-4b3a-b74d-7873f4cfe668' and resource.ofType(Condition).severity.coding.code = 'cae545f5-2813-4d79-98fc-0a7d770af3cd').fullUrl.replace('url','') in addresses.reference)).count()"
+* test[=].action[=].assert.operator = #equals
+* test[=].action[=].assert.value = "1"
+* test[=].action[=].assert.warningOnly = false
+
+RuleSet: testGoallifecycleStatusActive
+* test[=].action[+].assert.description = "Confirm that the Goal lifecycleStatus is active"
+* test[=].action[=].assert.direction = #request
+* test[=].action[=].assert.expression = "Bundle.entry.resource.ofType(Goal).all(lifecycleStatus = 'active').count()"
+* test[=].action[=].assert.warningOnly = false
+
+RuleSet: testCareplanStartbeforeBundletime
+* test[=].action[+].assert.description = "Confirm that the Careplan start i less or equal to bundle time"
+* test[=].action[=].assert.direction = #request
+* test[=].action[=].assert.expression = "Bundle.entry.resource.ofType(CarePlan).period.start <= %resource.timestamp"
+* test[=].action[=].assert.warningOnly = false
+
+RuleSet: testCareplanIntentPLAN
+* test[=].action[+].assert.description = "Confirm that the Careplan intent is plan"
+* test[=].action[=].assert.direction = #request
+* test[=].action[=].assert.expression = "Bundle.entry.resource.ofType(CarePlan).intent = 'plan'"
+* test[=].action[=].assert.warningOnly = false
+
+RuleSet: testCareplanStatusActive
+* test[=].action[+].assert.description = "Confirm that the Careplan intent is plan"
+* test[=].action[=].assert.direction = #request
+* test[=].action[=].assert.expression = "Bundle.entry.resource.ofType(CarePlan).intent = 'plan'"
+* test[=].action[=].assert.warningOnly = false
+
+
 
 RuleSet: actionOperationFfb(number)
 * test[+].id = "ffb-{number}" 
@@ -388,7 +415,6 @@ RuleSet: variableMunicipalityCaseNumber(number)
 * variable[=].sourceId = "bundle-create-{number}"
 
 RuleSet: variablePatientIdentifier(number)
-//There will only be one and only one MunicipalityCaseNumber for each test.
 * variable[+].name = "patientIdentifier"
 * variable[=].expression = "Bundle.entry.resource.ofType(Patient).identifier.value"
 * variable[=].sourceId = "bundle-create-{number}"
@@ -455,3 +481,21 @@ RuleSet:  validation
 * test[=].action[=].assert.warningOnly = false
 
 
+//Test: is the ConditinCodes from the 2nd Encounter 
+//https://build.fhir.org/ig/hl7dk/kl-ffb-reporting/example.html#2nd-encounter--second-documentation-phase--case-insight in the bundle
+RuleSet: testconditionCodesExists
+* insert testConditionCode(4934e45a-0f93-4c23-a767-2b681378700b)
+* insert testConditionCode(ef4271c4-f942-4194-a2b0-e9a7045eab22)
+* insert testConditionCode(b93216fa-3843-4a7e-85bc-e3ef35a1967f)
+* insert testConditionCode(9959e779-e8ee-47e8-989b-bbff4aae2883)
+* insert testConditionCode(e6f82424-da5a-41d1-bd1a-5796aa79d5f2)
+* insert testConditionCode(f5b8e809-7689-4952-838c-a069c99408b3)
+* insert testConditionCode(52efa2e9-e0dc-41eb-8c01-9865e2fdebae)
+* insert testConditionCode(7a8f247b-baf8-4552-95bb-acf8ef004b74)
+* insert testConditionCode(83342ff3-5f2e-4914-b045-e98357685866)
+* insert testConditionCode(df194a84-6e4b-4f14-a194-d8d9d9a1fcad)
+* insert testConditionCode(3f9da5ac-9686-4eeb-b517-b46e17fcb1d7)
+* insert testConditionCode(685e8517-2f5c-4ef8-a7c4-fa2d008fdd9d)
+* insert testConditionCode(464a2ab6-a7df-4b3a-b74d-7873f4cfe668)
+* insert testConditionCode(01770afa-cd17-41fe-a966-b8895e4d55d8)
+* insert testConditionCode(eff3385d-01fa-4c9c-9850-52e179243f21)
