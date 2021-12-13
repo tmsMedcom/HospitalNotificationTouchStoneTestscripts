@@ -46,7 +46,7 @@
   ],
   "fixture": [
     {
-      "id": "bundle-create-1",
+      "id": "fix-bundle-create-1",
       "autocreate": false,
       "autodelete": false,
       "resource": {
@@ -54,7 +54,7 @@
       }
     },
     {
-      "id": "bundle-create-2",
+      "id": "fix-bundle-create-2",
       "autocreate": false,
       "autodelete": false,
       "resource": {
@@ -62,7 +62,7 @@
       }
     },
     {
-      "id": "bundle-create-3",
+      "id": "fix-bundle-create-3",
       "autocreate": false,
       "autodelete": false,
       "resource": {
@@ -107,11 +107,6 @@
       "sourceId": "bundle-create-2"
     },
     {
-      "name": "clinicalImpressionFindingsAmount",
-      "expression": "Bundle.entry.resource.ofType(ClinicalImpression).finding.count()",
-      "sourceId": "bundle-create-3"
-    },
-    {
       "name": "observationFullUrl3",
       "expression": "Bundle.entry.where(resource.ofType(Observation)).fullUrl",
       "sourceId": "bundle-create-3"
@@ -140,7 +135,8 @@
             "destination": 1,
             "encodeRequestUrl": true,
             "origin": 1,
-            "sourceId": "bundle-create-1"
+            "sourceId": "fix-bundle-create-1",
+            "responseId": "bundle-create-1"
           }
         },
         {
@@ -207,7 +203,8 @@
             "destination": 1,
             "encodeRequestUrl": true,
             "origin": 1,
-            "sourceId": "bundle-create-2"
+            "sourceId": "fix-bundle-create-2",
+            "responseId": "bundle-create-2"
           }
         },
         {
@@ -510,7 +507,8 @@
             "destination": 1,
             "encodeRequestUrl": true,
             "origin": 1,
-            "sourceId": "bundle-create-3"
+            "sourceId": "fix-bundle-create-3",
+            "responseId": "bundle-create-3"
           }
         },
         {
@@ -676,30 +674,6 @@
             "description": "Confirm that the Goal lifecycleStatus is active",
             "direction": "request",
             "expression": "Bundle.entry.resource.ofType(Goal).all(lifecycleStatus = 'active').count()",
-            "warningOnly": false
-          }
-        },
-        {
-          "assert": {
-            "description": "Confirm that the Careplan start i less or equal to bundle time",
-            "direction": "request",
-            "expression": "Bundle.entry.resource.ofType(CarePlan).period.start <= %resource.timestamp",
-            "warningOnly": false
-          }
-        },
-        {
-          "assert": {
-            "description": "Confirm that the Careplan intent is plan",
-            "direction": "request",
-            "expression": "Bundle.entry.resource.ofType(CarePlan).intent = 'plan'",
-            "warningOnly": false
-          }
-        },
-        {
-          "assert": {
-            "description": "Confirm that the Careplan intent is plan",
-            "direction": "request",
-            "expression": "Bundle.entry.resource.ofType(CarePlan).intent = 'plan'",
             "warningOnly": false
           }
         },

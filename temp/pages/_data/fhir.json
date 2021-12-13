@@ -1,0 +1,40 @@
+{
+  "path": "http://hl7.org/fhir/R4/",
+  "canonical": "http://example.org/fhir/fish",
+  "igId": "medcom",
+  "igName": "HospitalnotificationTestscripts",
+  "packageId": "medcom",
+  "igVer": "0.1.0",
+  "errorCount": 155,
+  "version": "4.0.1",
+  "revision": "a53ec6ee1b",
+  "versionFull": "4.0.1-a53ec6ee1b",
+  "toolingVersion": "4.6.0",
+  "toolingRevision": "3",
+  "toolingVersionFull": "4.6.0 (3)",
+  "totalFiles": 58,
+  "processedFiles": 67,
+  "genDate": "Thu, Dec 9, 2021 08:00+0100",
+  "genDay": "09/12/2021",
+  "ig": {
+    "id": "medcom",
+    "name": "HospitalnotificationTestscripts",
+    "title": "HospitalNotification Testscripts",
+    "url": "http://example.org/fhir/fish/ImplementationGuide/medcom",
+    "version": "0.1.0",
+    "status": "draft",
+    "experimental": false,
+    "gitstatus": "main",
+    "contact": [
+      {
+        "name": "MedCom",
+        "telecom": [
+          "fhir@medcom.dk"
+        ]
+      }
+    ],
+    "date": "2021-12-09T08:00:09+01:00",
+    "description": "Testscripts for HospitalNotification",
+    "fhirVersion": "4.0.1"
+  }
+}

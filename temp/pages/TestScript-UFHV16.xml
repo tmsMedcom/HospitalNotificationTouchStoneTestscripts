@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<TestScript xmlns="http://hl7.org/fhir">
+  <id value="UFHV16"/>
+  <meta>
+    <profile value="http://touchstone.aegis.net/touchstone/fhir/testing/StructureDefinition/testscript"/>
+  </meta>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative</b></p><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">Resource "UFHV16" </p><p style="margin-bottom: 0px">Profile: <code>http://touchstone.aegis.net/touchstone/fhir/testing/StructureDefinition/testscript</code></p></div><p><b>url</b>: <code>http://build.fhir.org/ig/hl7dk/dk-medcom/</code></p><p><b>version</b>: 0.1.0</p><p><b>name</b>: transferred to a private hospital</p><p><b>title</b>: Patient is admitted, transferred to a private hospital (or other department) not sending notifications, and finally discharged</p><p><b>status</b>: active</p><p><b>date</b>: 2021-07-07</p><p><b>publisher</b>: MedCom</p><p><b>contact</b>: MedCom: <a href="mailto:fhir@medcom.dk">fhir@medcom.dk</a></p><p><b>description</b>: Testing correct use of correction</p><p><b>copyright</b>: MedCom 2021</p><h3>Origins</h3><table class="grid"><tr><td>-</td><td><b>Index</b></td><td><b>Profile</b></td></tr><tr><td>*</td><td>1</td><td>FHIR Client (Details: http://terminology.hl7.org/CodeSystem/testscript-profile-origin-types code FHIR-Client = 'FHIR Client', stated as 'null')</td></tr></table><h3>Destinations</h3><table class="grid"><tr><td>-</td><td><b>Index</b></td><td><b>Profile</b></td></tr><tr><td>*</td><td>1</td><td>FHIR Server (Details: http://terminology.hl7.org/CodeSystem/testscript-profile-destination-types code FHIR-Server = 'FHIR Server', stated as 'null')</td></tr></table><blockquote><p><b>fixture</b></p><p><b>autocreate</b>: false</p><p><b>autodelete</b>: false</p><p><b>resource</b>: <a href="/FHIRSandbox/MedCom/401-Hospitalnotification/receive/Userstory/_reference/resources/STIN_16.xml">/FHIRSandbox/MedCom/401-Hospitalnotification/receive/Userstory/_reference/resources/STIN_16.xml</a></p></blockquote><p><b>profile</b>: <a href="http://medcomfhir.dk/fhir/core/1.0/StructureDefinition/medcom-hospitalNotification-message">http://medcomfhir.dk/fhir/core/1.0/StructureDefinition/medcom-hospitalNotification-message</a></p><h3>Variables</h3><table class="grid"><tr><td>-</td><td><b>Name</b></td><td><b>Expression</b></td><td><b>SourceId</b></td></tr><tr><td>*</td><td>destinationUri</td><td>Bundle.entry.resource.ofType(MessageHeader).destination.endpoint</td><td>bundle-create-STIN</td></tr></table><blockquote><p><b>setup</b></p><blockquote><p><b>action</b></p><h3>Operations</h3><table class="grid"><tr><td>-</td><td><b>Type</b></td><td><b>Resource</b></td><td><b>Description</b></td><td><b>Accept</b></td><td><b>EncodeRequestUrl</b></td><td><b>Params</b></td></tr><tr><td>*</td><td>Delete (Details: http://terminology.hl7.org/CodeSystem/testscript-operation-codes code delete = 'Delete', stated as 'null')</td><td>Bundle</td><td>System-generated search and delete operations from conditional delete on Bundle MessageHeader).destination.endpoint</td><td>xml</td><td>true</td><td>?message.destination-uri=${destinationUri}</td></tr></table></blockquote><blockquote><p><b>action</b></p><h3>Operations</h3><table class="grid"><tr><td>-</td><td><b>Type</b></td><td><b>Resource</b></td><td><b>Description</b></td><td><b>Accept</b></td><td><b>ContentType</b></td><td><b>EncodeRequestUrl</b></td><td><b>SourceId</b></td></tr><tr><td>*</td><td>Create (Details: http://terminology.hl7.org/CodeSystem/testscript-operation-codes code create = 'Create', stated as 'null')</td><td>Bundle</td><td>Create the Bundle resource in XML format on the destination server.</td><td>xml</td><td>xml</td><td>true</td><td>bundle-create-STIN</td></tr></table></blockquote><blockquote><p><b>action</b></p><h3>Asserts</h3><table class="grid"><tr><td>-</td><td><b>Description</b></td><td><b>Direction</b></td><td><b>ResponseCode</b></td><td><b>WarningOnly</b></td></tr><tr><td>*</td><td>Confirm that the returned HTTP status is 201(Created).</td><td>response</td><td>201</td><td>false</td></tr></table></blockquote></blockquote><blockquote><p><b>test</b></p><p><b>name</b>: HospitalNotification-STIN</p><p><b>description</b>: GET a Hospital notification. The expected response is a 200(OK) with a payload of the Hospital notification resource in XML format.</p><blockquote><p><b>action</b></p><h3>Operations</h3><table class="grid"><tr><td>-</td><td><b>Type</b></td><td><b>Resource</b></td><td><b>Description</b></td><td><b>Accept</b></td><td><b>Destination</b></td><td><b>EncodeRequestUrl</b></td><td><b>Origin</b></td><td><b>Params</b></td></tr><tr><td>*</td><td>Read (Details: http://terminology.hl7.org/CodeSystem/testscript-operation-codes code read = 'Read', stated as 'null')</td><td>Bundle</td><td>Receive notification about admission -STIN</td><td>xml</td><td>1</td><td>true</td><td>1</td><td>?message.destination-uri=${destinationUri}</td></tr></table></blockquote><blockquote><p><b>action</b></p><h3>Asserts</h3><table class="grid"><tr><td>-</td><td><b>Description</b></td><td><b>Direction</b></td><td><b>ResponseCode</b></td><td><b>WarningOnly</b></td></tr><tr><td>*</td><td>Confirm that the returned HTTP status is 200(OK).</td><td>response</td><td>200</td><td>false</td></tr></table></blockquote></blockquote></div>
+  </text>
+  <url value="http://build.fhir.org/ig/hl7dk/dk-medcom/"/>
+  <version value="0.1.0"/>
+  <name value="transferred to a private hospital"/>
+  <title value="Patient is admitted, transferred to a private hospital (or other department) not sending notifications, and finally discharged"/>
+  <status value="active"/>
+  <date value="2021-07-07"/>
+  <publisher value="MedCom"/>
+  <contact>
+    <name value="MedCom"/>
+    <telecom>
+      <system value="email"/>
+      <value value="fhir@medcom.dk"/>
+    </telecom>
+  </contact>
+  <description value="Testing correct use of correction"/>
+  <copyright value="MedCom 2021"/>
+  <origin>
+    <index value="1"/>
+    <profile>
+      <system value="http://terminology.hl7.org/CodeSystem/testscript-profile-origin-types"/>
+      <code value="FHIR-Client"/>
+    </profile>
+  </origin>
+  <destination>
+    <index value="1"/>
+    <profile>
+      <system value="http://terminology.hl7.org/CodeSystem/testscript-profile-destination-types"/>
+      <code value="FHIR-Server"/>
+    </profile>
+  </destination>
+  <fixture id="bundle-create-STIN">
+    <autocreate value="false"/>
+    <autodelete value="false"/>
+    <resource>
+      <reference value="/FHIRSandbox/MedCom/401-Hospitalnotification/receive/Userstory/_reference/resources/STIN_16.xml"/>
+    </resource>
+  </fixture>
+  <profile id="hospitalnotification-profile">
+    <reference value="http://medcomfhir.dk/fhir/core/1.0/StructureDefinition/medcom-hospitalNotification-message"/>
+  </profile>
+  <variable>
+    <name value="destinationUri"/>
+    <expression value="Bundle.entry.resource.ofType(MessageHeader).destination.endpoint"/>
+    <sourceId value="bundle-create-STIN"/>
+  </variable>
+  <setup>
+    <action>
+      <operation>
+        <type>
+          <system value="http://terminology.hl7.org/CodeSystem/testscript-operation-codes"/>
+          <code value="delete"/>
+        </type>
+        <resource value="Bundle"/>
+        <description value="System-generated search and delete operations from conditional delete on Bundle MessageHeader).destination.endpoint"/>
+        <accept value="xml"/>
+        <encodeRequestUrl value="true"/>
+        <params value="?message.destination-uri=${destinationUri}"/>
+      </operation>
+    </action>
+    <action>
+      <operation>
+        <type>
+          <system value="http://terminology.hl7.org/CodeSystem/testscript-operation-codes"/>
+          <code value="create"/>
+        </type>
+        <resource value="Bundle"/>
+        <description value="Create the Bundle resource in XML format on the destination server."/>
+        <accept value="xml"/>
+        <contentType value="xml"/>
+        <encodeRequestUrl value="true"/>
+        <sourceId value="bundle-create-STIN"/>
+      </operation>
+    </action>
+    <action>
+      <assert>
+        <description value="Confirm that the returned HTTP status is 201(Created)."/>
+        <direction value="response"/>
+        <responseCode value="201"/>
+        <warningOnly value="false"/>
+      </assert>
+    </action>
+  </setup>
+  <test id="01-STIN-admitted">
+    <name value="HospitalNotification-STIN"/>
+    <description value="GET a Hospital notification. The expected response is a 200(OK) with a payload of the Hospital notification resource in XML format."/>
+    <action>
+      <operation>
+        <type>
+          <system value="http://terminology.hl7.org/CodeSystem/testscript-operation-codes"/>
+          <code value="read"/>
+        </type>
+        <resource value="Bundle"/>
+        <description value="Receive notification about admission -STIN"/>
+        <accept value="xml"/>
+        <destination value="1"/>
+        <encodeRequestUrl value="true"/>
+        <origin value="1"/>
+        <params value="?message.destination-uri=${destinationUri}"/>
+      </operation>
+    </action>
+    <action>
+      <assert>
+        <description value="Confirm that the returned HTTP status is 200(OK)."/>
+        <direction value="response"/>
+        <responseCode value="200"/>
+        <warningOnly value="false"/>
+      </assert>
+    </action>
+  </test>
+</TestScript>

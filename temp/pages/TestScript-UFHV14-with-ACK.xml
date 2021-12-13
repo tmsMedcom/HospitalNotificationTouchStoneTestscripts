@@ -1,0 +1,391 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<TestScript xmlns="http://hl7.org/fhir">
+  <id value="UFHV14-with-ACK"/>
+  <meta>
+    <profile value="http://touchstone.aegis.net/touchstone/fhir/testing/StructureDefinition/testscript"/>
+  </meta>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative</b></p><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">Resource "UFHV14-with-ACK" </p><p style="margin-bottom: 0px">Profile: <code>http://touchstone.aegis.net/touchstone/fhir/testing/StructureDefinition/testscript</code></p></div><p><b>url</b>: <code>http://build.fhir.org/ig/hl7dk/dk-medcom/</code></p><p><b>version</b>: 0.1.0</p><p><b>name</b>: Patient is admitted and dies at the hospital</p><p><b>title</b>: Patient is admitted and dies at the hospital</p><p><b>status</b>: active</p><p><b>date</b>: 2021-11-01</p><p><b>publisher</b>: MedCom</p><p><b>contact</b>: MedCom: <a href="mailto:fhir@medcom.dk">fhir@medcom.dk</a></p><p><b>description</b>: Testing correct use of status admit-inpatient</p><p><b>copyright</b>: MedCom 2021</p><h3>Origins</h3><table class="grid"><tr><td>-</td><td><b>Index</b></td><td><b>Profile</b></td></tr><tr><td>*</td><td>1</td><td>FHIR Client (Details: http://terminology.hl7.org/CodeSystem/testscript-profile-origin-types code FHIR-Client = 'FHIR Client', stated as 'null')</td></tr></table><h3>Destinations</h3><table class="grid"><tr><td>-</td><td><b>Index</b></td><td><b>Profile</b></td></tr><tr><td>*</td><td>1</td><td>FHIR Server (Details: http://terminology.hl7.org/CodeSystem/testscript-profile-destination-types code FHIR-Server = 'FHIR Server', stated as 'null')</td></tr></table><blockquote><p><b>fixture</b></p><p><b>autocreate</b>: false</p><p><b>autodelete</b>: false</p><p><b>resource</b>: <a href="/FHIRSandbox/MedCom/401-Acknowledgement/_reference/resources/Acknowledgement-ok.xml">/FHIRSandbox/MedCom/401-Acknowledgement/_reference/resources/Acknowledgement-ok.xml</a></p></blockquote><blockquote><p><b>fixture</b></p><p><b>autocreate</b>: false</p><p><b>autodelete</b>: false</p><p><b>resource</b>: <a href="/FHIRSandbox/MedCom/401-Hospitalnotification/receive/Userstory/_reference/resources/STIN_9.xml">/FHIRSandbox/MedCom/401-Hospitalnotification/receive/Userstory/_reference/resources/STIN_9.xml</a></p></blockquote><blockquote><p><b>fixture</b></p><p><b>autocreate</b>: false</p><p><b>autodelete</b>: false</p><p><b>resource</b>: <a href="/FHIRSandbox/MedCom/401-Hospitalnotification/receive/Userstory/_reference/resources/MORS_2.xml">/FHIRSandbox/MedCom/401-Hospitalnotification/receive/Userstory/_reference/resources/MORS_2.xml</a></p></blockquote><p><b>profile</b>: <a href="http://medcomfhir.dk/fhir/core/1.0/StructureDefinition/medcom-hospitalNotification-message">http://medcomfhir.dk/fhir/core/1.0/StructureDefinition/medcom-hospitalNotification-message</a></p><blockquote><p><b>variable</b></p><p><b>name</b>: destinationUri1</p><p><b>expression</b>: Bundle.entry.resource.ofType(MessageHeader).destination.endpoint</p><p><b>sourceId</b>: bundle-create-STIN1</p></blockquote><blockquote><p><b>variable</b></p><p><b>name</b>: KorrektMHID1</p><p><b>expression</b>: Bundle.entry.resource.ofType(Bundle).id</p><p><b>sourceId</b>: bundle-get-STIN1</p></blockquote><blockquote><p><b>variable</b></p><p><b>name</b>: MessageHeaderIdentifier1</p><p><b>expression</b>: Bundle.entry[0].fullUrl</p><p><b>sourceId</b>: bundle-create-STIN1</p></blockquote><blockquote><p><b>variable</b></p><p><b>name</b>: ProvenanceID1</p><p><b>expression</b>: Bundle.entry.resource.ofType(Provenance).id</p><p><b>sourceId</b>: bundle-create-STIN1</p></blockquote><blockquote><p><b>variable</b></p><p><b>name</b>: destinationUri2</p><p><b>expression</b>: Bundle.entry.resource.ofType(MessageHeader).destination.endpoint</p><p><b>sourceId</b>: bundle-create-MORS2</p></blockquote><blockquote><p><b>variable</b></p><p><b>name</b>: KorrektMHID2</p><p><b>expression</b>: Bundle.entry.resource.ofType(Bundle).id</p><p><b>sourceId</b>: bundle-get-MORS2</p></blockquote><blockquote><p><b>variable</b></p><p><b>name</b>: MessageHeaderIdentifier2</p><p><b>expression</b>: Bundle.entry[0].fullUrl</p><p><b>sourceId</b>: bundle-create-MORS2</p></blockquote><blockquote><p><b>variable</b></p><p><b>name</b>: ProvenanceID2</p><p><b>expression</b>: Bundle.entry.resource.ofType(Provenance).id</p><p><b>sourceId</b>: bundle-create-MORS2</p></blockquote><blockquote><p><b>setup</b></p><blockquote><p><b>action</b></p><h3>Operations</h3><table class="grid"><tr><td>-</td><td><b>Type</b></td><td><b>Resource</b></td><td><b>Description</b></td><td><b>Accept</b></td><td><b>EncodeRequestUrl</b></td><td><b>Params</b></td></tr><tr><td>*</td><td>Delete (Details: http://terminology.hl7.org/CodeSystem/testscript-operation-codes code delete = 'Delete', stated as 'null')</td><td>Bundle</td><td>System-generated search and delete operations from conditional delete on Bundle MessageHeader).destination.endpoint</td><td>xml</td><td>true</td><td>?message.destination-uri=${destinationUri1}</td></tr></table></blockquote><blockquote><p><b>action</b></p><h3>Operations</h3><table class="grid"><tr><td>-</td><td><b>Type</b></td><td><b>Resource</b></td><td><b>Description</b></td><td><b>Accept</b></td><td><b>ContentType</b></td><td><b>EncodeRequestUrl</b></td><td><b>SourceId</b></td></tr><tr><td>*</td><td>Create (Details: http://terminology.hl7.org/CodeSystem/testscript-operation-codes code create = 'Create', stated as 'null')</td><td>Bundle</td><td>Create the Bundle resource in XML format on the destination server.</td><td>xml</td><td>xml</td><td>true</td><td>bundle-create-STIN1</td></tr></table></blockquote><blockquote><p><b>action</b></p><h3>Operations</h3><table class="grid"><tr><td>-</td><td><b>Type</b></td><td><b>Resource</b></td><td><b>Description</b></td><td><b>Accept</b></td><td><b>EncodeRequestUrl</b></td><td><b>Params</b></td></tr><tr><td>*</td><td>Delete (Details: http://terminology.hl7.org/CodeSystem/testscript-operation-codes code delete = 'Delete', stated as 'null')</td><td>Bundle</td><td>System-generated search and delete operations from conditional delete on Bundle MessageHeader).destination.endpoint</td><td>xml</td><td>true</td><td>?message.destination-uri=${destinationUri2}</td></tr></table></blockquote><blockquote><p><b>action</b></p><h3>Operations</h3><table class="grid"><tr><td>-</td><td><b>Type</b></td><td><b>Resource</b></td><td><b>Description</b></td><td><b>Accept</b></td><td><b>ContentType</b></td><td><b>EncodeRequestUrl</b></td><td><b>SourceId</b></td></tr><tr><td>*</td><td>Create (Details: http://terminology.hl7.org/CodeSystem/testscript-operation-codes code create = 'Create', stated as 'null')</td><td>Bundle</td><td>Create the Bundle resource in XML format on the destination server.</td><td>xml</td><td>xml</td><td>true</td><td>bundle-create-MORS2</td></tr></table></blockquote></blockquote><blockquote><p><b>test</b></p><p><b>name</b>: HospitalNotification-STIN1</p><p><b>description</b>: GET a Hospital notification STIN. The expected response is a 200(OK) with a payload of the Hospital notification resource in XML format.</p><blockquote><p><b>action</b></p><h3>Operations</h3><table class="grid"><tr><td>-</td><td><b>Type</b></td><td><b>Resource</b></td><td><b>Description</b></td><td><b>Accept</b></td><td><b>Destination</b></td><td><b>EncodeRequestUrl</b></td><td><b>Origin</b></td><td><b>Params</b></td><td><b>ResponseId</b></td></tr><tr><td>*</td><td>Read (Details: http://terminology.hl7.org/CodeSystem/testscript-operation-codes code read = 'Read', stated as 'null')</td><td>Bundle</td><td>Receive notification-STIN</td><td>xml</td><td>1</td><td>true</td><td>1</td><td>?message.destination-uri=${destinationUri1}</td><td>bundle-get-STIN1</td></tr></table></blockquote><blockquote><p><b>action</b></p><h3>Asserts</h3><table class="grid"><tr><td>-</td><td><b>Description</b></td><td><b>Direction</b></td><td><b>ResponseCode</b></td><td><b>WarningOnly</b></td></tr><tr><td>*</td><td>Confirm that the returned HTTP status is 200(OK).</td><td>response</td><td>200</td><td>false</td></tr></table></blockquote></blockquote><blockquote><p><b>test</b></p><p><b>name</b>: 1 Post Acknowledgement-bundle-create-STIN1</p><p><b>description</b>: GET ACK</p><blockquote><p><b>action</b></p><h3>Operations</h3><table class="grid"><tr><td>-</td><td><b>Type</b></td><td><b>Resource</b></td><td><b>Description</b></td><td><b>Accept</b></td><td><b>Destination</b></td><td><b>EncodeRequestUrl</b></td><td><b>Origin</b></td><td><b>SourceId</b></td></tr><tr><td>*</td><td>Create (Details: http://terminology.hl7.org/CodeSystem/testscript-operation-codes code create = 'Create', stated as 'null')</td><td>Bundle</td><td>Post a acknowledgement</td><td>xml</td><td>1</td><td>true</td><td>1</td><td>bundle-create-ack-OK</td></tr></table></blockquote><blockquote><p><b>action</b></p><h3>Asserts</h3><table class="grid"><tr><td>-</td><td><b>Description</b></td><td><b>Direction</b></td><td><b>Resource</b></td><td><b>WarningOnly</b></td></tr><tr><td>*</td><td>Confirm that the client request payload contains a Bundle resource type.</td><td>request</td><td>Bundle</td><td>false</td></tr></table></blockquote><blockquote><p><b>action</b></p><h3>Asserts</h3><table class="grid"><tr><td>-</td><td><b>Description</b></td><td><b>Direction</b></td><td><b>Expression</b></td><td><b>Operator</b></td><td><b>Value</b></td><td><b>WarningOnly</b></td></tr><tr><td>*</td><td>Confirm that the MessageHeader response code is OK</td><td>request</td><td>Bundle.entry.resource.ofType(MessageHeader).response.code</td><td>equals</td><td>ok</td><td>false</td></tr></table></blockquote><blockquote><p><b>action</b></p><h3>Asserts</h3><table class="grid"><tr><td>-</td><td><b>Description</b></td><td><b>Direction</b></td><td><b>Expression</b></td><td><b>WarningOnly</b></td></tr><tr><td>*</td><td>Confirm that the request resource contains the expected evetCoding code.</td><td>request</td><td>Bundle.entry.resource.ofType(MessageHeader).event.as(Coding).select(code = 'acknowledgment-message').allTrue()</td><td>false</td></tr></table></blockquote><blockquote><p><b>action</b></p><h3>Asserts</h3><table class="grid"><tr><td>-</td><td><b>Description</b></td><td><b>Direction</b></td><td><b>Expression</b></td><td><b>WarningOnly</b></td></tr><tr><td>*</td><td>Confirm that the Bundle not containing a OperationOutcome</td><td>request</td><td>Bundle.entry.resource.ofType(OperationOutcome).exists().not()</td><td>false</td></tr></table></blockquote><blockquote><p><b>action</b></p><h3>Asserts</h3><table class="grid"><tr><td>-</td><td><b>Description</b></td><td><b>Direction</b></td><td><b>Expression</b></td><td><b>Operator</b></td><td><b>Value</b></td><td><b>WarningOnly</b></td></tr><tr><td>*</td><td>Confirm that the MessageHeader.response.identifier is equal to Id of original message </td><td>request</td><td>Bundle.entry.resource.ofType(MessageHeader).response.identifier</td><td>equals</td><td>${KorrektMHID1}</td><td>false</td></tr></table></blockquote><blockquote><p><b>action</b></p><h3>Asserts</h3><table class="grid"><tr><td>-</td><td><b>Description</b></td><td><b>Direction</b></td><td><b>Expression</b></td><td><b>WarningOnly</b></td></tr><tr><td>*</td><td>Confirm that the reference original Provenance.entity.what is equal to Id of original messageheader.identifier</td><td>request</td><td>Bundle.entry.resource.ofType(Provenance).where(entity.what.reference ='${MessageHeaderIdentifier1}')</td><td>false</td></tr></table></blockquote><blockquote><p><b>action</b></p><h3>Asserts</h3><table class="grid"><tr><td>-</td><td><b>Description</b></td><td><b>Direction</b></td><td><b>Expression</b></td><td><b>WarningOnly</b></td></tr><tr><td>*</td><td>Confirm that the there are two Provenances</td><td>request</td><td>Bundle.entry.resource.ofType(Provenance).count() = 2</td><td>false</td></tr></table></blockquote><blockquote><p><b>action</b></p><h3>Asserts</h3><table class="grid"><tr><td>-</td><td><b>Description</b></td><td><b>Direction</b></td><td><b>Expression</b></td><td><b>WarningOnly</b></td></tr><tr><td>*</td><td>Confirm that the id of the original message provenance exist in the ack</td><td>request</td><td>Bundle.entry.resource.ofType(Provenance).where(id='${ProvenanceID1}').exists()</td><td>false</td></tr></table></blockquote></blockquote><blockquote><p><b>test</b></p><p><b>name</b>: HospitalNotification-MORS2</p><p><b>description</b>: GET a Hospital notification MORS. The expected response is a 200(OK) with a payload of the Hospital notification resource in XML format.</p><blockquote><p><b>action</b></p><h3>Operations</h3><table class="grid"><tr><td>-</td><td><b>Type</b></td><td><b>Resource</b></td><td><b>Description</b></td><td><b>Accept</b></td><td><b>Destination</b></td><td><b>EncodeRequestUrl</b></td><td><b>Origin</b></td><td><b>Params</b></td><td><b>ResponseId</b></td></tr><tr><td>*</td><td>Read (Details: http://terminology.hl7.org/CodeSystem/testscript-operation-codes code read = 'Read', stated as 'null')</td><td>Bundle</td><td>Receive notification-MORS</td><td>xml</td><td>1</td><td>true</td><td>1</td><td>?message.destination-uri=${destinationUri2}</td><td>bundle-get-MORS2</td></tr></table></blockquote><blockquote><p><b>action</b></p><h3>Asserts</h3><table class="grid"><tr><td>-</td><td><b>Description</b></td><td><b>Direction</b></td><td><b>ResponseCode</b></td><td><b>WarningOnly</b></td></tr><tr><td>*</td><td>Confirm that the returned HTTP status is 200(OK).</td><td>response</td><td>200</td><td>false</td></tr></table></blockquote></blockquote><blockquote><p><b>test</b></p><p><b>name</b>: 2 Post Acknowledgement-bundle-create-MORS2</p><p><b>description</b>: GET ACK</p><blockquote><p><b>action</b></p><h3>Operations</h3><table class="grid"><tr><td>-</td><td><b>Type</b></td><td><b>Resource</b></td><td><b>Description</b></td><td><b>Accept</b></td><td><b>Destination</b></td><td><b>EncodeRequestUrl</b></td><td><b>Origin</b></td><td><b>SourceId</b></td></tr><tr><td>*</td><td>Create (Details: http://terminology.hl7.org/CodeSystem/testscript-operation-codes code create = 'Create', stated as 'null')</td><td>Bundle</td><td>Post a acknowledgement</td><td>xml</td><td>1</td><td>true</td><td>1</td><td>bundle-create-ack-OK</td></tr></table></blockquote><blockquote><p><b>action</b></p><h3>Asserts</h3><table class="grid"><tr><td>-</td><td><b>Description</b></td><td><b>Direction</b></td><td><b>Resource</b></td><td><b>WarningOnly</b></td></tr><tr><td>*</td><td>Confirm that the client request payload contains a Bundle resource type.</td><td>request</td><td>Bundle</td><td>false</td></tr></table></blockquote><blockquote><p><b>action</b></p><h3>Asserts</h3><table class="grid"><tr><td>-</td><td><b>Description</b></td><td><b>Direction</b></td><td><b>Expression</b></td><td><b>Operator</b></td><td><b>Value</b></td><td><b>WarningOnly</b></td></tr><tr><td>*</td><td>Confirm that the MessageHeader response code is OK</td><td>request</td><td>Bundle.entry.resource.ofType(MessageHeader).response.code</td><td>equals</td><td>ok</td><td>false</td></tr></table></blockquote><blockquote><p><b>action</b></p><h3>Asserts</h3><table class="grid"><tr><td>-</td><td><b>Description</b></td><td><b>Direction</b></td><td><b>Expression</b></td><td><b>WarningOnly</b></td></tr><tr><td>*</td><td>Confirm that the request resource contains the expected evetCoding code.</td><td>request</td><td>Bundle.entry.resource.ofType(MessageHeader).event.as(Coding).select(code = 'acknowledgment-message').allTrue()</td><td>false</td></tr></table></blockquote><blockquote><p><b>action</b></p><h3>Asserts</h3><table class="grid"><tr><td>-</td><td><b>Description</b></td><td><b>Direction</b></td><td><b>Expression</b></td><td><b>WarningOnly</b></td></tr><tr><td>*</td><td>Confirm that the Bundle not containing a OperationOutcome</td><td>request</td><td>Bundle.entry.resource.ofType(OperationOutcome).exists().not()</td><td>false</td></tr></table></blockquote><blockquote><p><b>action</b></p><h3>Asserts</h3><table class="grid"><tr><td>-</td><td><b>Description</b></td><td><b>Direction</b></td><td><b>Expression</b></td><td><b>Operator</b></td><td><b>Value</b></td><td><b>WarningOnly</b></td></tr><tr><td>*</td><td>Confirm that the MessageHeader.response.identifier is equal to Id of original message </td><td>request</td><td>Bundle.entry.resource.ofType(MessageHeader).response.identifier</td><td>equals</td><td>${KorrektMHID2}</td><td>false</td></tr></table></blockquote><blockquote><p><b>action</b></p><h3>Asserts</h3><table class="grid"><tr><td>-</td><td><b>Description</b></td><td><b>Direction</b></td><td><b>Expression</b></td><td><b>WarningOnly</b></td></tr><tr><td>*</td><td>Confirm that the reference original Provenance.entity.what is equal to Id of original messageheader.identifier</td><td>request</td><td>Bundle.entry.resource.ofType(Provenance).where(entity.what.reference ='${MessageHeaderIdentifier2}')</td><td>false</td></tr></table></blockquote><blockquote><p><b>action</b></p><h3>Asserts</h3><table class="grid"><tr><td>-</td><td><b>Description</b></td><td><b>Direction</b></td><td><b>Expression</b></td><td><b>WarningOnly</b></td></tr><tr><td>*</td><td>Confirm that the there are two Provenances</td><td>request</td><td>Bundle.entry.resource.ofType(Provenance).count() = 2</td><td>false</td></tr></table></blockquote><blockquote><p><b>action</b></p><h3>Asserts</h3><table class="grid"><tr><td>-</td><td><b>Description</b></td><td><b>Direction</b></td><td><b>Expression</b></td><td><b>WarningOnly</b></td></tr><tr><td>*</td><td>Confirm that the id of the original message provenance exist in the ack</td><td>request</td><td>Bundle.entry.resource.ofType(Provenance).where(id='${ProvenanceID2}').exists()</td><td>false</td></tr></table></blockquote></blockquote></div>
+  </text>
+  <url value="http://build.fhir.org/ig/hl7dk/dk-medcom/"/>
+  <version value="0.1.0"/>
+  <name value="Patient is admitted and dies at the hospital"/>
+  <title value="Patient is admitted and dies at the hospital"/>
+  <status value="active"/>
+  <date value="2021-11-01"/>
+  <publisher value="MedCom"/>
+  <contact>
+    <name value="MedCom"/>
+    <telecom>
+      <system value="email"/>
+      <value value="fhir@medcom.dk"/>
+    </telecom>
+  </contact>
+  <description value="Testing correct use of status admit-inpatient"/>
+  <copyright value="MedCom 2021"/>
+  <origin>
+    <index value="1"/>
+    <profile>
+      <system value="http://terminology.hl7.org/CodeSystem/testscript-profile-origin-types"/>
+      <code value="FHIR-Client"/>
+    </profile>
+  </origin>
+  <destination>
+    <index value="1"/>
+    <profile>
+      <system value="http://terminology.hl7.org/CodeSystem/testscript-profile-destination-types"/>
+      <code value="FHIR-Server"/>
+    </profile>
+  </destination>
+  <fixture id="bundle-create-ack-OK">
+    <autocreate value="false"/>
+    <autodelete value="false"/>
+    <resource>
+      <reference value="/FHIRSandbox/MedCom/401-Acknowledgement/_reference/resources/Acknowledgement-ok.xml"/>
+    </resource>
+  </fixture>
+  <fixture id="bundle-create-STIN1">
+    <autocreate value="false"/>
+    <autodelete value="false"/>
+    <resource>
+      <reference value="/FHIRSandbox/MedCom/401-Hospitalnotification/receive/Userstory/_reference/resources/STIN_9.xml"/>
+    </resource>
+  </fixture>
+  <fixture id="bundle-create-MORS2">
+    <autocreate value="false"/>
+    <autodelete value="false"/>
+    <resource>
+      <reference value="/FHIRSandbox/MedCom/401-Hospitalnotification/receive/Userstory/_reference/resources/MORS_2.xml"/>
+    </resource>
+  </fixture>
+  <profile id="hospitalnotification-profile">
+    <reference value="http://medcomfhir.dk/fhir/core/1.0/StructureDefinition/medcom-hospitalNotification-message"/>
+  </profile>
+  <variable>
+    <name value="destinationUri1"/>
+    <expression value="Bundle.entry.resource.ofType(MessageHeader).destination.endpoint"/>
+    <sourceId value="bundle-create-STIN1"/>
+  </variable>
+  <variable>
+    <name value="KorrektMHID1"/>
+    <expression value="Bundle.entry.resource.ofType(Bundle).id"/>
+    <sourceId value="bundle-get-STIN1"/>
+  </variable>
+  <variable>
+    <name value="MessageHeaderIdentifier1"/>
+    <expression value="Bundle.entry[0].fullUrl"/>
+    <sourceId value="bundle-create-STIN1"/>
+  </variable>
+  <variable>
+    <name value="ProvenanceID1"/>
+    <expression value="Bundle.entry.resource.ofType(Provenance).id"/>
+    <sourceId value="bundle-create-STIN1"/>
+  </variable>
+  <variable>
+    <name value="destinationUri2"/>
+    <expression value="Bundle.entry.resource.ofType(MessageHeader).destination.endpoint"/>
+    <sourceId value="bundle-create-MORS2"/>
+  </variable>
+  <variable>
+    <name value="KorrektMHID2"/>
+    <expression value="Bundle.entry.resource.ofType(Bundle).id"/>
+    <sourceId value="bundle-get-MORS2"/>
+  </variable>
+  <variable>
+    <name value="MessageHeaderIdentifier2"/>
+    <expression value="Bundle.entry[0].fullUrl"/>
+    <sourceId value="bundle-create-MORS2"/>
+  </variable>
+  <variable>
+    <name value="ProvenanceID2"/>
+    <expression value="Bundle.entry.resource.ofType(Provenance).id"/>
+    <sourceId value="bundle-create-MORS2"/>
+  </variable>
+  <setup>
+    <action>
+      <operation>
+        <type>
+          <system value="http://terminology.hl7.org/CodeSystem/testscript-operation-codes"/>
+          <code value="delete"/>
+        </type>
+        <resource value="Bundle"/>
+        <description value="System-generated search and delete operations from conditional delete on Bundle MessageHeader).destination.endpoint"/>
+        <accept value="xml"/>
+        <encodeRequestUrl value="true"/>
+        <params value="?message.destination-uri=${destinationUri1}"/>
+      </operation>
+    </action>
+    <action>
+      <operation>
+        <type>
+          <system value="http://terminology.hl7.org/CodeSystem/testscript-operation-codes"/>
+          <code value="create"/>
+        </type>
+        <resource value="Bundle"/>
+        <description value="Create the Bundle resource in XML format on the destination server."/>
+        <accept value="xml"/>
+        <contentType value="xml"/>
+        <encodeRequestUrl value="true"/>
+        <sourceId value="bundle-create-STIN1"/>
+      </operation>
+    </action>
+    <action>
+      <operation>
+        <type>
+          <system value="http://terminology.hl7.org/CodeSystem/testscript-operation-codes"/>
+          <code value="delete"/>
+        </type>
+        <resource value="Bundle"/>
+        <description value="System-generated search and delete operations from conditional delete on Bundle MessageHeader).destination.endpoint"/>
+        <accept value="xml"/>
+        <encodeRequestUrl value="true"/>
+        <params value="?message.destination-uri=${destinationUri2}"/>
+      </operation>
+    </action>
+    <action>
+      <operation>
+        <type>
+          <system value="http://terminology.hl7.org/CodeSystem/testscript-operation-codes"/>
+          <code value="create"/>
+        </type>
+        <resource value="Bundle"/>
+        <description value="Create the Bundle resource in XML format on the destination server."/>
+        <accept value="xml"/>
+        <contentType value="xml"/>
+        <encodeRequestUrl value="true"/>
+        <sourceId value="bundle-create-MORS2"/>
+      </operation>
+    </action>
+  </setup>
+  <test id="1-STIN-admitted">
+    <name value="HospitalNotification-STIN1"/>
+    <description value="GET a Hospital notification STIN. The expected response is a 200(OK) with a payload of the Hospital notification resource in XML format."/>
+    <action>
+      <operation>
+        <type>
+          <system value="http://terminology.hl7.org/CodeSystem/testscript-operation-codes"/>
+          <code value="read"/>
+        </type>
+        <resource value="Bundle"/>
+        <description value="Receive notification-STIN"/>
+        <accept value="xml"/>
+        <destination value="1"/>
+        <encodeRequestUrl value="true"/>
+        <origin value="1"/>
+        <params value="?message.destination-uri=${destinationUri1}"/>
+        <responseId value="bundle-get-STIN1"/>
+      </operation>
+    </action>
+    <action>
+      <assert>
+        <description value="Confirm that the returned HTTP status is 200(OK)."/>
+        <direction value="response"/>
+        <responseCode value="200"/>
+        <warningOnly value="false"/>
+      </assert>
+    </action>
+  </test>
+  <test id="1ACK-bundle-create-STIN1">
+    <name value="1 Post Acknowledgement-bundle-create-STIN1"/>
+    <description value="GET ACK"/>
+    <action>
+      <operation>
+        <type>
+          <system value="http://terminology.hl7.org/CodeSystem/testscript-operation-codes"/>
+          <code value="create"/>
+        </type>
+        <resource value="Bundle"/>
+        <description value="Post a acknowledgement"/>
+        <accept value="xml"/>
+        <destination value="1"/>
+        <encodeRequestUrl value="true"/>
+        <origin value="1"/>
+        <sourceId value="bundle-create-ack-OK"/>
+      </operation>
+    </action>
+    <action>
+      <assert>
+        <description value="Confirm that the client request payload contains a Bundle resource type."/>
+        <direction value="request"/>
+        <resource value="Bundle"/>
+        <warningOnly value="false"/>
+      </assert>
+    </action>
+    <action>
+      <assert>
+        <description value="Confirm that the MessageHeader response code is OK"/>
+        <direction value="request"/>
+        <expression value="Bundle.entry.resource.ofType(MessageHeader).response.code"/>
+        <operator value="equals"/>
+        <value value="ok"/>
+        <warningOnly value="false"/>
+      </assert>
+    </action>
+    <action>
+      <assert>
+        <description value="Confirm that the request resource contains the expected evetCoding code."/>
+        <direction value="request"/>
+        <expression value="Bundle.entry.resource.ofType(MessageHeader).event.as(Coding).select(code = &#39;acknowledgment-message&#39;).allTrue()"/>
+        <warningOnly value="false"/>
+      </assert>
+    </action>
+    <action>
+      <assert>
+        <description value="Confirm that the Bundle not containing a OperationOutcome"/>
+        <direction value="request"/>
+        <expression value="Bundle.entry.resource.ofType(OperationOutcome).exists().not()"/>
+        <warningOnly value="false"/>
+      </assert>
+    </action>
+    <action>
+      <assert>
+        <description value="Confirm that the MessageHeader.response.identifier is equal to Id of original message "/>
+        <direction value="request"/>
+        <expression value="Bundle.entry.resource.ofType(MessageHeader).response.identifier"/>
+        <operator value="equals"/>
+        <value value="${KorrektMHID1}"/>
+        <warningOnly value="false"/>
+      </assert>
+    </action>
+    <action>
+      <assert>
+        <description value="Confirm that the reference original Provenance.entity.what is equal to Id of original messageheader.identifier"/>
+        <direction value="request"/>
+        <expression value="Bundle.entry.resource.ofType(Provenance).where(entity.what.reference =&#39;${MessageHeaderIdentifier1}&#39;)"/>
+        <warningOnly value="false"/>
+      </assert>
+    </action>
+    <action>
+      <assert>
+        <description value="Confirm that the there are two Provenances"/>
+        <direction value="request"/>
+        <expression value="Bundle.entry.resource.ofType(Provenance).count() = 2"/>
+        <warningOnly value="false"/>
+      </assert>
+    </action>
+    <action>
+      <assert>
+        <description value="Confirm that the id of the original message provenance exist in the ack"/>
+        <direction value="request"/>
+        <expression value="Bundle.entry.resource.ofType(Provenance).where(id=&#39;${ProvenanceID1}&#39;).exists()"/>
+        <warningOnly value="false"/>
+      </assert>
+    </action>
+  </test>
+  <test id="2-MORS-admitted">
+    <name value="HospitalNotification-MORS2"/>
+    <description value="GET a Hospital notification MORS. The expected response is a 200(OK) with a payload of the Hospital notification resource in XML format."/>
+    <action>
+      <operation>
+        <type>
+          <system value="http://terminology.hl7.org/CodeSystem/testscript-operation-codes"/>
+          <code value="read"/>
+        </type>
+        <resource value="Bundle"/>
+        <description value="Receive notification-MORS"/>
+        <accept value="xml"/>
+        <destination value="1"/>
+        <encodeRequestUrl value="true"/>
+        <origin value="1"/>
+        <params value="?message.destination-uri=${destinationUri2}"/>
+        <responseId value="bundle-get-MORS2"/>
+      </operation>
+    </action>
+    <action>
+      <assert>
+        <description value="Confirm that the returned HTTP status is 200(OK)."/>
+        <direction value="response"/>
+        <responseCode value="200"/>
+        <warningOnly value="false"/>
+      </assert>
+    </action>
+  </test>
+  <test id="2ACK-bundle-create-MORS2">
+    <name value="2 Post Acknowledgement-bundle-create-MORS2"/>
+    <description value="GET ACK"/>
+    <action>
+      <operation>
+        <type>
+          <system value="http://terminology.hl7.org/CodeSystem/testscript-operation-codes"/>
+          <code value="create"/>
+        </type>
+        <resource value="Bundle"/>
+        <description value="Post a acknowledgement"/>
+        <accept value="xml"/>
+        <destination value="1"/>
+        <encodeRequestUrl value="true"/>
+        <origin value="1"/>
+        <sourceId value="bundle-create-ack-OK"/>
+      </operation>
+    </action>
+    <action>
+      <assert>
+        <description value="Confirm that the client request payload contains a Bundle resource type."/>
+        <direction value="request"/>
+        <resource value="Bundle"/>
+        <warningOnly value="false"/>
+      </assert>
+    </action>
+    <action>
+      <assert>
+        <description value="Confirm that the MessageHeader response code is OK"/>
+        <direction value="request"/>
+        <expression value="Bundle.entry.resource.ofType(MessageHeader).response.code"/>
+        <operator value="equals"/>
+        <value value="ok"/>
+        <warningOnly value="false"/>
+      </assert>
+    </action>
+    <action>
+      <assert>
+        <description value="Confirm that the request resource contains the expected evetCoding code."/>
+        <direction value="request"/>
+        <expression value="Bundle.entry.resource.ofType(MessageHeader).event.as(Coding).select(code = &#39;acknowledgment-message&#39;).allTrue()"/>
+        <warningOnly value="false"/>
+      </assert>
+    </action>
+    <action>
+      <assert>
+        <description value="Confirm that the Bundle not containing a OperationOutcome"/>
+        <direction value="request"/>
+        <expression value="Bundle.entry.resource.ofType(OperationOutcome).exists().not()"/>
+        <warningOnly value="false"/>
+      </assert>
+    </action>
+    <action>
+      <assert>
+        <description value="Confirm that the MessageHeader.response.identifier is equal to Id of original message "/>
+        <direction value="request"/>
+        <expression value="Bundle.entry.resource.ofType(MessageHeader).response.identifier"/>
+        <operator value="equals"/>
+        <value value="${KorrektMHID2}"/>
+        <warningOnly value="false"/>
+      </assert>
+    </action>
+    <action>
+      <assert>
+        <description value="Confirm that the reference original Provenance.entity.what is equal to Id of original messageheader.identifier"/>
+        <direction value="request"/>
+        <expression value="Bundle.entry.resource.ofType(Provenance).where(entity.what.reference =&#39;${MessageHeaderIdentifier2}&#39;)"/>
+        <warningOnly value="false"/>
+      </assert>
+    </action>
+    <action>
+      <assert>
+        <description value="Confirm that the there are two Provenances"/>
+        <direction value="request"/>
+        <expression value="Bundle.entry.resource.ofType(Provenance).count() = 2"/>
+        <warningOnly value="false"/>
+      </assert>
+    </action>
+    <action>
+      <assert>
+        <description value="Confirm that the id of the original message provenance exist in the ack"/>
+        <direction value="request"/>
+        <expression value="Bundle.entry.resource.ofType(Provenance).where(id=&#39;${ProvenanceID2}&#39;).exists()"/>
+        <warningOnly value="false"/>
+      </assert>
+    </action>
+  </test>
+</TestScript>

@@ -17,7 +17,7 @@
    <name value="HospitalnotificationTestscripts"/>
    <title value="HospitalNotification Testscripts"/>
    <status value="draft"/>
-   <date value="2021-11-19T10:31:09+01:00"/>
+   <date value="2021-12-09T08:00:09+01:00"/>
    <contact>
       <name value="MedCom"/>
       <telecom>
@@ -90,12 +90,12 @@
             <valueString value="TestScript"/>
          </extension>
          <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-            <valueUri value="TestScript-HS-Cancellation-of-deseased-emer.html"/>
+            <valueUri value="TestScript-HN-Cancellation-of-deseased-emer.html"/>
          </extension>
          <reference>
-            <reference value="TestScript/HS-Cancellation-of-deseased-emer"/>
+            <reference value="TestScript/HN-Cancellation-of-deseased-emer"/>
          </reference>
-         <name value="HS-send-cancel-discharge-emergency-home-an-mors"/>
+         <name value="HN-send-cancel-discharge-emergency-home-an-mors"/>
          <description value="Testing correct use of Cancellation-of-deseased"/>
          <exampleBoolean value="true"/>
          <groupingId value="-ex-example"/>
@@ -105,12 +105,12 @@
             <valueString value="TestScript"/>
          </extension>
          <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-            <valueUri value="TestScript-HS-Cancellation-of-deseased-imp.html"/>
+            <valueUri value="TestScript-HN-Cancellation-of-deseased-imp.html"/>
          </extension>
          <reference>
-            <reference value="TestScript/HS-Cancellation-of-deseased-imp"/>
+            <reference value="TestScript/HN-Cancellation-of-deseased-imp"/>
          </reference>
-         <name value="HS-send-cancel-discharge-inpatient-home-an-mors"/>
+         <name value="HN-send-cancel-discharge-inpatient-home-an-mors"/>
          <description value="Testing correct use of Cancellation-of-deseased-imp"/>
          <exampleBoolean value="true"/>
          <groupingId value="-ex-example"/>
@@ -120,12 +120,12 @@
             <valueString value="TestScript"/>
          </extension>
          <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-            <valueUri value="TestScript-HS-admit-emergency.html"/>
+            <valueUri value="TestScript-HN-admit-emergency.html"/>
          </extension>
          <reference>
-            <reference value="TestScript/HS-admit-emergency"/>
+            <reference value="TestScript/HN-admit-emergency"/>
          </reference>
-         <name value="HS-send-admit-emergency"/>
+         <name value="HN-send-admit-emergency"/>
          <description value="Testing correct use of status admit-emergency"/>
          <exampleBoolean value="true"/>
          <groupingId value="-ex-example"/>
@@ -135,12 +135,12 @@
             <valueString value="TestScript"/>
          </extension>
          <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-            <valueUri value="TestScript-HS-admit-inpatient.html"/>
+            <valueUri value="TestScript-HN-admit-inpatient.html"/>
          </extension>
          <reference>
-            <reference value="TestScript/HS-admit-inpatient"/>
+            <reference value="TestScript/HN-admit-inpatient"/>
          </reference>
-         <name value="HS-send-admit-inpatient"/>
+         <name value="HN-send-admit-inpatient"/>
          <description value="Testing correct use of status admit-inpatient"/>
          <exampleBoolean value="true"/>
          <groupingId value="-ex-example"/>
@@ -150,12 +150,12 @@
             <valueString value="TestScript"/>
          </extension>
          <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-            <valueUri value="TestScript-HS-cancel-admit-emergency.html"/>
+            <valueUri value="TestScript-HN-cancel-admit-emergency.html"/>
          </extension>
          <reference>
-            <reference value="TestScript/HS-cancel-admit-emergency"/>
+            <reference value="TestScript/HN-cancel-admit-emergency"/>
          </reference>
-         <name value="HS-send-cancel-admit-emergency"/>
+         <name value="HN-send-cancel-admit-emergency"/>
          <description value="Testing correct use of status stay-acute ambulant"/>
          <exampleBoolean value="true"/>
          <groupingId value="-ex-example"/>
@@ -165,12 +165,12 @@
             <valueString value="TestScript"/>
          </extension>
          <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-            <valueUri value="TestScript-HS-cancel-admit-inpatient.html"/>
+            <valueUri value="TestScript-HN-cancel-admit-inpatient.html"/>
          </extension>
          <reference>
-            <reference value="TestScript/HS-cancel-admit-inpatient"/>
+            <reference value="TestScript/HN-cancel-admit-inpatient"/>
          </reference>
-         <name value="HS-send-cancel-admit-inpatient"/>
+         <name value="HN-send-cancel-admit-inpatient"/>
          <description value="Testing correct use of status Update of Cancellation of start hospital stayadmission"/>
          <exampleBoolean value="true"/>
          <groupingId value="-ex-example"/>
@@ -180,12 +180,12 @@
             <valueString value="TestScript"/>
          </extension>
          <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-            <valueUri value="TestScript-HS-cancel-discharge-emergency-home.html"/>
+            <valueUri value="TestScript-HN-cancel-discharge-emergency-home.html"/>
          </extension>
          <reference>
-            <reference value="TestScript/HS-cancel-discharge-emergency-home"/>
+            <reference value="TestScript/HN-cancel-discharge-emergency-home"/>
          </reference>
-         <name value="HS-send-cancel-discharge-emergency-home"/>
+         <name value="HN-send-cancel-discharge-emergency-home"/>
          <description value="Testing correct use of Cancellation of End hospital Stay"/>
          <exampleBoolean value="true"/>
          <groupingId value="-ex-example"/>
@@ -195,12 +195,12 @@
             <valueString value="TestScript"/>
          </extension>
          <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-            <valueUri value="TestScript-HS-cancel-discharge-emergency-home-deseased.html"/>
+            <valueUri value="TestScript-HN-cancel-discharge-emergency-home-deseased.html"/>
          </extension>
          <reference>
-            <reference value="TestScript/HS-cancel-discharge-emergency-home-deseased"/>
+            <reference value="TestScript/HN-cancel-discharge-emergency-home-deseased"/>
          </reference>
-         <name value="HS-send-cancel-discharge-emergency-home-mors"/>
+         <name value="HN-send-cancel-discharge-emergency-home-mors"/>
          <description value="Testing correct use of Cancellation of End hospital Stay-deseased"/>
          <exampleBoolean value="true"/>
          <groupingId value="-ex-example"/>
@@ -210,12 +210,12 @@
             <valueString value="TestScript"/>
          </extension>
          <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-            <valueUri value="TestScript-HS-cancel-discharge-inpatient-home.html"/>
+            <valueUri value="TestScript-HN-cancel-discharge-inpatient-home.html"/>
          </extension>
          <reference>
-            <reference value="TestScript/HS-cancel-discharge-inpatient-home"/>
+            <reference value="TestScript/HN-cancel-discharge-inpatient-home"/>
          </reference>
-         <name value="HS-send-cancel-discharge-inpatient-home"/>
+         <name value="HN-send-cancel-discharge-inpatient-home"/>
          <description value="Testing correct use of Cancellation of End hospital Stay"/>
          <exampleBoolean value="true"/>
          <groupingId value="-ex-example"/>
@@ -225,12 +225,12 @@
             <valueString value="TestScript"/>
          </extension>
          <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-            <valueUri value="TestScript-HS-cancel-discharge-inpatient-home-deseased.html"/>
+            <valueUri value="TestScript-HN-cancel-discharge-inpatient-home-deseased.html"/>
          </extension>
          <reference>
-            <reference value="TestScript/HS-cancel-discharge-inpatient-home-deseased"/>
+            <reference value="TestScript/HN-cancel-discharge-inpatient-home-deseased"/>
          </reference>
-         <name value="HS-send-cancel-discharge-inpatient-home-mors"/>
+         <name value="HN-send-cancel-discharge-inpatient-home-mors"/>
          <description value="Testing correct use of Cancellation of End hospital Stay-deseased"/>
          <exampleBoolean value="true"/>
          <groupingId value="-ex-example"/>
@@ -240,12 +240,12 @@
             <valueString value="TestScript"/>
          </extension>
          <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-            <valueUri value="TestScript-HS-cancel-end-leave-inpatient.html"/>
+            <valueUri value="TestScript-HN-cancel-end-leave-inpatient.html"/>
          </extension>
          <reference>
-            <reference value="TestScript/HS-cancel-end-leave-inpatient"/>
+            <reference value="TestScript/HN-cancel-end-leave-inpatient"/>
          </reference>
-         <name value="HS-send-cancel-end-leave-inpatient"/>
+         <name value="HN-send-cancel-end-leave-inpatient"/>
          <description value="Testing correct use of cancel-end-leave-inpatient"/>
          <exampleBoolean value="true"/>
          <groupingId value="-ex-example"/>
@@ -255,12 +255,12 @@
             <valueString value="TestScript"/>
          </extension>
          <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-            <valueUri value="TestScript-HS-cancel-start-leave-inpatient.html"/>
+            <valueUri value="TestScript-HN-cancel-start-leave-inpatient.html"/>
          </extension>
          <reference>
-            <reference value="TestScript/HS-cancel-start-leave-inpatient"/>
+            <reference value="TestScript/HN-cancel-start-leave-inpatient"/>
          </reference>
-         <name value="HS-send-cancel-start-leave-inpatient"/>
+         <name value="HN-send-cancel-start-leave-inpatient"/>
          <description value="Testing correct use of Update of Start leave"/>
          <exampleBoolean value="true"/>
          <groupingId value="-ex-example"/>
@@ -270,12 +270,12 @@
             <valueString value="TestScript"/>
          </extension>
          <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-            <valueUri value="TestScript-HS-discharge-emergency-home.html"/>
+            <valueUri value="TestScript-HN-discharge-emergency-home.html"/>
          </extension>
          <reference>
-            <reference value="TestScript/HS-discharge-emergency-home"/>
+            <reference value="TestScript/HN-discharge-emergency-home"/>
          </reference>
-         <name value="HS-send-discharge-emergency-home"/>
+         <name value="HN-send-discharge-emergency-home"/>
          <description value="Testing correct use of End hospital Stay- patient dischargedto home/primary sector"/>
          <exampleBoolean value="true"/>
          <groupingId value="-ex-example"/>
@@ -285,12 +285,12 @@
             <valueString value="TestScript"/>
          </extension>
          <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-            <valueUri value="TestScript-HS-discharge-inpatient-home.html"/>
+            <valueUri value="TestScript-HN-discharge-inpatient-home.html"/>
          </extension>
          <reference>
-            <reference value="TestScript/HS-discharge-inpatient-home"/>
+            <reference value="TestScript/HN-discharge-inpatient-home"/>
          </reference>
-         <name value="HS-send-discharge-inpatient-home"/>
+         <name value="HN-send-discharge-inpatient-home"/>
          <description value="Testing correct use of End hospital Stay- patient dischargedto home/primary sector"/>
          <exampleBoolean value="true"/>
          <groupingId value="-ex-example"/>
@@ -300,12 +300,12 @@
             <valueString value="TestScript"/>
          </extension>
          <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-            <valueUri value="TestScript-HS-end-leave-inpatient.html"/>
+            <valueUri value="TestScript-HN-end-leave-inpatient.html"/>
          </extension>
          <reference>
-            <reference value="TestScript/HS-end-leave-inpatient"/>
+            <reference value="TestScript/HN-end-leave-inpatient"/>
          </reference>
-         <name value="HS-send-end-leave-inpatient"/>
+         <name value="HN-send-end-leave-inpatient"/>
          <description value="Testing correct use of end-leave-inpatient"/>
          <exampleBoolean value="true"/>
          <groupingId value="-ex-example"/>
@@ -315,12 +315,12 @@
             <valueString value="TestScript"/>
          </extension>
          <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-            <valueUri value="TestScript-HS-revise-admit-emergency.html"/>
+            <valueUri value="TestScript-HN-revise-admit-emergency.html"/>
          </extension>
          <reference>
-            <reference value="TestScript/HS-revise-admit-emergency"/>
+            <reference value="TestScript/HN-revise-admit-emergency"/>
          </reference>
-         <name value="HS-send-revise-admit-emergency"/>
+         <name value="HN-send-revise-admit-emergency"/>
          <description value="Testing correct use of status stay-acute ambulant"/>
          <exampleBoolean value="true"/>
          <groupingId value="-ex-example"/>
@@ -330,12 +330,12 @@
             <valueString value="TestScript"/>
          </extension>
          <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-            <valueUri value="TestScript-HS-revise-admit-inpatient.html"/>
+            <valueUri value="TestScript-HN-revise-admit-inpatient.html"/>
          </extension>
          <reference>
-            <reference value="TestScript/HS-revise-admit-inpatient"/>
+            <reference value="TestScript/HN-revise-admit-inpatient"/>
          </reference>
-         <name value="HS-send-revise-admit-inpatient"/>
+         <name value="HN-send-revise-admit-inpatient"/>
          <description value="Testing correct use of status Update of start hospital stay-admission"/>
          <exampleBoolean value="true"/>
          <groupingId value="-ex-example"/>
@@ -345,12 +345,12 @@
             <valueString value="TestScript"/>
          </extension>
          <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-            <valueUri value="TestScript-HS-revise-discharge-emergency-home.html"/>
+            <valueUri value="TestScript-HN-revise-discharge-emergency-home.html"/>
          </extension>
          <reference>
-            <reference value="TestScript/HS-revise-discharge-emergency-home"/>
+            <reference value="TestScript/HN-revise-discharge-emergency-home"/>
          </reference>
-         <name value="HS-send-revise-discharge-emergency-home"/>
+         <name value="HN-send-revise-discharge-emergency-home"/>
          <description value="Testing correct use of Update of End hospital Stay"/>
          <exampleBoolean value="true"/>
          <groupingId value="-ex-example"/>
@@ -360,12 +360,12 @@
             <valueString value="TestScript"/>
          </extension>
          <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-            <valueUri value="TestScript-HS-revise-discharge-emergency-home-re-deseased.html"/>
+            <valueUri value="TestScript-HN-revise-discharge-emergency-home-re-deseased.html"/>
          </extension>
          <reference>
-            <reference value="TestScript/HS-revise-discharge-emergency-home-re-deseased"/>
+            <reference value="TestScript/HN-revise-discharge-emergency-home-re-deseased"/>
          </reference>
-         <name value="HS-send-revise-discharge-emergency-home-mors"/>
+         <name value="HN-send-revise-discharge-emergency-home-mors"/>
          <description value="Testing correct use of Update of End hospital Stay"/>
          <exampleBoolean value="true"/>
          <groupingId value="-ex-example"/>
@@ -375,12 +375,12 @@
             <valueString value="TestScript"/>
          </extension>
          <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-            <valueUri value="TestScript-HS-revise-discharge-inpatient-home.html"/>
+            <valueUri value="TestScript-HN-revise-discharge-inpatient-home.html"/>
          </extension>
          <reference>
-            <reference value="TestScript/HS-revise-discharge-inpatient-home"/>
+            <reference value="TestScript/HN-revise-discharge-inpatient-home"/>
          </reference>
-         <name value="HS-send-revise-discharge-inpatient-home"/>
+         <name value="HN-send-revise-discharge-inpatient-home"/>
          <description value="Testing correct use of Update of End hospital Stay"/>
          <exampleBoolean value="true"/>
          <groupingId value="-ex-example"/>
@@ -390,12 +390,12 @@
             <valueString value="TestScript"/>
          </extension>
          <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-            <valueUri value="TestScript-HS-revise-discharge-inpatient-home-re-deseased.html"/>
+            <valueUri value="TestScript-HN-revise-discharge-inpatient-home-re-deseased.html"/>
          </extension>
          <reference>
-            <reference value="TestScript/HS-revise-discharge-inpatient-home-re-deseased"/>
+            <reference value="TestScript/HN-revise-discharge-inpatient-home-re-deseased"/>
          </reference>
-         <name value="HS-send-revise-discharge-inpatient-home-mors"/>
+         <name value="HN-send-revise-discharge-inpatient-home-mors"/>
          <description value="Testing correct use of Update of deseased"/>
          <exampleBoolean value="true"/>
          <groupingId value="-ex-example"/>
@@ -405,12 +405,12 @@
             <valueString value="TestScript"/>
          </extension>
          <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-            <valueUri value="TestScript-HS-revise-end-leave-inpatient.html"/>
+            <valueUri value="TestScript-HN-revise-end-leave-inpatient.html"/>
          </extension>
          <reference>
-            <reference value="TestScript/HS-revise-end-leave-inpatient"/>
+            <reference value="TestScript/HN-revise-end-leave-inpatient"/>
          </reference>
-         <name value="HS-send-revise-end-leave-inpatient"/>
+         <name value="HN-send-revise-end-leave-inpatient"/>
          <description value="Testing correct use of revise-end-leave-inpatient"/>
          <exampleBoolean value="true"/>
          <groupingId value="-ex-example"/>
@@ -420,12 +420,12 @@
             <valueString value="TestScript"/>
          </extension>
          <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-            <valueUri value="TestScript-HS-revise-start-leave-inpatient.html"/>
+            <valueUri value="TestScript-HN-revise-start-leave-inpatient.html"/>
          </extension>
          <reference>
-            <reference value="TestScript/HS-revise-start-leave-inpatient"/>
+            <reference value="TestScript/HN-revise-start-leave-inpatient"/>
          </reference>
-         <name value="HS-send-revise-start-leave-inpatient"/>
+         <name value="HN-send-revise-start-leave-inpatient"/>
          <description value="Testing correct use of Update of Start leave"/>
          <exampleBoolean value="true"/>
          <groupingId value="-ex-example"/>
@@ -435,12 +435,12 @@
             <valueString value="TestScript"/>
          </extension>
          <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-            <valueUri value="TestScript-HS-start-leave-inpatient.html"/>
+            <valueUri value="TestScript-HN-start-leave-inpatient.html"/>
          </extension>
          <reference>
-            <reference value="TestScript/HS-start-leave-inpatient"/>
+            <reference value="TestScript/HN-start-leave-inpatient"/>
          </reference>
-         <name value="HS-send-start-leave-inpatient"/>
+         <name value="HN-send-start-leave-inpatient"/>
          <description value="Testing correct use of status Start leave"/>
          <exampleBoolean value="true"/>
          <groupingId value="-ex-example"/>
@@ -897,13 +897,13 @@
             <valueString value="TestScript"/>
          </extension>
          <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-            <valueUri value="TestScript-ffb-1-encounter.html"/>
+            <valueUri value="TestScript-ffb-encounter-1-3.html"/>
          </extension>
          <reference>
-            <reference value="TestScript/ffb-1-encounter"/>
+            <reference value="TestScript/ffb-encounter-1-3"/>
          </reference>
          <name value="ffb-1st-encounter"/>
-         <description value="Testing correct use of First documentation phase"/>
+         <description value="Testing correct use of encounter phase 1-3"/>
          <exampleBoolean value="true"/>
          <groupingId value="-ex-example"/>
       </resource>
@@ -931,123 +931,123 @@
                <generation value="generated"/>
             </page>
             <page>
-               <nameUrl value="TestScript-HS-Cancellation-of-deseased-emer.html"/>
-               <title value="HS-send-cancel-discharge-emergency-home-an-mors"/>
+               <nameUrl value="TestScript-HN-Cancellation-of-deseased-emer.html"/>
+               <title value="HN-send-cancel-discharge-emergency-home-an-mors"/>
                <generation value="generated"/>
             </page>
             <page>
-               <nameUrl value="TestScript-HS-Cancellation-of-deseased-imp.html"/>
-               <title value="HS-send-cancel-discharge-inpatient-home-an-mors"/>
+               <nameUrl value="TestScript-HN-Cancellation-of-deseased-imp.html"/>
+               <title value="HN-send-cancel-discharge-inpatient-home-an-mors"/>
                <generation value="generated"/>
             </page>
             <page>
-               <nameUrl value="TestScript-HS-admit-emergency.html"/>
-               <title value="HS-send-admit-emergency"/>
+               <nameUrl value="TestScript-HN-admit-emergency.html"/>
+               <title value="HN-send-admit-emergency"/>
                <generation value="generated"/>
             </page>
             <page>
-               <nameUrl value="TestScript-HS-admit-inpatient.html"/>
-               <title value="HS-send-admit-inpatient"/>
+               <nameUrl value="TestScript-HN-admit-inpatient.html"/>
+               <title value="HN-send-admit-inpatient"/>
                <generation value="generated"/>
             </page>
             <page>
-               <nameUrl value="TestScript-HS-cancel-admit-emergency.html"/>
-               <title value="HS-send-cancel-admit-emergency"/>
+               <nameUrl value="TestScript-HN-cancel-admit-emergency.html"/>
+               <title value="HN-send-cancel-admit-emergency"/>
                <generation value="generated"/>
             </page>
             <page>
-               <nameUrl value="TestScript-HS-cancel-admit-inpatient.html"/>
-               <title value="HS-send-cancel-admit-inpatient"/>
+               <nameUrl value="TestScript-HN-cancel-admit-inpatient.html"/>
+               <title value="HN-send-cancel-admit-inpatient"/>
                <generation value="generated"/>
             </page>
             <page>
-               <nameUrl value="TestScript-HS-cancel-discharge-emergency-home.html"/>
-               <title value="HS-send-cancel-discharge-emergency-home"/>
+               <nameUrl value="TestScript-HN-cancel-discharge-emergency-home.html"/>
+               <title value="HN-send-cancel-discharge-emergency-home"/>
                <generation value="generated"/>
             </page>
             <page>
-               <nameUrl value="TestScript-HS-cancel-discharge-emergency-home-deseased.html"/>
-               <title value="HS-send-cancel-discharge-emergency-home-mors"/>
+               <nameUrl value="TestScript-HN-cancel-discharge-emergency-home-deseased.html"/>
+               <title value="HN-send-cancel-discharge-emergency-home-mors"/>
                <generation value="generated"/>
             </page>
             <page>
-               <nameUrl value="TestScript-HS-cancel-discharge-inpatient-home.html"/>
-               <title value="HS-send-cancel-discharge-inpatient-home"/>
+               <nameUrl value="TestScript-HN-cancel-discharge-inpatient-home.html"/>
+               <title value="HN-send-cancel-discharge-inpatient-home"/>
                <generation value="generated"/>
             </page>
             <page>
-               <nameUrl value="TestScript-HS-cancel-discharge-inpatient-home-deseased.html"/>
-               <title value="HS-send-cancel-discharge-inpatient-home-mors"/>
+               <nameUrl value="TestScript-HN-cancel-discharge-inpatient-home-deseased.html"/>
+               <title value="HN-send-cancel-discharge-inpatient-home-mors"/>
                <generation value="generated"/>
             </page>
             <page>
-               <nameUrl value="TestScript-HS-cancel-end-leave-inpatient.html"/>
-               <title value="HS-send-cancel-end-leave-inpatient"/>
+               <nameUrl value="TestScript-HN-cancel-end-leave-inpatient.html"/>
+               <title value="HN-send-cancel-end-leave-inpatient"/>
                <generation value="generated"/>
             </page>
             <page>
-               <nameUrl value="TestScript-HS-cancel-start-leave-inpatient.html"/>
-               <title value="HS-send-cancel-start-leave-inpatient"/>
+               <nameUrl value="TestScript-HN-cancel-start-leave-inpatient.html"/>
+               <title value="HN-send-cancel-start-leave-inpatient"/>
                <generation value="generated"/>
             </page>
             <page>
-               <nameUrl value="TestScript-HS-discharge-emergency-home.html"/>
-               <title value="HS-send-discharge-emergency-home"/>
+               <nameUrl value="TestScript-HN-discharge-emergency-home.html"/>
+               <title value="HN-send-discharge-emergency-home"/>
                <generation value="generated"/>
             </page>
             <page>
-               <nameUrl value="TestScript-HS-discharge-inpatient-home.html"/>
-               <title value="HS-send-discharge-inpatient-home"/>
+               <nameUrl value="TestScript-HN-discharge-inpatient-home.html"/>
+               <title value="HN-send-discharge-inpatient-home"/>
                <generation value="generated"/>
             </page>
             <page>
-               <nameUrl value="TestScript-HS-end-leave-inpatient.html"/>
-               <title value="HS-send-end-leave-inpatient"/>
+               <nameUrl value="TestScript-HN-end-leave-inpatient.html"/>
+               <title value="HN-send-end-leave-inpatient"/>
                <generation value="generated"/>
             </page>
             <page>
-               <nameUrl value="TestScript-HS-revise-admit-emergency.html"/>
-               <title value="HS-send-revise-admit-emergency"/>
+               <nameUrl value="TestScript-HN-revise-admit-emergency.html"/>
+               <title value="HN-send-revise-admit-emergency"/>
                <generation value="generated"/>
             </page>
             <page>
-               <nameUrl value="TestScript-HS-revise-admit-inpatient.html"/>
-               <title value="HS-send-revise-admit-inpatient"/>
+               <nameUrl value="TestScript-HN-revise-admit-inpatient.html"/>
+               <title value="HN-send-revise-admit-inpatient"/>
                <generation value="generated"/>
             </page>
             <page>
-               <nameUrl value="TestScript-HS-revise-discharge-emergency-home.html"/>
-               <title value="HS-send-revise-discharge-emergency-home"/>
+               <nameUrl value="TestScript-HN-revise-discharge-emergency-home.html"/>
+               <title value="HN-send-revise-discharge-emergency-home"/>
                <generation value="generated"/>
             </page>
             <page>
-               <nameUrl value="TestScript-HS-revise-discharge-emergency-home-re-deseased.html"/>
-               <title value="HS-send-revise-discharge-emergency-home-mors"/>
+               <nameUrl value="TestScript-HN-revise-discharge-emergency-home-re-deseased.html"/>
+               <title value="HN-send-revise-discharge-emergency-home-mors"/>
                <generation value="generated"/>
             </page>
             <page>
-               <nameUrl value="TestScript-HS-revise-discharge-inpatient-home.html"/>
-               <title value="HS-send-revise-discharge-inpatient-home"/>
+               <nameUrl value="TestScript-HN-revise-discharge-inpatient-home.html"/>
+               <title value="HN-send-revise-discharge-inpatient-home"/>
                <generation value="generated"/>
             </page>
             <page>
-               <nameUrl value="TestScript-HS-revise-discharge-inpatient-home-re-deseased.html"/>
-               <title value="HS-send-revise-discharge-inpatient-home-mors"/>
+               <nameUrl value="TestScript-HN-revise-discharge-inpatient-home-re-deseased.html"/>
+               <title value="HN-send-revise-discharge-inpatient-home-mors"/>
                <generation value="generated"/>
             </page>
             <page>
-               <nameUrl value="TestScript-HS-revise-end-leave-inpatient.html"/>
-               <title value="HS-send-revise-end-leave-inpatient"/>
+               <nameUrl value="TestScript-HN-revise-end-leave-inpatient.html"/>
+               <title value="HN-send-revise-end-leave-inpatient"/>
                <generation value="generated"/>
             </page>
             <page>
-               <nameUrl value="TestScript-HS-revise-start-leave-inpatient.html"/>
-               <title value="HS-send-revise-start-leave-inpatient"/>
+               <nameUrl value="TestScript-HN-revise-start-leave-inpatient.html"/>
+               <title value="HN-send-revise-start-leave-inpatient"/>
                <generation value="generated"/>
             </page>
             <page>
-               <nameUrl value="TestScript-HS-start-leave-inpatient.html"/>
-               <title value="HS-send-start-leave-inpatient"/>
+               <nameUrl value="TestScript-HN-start-leave-inpatient.html"/>
+               <title value="HN-send-start-leave-inpatient"/>
                <generation value="generated"/>
             </page>
             <page>
@@ -1201,7 +1201,7 @@
                <generation value="generated"/>
             </page>
             <page>
-               <nameUrl value="TestScript-ffb-1-encounter.html"/>
+               <nameUrl value="TestScript-ffb-encounter-1-3.html"/>
                <title value="ffb-1st-encounter"/>
                <generation value="generated"/>
             </page>

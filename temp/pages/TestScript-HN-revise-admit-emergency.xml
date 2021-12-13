@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<TestScript xmlns="http://hl7.org/fhir">
+  <id value="HN-revise-admit-emergency"/>
+  <meta>
+    <profile value="http://touchstone.aegis.net/touchstone/fhir/testing/StructureDefinition/testscript"/>
+  </meta>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative</b></p><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">Resource "HN-revise-admit-emergency" </p><p style="margin-bottom: 0px">Profile: <code>http://touchstone.aegis.net/touchstone/fhir/testing/StructureDefinition/testscript</code></p></div><p><b>url</b>: <code>http://build.fhir.org/ig/hl7dk/dk-medcom/</code></p><p><b>version</b>: 0.1.0</p><p><b>name</b>: Update of start hospital stay-acute ambulant</p><p><b>title</b>: hospitalNotification-message Update of start hospital stay-acute ambulant send</p><p><b>status</b>: active</p><p><b>date</b>: 2021-11-01</p><p><b>publisher</b>: MedCom</p><p><b>contact</b>: MedCom: <a href="mailto:fhir@medcom.dk">fhir@medcom.dk</a></p><p><b>description</b>: Testing correct use of status stay-acute ambulant</p><p><b>copyright</b>: MedCom 2021</p><h3>Origins</h3><table class="grid"><tr><td>-</td><td><b>Index</b></td><td><b>Profile</b></td></tr><tr><td>*</td><td>1</td><td>FHIR Client (Details: http://terminology.hl7.org/CodeSystem/testscript-profile-origin-types code FHIR-Client = 'FHIR Client', stated as 'null')</td></tr></table><h3>Destinations</h3><table class="grid"><tr><td>-</td><td><b>Index</b></td><td><b>Profile</b></td></tr><tr><td>*</td><td>1</td><td>FHIR Server (Details: http://terminology.hl7.org/CodeSystem/testscript-profile-destination-types code FHIR-Server = 'FHIR Server', stated as 'null')</td></tr></table><p><b>profile</b>: <a href="http://medcomfhir.dk/fhir/core/1.0/StructureDefinition/medcom-messaging-acknowledgement">http://medcomfhir.dk/fhir/core/1.0/StructureDefinition/medcom-messaging-acknowledgement</a></p><blockquote><p><b>variable</b></p><p><b>name</b>: encounterResourceIdentifierRE-STAA1</p><p><b>expression</b>: Bundle.entry.resource.ofType(Encounter).identifier.value</p><p><b>sourceId</b>: bundle-create-RE-STAA1</p></blockquote><blockquote><p><b>variable</b></p><p><b>name</b>: headerResourceReferenceRE-STAA1</p><p><b>expression</b>: Bundle.entry[0].fullUrl</p><p><b>sourceId</b>: bundle-create-RE-STAA1</p></blockquote><blockquote><p><b>variable</b></p><p><b>name</b>: firstEpisodeOfCareIdentifierRE-STAA1</p><p><b>expression</b>: Bundle.entry.resource.ofType(Encounter).episodeOfCare.identifier.value</p><p><b>sourceId</b>: bundle-create-RE-STAA1</p></blockquote><blockquote><p><b>test</b></p><p><b>name</b>: 1 Post Hospitalnotification</p><p><b>description</b>: Post Hospitalnotification</p><blockquote><p><b>action</b></p><h3>Operations</h3><table class="grid"><tr><td>-</td><td><b>Type</b></td><td><b>Resource</b></td><td><b>Description</b></td><td><b>Destination</b></td><td><b>EncodeRequestUrl</b></td><td><b>Origin</b></td><td><b>SourceId</b></td></tr><tr><td>*</td><td>Create (Details: http://terminology.hl7.org/CodeSystem/testscript-operation-codes code create = 'Create', stated as 'null')</td><td>Bundle</td><td>Post a Hospitalnotification</td><td>1</td><td>true</td><td>1</td><td>bundle-create-RE-STAA1</td></tr></table></blockquote><blockquote><p><b>action</b></p><h3>Asserts</h3><table class="grid"><tr><td>-</td><td><b>Description</b></td><td><b>Direction</b></td><td><b>Resource</b></td><td><b>WarningOnly</b></td></tr><tr><td>*</td><td>Confirm that the client request payload contains a Bundle resource type.</td><td>request</td><td>Bundle</td><td>false</td></tr></table></blockquote><blockquote><p><b>action</b></p><h3>Asserts</h3><table class="grid"><tr><td>-</td><td><b>Description</b></td><td><b>Direction</b></td><td><b>Expression</b></td><td><b>WarningOnly</b></td></tr><tr><td>*</td><td>Confirm that the request resource contains the expected evetCoding code.</td><td>request</td><td>Bundle.entry.resource.ofType(MessageHeader).event.as(Coding).select(code = 'hospital-notification-message').allTrue()</td><td>false</td></tr></table></blockquote><blockquote><p><b>action</b></p><h3>Asserts</h3><table class="grid"><tr><td>-</td><td><b>Description</b></td><td><b>Direction</b></td><td><b>Expression</b></td><td><b>Operator</b></td><td><b>Value</b></td><td><b>WarningOnly</b></td></tr><tr><td>*</td><td>Confirm that the request resource contains the expected activity code.</td><td>request</td><td>Bundle.entry.resource.ofType(Provenance).activity.coding.code</td><td>equals</td><td>revise-admit-emergency</td><td>false</td></tr></table></blockquote><blockquote><p><b>action</b></p><h3>Asserts</h3><table class="grid"><tr><td>-</td><td><b>Description</b></td><td><b>Direction</b></td><td><b>Expression</b></td><td><b>Operator</b></td><td><b>Value</b></td><td><b>WarningOnly</b></td></tr><tr><td>*</td><td>Confirm that the request resource contains the expected Encounter class code.</td><td>request</td><td>Bundle.entry.resource.ofType(Encounter).class.code</td><td>equals</td><td>EMER</td><td>false</td></tr></table></blockquote><blockquote><p><b>action</b></p><h3>Asserts</h3><table class="grid"><tr><td>-</td><td><b>Description</b></td><td><b>Direction</b></td><td><b>Expression</b></td><td><b>Operator</b></td><td><b>Value</b></td><td><b>WarningOnly</b></td></tr><tr><td>*</td><td>Confirm that the request resource contains the expected status.</td><td>request</td><td>Bundle.entry.resource.ofType(Encounter).status</td><td>equals</td><td>in-progress</td><td>false</td></tr></table></blockquote><blockquote><p><b>action</b></p><h3>Asserts</h3><table class="grid"><tr><td>-</td><td><b>Description</b></td><td><b>Direction</b></td><td><b>Expression</b></td><td><b>Operator</b></td><td><b>Value</b></td><td><b>WarningOnly</b></td></tr><tr><td>*</td><td>Confirm that the reportOfAdmissionRecipientExtension is set to true.</td><td>request</td><td>Bundle.entry.resource.ofType(MessageHeader).extension.where(url='http://medcomfhir.dk/fhir/core/1.0/StructureDefinition/medcom-messaging-reportOfAdmissionExtension').value</td><td>equals</td><td>true</td><td>false</td></tr></table></blockquote><blockquote><p><b>action</b></p><h3>Asserts</h3><table class="grid"><tr><td>-</td><td><b>Description</b></td><td><b>Direction</b></td><td><b>Expression</b></td><td><b>WarningOnly</b></td></tr><tr><td>*</td><td>Confirm that the taget refferece the MessageHeader</td><td>request</td><td>Bundle.entry.resource.ofType(Provenance).where(target.reference = '${headerResourceReferenceRE-STAA1}')</td><td>false</td></tr></table></blockquote><blockquote><p><b>action</b></p><h3>Asserts</h3><table class="grid"><tr><td>-</td><td><b>Description</b></td><td><b>Direction</b></td><td><b>Expression</b></td><td><b>WarningOnly</b></td></tr><tr><td>*</td><td>Confirm that the WHAT refferece the MessageHeader. First message its own. Efterwards previous messageheader</td><td>request</td><td>Bundle.entry.resource.ofType(Provenance).where(entity.what.reference ='NA')</td><td>false</td></tr></table></blockquote><blockquote><p><b>action</b></p><h3>Asserts</h3><table class="grid"><tr><td>-</td><td><b>Description</b></td><td><b>Direction</b></td><td><b>Expression</b></td><td><b>Operator</b></td><td><b>Value</b></td><td><b>WarningOnly</b></td></tr><tr><td>*</td><td>Confirm that the role is set to source</td><td>request</td><td>Bundle.entry.resource.ofType(Provenance).entity.role</td><td>equals</td><td>source</td><td>false</td></tr></table></blockquote></blockquote></div>
+  </text>
+  <url value="http://build.fhir.org/ig/hl7dk/dk-medcom/"/>
+  <version value="0.1.0"/>
+  <name value="Update of start hospital stay-acute ambulant"/>
+  <title value="hospitalNotification-message Update of start hospital stay-acute ambulant send"/>
+  <status value="active"/>
+  <date value="2021-11-01"/>
+  <publisher value="MedCom"/>
+  <contact>
+    <name value="MedCom"/>
+    <telecom>
+      <system value="email"/>
+      <value value="fhir@medcom.dk"/>
+    </telecom>
+  </contact>
+  <description value="Testing correct use of status stay-acute ambulant"/>
+  <copyright value="MedCom 2021"/>
+  <origin>
+    <index value="1"/>
+    <profile>
+      <system value="http://terminology.hl7.org/CodeSystem/testscript-profile-origin-types"/>
+      <code value="FHIR-Client"/>
+    </profile>
+  </origin>
+  <destination>
+    <index value="1"/>
+    <profile>
+      <system value="http://terminology.hl7.org/CodeSystem/testscript-profile-destination-types"/>
+      <code value="FHIR-Server"/>
+    </profile>
+  </destination>
+  <profile id="hospitalnotification-profile">
+    <reference value="http://medcomfhir.dk/fhir/core/1.0/StructureDefinition/medcom-messaging-acknowledgement"/>
+  </profile>
+  <variable>
+    <name value="encounterResourceIdentifierRE-STAA1"/>
+    <expression value="Bundle.entry.resource.ofType(Encounter).identifier.value"/>
+    <sourceId value="bundle-create-RE-STAA1"/>
+  </variable>
+  <variable>
+    <name value="headerResourceReferenceRE-STAA1"/>
+    <expression value="Bundle.entry[0].fullUrl"/>
+    <sourceId value="bundle-create-RE-STAA1"/>
+  </variable>
+  <variable>
+    <name value="firstEpisodeOfCareIdentifierRE-STAA1"/>
+    <expression value="Bundle.entry.resource.ofType(Encounter).episodeOfCare.identifier.value"/>
+    <sourceId value="bundle-create-RE-STAA1"/>
+  </variable>
+  <test id="HN-RE-STAA-1">
+    <name value="1 Post Hospitalnotification"/>
+    <description value="Post Hospitalnotification"/>
+    <action>
+      <operation>
+        <type>
+          <system value="http://terminology.hl7.org/CodeSystem/testscript-operation-codes"/>
+          <code value="create"/>
+        </type>
+        <resource value="Bundle"/>
+        <description value="Post a Hospitalnotification"/>
+        <destination value="1"/>
+        <encodeRequestUrl value="true"/>
+        <origin value="1"/>
+        <sourceId value="bundle-create-RE-STAA1"/>
+      </operation>
+    </action>
+    <action>
+      <assert>
+        <description value="Confirm that the client request payload contains a Bundle resource type."/>
+        <direction value="request"/>
+        <resource value="Bundle"/>
+        <warningOnly value="false"/>
+      </assert>
+    </action>
+    <action>
+      <assert>
+        <description value="Confirm that the request resource contains the expected evetCoding code."/>
+        <direction value="request"/>
+        <expression value="Bundle.entry.resource.ofType(MessageHeader).event.as(Coding).select(code = &#39;hospital-notification-message&#39;).allTrue()"/>
+        <warningOnly value="false"/>
+      </assert>
+    </action>
+    <action>
+      <assert>
+        <description value="Confirm that the request resource contains the expected activity code."/>
+        <direction value="request"/>
+        <expression value="Bundle.entry.resource.ofType(Provenance).activity.coding.code"/>
+        <operator value="equals"/>
+        <value value="revise-admit-emergency"/>
+        <warningOnly value="false"/>
+      </assert>
+    </action>
+    <action>
+      <assert>
+        <description value="Confirm that the request resource contains the expected Encounter class code."/>
+        <direction value="request"/>
+        <expression value="Bundle.entry.resource.ofType(Encounter).class.code"/>
+        <operator value="equals"/>
+        <value value="EMER"/>
+        <warningOnly value="false"/>
+      </assert>
+    </action>
+    <action>
+      <assert>
+        <description value="Confirm that the request resource contains the expected status."/>
+        <direction value="request"/>
+        <expression value="Bundle.entry.resource.ofType(Encounter).status"/>
+        <operator value="equals"/>
+        <value value="in-progress"/>
+        <warningOnly value="false"/>
+      </assert>
+    </action>
+    <action>
+      <assert>
+        <description value="Confirm that the reportOfAdmissionRecipientExtension is set to true."/>
+        <direction value="request"/>
+        <expression value="Bundle.entry.resource.ofType(MessageHeader).extension.where(url=&#39;http://medcomfhir.dk/fhir/core/1.0/StructureDefinition/medcom-messaging-reportOfAdmissionExtension&#39;).value"/>
+        <operator value="equals"/>
+        <value value="true"/>
+        <warningOnly value="false"/>
+      </assert>
+    </action>
+    <action>
+      <assert>
+        <description value="Confirm that the taget refferece the MessageHeader"/>
+        <direction value="request"/>
+        <expression value="Bundle.entry.resource.ofType(Provenance).where(target.reference = &#39;${headerResourceReferenceRE-STAA1}&#39;)"/>
+        <warningOnly value="false"/>
+      </assert>
+    </action>
+    <action>
+      <assert>
+        <description value="Confirm that the WHAT refferece the MessageHeader. First message its own. Efterwards previous messageheader"/>
+        <direction value="request"/>
+        <expression value="Bundle.entry.resource.ofType(Provenance).where(entity.what.reference =&#39;NA&#39;)"/>
+        <warningOnly value="false"/>
+      </assert>
+    </action>
+    <action>
+      <assert>
+        <description value="Confirm that the role is set to source"/>
+        <direction value="request"/>
+        <expression value="Bundle.entry.resource.ofType(Provenance).entity.role"/>
+        <operator value="equals"/>
+        <value value="source"/>
+        <warningOnly value="false"/>
+      </assert>
+    </action>
+  </test>
+</TestScript>

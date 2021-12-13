@@ -6,12 +6,12 @@ RuleSet: createHNSendTest(type, number, fixture, activityCode, encounterClass, e
 * destination.index = 1
 * destination.profile.system = "http://terminology.hl7.org/CodeSystem/testscript-profile-destination-types"
 * destination.profile.code = #FHIR-Server
-
-* fixture[+].id = "bundle-create-{type}{number}"
+/*
+* fixture[+].id = "fixture-bundle-create-{type}{number}"
 * fixture[=].autocreate = false
 * fixture[=].autodelete = false
 * fixture[=].resource.reference = "{fixture}"
-
+*/
 * profile.id = "hospitalnotification-profile"
 * profile.reference = "http://medcomfhir.dk/fhir/core/1.0/StructureDefinition/medcom-messaging-acknowledgement" 
 
@@ -39,6 +39,7 @@ RuleSet: createHNSendTest(type, number, fixture, activityCode, encounterClass, e
 * test[=].action[=].operation.encodeRequestUrl = true
 * test[=].action[=].operation.origin = 1
 * test[=].action[=].operation.sourceId = "bundle-create-{type}{number}" 
+//* test[=].action[=].operation.responseId = "bundle-create-{type}{number}"
 
 * test[=].action[+].assert.description = "Confirm that the client request payload contains a Bundle resource type."
 * test[=].action[=].assert.direction = #request

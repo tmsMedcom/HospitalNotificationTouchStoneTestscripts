@@ -1,0 +1,21 @@
+---
+---
+<!-- layouts\layout-changehistory.html -->
+<!-- get modelType -->
+
+
+{% include fragment-pagebegin.html %}
+
+<div style="counter-reset: section 10" class="col-12">
+  <!--ReleaseHeader--><p id="publish-box">Publish Box goes here</p><!--EndReleaseHeader-->
+  {% include fragment-base-navtabs.html type='TestScript' id='HN-cancel-admit-emergency' active='history' %}
+
+  <a name="root"> </a>
+  <h2 id="root">{{type}}: Cancellation of start hospital stayacute ambulant - Change History</h2>
+  <p>History of changes for HN-cancel-admit-emergency {{type | downcase}}.</p>
+
+  {%include TestScript-HN-cancel-admit-emergency-history.xhtml%}
+
+</div>
+{% assign includetabscripts = 'true' %}
+{% include fragment-pageend.html %}

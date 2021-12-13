@@ -32,6 +32,8 @@ RuleSet: CreateFfbReportCaseinsightTest(number, fixture)
 * insert variableClinicalImpressionCountFindings({number}) //only for 2end test
 * insert actionOperationFfb({number})
 
+//validation
+//* insert validation
 
 //Only relevant for n+1 test
 
@@ -74,7 +76,7 @@ RuleSet: CreateFfbReportCaseassesment(number, fixture)
 * insert originClient
 * insert destinationServer
 * insert fixtureFfb({number}, {fixture})
-* insert variableClinicalImpressionCountFindings({number}) //only for 2end test
+//* insert variableClinicalImpressionCountFindings({number}) //only for 2end test
 * insert variableObservationFullUrl({number})
 * insert actionOperationFfb({number})
 * insert testClinicalImpressionContainsRefMunicipalityCaseNumber
@@ -84,6 +86,9 @@ RuleSet: CreateFfbReportCaseassesment(number, fixture)
 * insert testServiceRequestEqualsFirst
 * insert testConditionsExists
 * insert testSameNoOfFindingRefAndCondition
+
+//validation
+//* insert validation
 
 //below specific tests for 3rd encounter.
 
@@ -119,11 +124,13 @@ RuleSet: CreateFfbReportCaseassesment(number, fixture)
 
 * insert testGoallifecycleStatusActive
 
+/*Is not a part of 3rd  encounter any more 08-12-2021
 * insert testCareplanStartbeforeBundletime
 
 * insert testCareplanIntentPLAN
 
 * insert testCareplanStatusActive
+*/
 
 * insert testMunicipalityCaseNumberEqualsFist
 
@@ -404,7 +411,8 @@ RuleSet: actionOperationFfb(number)
 * test[=].action[=].operation.destination = 1
 * test[=].action[=].operation.encodeRequestUrl = true
 * test[=].action[=].operation.origin = 1
-* test[=].action[=].operation.sourceId = "bundle-create-{number}" 
+* test[=].action[=].operation.sourceId = "fix-bundle-create-{number}" 
+* test[=].action[=].operation.responseId = "bundle-create-{number}"
 
 
 
@@ -459,7 +467,7 @@ RuleSet: profileFfb
 * profile.reference = "http://ffb/reporting/kl.dk/1.0/StructureDefinition/kl-reporting-ffb-deliveryReport" 
 
 RuleSet: fixtureFfb(number, fixture)
-* fixture[+].id = "bundle-create-{number}"
+* fixture[+].id = "fix-bundle-create-{number}"
 * fixture[=].autocreate = false
 * fixture[=].autodelete = false
 * fixture[=].resource.reference = "{fixture}"

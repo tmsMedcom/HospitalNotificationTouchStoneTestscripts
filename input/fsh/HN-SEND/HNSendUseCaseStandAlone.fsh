@@ -1,8 +1,8 @@
 //STAA
-Instance: HS-send-admit-emergency
+Instance: HN-send-admit-emergency
 InstanceOf: TestScript
 * insert Metadata
-* id = "HS-admit-emergency"
+* id = "HN-admit-emergency"
 * name = "Start hospital admit-emergency"
 * title = "hospitalNotification-message admit-emergency send"
 * description = "Testing correct use of status admit-emergency"
@@ -12,10 +12,10 @@ InstanceOf: TestScript
  admit-emergency, EMER, in-progress, NA, source) 
 
 //RE_STAA
-Instance: HS-send-revise-admit-emergency
+Instance: HN-send-revise-admit-emergency
 InstanceOf: TestScript
 * insert Metadata
-* id = "HS-revise-admit-emergency"
+* id = "HN-revise-admit-emergency"
 * name = "Update of start hospital stay-acute ambulant"
 * title = "hospitalNotification-message Update of start hospital stay-acute ambulant send"
 * description = "Testing correct use of status stay-acute ambulant"
@@ -25,10 +25,10 @@ InstanceOf: TestScript
  revise-admit-emergency, EMER, in-progress, NA, source)
 
 //AN_STAA
-Instance: HS-send-cancel-admit-emergency
+Instance: HN-send-cancel-admit-emergency
 InstanceOf: TestScript
 * insert Metadata
-* id = "HS-cancel-admit-emergency"
+* id = "HN-cancel-admit-emergency"
 * name = "Cancellation of start hospital stayacute ambulant"
 * title = "hospitalNotification-message Cancellation of start hospital stayacute ambulant send"
 * description = "Testing correct use of status stay-acute ambulant"
@@ -38,10 +38,10 @@ InstanceOf: TestScript
  cancel-admit-emergency, EMER, entered-in-error, NA, source)
 
 //STIN
-Instance: HS-send-admit-inpatient
+Instance: HN-send-admit-inpatient
 InstanceOf: TestScript
 * insert Metadata
-* id = "HS-admit-inpatient"
+* id = "HN-admit-inpatient"
 * name = "Start hospital stay-admission"
 * title = "hospitalNotification-message admit-inpatient send"
 * description = "Testing correct use of status admit-inpatient"
@@ -52,10 +52,10 @@ InstanceOf: TestScript
 
 
 //RE_STIN
-Instance: HS-send-revise-admit-inpatient
+Instance: HN-send-revise-admit-inpatient
 InstanceOf: TestScript
 * insert Metadata
-* id = "HS-revise-admit-inpatient"
+* id = "HN-revise-admit-inpatient"
 * name = "Update of start hospital stay-admission"
 * title = "hospitalNotification-message Update of start hospital stay-admission send"
 * description = "Testing correct use of status Update of start hospital stay-admission"
@@ -66,10 +66,10 @@ InstanceOf: TestScript
 
 
 //AN_STIN
-Instance: HS-send-cancel-admit-inpatient
+Instance: HN-send-cancel-admit-inpatient
 InstanceOf: TestScript
 * insert Metadata
-* id = "HS-cancel-admit-inpatient"
+* id = "HN-cancel-admit-inpatient"
 * name = "Cancellation of start hospital stayadmission"
 * title = "hospitalNotification-message Cancellation of start hospital stayadmission send"
 * description = "Testing correct use of status Update of Cancellation of start hospital stayadmission"
@@ -80,10 +80,10 @@ InstanceOf: TestScript
 
 
 //STOR
-Instance: HS-send-start-leave-inpatient
+Instance: HN-send-start-leave-inpatient
 InstanceOf: TestScript
 * insert Metadata
-* id = "HS-start-leave-inpatient"
+* id = "HN-start-leave-inpatient"
 * name = "Start leave"
 * title = "hospitalNotification-message Cancellation of Start leave send"
 * description = "Testing correct use of status Start leave"
@@ -94,10 +94,10 @@ InstanceOf: TestScript
 
 
 //RE_STOR
-Instance: HS-send-revise-start-leave-inpatient
+Instance: HN-send-revise-start-leave-inpatient
 InstanceOf: TestScript
 * insert Metadata
-* id = "HS-revise-start-leave-inpatient"
+* id = "HN-revise-start-leave-inpatient"
 * name = "Update of Start leave"
 * title = "hospitalNotification-message Update of Start leave send"
 * description = "Testing correct use of Update of Start leave"
@@ -108,10 +108,10 @@ InstanceOf: TestScript
 
 
 //AN_STOR
-Instance: HS-send-cancel-start-leave-inpatient
+Instance: HN-send-cancel-start-leave-inpatient
 InstanceOf: TestScript
 * insert Metadata
-* id = "HS-cancel-start-leave-inpatient"
+* id = "HN-cancel-start-leave-inpatient"
 * name = "Update of Start leave"
 * title = "hospitalNotification-message Update of Start leave send"
 * description = "Testing correct use of Update of Start leave"
@@ -121,10 +121,10 @@ InstanceOf: TestScript
  cancel-start-leave-inpatient, IMP, in-progress, NA, source)
 
 //SLOR
-Instance: HS-send-end-leave-inpatient
+Instance: HN-send-end-leave-inpatient
 InstanceOf: TestScript
 * insert Metadata
-* id = "HS-end-leave-inpatient"
+* id = "HN-end-leave-inpatient"
 * name = "end-leave-inpatient"
 * title = "hospitalNotification-message end-leave-inpatient"
 * description = "Testing correct use of end-leave-inpatient"
@@ -134,10 +134,10 @@ InstanceOf: TestScript
  end-leave-inpatient, IMP, in-progress, NA, source)
 
  //RE_SLOR
-Instance: HS-send-revise-end-leave-inpatient
+Instance: HN-send-revise-end-leave-inpatient
 InstanceOf: TestScript
 * insert Metadata
-* id = "HS-revise-end-leave-inpatient"
+* id = "HN-revise-end-leave-inpatient"
 * name = "revise-end-leave-inpatient"
 * title = "hospitalNotification-message revise-end-leave-inpatient"
 * description = "Testing correct use of revise-end-leave-inpatient"
@@ -147,10 +147,10 @@ InstanceOf: TestScript
  revise-end-leave-inpatient, IMP, in-progress, NA, source)
 
   //AN_SLOR
-Instance: HS-send-cancel-end-leave-inpatient
+Instance: HN-send-cancel-end-leave-inpatient
 InstanceOf: TestScript
 * insert Metadata
-* id = "HS-cancel-end-leave-inpatient"
+* id = "HN-cancel-end-leave-inpatient"
 * name = "cancel-end-leave-inpatient"
 * title = "hospitalNotification-message cancel-end-leave-inpatient"
 * description = "Testing correct use of cancel-end-leave-inpatient"
@@ -160,10 +160,10 @@ InstanceOf: TestScript
  cancel-end-leave-inpatient, IMP, on-leave, NA, source)
 
 //SLHJ - IMP
-Instance: HS-send-discharge-inpatient-home
+Instance: HN-send-discharge-inpatient-home
 InstanceOf: TestScript
 * insert Metadata
-* id = "HS-discharge-inpatient-home"
+* id = "HN-discharge-inpatient-home"
 * name = "discharge-inpatient-home"
 * title = "hospitalNotification-message discharge-inpatient-home"
 * description = "Testing correct use of End hospital Stay- patient dischargedto home/primary sector"
@@ -173,10 +173,10 @@ InstanceOf: TestScript
  discharge-inpatient-home, IMP, finished, NA, source)
 
 //RE_SLHJ - IMP
-Instance: HS-send-revise-discharge-inpatient-home
+Instance: HN-send-revise-discharge-inpatient-home
 InstanceOf: TestScript
 * insert Metadata
-* id = "HS-revise-discharge-inpatient-home"
+* id = "HN-revise-discharge-inpatient-home"
 * name = "revise-discharge-inpatient-home"
 * title = "hospitalNotification-message revise-discharge-inpatient-home"
 * description = "Testing correct use of Update of End hospital Stay"
@@ -186,10 +186,10 @@ InstanceOf: TestScript
  revise-discharge-inpatient-home, IMP, finished, NA, source)
 
  //AN_SLHJ - IMP
-Instance: HS-send-cancel-discharge-inpatient-home
+Instance: HN-send-cancel-discharge-inpatient-home
 InstanceOf: TestScript
 * insert Metadata
-* id = "HS-cancel-discharge-inpatient-home"
+* id = "HN-cancel-discharge-inpatient-home"
 * name = "cancel-discharge-inpatient-home"
 * title = "hospitalNotification-message cancel-discharge-inpatient-home"
 * description = "Testing correct use of Cancellation of End hospital Stay"
@@ -202,10 +202,10 @@ InstanceOf: TestScript
 
 
    //SLHJ - EMER
-Instance: HS-send-discharge-emergency-home
+Instance: HN-send-discharge-emergency-home
 InstanceOf: TestScript
 * insert Metadata
-* id = "HS-discharge-emergency-home"
+* id = "HN-discharge-emergency-home"
 * name = "discharge-emergency-home"
 * title = "hospitalNotification-message discharge-emergency-home"
 * description = "Testing correct use of End hospital Stay- patient dischargedto home/primary sector"
@@ -215,10 +215,10 @@ InstanceOf: TestScript
  discharge-emergency-home, EMER, finished, NA, source)
 
  //RE_SLHJ - EMER
-Instance: HS-send-revise-discharge-emergency-home
+Instance: HN-send-revise-discharge-emergency-home
 InstanceOf: TestScript
 * insert Metadata
-* id = "HS-revise-discharge-emergency-home"
+* id = "HN-revise-discharge-emergency-home"
 * name = "revise-discharge-emergency-home"
 * title = "hospitalNotification-message revise-discharge-emergency-home"
 * description = "Testing correct use of Update of End hospital Stay"
@@ -228,10 +228,10 @@ InstanceOf: TestScript
  revise-discharge-emergency-home, EMER, finished, NA, source)
 
  //AN_SLHJ - EMER
-Instance: HS-send-cancel-discharge-emergency-home
+Instance: HN-send-cancel-discharge-emergency-home
 InstanceOf: TestScript
 * insert Metadata
-* id = "HS-cancel-discharge-emergency-home"
+* id = "HN-cancel-discharge-emergency-home"
 * name = "cancel-discharge-emergency-home"
 * title = "hospitalNotification-message cancel-discharge-emergency-home"
 * description = "Testing correct use of Cancellation of End hospital Stay"
@@ -242,10 +242,10 @@ InstanceOf: TestScript
 
 
 //MORS - EMER
-Instance: HS-send-cancel-discharge-emergency-home-mors
+Instance: HN-send-cancel-discharge-emergency-home-mors
 InstanceOf: TestScript
 * insert Metadata
-* id = "HS-cancel-discharge-emergency-home-deseased"
+* id = "HN-cancel-discharge-emergency-home-deseased"
 * name = "cancel-discharge-emergency-home-deseased"
 * title = "hospitalNotification-message cancel-discharge-emergency-home-deseased"
 * description = "Testing correct use of Cancellation of End hospital Stay-deseased"
@@ -255,10 +255,10 @@ InstanceOf: TestScript
  cancel-discharge-emergency-home, EMER, finished, NA, source,true)
 
  //MORS - IMP
-Instance: HS-send-cancel-discharge-inpatient-home-mors
+Instance: HN-send-cancel-discharge-inpatient-home-mors
 InstanceOf: TestScript
 * insert Metadata
-* id = "HS-cancel-discharge-inpatient-home-deseased"
+* id = "HN-cancel-discharge-inpatient-home-deseased"
 * name = "cancel-discharge-inpatient-home-deseased"
 * title = "hospitalNotification-message cancel-discharge-inpatient-home-deseased"
 * description = "Testing correct use of Cancellation of End hospital Stay-deseased"
@@ -268,10 +268,10 @@ InstanceOf: TestScript
  cancel-discharge-inpatient-home, IMP, finished, NA, source, true)
 
  //RE_MORS - EMER
-Instance: HS-send-revise-discharge-emergency-home-mors
+Instance: HN-send-revise-discharge-emergency-home-mors
 InstanceOf: TestScript
 * insert Metadata
-* id = "HS-revise-discharge-emergency-home-re-deseased"
+* id = "HN-revise-discharge-emergency-home-re-deseased"
 * name = "revise-discharge-emergency-home-re-deseased"
 * title = "hospitalNotification-message Update of deseased"
 * description = "Testing correct use of Update of End hospital Stay"
@@ -281,10 +281,10 @@ InstanceOf: TestScript
  revise-discharge-emergency-home, EMER, finished, NA, source, true)
 
  //RE_MORS - IMP
-Instance: HS-send-revise-discharge-inpatient-home-mors
+Instance: HN-send-revise-discharge-inpatient-home-mors
 InstanceOf: TestScript
 * insert Metadata
-* id = "HS-revise-discharge-inpatient-home-re-deseased"
+* id = "HN-revise-discharge-inpatient-home-re-deseased"
 * name = "revise-discharge-inpatient-home-re-deseased"
 * title = "hospitalNotification-message Update of deseased"
 * description = "Testing correct use of Update of deseased"
@@ -294,10 +294,10 @@ InstanceOf: TestScript
  revise-discharge-inpatient-home, IMP, finished, NA, source, true)
 
   //AN_MORS - EMER
-Instance: HS-send-cancel-discharge-emergency-home-an-mors
+Instance: HN-send-cancel-discharge-emergency-home-an-mors
 InstanceOf: TestScript
 * insert Metadata
-* id = "HS-Cancellation-of-deseased-emer"
+* id = "HN-Cancellation-of-deseased-emer"
 * name = "Cancellation-of-deseased-emer"
 * title = "hospitalNotification-message Cancellation-of-deseased"
 * description = "Testing correct use of Cancellation-of-deseased"
@@ -307,10 +307,10 @@ InstanceOf: TestScript
  cancel-discharge-emergency-home, EMER, in-progress, NA, source, false)
 
  //AN_MORS - IMP
-Instance: HS-send-cancel-discharge-inpatient-home-an-mors
+Instance: HN-send-cancel-discharge-inpatient-home-an-mors
 InstanceOf: TestScript
 * insert Metadata
-* id = "HS-Cancellation-of-deseased-imp"
+* id = "HN-Cancellation-of-deseased-imp"
 * name = "Cancellation-of-deseased-imp"
 * title = "hospitalNotification-message Cancellation-of-deseased-imp"
 * description = "Testing correct use of Cancellation-of-deseased-imp"
