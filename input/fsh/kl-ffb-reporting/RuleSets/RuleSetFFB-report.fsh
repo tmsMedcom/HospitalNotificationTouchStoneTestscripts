@@ -1,50 +1,22 @@
-
-//1stFirst documentation phase
-RuleSet: CreateFfbReportCaseOpeningTest(number, fixture)
-* insert originClient
-* insert destinationServer
-* insert fixtureFfb({number}, {fixture})
-* insert variableMunicipalityCaseNumber({number})
-* insert variablePatientIdentifier({number})
-* insert variableServiceRequestFullUrl({number}) //Only assign in first test
-* insert variableClinicalImpressionId({number})
-* insert variableClinicalImpressionEffectiveDatetime({number})
-* insert variableBundleTime({number})
-
-* insert profileFfb //only add once
-
-* insert actionOperationFfb({number})
-
-* insert testPatientExists
-* insert testClinicalImpressionExists
-* insert testEffectiveDateTimeLtBundleTime
-* insert testEffectiveDateTimeBeforeNow
-* insert testClinicalImpressionStatus(in-progress)
-
-//validation
-//* insert validation
-
 //Second documentation phase. Check: citizen, same CaseNumber
 RuleSet: CreateFfbReportCaseinsightTest(number, fixture)
 * insert originClient
 * insert destinationServer
 * insert fixtureFfb({number}, {fixture})
-* insert variableClinicalImpressionCountFindings({number}) //only for 2end test
 * insert actionOperationFfb({number})
-
+* insert profileFfb
 //validation
 //* insert validation
 
-//Only relevant for n+1 test
+* insert variableMunicipalityCaseNumber({number})
+* insert variablePatientIdentifier({number})
+* insert variableServiceRequestFullUrl({number}) //Only assign in first test
+* insert variableClinicalImpressionId({number})
 
-//Test: Is the Patient.Identifier equal to First patient 
-* insert testPatientIdentifirEqualsFirst
+* insert testEffectiveDateTimeLtBundleTime
+* insert testEffectiveDateTimeBeforeNow
+* insert testClinicalImpressionStatus(in-progress)
 
-//Test: Is MunicipalityCaseNumber equal to Fist MunicipalityCaseNumber
-* insert testMunicipalityCaseNumberEqualsFist
-
-//Test: Is ServiceRequest Equal to first ServiceRequest
-* insert testServiceRequestEqualsFirst
 
 //Test: Is Conditions Existing in the bundle
 * insert testConditionsExists
@@ -52,7 +24,7 @@ RuleSet: CreateFfbReportCaseinsightTest(number, fixture)
 //Test: is the number of FindingRefferences and Conditions the same. 
 * insert testSameNoOfFindingRefAndCondition
 
-* insert testconditionCodesExists
+
 
 //Test: Is the Severity.code matching the expected Condition code.
 // from 2en encounter https://build.fhir.org/ig/hl7dk/kl-ffb-reporting/example.html#2nd-encounter--second-documentation-phase--case-insight 
@@ -62,13 +34,11 @@ RuleSet: CreateFfbReportCaseinsightTest(number, fixture)
 * insert testSeverityMatchSpeceficCode(01770afa-cd17-41fe-a966-b8895e4d55d8, 5bdde847-2837-416b-ab63-bbff8b7aa531)
 * insert testSeverityMatchSpeceficCode(eff3385d-01fa-4c9c-9850-52e179243f21, cae545f5-2813-4d79-98fc-0a7d770af3cd)
 
-* insert testBundleTimestampGtPreviousBundle(1) 
+* insert testconditionCodesExists
 * insert testConditionRecordedDateLtBundleTime
 * insert testConditionClinicalStatusActive
 * insert testConditionVerificationStatusEqConfirmed
-* insert testClinicalImpressionIdEqPrevious(1)
-* insert testClinicalImpressionStatusInProgress
-* insert testClinicalImpressionEffectiveDateTimeEqPrevious(1)
+
 
 
 //Third documentation phase 
@@ -76,8 +46,6 @@ RuleSet: CreateFfbReportCaseassesment(number, fixture)
 * insert originClient
 * insert destinationServer
 * insert fixtureFfb({number}, {fixture})
-//* insert variableClinicalImpressionCountFindings({number}) //only for 2end test
-* insert variableObservationFullUrl({number})
 * insert actionOperationFfb({number})
 * insert testClinicalImpressionContainsRefMunicipalityCaseNumber
 //Only relevant for n+1 test
@@ -94,9 +62,6 @@ RuleSet: CreateFfbReportCaseassesment(number, fixture)
 
 //Test: that the CarePlanEvalutionCode Let støttebehov exists
 * insert testCarePlanEvaluationCode(dd628e73-d6c9-4837-a2b8-aa62d73bd6ae) 
-
-//Test: Careplan outcomeReference refference CarePlanEvalution
-* insert testCarePlanRefEvalution({number})
 
 //Test: changevalue: Let nedsat funktionsevne  is of taget.type funktionsevneniveau (66959f77-6e2a-4574-8423-3ff097f8b9fa) 
 * insert testGoalTargetTypeValueIsFunktionsevneniveau(8328ce4a-6238-4f73-bf1a-74aadb68eff8) 
@@ -124,18 +89,13 @@ RuleSet: CreateFfbReportCaseassesment(number, fixture)
 
 * insert testGoallifecycleStatusActive
 
-/*Is not a part of 3rd  encounter any more 08-12-2021
-* insert testCareplanStartbeforeBundletime
-
-* insert testCareplanIntentPLAN
-
-* insert testCareplanStatusActive
-*/
-
 * insert testMunicipalityCaseNumberEqualsFist
 
 * insert testconditionCodesExists
 
+* insert testEffectiveDateTimeLtBundleTime
+* insert testEffectiveDateTimeBeforeNow
+* insert testClinicalImpressionStatus(completed)
 
 
 /*Isolated Testmothods*/
@@ -206,9 +166,7 @@ RuleSet: testConditionsExists
 RuleSet: testSameNoOfFindingRefAndCondition
 * test[=].action[+].assert.description = "Make sure the numbers of ClinicalImpression.finding and Conditions is equal "
 * test[=].action[=].assert.direction = #request
-* test[=].action[=].assert.expression = "Bundle.entry.resource.ofType(Condition).count()"
-* test[=].action[=].assert.operator = #equals
-* test[=].action[=].assert.value = "${clinicalImpressionFindingsAmount}"
+* test[=].action[=].assert.expression = "Bundle.entry.resource.ofType(Condition).count() = Bundle.entry.resource.ofType(ClinicalImpression).finding.count()"
 * test[=].action[=].assert.warningOnly = false
 
 //Check for specific Condition.codes 
@@ -236,12 +194,10 @@ RuleSet: testCarePlanEvaluationCode(code)
 * test[=].action[=].assert.value = "{code}"
 * test[=].action[=].assert.warningOnly = false
 
-RuleSet: testCarePlanRefEvalution(number)
+RuleSet: testCarePlanRefEvalution
 * test[=].action[+].assert.description = "Confirm that the Careplan outcomeReference refference CarePlanEvalution"
 * test[=].action[=].assert.direction = #request
-* test[=].action[=].assert.expression = "Bundle.entry.resource.ofType(CarePlan).activity.outcomeReference.reference"
-* test[=].action[=].assert.operator = #equals
-* test[=].action[=].assert.value = "${observationFullUrl{number}}"
+* test[=].action[=].assert.expression = "Bundle.entry.resource.ofType(CarePlan).activity.outcomeReference.reference = Bundle.entry.where(resource.ofType(Observation)).fullUrl"
 * test[=].action[=].assert.warningOnly = false
 
 //Used for 3ed encounter
@@ -430,12 +386,6 @@ RuleSet: variablePatientIdentifier(number)
 RuleSet: variableServiceRequestFullUrl(number)
 * variable[+].name = "ServiceRequestFullUrl"
 * variable[=].expression = "Bundle.entry.where(resource.ofType(ServiceRequest)).fullUrl"
-* variable[=].sourceId = "bundle-create-{number}"
-
-//For the 2end test to compare refferences and Conditions
-RuleSet: variableClinicalImpressionCountFindings(number)
-* variable[+].name = "clinicalImpressionFindingsAmount"
-* variable[=].expression = "Bundle.entry.resource.ofType(ClinicalImpression).finding.count()"
 * variable[=].sourceId = "bundle-create-{number}"
 
 //For the 3th test to compare ref to observation
