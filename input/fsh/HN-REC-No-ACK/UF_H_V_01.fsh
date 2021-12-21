@@ -3,7 +3,7 @@ InstanceOf: TestScript
 * insert Metadata
 * id = "UFHV01"
 * name = "receive-notification-about-admission"
-* title = "hospitalNotification-message admit-inpatient receiving XML"
+* title = "hospitalNotification-message admit-inpatient receiving"
 * description = "Testing correct use of status admit-inpatient"
 
 * origin.index = 1
