@@ -10,9 +10,17 @@ RuleSet: createHNSendTest(type, number, fixture, activityCode, encounterClass, e
 * profile.id = "hospitalnotification-profile"
 * profile.reference = "http://medcomfhir.dk/fhir/core/1.0/StructureDefinition/medcom-messaging-acknowledgement" 
 
+* fixture[+].id = "fix-bundle-create-{number}"
+* fixture[=].autocreate = false
+* fixture[=].autodelete = false
+* fixture[=].resource.reference = "{fixture}"
+
 * variable[+].name = "encounterResourceIdentifier{type}{number}"
 * variable[=].expression = "Bundle.entry.resource.ofType(Encounter).identifier.value"
 * variable[=].sourceId = "bundle-create-{type}{number}"
+
+* variable[+].name = "NA"
+* variable[=].defaultValue = "NA"
 
 * variable[+].name = "headerResourceReference{type}{number}"
 * variable[=].expression = "Bundle.entry[0].fullUrl"
@@ -21,6 +29,8 @@ RuleSet: createHNSendTest(type, number, fixture, activityCode, encounterClass, e
 * variable[+].name = "firstEpisodeOfCareIdentifier{type}{number}"
 * variable[=].expression = "Bundle.entry.resource.ofType(Encounter).episodeOfCare.identifier.value"
 * variable[=].sourceId = "bundle-create-{type}{number}"
+
+
 
 
 * test[+].id = "HN-{type}-{number}" 
@@ -33,8 +43,9 @@ RuleSet: createHNSendTest(type, number, fixture, activityCode, encounterClass, e
 * test[=].action[=].operation.destination = 1
 * test[=].action[=].operation.encodeRequestUrl = true
 * test[=].action[=].operation.origin = 1
-* test[=].action[=].operation.sourceId = "bundle-create-{type}{number}" 
-//* test[=].action[=].operation.responseId = "bundle-create-{type}{number}"
+* test[=].action[=].operation.responseId = "bundle-create-{type}{number}"
+* test[=].action[=].operation.sourceId = "fix-bundle-create-{number}" 
+
 
 * test[=].action[+].assert.description = "Confirm that the client request payload contains a Bundle resource type."
 * test[=].action[=].assert.direction = #request
@@ -48,9 +59,7 @@ RuleSet: createHNSendTest(type, number, fixture, activityCode, encounterClass, e
 
 * test[=].action[+].assert.description = "Confirm that the request resource contains the expected activity code."
 * test[=].action[=].assert.direction = #request
-* test[=].action[=].assert.expression = "Bundle.entry.resource.ofType(Provenance).activity.coding.code"
-* test[=].action[=].assert.operator = #equals
-* test[=].action[=].assert.value = "{activityCode}"
+* test[=].action[=].assert.expression = "Bundle.entry.resource.ofType(Provenance).where(activity.coding.code = '{activityCode}').exists()"
 * test[=].action[=].assert.warningOnly = false
 
 * test[=].action[+].assert.description = "Confirm that the request resource contains the expected Encounter class code."
@@ -74,15 +83,15 @@ RuleSet: createHNSendTest(type, number, fixture, activityCode, encounterClass, e
 * test[=].action[=].assert.value = "true"
 * test[=].action[=].assert.warningOnly = false
 
-* test[=].action[+].assert.description = "Confirm that the taget refferece the MessageHeader"
+* test[=].action[+].assert.description = "Confirm that the taget reference the MessageHeader"
 * test[=].action[=].assert.direction = #request
-* test[=].action[=].assert.expression = "Bundle.entry.resource.ofType(Provenance).where(target.reference = '${headerResourceReference{type}{number}}')"
+* test[=].action[=].assert.expression = "Bundle.entry.resource.ofType(Provenance).where(target.reference = %resource.entry[0].fullUrl).exists()"
 * test[=].action[=].assert.warningOnly = false
 
 //first what is "NA" efterwards previous messageheader
-* test[=].action[+].assert.description = "Confirm that the WHAT refferece the MessageHeader. First message its own. Efterwards previous messageheader"
+* test[=].action[+].assert.description = "Confirm that the WHAT reference the MessageHeader. First message its own. Afterwards previous messageheader"
 * test[=].action[=].assert.direction = #request
-* test[=].action[=].assert.expression = "Bundle.entry.resource.ofType(Provenance).where(entity.what.reference ='{whatRefference}')"
+* test[=].action[=].assert.expression = "Bundle.entry.resource.ofType(Provenance).where(entity.what.reference = '${{whatRefference}}')"
 * test[=].action[=].assert.warningOnly = false
 
 * test[=].action[+].assert.description = "Confirm that the role is set to {role}"

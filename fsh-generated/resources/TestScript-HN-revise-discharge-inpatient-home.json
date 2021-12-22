@@ -50,11 +50,25 @@
       "reference": "http://medcomfhir.dk/fhir/core/1.0/StructureDefinition/medcom-messaging-acknowledgement"
     }
   ],
+  "fixture": [
+    {
+      "id": "fix-bundle-create-1",
+      "autocreate": false,
+      "autodelete": false,
+      "resource": {
+        "reference": "/FHIRSandbox/MedCom/401-Hospitalnotification/send/Userstory/_reference/resources/HospitalNotificationMessage-RE_SLHJ.xml"
+      }
+    }
+  ],
   "variable": [
     {
       "name": "encounterResourceIdentifierRE-SLHJ-IMP1",
       "expression": "Bundle.entry.resource.ofType(Encounter).identifier.value",
       "sourceId": "bundle-create-RE-SLHJ-IMP1"
+    },
+    {
+      "name": "NA",
+      "defaultValue": "NA"
     },
     {
       "name": "headerResourceReferenceRE-SLHJ-IMP1",
@@ -84,7 +98,8 @@
             "destination": 1,
             "encodeRequestUrl": true,
             "origin": 1,
-            "sourceId": "bundle-create-RE-SLHJ-IMP1"
+            "responseId": "bundle-create-RE-SLHJ-IMP1",
+            "sourceId": "fix-bundle-create-1"
           }
         },
         {
@@ -107,9 +122,7 @@
           "assert": {
             "description": "Confirm that the request resource contains the expected activity code.",
             "direction": "request",
-            "expression": "Bundle.entry.resource.ofType(Provenance).activity.coding.code",
-            "operator": "equals",
-            "value": "revise-discharge-inpatient-home",
+            "expression": "Bundle.entry.resource.ofType(Provenance).where(activity.coding.code = 'revise-discharge-inpatient-home').exists()",
             "warningOnly": false
           }
         },
@@ -145,17 +158,17 @@
         },
         {
           "assert": {
-            "description": "Confirm that the taget refferece the MessageHeader",
+            "description": "Confirm that the taget reference the MessageHeader",
             "direction": "request",
-            "expression": "Bundle.entry.resource.ofType(Provenance).where(target.reference = '${headerResourceReferenceRE-SLHJ-IMP1}')",
+            "expression": "Bundle.entry.resource.ofType(Provenance).where(target.reference = %resource.entry[0].fullUrl).exists()",
             "warningOnly": false
           }
         },
         {
           "assert": {
-            "description": "Confirm that the WHAT refferece the MessageHeader. First message its own. Efterwards previous messageheader",
+            "description": "Confirm that the WHAT reference the MessageHeader. First message its own. Afterwards previous messageheader",
             "direction": "request",
-            "expression": "Bundle.entry.resource.ofType(Provenance).where(entity.what.reference ='NA')",
+            "expression": "Bundle.entry.resource.ofType(Provenance).where(entity.what.reference = '${NA}')",
             "warningOnly": false
           }
         },

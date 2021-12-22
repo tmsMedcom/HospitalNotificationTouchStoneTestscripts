@@ -17,7 +17,7 @@
    <name value="HospitalnotificationTestscripts"/>
    <title value="HospitalNotification Testscripts"/>
    <status value="draft"/>
-   <date value="2021-12-09T08:00:09+01:00"/>
+   <date value="2021-12-22T13:13:28+01:00"/>
    <contact>
       <name value="MedCom"/>
       <telecom>
@@ -892,21 +892,6 @@
          <exampleBoolean value="true"/>
          <groupingId value="-ex-example"/>
       </resource>
-      <resource>
-         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-            <valueString value="TestScript"/>
-         </extension>
-         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-            <valueUri value="TestScript-ffb-encounter-1-3.html"/>
-         </extension>
-         <reference>
-            <reference value="TestScript/ffb-encounter-1-3"/>
-         </reference>
-         <name value="ffb-1st-encounter"/>
-         <description value="Testing correct use of encounter phase 1-3"/>
-         <exampleBoolean value="true"/>
-         <groupingId value="-ex-example"/>
-      </resource>
       <page>
          <nameUrl value="toc.html"/>
          <title value="Table of Contents"/>
@@ -1198,11 +1183,6 @@
             <page>
                <nameUrl value="TestScript-UFHV16-with-ACK.html"/>
                <title value="TestinstanceUFHV16-with-ACK"/>
-               <generation value="generated"/>
-            </page>
-            <page>
-               <nameUrl value="TestScript-ffb-encounter-1-3.html"/>
-               <title value="ffb-1st-encounter"/>
                <generation value="generated"/>
             </page>
          </page>

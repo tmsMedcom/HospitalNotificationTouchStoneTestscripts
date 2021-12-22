@@ -17,7 +17,7 @@
   fhir:ImplementationGuide.name [ fhir:value "HospitalnotificationTestscripts"];
   fhir:ImplementationGuide.title [ fhir:value "HospitalNotification Testscripts"];
   fhir:ImplementationGuide.status [ fhir:value "draft"];
-  fhir:ImplementationGuide.date [ fhir:value "2021-12-09T08:00:09+01:00"^^xsd:dateTime];
+  fhir:ImplementationGuide.date [ fhir:value "2021-12-22T13:13:28+01:00"^^xsd:dateTime];
   fhir:ImplementationGuide.contact [
      fhir:index 0;
      fhir:ContactDetail.name [ fhir:value "MedCom" ];
@@ -1068,20 +1068,6 @@
        ];
        fhir:ImplementationGuide.definition.resource.name [ fhir:value "TestinstanceUFHV16-with-ACK" ];
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Testing correct use of correction" ];
-       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "true"^^xsd:boolean ]
-     ], [
-       fhir:index 56;
-       fhir:Element.extension [
-         fhir:index 0;
-         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
-         fhir:Extension.valueString [ fhir:value "TestScript" ]
-       ];
-       fhir:ImplementationGuide.definition.resource.reference [
-         fhir:link <http://example.org/fhir/fish/TestScript/ffb-encounter-1-3>;
-         fhir:Reference.reference [ fhir:value "TestScript/ffb-encounter-1-3" ]
-       ];
-       fhir:ImplementationGuide.definition.resource.name [ fhir:value "ffb-1st-encounter" ];
-       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Testing correct use of encounter phase 1-3" ];
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "true"^^xsd:boolean ]
      ];
      fhir:ImplementationGuide.definition.page [

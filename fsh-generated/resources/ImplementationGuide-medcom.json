@@ -55,6 +55,76 @@
       },
       {
         "reference": {
+          "reference": "TestScript/HN-UFHV-01"
+        },
+        "name": "HN-send-UF_H_V_01",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "TestScript/HN-UFHV-05"
+        },
+        "name": "HN-send-UF_H_V_05",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "TestScript/HN-UFHV-06"
+        },
+        "name": "HN-send-UF_H_V_06",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "TestScript/HN-UFHV-07"
+        },
+        "name": "HN-send-UF_H_V_07",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "TestScript/HN-UFHV-10"
+        },
+        "name": "HN-send-UF_H_V_10",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "TestScript/HN-UFHV-11"
+        },
+        "name": "HN-send-UF_H_V_11",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "TestScript/HN-UFHV-17"
+        },
+        "name": "HN-send-UF_H_V_17",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "TestScript/HN-UFHV-18"
+        },
+        "name": "HN-send-UF_H_V_18",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "TestScript/HN-UFHV-19"
+        },
+        "name": "HN-send-UF_H_V_19",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "TestScript/HN-UFHV-20"
+        },
+        "name": "HN-send-UF_H_V_20",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
           "reference": "TestScript/HN-admit-emergency"
         },
         "name": "HN-send-admit-emergency",
