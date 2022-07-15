@@ -27,464 +27,86 @@
     "resource": [
       {
         "reference": {
-          "reference": "TestScript/5e657b1f-060e-423f-b198-fa8ffee77b87"
+          "reference": "TestScript/hospitalnotification-an-staa"
         },
-        "name": "GeneratedHNrecScript",
+        "name": "HospitalNotification-AN_STAA",
         "exampleBoolean": true
       },
       {
         "reference": {
-          "reference": "TestScript/ACK01-ok"
+          "reference": "TestScript/hospitalnotification-an-stin"
         },
-        "name": "TestinstanceACK-OK",
+        "name": "HospitalNotification-AN_STIN",
         "exampleBoolean": true
       },
       {
         "reference": {
-          "reference": "TestScript/HN-Cancellation-of-deseased-emer"
+          "reference": "TestScript/hospitalnotification-mors-emer"
         },
-        "name": "HN-send-cancel-discharge-emergency-home-an-mors",
+        "name": "HospitalNotification-MORS-EMER",
         "exampleBoolean": true
       },
       {
         "reference": {
-          "reference": "TestScript/HN-Cancellation-of-deseased-imp"
+          "reference": "TestScript/hospitalnotification-mors-imp"
         },
-        "name": "HN-send-cancel-discharge-inpatient-home-an-mors",
+        "name": "HospitalNotification-MORS-IMP",
         "exampleBoolean": true
       },
       {
         "reference": {
-          "reference": "TestScript/HN-UFHV-01"
+          "reference": "TestScript/hospitalnotification-re-staa"
         },
-        "name": "HN-send-UF_H_V_01",
+        "name": "HospitalNotification-RE_STAA",
         "exampleBoolean": true
       },
       {
         "reference": {
-          "reference": "TestScript/HN-UFHV-05"
+          "reference": "TestScript/hospitalnotification-re-stin"
         },
-        "name": "HN-send-UF_H_V_05",
+        "name": "HospitalNotification-RE_STIN",
         "exampleBoolean": true
       },
       {
         "reference": {
-          "reference": "TestScript/HN-UFHV-06"
+          "reference": "TestScript/hospitalnotification-slhj-emer"
         },
-        "name": "HN-send-UF_H_V_06",
+        "name": "HospitalNotification-SLHJ-EMER",
         "exampleBoolean": true
       },
       {
         "reference": {
-          "reference": "TestScript/HN-UFHV-07"
+          "reference": "TestScript/hospitalnotification-slhj-imp"
         },
-        "name": "HN-send-UF_H_V_07",
+        "name": "HospitalNotification-SLHJ-IMP",
         "exampleBoolean": true
       },
       {
         "reference": {
-          "reference": "TestScript/HN-UFHV-10"
+          "reference": "TestScript/hospitalnotification-slor"
         },
-        "name": "HN-send-UF_H_V_10",
+        "name": "HospitalNotification-SLOR",
         "exampleBoolean": true
       },
       {
         "reference": {
-          "reference": "TestScript/HN-UFHV-11"
+          "reference": "TestScript/hospitalnotification-staa"
         },
-        "name": "HN-send-UF_H_V_11",
+        "name": "HospitalNotification-STAA",
         "exampleBoolean": true
       },
       {
         "reference": {
-          "reference": "TestScript/HN-UFHV-17"
+          "reference": "TestScript/hospitalnotification-stin"
         },
-        "name": "HN-send-UF_H_V_17",
+        "name": "HospitalNotification-STIN",
         "exampleBoolean": true
       },
       {
         "reference": {
-          "reference": "TestScript/HN-UFHV-18"
+          "reference": "TestScript/hospitalnotification-stor"
         },
-        "name": "HN-send-UF_H_V_18",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "TestScript/HN-UFHV-19"
-        },
-        "name": "HN-send-UF_H_V_19",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "TestScript/HN-UFHV-20"
-        },
-        "name": "HN-send-UF_H_V_20",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "TestScript/HN-admit-emergency"
-        },
-        "name": "HN-send-admit-emergency",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "TestScript/HN-admit-inpatient"
-        },
-        "name": "HN-send-admit-inpatient",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "TestScript/HN-cancel-admit-emergency"
-        },
-        "name": "HN-send-cancel-admit-emergency",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "TestScript/HN-cancel-admit-inpatient"
-        },
-        "name": "HN-send-cancel-admit-inpatient",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "TestScript/HN-cancel-discharge-emergency-home"
-        },
-        "name": "HN-send-cancel-discharge-emergency-home",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "TestScript/HN-cancel-discharge-emergency-home-deseased"
-        },
-        "name": "HN-send-cancel-discharge-emergency-home-mors",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "TestScript/HN-cancel-discharge-inpatient-home"
-        },
-        "name": "HN-send-cancel-discharge-inpatient-home",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "TestScript/HN-cancel-discharge-inpatient-home-deseased"
-        },
-        "name": "HN-send-cancel-discharge-inpatient-home-mors",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "TestScript/HN-cancel-end-leave-inpatient"
-        },
-        "name": "HN-send-cancel-end-leave-inpatient",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "TestScript/HN-cancel-start-leave-inpatient"
-        },
-        "name": "HN-send-cancel-start-leave-inpatient",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "TestScript/HN-discharge-emergency-home"
-        },
-        "name": "HN-send-discharge-emergency-home",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "TestScript/HN-discharge-inpatient-home"
-        },
-        "name": "HN-send-discharge-inpatient-home",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "TestScript/HN-end-leave-inpatient"
-        },
-        "name": "HN-send-end-leave-inpatient",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "TestScript/HN-revise-admit-emergency"
-        },
-        "name": "HN-send-revise-admit-emergency",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "TestScript/HN-revise-admit-inpatient"
-        },
-        "name": "HN-send-revise-admit-inpatient",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "TestScript/HN-revise-discharge-emergency-home"
-        },
-        "name": "HN-send-revise-discharge-emergency-home",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "TestScript/HN-revise-discharge-emergency-home-re-deseased"
-        },
-        "name": "HN-send-revise-discharge-emergency-home-mors",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "TestScript/HN-revise-discharge-inpatient-home"
-        },
-        "name": "HN-send-revise-discharge-inpatient-home",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "TestScript/HN-revise-discharge-inpatient-home-re-deseased"
-        },
-        "name": "HN-send-revise-discharge-inpatient-home-mors",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "TestScript/HN-revise-end-leave-inpatient"
-        },
-        "name": "HN-send-revise-end-leave-inpatient",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "TestScript/HN-revise-start-leave-inpatient"
-        },
-        "name": "HN-send-revise-start-leave-inpatient",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "TestScript/HN-start-leave-inpatient"
-        },
-        "name": "HN-send-start-leave-inpatient",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "TestScript/UFHV01"
-        },
-        "name": "TestinstanceUFHV1",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "TestScript/UFHV01-with-ACK"
-        },
-        "name": "TestinstanceUFHV1-with-ACK",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "TestScript/UFHV02"
-        },
-        "name": "TestinstanceUFHV2",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "TestScript/UFHV02-with-ACK"
-        },
-        "name": "TestinstanceUFHV2-with-ACK",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "TestScript/UFHV03"
-        },
-        "name": "TestinstanceUFHV3",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "TestScript/UFHV03-with-ACK"
-        },
-        "name": "TestinstanceUFHV3-with-ACK",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "TestScript/UFHV04"
-        },
-        "name": "TestinstanceUFHV4",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "TestScript/UFHV04-with-ACK"
-        },
-        "name": "TestinstanceUFHV4-with-ACK",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "TestScript/UFHV05"
-        },
-        "name": "TestinstanceUFHV5",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "TestScript/UFHV05-with-ACK"
-        },
-        "name": "TestinstanceUFHV5-with-ACK",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "TestScript/UFHV06"
-        },
-        "name": "TestinstanceUFHV6",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "TestScript/UFHV06-with-ACK"
-        },
-        "name": "TestinstanceUFHV6-with-ACK",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "TestScript/UFHV08"
-        },
-        "name": "TestinstanceUFHV8",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "TestScript/UFHV08-with-ACK"
-        },
-        "name": "TestinstanceUFHV8-with-ACK",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "TestScript/UFHV09"
-        },
-        "name": "TestinstanceUFHV9",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "TestScript/UFHV09-with-ACK"
-        },
-        "name": "TestinstanceUFHV9-with-ACK",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "TestScript/UFHV10"
-        },
-        "name": "TestinstanceUFHV10",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "TestScript/UFHV10-with-ACK"
-        },
-        "name": "TestinstanceUFHV10-with-ACK",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "TestScript/UFHV11"
-        },
-        "name": "TestinstanceUFHV11",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "TestScript/UFHV11-with-ACK"
-        },
-        "name": "TestinstanceUFHV11-with-ACK",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "TestScript/UFHV12"
-        },
-        "name": "TestinstanceUFHV12",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "TestScript/UFHV12-with-ACK"
-        },
-        "name": "TestinstanceUFHV12-with-ACK",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "TestScript/UFHV13"
-        },
-        "name": "TestinstanceUFHV13",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "TestScript/UFHV13-with-ACK"
-        },
-        "name": "TestinstanceUFHV13-with-ACK",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "TestScript/UFHV14"
-        },
-        "name": "TestinstanceUFHV14",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "TestScript/UFHV14-with-ACK"
-        },
-        "name": "TestinstanceUFHV14-with-ACK",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "TestScript/UFHV15"
-        },
-        "name": "TestinstanceUFHV15",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "TestScript/UFHV15-with-ACK"
-        },
-        "name": "TestinstanceUFHV15-with-ACK",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "TestScript/UFHV16"
-        },
-        "name": "TestinstanceUFHV16",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "TestScript/UFHV16-with-ACK"
-        },
-        "name": "TestinstanceUFHV16-with-ACK",
+        "name": "HospitalNotification-STOR",
         "exampleBoolean": true
       }
     ],
