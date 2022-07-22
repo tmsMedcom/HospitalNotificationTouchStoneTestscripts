@@ -65,12 +65,12 @@
   "profile": [
     {
       "id": "hospitalnotification",
-      "reference": "http://medcomfhir.dk/fhir/carecommunication/StructureDefinition/medcom-careCommunication-message"
+      "reference": "http://medcomfhir.dk/fhir/hospitalnotification/StructureDefinition/medcom-hospitalNotification-message"
     }
   ],
   "variable": [
     {
-      "name": "headerResourceReference",
+      "name": "messageHeaderid-01",
       "expression": "Bundle.entry[0].fullUrl",
       "sourceId": "create-STAA-01"
     },
@@ -128,7 +128,7 @@
   "test": [
     {
       "id": "hospitalnotification-cancel-AN-STAA-01",
-      "name": "Cancel a a HospitalNotification Message 01",
+      "name": "Cancel a HospitalNotification Message 01",
       "description": "Cancelling an existing message",
       "action": [
         {
@@ -159,9 +159,7 @@
           "assert": {
             "description": "Confirm that the previous MessageHeader fullURL is identical to Provenanve.entity.what",
             "direction": "request",
-            "expression": "Bundle.entry.resource.ofType(Provenance).entity.what.reference",
-            "operator": "equals",
-            "value": "${headerResourceReference}",
+            "expression": "Bundle.entry.resource.ofType(Provenance).where(entity.what.reference = '${messageHeaderid-01}').count() = 1",
             "warningOnly": false
           }
         },

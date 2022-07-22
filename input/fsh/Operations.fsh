@@ -19,7 +19,7 @@ RuleSet: operationCreateSetup(type, number)
 
 RuleSet: operationCreateMessage(type, number)
 * test[+].id = "hospitalnotification-create-{type}-{number}" 
-* test[=].name = "Create a HospitalNotification Message {number}" 
+* test[=].name = "Create a HospitalNotification {type} Message {number}" 
 * test[=].description = "Post HospitalNotification to the server." 
 * test[=].action[+].operation.type.system = "http://terminology.hl7.org/CodeSystem/testscript-operation-codes"
 * test[=].action[=].operation.type.code = #create
@@ -49,7 +49,7 @@ RuleSet: operationUpdateMessage(type, number)
 
 RuleSet: operationCancelMessage(type, number)
 * test[+].id = "hospitalnotification-cancel-{type}-{number}"
-* test[=].name = "Cancel a a HospitalNotification Message {number}"
+* test[=].name = "Cancel a HospitalNotification Message {number}"
 * test[=].description = "Cancelling an existing message"
 * test[=].action[+].operation.type.system = "http://terminology.hl7.org/CodeSystem/testscript-operation-codes"
 * test[=].action[=].operation.type.code = #deleteCondSingle
@@ -60,3 +60,17 @@ RuleSet: operationCancelMessage(type, number)
 * test[=].action[=].operation.encodeRequestUrl = true
 * test[=].action[=].operation.origin = 1
 * test[=].action[=].operation.params = "?identifier=${searchParamIdentifier}"
+
+RuleSet: operationReadMessage(type, number)
+* test[+].id = "hospitalnotification-read-{type}-{number}"
+* test[=].name = "Get a HospitalNotification Message {number}"
+* test[=].description = "GET a Hospital notification. The expected response is a 200(OK) with a payload of the Hospital notification resource in XML format."
+* test[=].action[+].operation.type.system = "http://terminology.hl7.org/CodeSystem/testscript-operation-codes"
+* test[=].action[=].operation.type.code = #read
+* test[=].action[=].operation.resource = #Bundle
+* test[=].action[=].operation.description = "Receive Hospital Notification"
+* test[=].action[=].operation.accept = #xml
+* test[=].action[=].operation.destination = 1
+* test[=].action[=].operation.encodeRequestUrl = true
+* test[=].action[=].operation.origin = 1
+* test[=].action[=].operation.params = "?message.destination-uri=${destinationUri}"

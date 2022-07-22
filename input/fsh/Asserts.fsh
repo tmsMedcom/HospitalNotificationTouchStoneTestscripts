@@ -26,12 +26,10 @@ RuleSet: assertValidateProfiles
 * test[=].action[=].assert.validateProfileId = "hospitalnotification"
 * test[=].action[=].assert.warningOnly = false
 
-RuleSet: assertMessageHeaderid
+RuleSet: assertMessageHeaderid(messageHeaderid)
 * test[=].action[+].assert.description = "Confirm that the previous MessageHeader fullURL is identical to Provenanve.entity.what" 
 * test[=].action[=].assert.direction = #request
-* test[=].action[=].assert.expression = "Bundle.entry.resource.ofType(Provenance).entity.what.reference"
-* test[=].action[=].assert.operator = #equals
-* test[=].action[=].assert.value = "${headerResourceReference}"
+* test[=].action[=].assert.expression = "Bundle.entry.resource.ofType(Provenance).where(entity.what.reference = '${{messageHeaderid}}').count() = 1"
 * test[=].action[=].assert.warningOnly = false
 
 RuleSet: assertPayload
@@ -59,6 +57,14 @@ RuleSet: assertEncounterClass(encounterClass)
 * test[=].action[=].assert.operator = #equals
 * test[=].action[=].assert.value = "{encounterClass}"
 * test[=].action[=].assert.warningOnly = false
+
+RuleSet: assertOccurredTimeStamp // ikke anvendt
+* test[=].action[+].assert.description = "Confirm that the Provenance.occurredDateTime in the latest Provenance is after the previous"
+* test[=].action[=].assert.direction = #request
+* test[=].action[=].assert.expression = "Bundle.entry.resource.ofType(Provenance).where(target.reference = %resource.entry[0].fullUrl).occurred"
+* test[=].action[=].assert.operator = #greaterThan
+* test[=].action[=].assert.value = "{occurredDateTime}"
+* test[=].action[=].assert.warningOnly = false                               
 
 RuleSet: assertEncounterStatus(encounterStatus)
 * test[=].action[+].assert.description = "Confirm that the Encounter status of the request resource is {encounterStatus}."

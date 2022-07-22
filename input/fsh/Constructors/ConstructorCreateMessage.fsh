@@ -1,4 +1,4 @@
-RuleSet: createMessage(type, number, fixture, activityCode, encounterClass, encounterStatus, role)
+RuleSet: createMessage(type, number, fixture, activityCode, encounterClass, encounterStatus, role, messageHeaderid)
 
 /* 
 Beskriver server og client for dette testsetup
@@ -20,7 +20,7 @@ Beskriver den profil, der valideres op mod
 Beskriver anvendte variable
 */
 * insert variableEncounterResourceIdentifier({type}, {number})
-* insert variableHeaderResourceReference({type}, {number})
+* insert variableMessageHeaderId({type}, {number})
 * insert variableEpisodeOfCareIdentifier({type}, {number})
 
 /* 
@@ -33,6 +33,7 @@ Beskriver den vurdering der sker af operationen.
 */
 * insert assertResponseCodeTest
 * insert assertPayload
+* insert assertMessageHeaderid({messageHeaderid})
 * insert assertMessageHeaderEventCoding
 * insert assertProvenanceEntityRole({role})
 * insert assertEncounterClass({encounterClass})

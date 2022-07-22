@@ -1,6 +1,6 @@
 RuleSet: profileHospitalNotificationMessage
 * profile.id = "hospitalnotification" //TODO change name
-* profile.reference = "http://medcomfhir.dk/fhir/carecommunication/StructureDefinition/medcom-careCommunication-message" 
+* profile.reference = "http://medcomfhir.dk/fhir/hospitalnotification/StructureDefinition/medcom-hospitalNotification-message" 
 
 /* RuleSet: profileHospitalNotificationMessageHeader
 * profile.id = "hospitalnotification" //TODO change name

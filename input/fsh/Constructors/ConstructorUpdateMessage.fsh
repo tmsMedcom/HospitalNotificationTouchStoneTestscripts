@@ -1,4 +1,4 @@
-RuleSet: updateMessage(type, number, fixture, activityCode, encounterClass, encounterStatus, role) //TODO change name
+RuleSet: updateMessage(type, number, fixture, activityCode, encounterClass, encounterStatus, role, messageHeaderid) //TODO change name
 
 /* 
 Beskriver server og client for dette testsetup
@@ -24,7 +24,7 @@ Beskriver de operationer der udføres i denne test. Her er det kun setup operati
 /* 
 Beskriver den vurdering der sker af operationen.
 */
-* insert assertMessageHeaderid
+* insert assertMessageHeaderid({messageHeaderid})
 * insert assertProvenanceEntityRole({role})
 * insert assertEncounterClass({encounterClass})
 * insert assertEncounterStatus({encounterStatus})

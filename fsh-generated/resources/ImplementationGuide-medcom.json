@@ -55,6 +55,34 @@
       },
       {
         "reference": {
+          "reference": "TestScript/hospitalnotification-patientstory-01"
+        },
+        "name": "HospitalNotification-PatientStory-01",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "TestScript/hospitalnotification-patientstory-02"
+        },
+        "name": "HospitalNotification-PatientStory-02",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "TestScript/hospitalnotification-patientstory-03"
+        },
+        "name": "HospitalNotification-PatientStory-03",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "TestScript/hospitalnotification-patientstory-04"
+        },
+        "name": "HospitalNotification-PatientStory-04",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
           "reference": "TestScript/hospitalnotification-re-staa"
         },
         "name": "HospitalNotification-RE_STAA",
@@ -65,6 +93,27 @@
           "reference": "TestScript/hospitalnotification-re-stin"
         },
         "name": "HospitalNotification-RE_STIN",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "TestScript/hospitalnotification-receive-an-stin"
+        },
+        "name": "HospitalNotification-Receive-AN-STIN",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "TestScript/hospitalnotification-receive-re-stin"
+        },
+        "name": "HospitalNotification-Receive-RE-STIN",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "TestScript/hospitalnotification-receive-stin"
+        },
+        "name": "HospitalNotification-Receive-STIN",
         "exampleBoolean": true
       },
       {

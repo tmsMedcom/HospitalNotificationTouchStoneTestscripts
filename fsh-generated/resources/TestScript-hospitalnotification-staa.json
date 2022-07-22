@@ -47,7 +47,7 @@
   "profile": [
     {
       "id": "hospitalnotification",
-      "reference": "http://medcomfhir.dk/fhir/carecommunication/StructureDefinition/medcom-careCommunication-message"
+      "reference": "http://medcomfhir.dk/fhir/hospitalnotification/StructureDefinition/medcom-hospitalNotification-message"
     }
   ],
   "fixture": [
@@ -67,7 +67,7 @@
       "sourceId": "create-STAA-01"
     },
     {
-      "name": "headerResourceReference",
+      "name": "messageHeaderid-01",
       "expression": "Bundle.entry[0].fullUrl",
       "sourceId": "create-STAA-01"
     },
@@ -75,12 +75,17 @@
       "name": "episodeOfCareIdentifier",
       "expression": "Bundle.entry.resource.ofType(Encounter).episodeOfCare.identifier.value",
       "sourceId": "create-STAA-01"
+    },
+    {
+      "name": "searchParamIdentifier",
+      "expression": "Bundle.entry.resource.ofType(MessageHeader).id",
+      "sourceId": "create-STAA-01"
     }
   ],
   "test": [
     {
       "id": "hospitalnotification-create-STAA-01",
-      "name": "Create a HospitalNotification Message 01",
+      "name": "Create a HospitalNotification STAA Message 01",
       "description": "Post HospitalNotification to the server.",
       "action": [
         {

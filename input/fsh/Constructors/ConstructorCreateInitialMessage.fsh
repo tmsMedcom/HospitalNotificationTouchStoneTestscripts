@@ -20,9 +20,10 @@ Beskriver anvendte fixtures
 Beskriver anvendte variable
 */
 * insert variableEncounterResourceIdentifier({type}, {number})
-* insert variableHeaderResourceReference({type}, {number})
+* insert variableMessageHeaderId({type}, {number})
 * insert variableEpisodeOfCareIdentifier({type}, {number})
-
+* insert variableSearchParamIdentifier({type}, {number})
+ 
 /* 
 Beskriver den operation der udføres i denne test.
 */

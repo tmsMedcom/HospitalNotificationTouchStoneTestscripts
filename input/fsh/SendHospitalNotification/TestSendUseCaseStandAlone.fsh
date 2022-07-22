@@ -6,7 +6,6 @@ InstanceOf: TestScript
 * name = "Start admission of an acute ambulant patient."
 * title = "Create a HospitalNotification message - STAA"
 * description = "Testing correct use of status acute-ambulant"
-//params createMessage(type, number, fixture, activityCode, encounterClass, encounterStatus)
 * insert createInitialMessage(STAA, 01, /FHIRSandbox/MedCom/HospitalNotificationTMS/fixtureHospitalNotificationSTAA.xml, admit-emergency, EMER, in-progress, true) 
 
 //RE_STAA
@@ -18,7 +17,7 @@ InstanceOf: TestScript
 * title = "Update of start hospital stay-acute ambulant - RE_STAA"
 * description = "Testing correct use of status stay-acute ambulant"
 * insert createMessageSetup(STAA, 01, /FHIRSandbox/MedCom/HospitalNotificationTMS/fixtureHospitalNotificationSTAA.xml)
-* insert updateMessage(RE-STAA, 02, /FHIRSandbox/MedCom/HospitalNotificationTMS/fixtureHospitalNotificationRE-STAA.xml, revise-admit-emergency, EMER, in-progress, revision)
+* insert updateMessage(RE-STAA, 02, /FHIRSandbox/MedCom/HospitalNotificationTMS/fixtureHospitalNotificationRE-STAA.xml, revise-admit-emergency, EMER, in-progress, revision, messageHeaderid-01)
 
 //AN_STAA
 Instance: HospitalNotification-AN_STAA
@@ -28,9 +27,8 @@ InstanceOf: TestScript
 * name = "Cancellation of start hospital stayacute ambulant"
 * title = "Cancellation of start hospital stay acute ambulant send - AN_STAA"
 * description = "Testing correct use of status stay-acute ambulant"
-
 * insert createMessageSetup(STAA, 01, /FHIRSandbox/MedCom/HospitalNotificationTMS/fixtureHospitalNotificationSTAA.xml)
-* insert cancelMessage(AN-STAA, 01, /FHIRSandbox/MedCom/HospitalNotificationTMS/fixtureHospitalNotificationAN-STAA.xml, cancel-admit-emergency, EMER, entered-in-error, removal)
+* insert cancelMessage(AN-STAA, 01, /FHIRSandbox/MedCom/HospitalNotificationTMS/fixtureHospitalNotificationAN-STAA.xml, cancel-admit-emergency, EMER, entered-in-error, removal, messageHeaderid-01)
 
 //STIN
 Instance: HospitalNotification-STIN
@@ -40,7 +38,6 @@ InstanceOf: TestScript
 * name = "Start admission of an inpatient."
 * title = "Create a HospitalNotification message - STIN"
 * description = "Testing correct use of status inpatient"
-
 * insert createInitialMessage(STIN, 01, /FHIRSandbox/MedCom/HospitalNotificationTMS/fixtureHospitalNotificationSTIN.xml, admit-inpatient, IMP, in-progress, false) 
 
 //RE_STIN
@@ -51,9 +48,8 @@ InstanceOf: TestScript
 * name = "Update of start hospital stay-admission"
 * title = "Update of start hospital stay-admission - RE_STIN"
 * description = "Testing correct use of status Update of start hospital stay-admission"
-
 * insert createMessageSetup(STIN, 01, /FHIRSandbox/MedCom/HospitalNotificationTMS/fixtureHospitalNotificationSTIN.xml)
-* insert updateMessage(RE-STIN, 02, /FHIRSandbox/MedCom/HospitalNotificationTMS/fixtureHospitalNotificationRE-STIN.xml, revise-admit-inpatient, IMP, in-progress, revision)
+* insert updateMessage(RE-STIN, 02, /FHIRSandbox/MedCom/HospitalNotificationTMS/fixtureHospitalNotificationRE-STIN.xml, revise-admit-inpatient, IMP, in-progress, revision, messageHeaderid-01)
 
 
 //AN_STIN
@@ -64,9 +60,8 @@ InstanceOf: TestScript
 * name = "Cancellation of start hospital stayadmission"
 * title = "Cancellation of start hospital stayadmission send - AN_STIN"
 * description = "Testing correct use of status Update of Cancellation of start hospital stayadmission"
-
 * insert createMessageSetup(STAA, 01, /FHIRSandbox/MedCom/HospitalNotificationTMS/fixtureHospitalNotificationSTIN.xml)
-* insert cancelMessage(AN-STAA, 01, /FHIRSandbox/MedCom/HospitalNotificationTMS/fixtureHospitalNotificationAN-STIN.xml, cancel-admit-inpatient, IMP, entered-in-error, removal)
+* insert cancelMessage(AN-STAA, 01, /FHIRSandbox/MedCom/HospitalNotificationTMS/fixtureHospitalNotificationAN-STIN.xml, cancel-admit-inpatient, IMP, entered-in-error, removal, messageHeaderid-01)
 
 
 //STOR
@@ -77,9 +72,8 @@ InstanceOf: TestScript
 * name = "Start leave of hospital stayadmission"
 * title = "Start leave of hospital stayadmission - STOR"
 * description = "Testing correct use of status Start leave"
-
 * insert createMessageSetup(STAA, 01, /FHIRSandbox/MedCom/HospitalNotificationTMS/fixtureHospitalNotificationSTIN.xml)
-* insert createMessage(STOR, 02, /FHIRSandbox/MedCom/HospitalNotificationTMS/fixtureHospitalNotificationSTOR.xml, start-leave-inpatient, IMP, onleave, revision)
+* insert createMessage(STOR, 02, /FHIRSandbox/MedCom/HospitalNotificationTMS/fixtureHospitalNotificationSTOR.xml, start-leave-inpatient, IMP, onleave, revision, messageHeaderid-01)
 
 
 /* //RE_STOR
@@ -116,7 +110,7 @@ InstanceOf: TestScript
 * title = "End leave of hospital stayadmission - SLOR"
 * description = "Testing correct use of status End leave"
 * insert createMessageSetup(STOR, 01, /FHIRSandbox/MedCom/HospitalNotificationTMS/fixtureHospitalNotificationSTOR.xml)
-* insert createMessage(STOR, 02, /FHIRSandbox/MedCom/HospitalNotificationTMS/fixtureHospitalNotificationSLOR.xml, end-leave-inpatient, IMP, in-progress, revision)
+* insert createMessage(STOR, 02, /FHIRSandbox/MedCom/HospitalNotificationTMS/fixtureHospitalNotificationSLOR.xml, end-leave-inpatient, IMP, in-progress, revision, messageHeaderid-01)
 
 /*  //RE_SLOR
 Instance: HN-send-revise-end-leave-inpatient
@@ -151,7 +145,7 @@ InstanceOf: TestScript
 * title = "Discharge inpatient to home - SLHJ-IMP"
 * description = "Testing correct use of End hospital Stay- patient discharged to home/primary sector"
 * insert createMessageSetup(STAA, 01, /FHIRSandbox/MedCom/HospitalNotificationTMS/fixtureHospitalNotificationSTIN.xml)
-* insert createMessage(SLHJ, 02, /FHIRSandbox/MedCom/HospitalNotificationTMS/fixtureHospitalNotificationSLHJ-IMP.xml, discharge-inpatient-home, IMP, finished, revision)
+* insert createMessage(SLHJ, 02, /FHIRSandbox/MedCom/HospitalNotificationTMS/fixtureHospitalNotificationSLHJ-IMP.xml, discharge-inpatient-home, IMP, finished, revision, messageHeaderid-01)
 
 /* //RE_SLHJ - IMP
 Instance: HN-send-revise-discharge-inpatient-home
@@ -186,7 +180,7 @@ InstanceOf: TestScript
 * title = "Discharge acute ambulant patient to home - SLHJ-EMER"
 * description = "Testing correct use of End hospital Stay - patient discharged to home/primary sector"
 * insert createMessageSetup(STAA, 01, /FHIRSandbox/MedCom/HospitalNotificationTMS/fixtureHospitalNotificationSTIN.xml)
-* insert createMessage(SLHJ-EMER, 02, /FHIRSandbox/MedCom/HospitalNotificationTMS/fixtureHospitalNotificationSLHJ-EMER.xml, discharge-emergency-home, EMER, finished, revision)
+* insert createMessage(SLHJ-EMER, 02, /FHIRSandbox/MedCom/HospitalNotificationTMS/fixtureHospitalNotificationSLHJ-EMER.xml, discharge-emergency-home, EMER, finished, revision, messageHeaderid-01)
 
 /*  //RE_SLHJ - EMER
 Instance: HN-send-revise-discharge-emergency-home
@@ -222,8 +216,7 @@ InstanceOf: TestScript
 * title = "Acute ambulant patient, deceased during hospital stay - MORS-EMER"
 * description = "Testing correct use of End hospital Stay-deseased"
 * insert createMessageSetup(STAA, 01, /FHIRSandbox/MedCom/HospitalNotificationTMS/fixtureHospitalNotificationSTAA.xml)
-* insert createMessageDeceased(MORS-EMER, 02, /FHIRSandbox/MedCom/HospitalNotificationTMS/fixtureHospitalNotificationMORS-EMER.xml,
- admit-emergency, EMER, finished, revision, true)
+* insert createMessageDeceased(MORS-EMER, 02, /FHIRSandbox/MedCom/HospitalNotificationTMS/fixtureHospitalNotificationMORS-EMER.xml, admit-emergency, EMER, finished, revision, messageHeaderid-01, true)
 
  //MORS - IMP
 Instance: HospitalNotification-MORS-IMP
@@ -234,8 +227,7 @@ InstanceOf: TestScript
 * title = "Inpatient deceased during hospital stay - MORS-IMP"
 * description = "Testing correct use of End hospital Stay-deseased"
 * insert createMessageSetup(STAA, 01, /FHIRSandbox/MedCom/HospitalNotificationTMS/fixtureHospitalNotificationSTIN.xml)
-* insert createMessageDeceased(MORS-IMP, 02, /FHIRSandbox/MedCom/HospitalNotificationTMS/fixtureHospitalNotificationMORS-IMP.xml,
- admit-inpatient, IMP, finished, revision, true)
+* insert createMessageDeceased(MORS-IMP, 02, /FHIRSandbox/MedCom/HospitalNotificationTMS/fixtureHospitalNotificationMORS-IMP.xml, admit-inpatient, IMP, finished, revision, messageHeaderid-01, true)
 
 /*  //RE_MORS - EMER
 Instance: HN-send-revise-discharge-emergency-home-mors

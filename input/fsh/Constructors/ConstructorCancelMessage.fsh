@@ -1,4 +1,4 @@
-RuleSet: cancelMessage(type, number, fixture, activityCode, encounterClass, encounterStatus, role) //TODO change name
+RuleSet: cancelMessage(type, number, fixture, activityCode, encounterClass, encounterStatus, role, messageHeaderid) //TODO change name
 //Server and client
 * insert originClient
 * insert destinationServer
@@ -9,7 +9,7 @@ RuleSet: cancelMessage(type, number, fixture, activityCode, encounterClass, enco
 * insert operationCancelMessage({type}, {number})
 
 * insert assertResponseCodeTest
-* insert assertMessageHeaderid
+* insert assertMessageHeaderid({messageHeaderid})
 * insert assertProvenanceEntityRole({role})
 * insert assertEncounterClass({encounterClass})
 * insert assertEncounterStatus({encounterStatus})
