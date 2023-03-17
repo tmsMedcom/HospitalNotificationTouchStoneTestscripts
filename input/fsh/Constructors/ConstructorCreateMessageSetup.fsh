@@ -19,7 +19,7 @@ Beskriver den profil, der valideres op mod
 /* 
 Beskriver anvendte variable
 */
-* insert variableMessageHeaderId({type}, {number})
+* insert variableMessageHeaderId({type})
 * insert variableDestinationUri({type}, {number})
 * insert variableSearchParamIdentifier({type}, {number})
 

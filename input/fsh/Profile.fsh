@@ -1,14 +1,14 @@
 RuleSet: profileHospitalNotificationMessage
 * profile.id = "hospitalnotification" //TODO change name
-* profile.reference = "http://medcomfhir.dk/fhir/hospitalnotification/StructureDefinition/medcom-hospitalNotification-message" 
+* profile.reference = "http://medcomfhir.dk/ig/hospitalnotification/StructureDefinition/medcom-hospitalNotification-message" 
 
 /* RuleSet: profileHospitalNotificationMessageHeader
 * profile.id = "hospitalnotification" //TODO change name
-* profile.reference = "http://medcomfhir.dk/fhir/hospitalnotification/StructureDefinition/medcom-hospitalNotification-messageHeader" 
+* profile.reference = "http://medcomfhir.dk/ig/hospitalnotification/StructureDefinition/medcom-hospitalNotification-messageHeader" 
 
 RuleSet: profileHospitalNotificationEncounter
 * profile.id = "hospitalnotification" //TODO change name
-* profile.reference = "http://medcomfhir.dk/fhir/hospitalnotification/StructureDefinition/medcom-hospitalNotification-encounter" 
+* profile.reference = "http://medcomfhir.dk/ig/hospitalnotification/StructureDefinition/medcom-hospitalNotification-encounter" 
 
 RuleSet: profileMessagingProvenance
 * profile.id = "messaging" //TODO change name

@@ -6,9 +6,9 @@
       "http://touchstone.aegis.net/touchstone/fhir/testing/StructureDefinition/testscript"
     ]
   },
-  "url": "medcom.dk",
+  "url": "https://medcomfhir.dk/ig/hospitalnotification/",
   "status": "active",
-  "date": "2022-07-13",
+  "date": "2023-02-22",
   "publisher": "MedCom",
   "contact": [
     {
@@ -47,7 +47,7 @@
   "profile": [
     {
       "id": "hospitalnotification",
-      "reference": "http://medcomfhir.dk/fhir/hospitalnotification/StructureDefinition/medcom-hospitalNotification-message"
+      "reference": "http://medcomfhir.dk/ig/hospitalnotification/StructureDefinition/medcom-hospitalNotification-message"
     }
   ],
   "fixture": [
@@ -56,30 +56,30 @@
       "autocreate": false,
       "autodelete": false,
       "resource": {
-        "reference": "/FHIRSandbox/MedCom/HospitalNotificationTMS/fixtureHospitalNotificationSTAA.xml"
+        "reference": "/FHIRSandbox/MedCom/HospitalNotificationTMS/fixtureHospitalNotification.xml"
       }
     }
   ],
   "variable": [
     {
-      "name": "encounterResourceIdentifier",
-      "expression": "Bundle.entry.resource.ofType(Encounter).identifier.value",
-      "sourceId": "create-STAA-01"
-    },
-    {
-      "name": "messageHeaderid-01",
+      "name": "messageHeaderid-STAA",
       "expression": "Bundle.entry[0].fullUrl",
-      "sourceId": "create-STAA-01"
+      "sourceId": "create-message-STAA"
     },
     {
-      "name": "episodeOfCareIdentifier",
+      "name": "episodeOfCareID-STAA",
       "expression": "Bundle.entry.resource.ofType(Encounter).episodeOfCare.identifier.value",
-      "sourceId": "create-STAA-01"
+      "sourceId": "create-message-STAA"
     },
     {
-      "name": "searchParamIdentifier",
+      "name": "searchParamIdentifier-STAA",
       "expression": "Bundle.entry.resource.ofType(MessageHeader).id",
-      "sourceId": "create-STAA-01"
+      "sourceId": "create-message-STAA"
+    },
+    {
+      "name": "occurredDateTime-STAA",
+      "expression": "Bundle.entry.resource.ofType(Provenance).where(target.reference = %resource.entry[0].fullUrl).occurred",
+      "sourceId": "create-message-STAA"
     }
   ],
   "test": [
@@ -99,7 +99,7 @@
             "destination": 1,
             "encodeRequestUrl": true,
             "origin": 1,
-            "responseId": "create-message-ok",
+            "responseId": "create-message-STAA",
             "sourceId": "create-STAA-01"
           }
         },
@@ -160,7 +160,7 @@
           "assert": {
             "description": "Confirm that the report of admission flag is true.",
             "direction": "request",
-            "expression": "Bundle.entry.resource.ofType(MessageHeader).extension.where(url='http://medcomfhir.dk/fhir/hospitalnotification/StructureDefinition/medcom-messaging-reportOfAdmissionExtension').value",
+            "expression": "Bundle.entry.resource.ofType(MessageHeader).extension.where(url='http://medcomfhir.dk/ig/hospitalnotification/StructureDefinition/medcom-messaging-reportOfAdmissionExtension').value",
             "operator": "equals",
             "value": "true",
             "warningOnly": false
@@ -171,6 +171,22 @@
             "description": "Confirm that the target reference in Provenance equals MessageHeader.id",
             "direction": "request",
             "expression": "Bundle.entry.resource.ofType(Provenance).where(target.reference = %resource.entry[0].fullUrl).exists()",
+            "warningOnly": false
+          }
+        },
+        {
+          "assert": {
+            "description": "Confirm that the episodeOfCare-identifier has the structure of an UUID",
+            "direction": "request",
+            "expression": "Bundle.entry.resource.ofType(Encounter).episodeOfCare.identifier.value.matches('[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}')",
+            "warningOnly": false
+          }
+        },
+        {
+          "assert": {
+            "description": "Confirm that the a receiver of the report of admission exists, when the flag is true, and doesn't exists when the flag is false.",
+            "direction": "request",
+            "expression": "Bundle.entry.resource.ofType(MessageHeader).extension.where(url='http://medcomfhir.dk/ig/hospitalnotification/StructureDefinition/medcom-messaging-reportOfAdmissionRecipientExtension').exists() = true",
             "warningOnly": false
           }
         }

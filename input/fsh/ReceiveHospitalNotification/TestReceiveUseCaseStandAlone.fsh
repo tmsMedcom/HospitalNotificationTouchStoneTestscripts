@@ -1,4 +1,4 @@
-//Read STIN
+/* //Read STIN
 Instance: HospitalNotification-Receive-STIN
 InstanceOf: TestScript
 * insert Metadata
@@ -32,4 +32,4 @@ InstanceOf: TestScript
 * description = "Testing correct receiving of HospitalNotification Message."
 // Fixturen indeholder en placeholder ved MessageHeader.destination.endpoint, hvilket gør endpointet unikt for hver bruger.
 * insert createMessageSetup(AN-STIN, 01, /FHIRSandbox/MedCom/HospitalNotificationTMS/fixtureHospitalNotificationAN-STIN-Placeholder.xml)
-* insert readMessage(AN-STIN, 02)
+* insert readMessage(AN-STIN, 02) */

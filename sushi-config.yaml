@@ -3,13 +3,13 @@
 # │  supported properties, see:                                                                    │
 # │  https://fshschool.org/docs/sushi/configuration/#full-configuration                            │
 # ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
-id: medcom
-canonical: http://example.org/fhir/fish
-version: 0.1.0
+id: medcom.fhir.dk.testscripts.hospitalnotification
+canonical: http://example.org/fhir/fish #http://medcomfhir.dk/ig/testscript/hospitalnotification
+version: 1.0.0-b1
 name: Hospitalnotification Testscripts
 title: HospitalNotification Testscripts
 status: draft
-publisher: Anders Jensen
+publisher: MedCom
 contact:
   - name: MedCom
     telecom:
@@ -24,6 +24,15 @@ parameters:
   show-inherited-invariants: false
 copyrightYear: 2020+
 releaseLabel: ci-build
+Dependencies: 
+  medcom.fhir.dk.hospitalnotification: 
+    version: current
+    uri: https://medcomfhir.dk/ig/hospitalnotification/
+  medcom.fhir.dk.core: 
+    version: current
+    uri: https://medcomfhir.dk/ig/core/
+
+
 
 # ╭────────────────────────────────────────────menu.xml────────────────────────────────────────────╮
 # │  To use a provided input/includes/menu.xml file, delete the "menu" property below.             │
@@ -34,3 +43,33 @@ menu:
   Artifacts Summary: artifacts.html
   Other Resources:
     "FHIR Spec ": new-tab {{site.data.fhir.path}}index.html
+
+
+# The resources property corresponds to IG.definition.resource.
+# SUSHI can auto-generate all of the resource entries based on
+# the FSH definitions and/or information in any user-provided
+# JSON or XML resource files. If the generated entries are not
+# sufficient or complete, however, the author can add entries
+# here. If the reference matches a generated entry, it will
+# replace the generated entry. If it doesn't match any generated
+# entries, it will be added to the generated entries. The format
+# follows IG.definition.resource with the following differences:
+#   * use IG.definition.resource.reference.reference as the YAML key.
+#   * if the key is an id or name, SUSHI will replace it with the
+#     correct URL when generating the IG JSON.
+#   * specify "omit" to omit a FSH-generated resource from the
+#     resource list.
+#   * if the exampleCanonical is an id or name, SUSHI will replace
+#     it with the correct canonical when generating the IG JSON.
+#   * groupingId can be used, but top-level groups syntax may be a
+#     better option (see below).
+# The following are simple examples to demonstrate what this might
+# look like:
+#
+#resources:
+#  Binary/create-STIN-01: 
+#    extension:
+#    - url: http://hl7.org/fhir/StructureDefinition/implementationguide-resource-format
+#      valueCode: application/fhir+json
+#    name: STIN-01
+#    exampleCanonical: http://medcomfhir.dk/ig/hospitalnotification/StructureDefinition/medcom-hospitalNotification-message

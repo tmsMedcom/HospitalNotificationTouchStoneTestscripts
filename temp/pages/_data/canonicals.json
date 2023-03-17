@@ -1,401 +1,240 @@
 [
   {
-    "id": "5e657b1f-060e-423f-b198-fa8ffee77b87",
-    "type": "TestScript",
-    "url": "http://build.fhir.org/ig/hl7dk/dk-medcom/",
-    "version": "0.1.0",
-    "name": "re111ceive-notification-about-admission"
+    "id" : "medcom.fhir.dk.testscripts.hospitalnotification",
+    "type" : "ImplementationGuide",
+    "url" : "http://example.org/fhir/fish/ImplementationGuide/medcom.fhir.dk.testscripts.hospitalnotification",
+    "version" : "1.0.0-b1",
+    "name" : "HospitalnotificationTestscripts"
   },
   {
-    "id": "ACK01-ok",
-    "type": "TestScript",
-    "url": "http://build.fhir.org/ig/hl7dk/dk-medcom/",
-    "version": "0.1.0",
-    "name": "medcom-Acknowledgement-ok-xml-json"
+    "id" : "hospitalmotification-an-mors-imp",
+    "type" : "TestScript",
+    "url" : "https://medcomfhir.dk/ig/hospitalnotification/",
+    "version" : "1.0.0-b1",
+    "name" : "Cancellation Inpatient deceased during admission"
   },
   {
-    "id": "HN-admit-emergency",
-    "type": "TestScript",
-    "url": "http://build.fhir.org/ig/hl7dk/dk-medcom/",
-    "version": "0.1.0",
-    "name": "Start hospital admit-emergency"
+    "id" : "hospitalmotification-an-mors-stor",
+    "type" : "TestScript",
+    "url" : "https://medcomfhir.dk/ig/hospitalnotification/",
+    "version" : "1.0.0-b1",
+    "name" : "Cancellation Inpatient deceased during a period of leave"
   },
   {
-    "id": "HN-admit-inpatient",
-    "type": "TestScript",
-    "url": "http://build.fhir.org/ig/hl7dk/dk-medcom/",
-    "version": "0.1.0",
-    "name": "Start hospital stay-admission"
+    "id" : "hospitalmotification-an-slhj-emer",
+    "type" : "TestScript",
+    "url" : "https://medcomfhir.dk/ig/hospitalnotification/",
+    "version" : "1.0.0-b1",
+    "name" : "Cancellation discharge acute ambulant patient to Home/Primary sector"
   },
   {
-    "id": "HN-cancel-admit-emergency",
-    "type": "TestScript",
-    "url": "http://build.fhir.org/ig/hl7dk/dk-medcom/",
-    "version": "0.1.0",
-    "name": "Cancellation of start hospital stayacute ambulant"
+    "id" : "hospitalmotification-an-slhj-imp",
+    "type" : "TestScript",
+    "url" : "https://medcomfhir.dk/ig/hospitalnotification/",
+    "version" : "1.0.0-b1",
+    "name" : "Cancellation discharge patient to Home/Primary sector"
   },
   {
-    "id": "HN-cancel-admit-inpatient",
-    "type": "TestScript",
-    "url": "http://build.fhir.org/ig/hl7dk/dk-medcom/",
-    "version": "0.1.0",
-    "name": "Cancellation of start hospital stayadmission"
+    "id" : "hospitalmotification-re-mors-imp",
+    "type" : "TestScript",
+    "url" : "https://medcomfhir.dk/ig/hospitalnotification/",
+    "version" : "1.0.0-b1",
+    "name" : "Update Inpatient deceased during admission"
   },
   {
-    "id": "HN-cancel-discharge-emergency-home-deseased",
-    "type": "TestScript",
-    "url": "http://build.fhir.org/ig/hl7dk/dk-medcom/",
-    "version": "0.1.0",
-    "name": "cancel-discharge-emergency-home-deseased"
+    "id" : "hospitalmotification-re-mors-stor",
+    "type" : "TestScript",
+    "url" : "https://medcomfhir.dk/ig/hospitalnotification/",
+    "version" : "1.0.0-b1",
+    "name" : "Update Inpatient deceased during a period of leave"
   },
   {
-    "id": "HN-cancel-discharge-emergency-home",
-    "type": "TestScript",
-    "url": "http://build.fhir.org/ig/hl7dk/dk-medcom/",
-    "version": "0.1.0",
-    "name": "cancel-discharge-emergency-home"
+    "id" : "hospitalmotification-re-slhj-emer",
+    "type" : "TestScript",
+    "url" : "https://medcomfhir.dk/ig/hospitalnotification/",
+    "version" : "1.0.0-b1",
+    "name" : "Update discharge acute ambulant patient to Home/Primary sector"
   },
   {
-    "id": "HN-cancel-discharge-inpatient-home-deseased",
-    "type": "TestScript",
-    "url": "http://build.fhir.org/ig/hl7dk/dk-medcom/",
-    "version": "0.1.0",
-    "name": "cancel-discharge-inpatient-home-deseased"
+    "id" : "hospitalmotification-re-slhj-imp",
+    "type" : "TestScript",
+    "url" : "https://medcomfhir.dk/ig/hospitalnotification/",
+    "version" : "1.0.0-b1",
+    "name" : "Update discharge patient to Home/Primary sector"
   },
   {
-    "id": "HN-cancel-discharge-inpatient-home",
-    "type": "TestScript",
-    "url": "http://build.fhir.org/ig/hl7dk/dk-medcom/",
-    "version": "0.1.0",
-    "name": "cancel-discharge-inpatient-home"
+    "id" : "hospitalnotification-an-mors-emer",
+    "type" : "TestScript",
+    "url" : "https://medcomfhir.dk/ig/hospitalnotification/",
+    "version" : "1.0.0-b1",
+    "name" : "Cancellation Acute ambulant patient, deceased during hospital stay"
   },
   {
-    "id": "HN-cancel-end-leave-inpatient",
-    "type": "TestScript",
-    "url": "http://build.fhir.org/ig/hl7dk/dk-medcom/",
-    "version": "0.1.0",
-    "name": "cancel-end-leave-inpatient"
+    "id" : "hospitalnotification-an-mors",
+    "type" : "TestScript",
+    "url" : "https://medcomfhir.dk/ig/hospitalnotification/",
+    "version" : "1.0.0-b1",
+    "name" : "Cancellationof deceased inpatient before arrival at the hospital"
   },
   {
-    "id": "HN-cancel-start-leave-inpatient",
-    "type": "TestScript",
-    "url": "http://build.fhir.org/ig/hl7dk/dk-medcom/",
-    "version": "0.1.0",
-    "name": "Update of Start leave"
+    "id" : "hospitalnotification-an-slor",
+    "type" : "TestScript",
+    "url" : "https://medcomfhir.dk/ig/hospitalnotification/",
+    "version" : "1.0.0-b1",
+    "name" : "Cancellation of End leave"
   },
   {
-    "id": "HN-Cancellation-of-deseased-emer",
-    "type": "TestScript",
-    "url": "http://build.fhir.org/ig/hl7dk/dk-medcom/",
-    "version": "0.1.0",
-    "name": "Cancellation-of-deseased-emer"
+    "id" : "hospitalnotification-an-staa",
+    "type" : "TestScript",
+    "url" : "https://medcomfhir.dk/ig/hospitalnotification/",
+    "version" : "1.0.0-b1",
+    "name" : "Cancellation of start hospital stay-acute ambulant"
   },
   {
-    "id": "HN-Cancellation-of-deseased-imp",
-    "type": "TestScript",
-    "url": "http://build.fhir.org/ig/hl7dk/dk-medcom/",
-    "version": "0.1.0",
-    "name": "Cancellation-of-deseased-imp"
+    "id" : "hospitalnotification-an-stin",
+    "type" : "TestScript",
+    "url" : "https://medcomfhir.dk/ig/hospitalnotification/",
+    "version" : "1.0.0-b1",
+    "name" : "Cancellation of start hospital stay admission - AN_STIN"
   },
   {
-    "id": "HN-discharge-emergency-home",
-    "type": "TestScript",
-    "url": "http://build.fhir.org/ig/hl7dk/dk-medcom/",
-    "version": "0.1.0",
-    "name": "discharge-emergency-home"
+    "id" : "hospitalnotification-an-stor",
+    "type" : "TestScript",
+    "url" : "https://medcomfhir.dk/ig/hospitalnotification/",
+    "version" : "1.0.0-b1",
+    "name" : "Cancellation of start leave - AN_STOR"
   },
   {
-    "id": "HN-discharge-inpatient-home",
-    "type": "TestScript",
-    "url": "http://build.fhir.org/ig/hl7dk/dk-medcom/",
-    "version": "0.1.0",
-    "name": "discharge-inpatient-home"
+    "id" : "hospitalnotification-mors-emer",
+    "type" : "TestScript",
+    "url" : "https://medcomfhir.dk/ig/hospitalnotification/",
+    "version" : "1.0.0-b1",
+    "name" : "Acute ambulant patient, deceased during hospital stay"
   },
   {
-    "id": "HN-end-leave-inpatient",
-    "type": "TestScript",
-    "url": "http://build.fhir.org/ig/hl7dk/dk-medcom/",
-    "version": "0.1.0",
-    "name": "end-leave-inpatient"
+    "id" : "hospitalnotification-mors-imp",
+    "type" : "TestScript",
+    "url" : "https://medcomfhir.dk/ig/hospitalnotification/",
+    "version" : "1.0.0-b1",
+    "name" : "Inpatient deceased during admission"
   },
   {
-    "id": "HN-revise-admit-emergency",
-    "type": "TestScript",
-    "url": "http://build.fhir.org/ig/hl7dk/dk-medcom/",
-    "version": "0.1.0",
-    "name": "Update of start hospital stay-acute ambulant"
+    "id" : "hospitalnotification-mors-stor",
+    "type" : "TestScript",
+    "url" : "https://medcomfhir.dk/ig/hospitalnotification/",
+    "version" : "1.0.0-b1",
+    "name" : "Inpatient deceased during a period of leave"
   },
   {
-    "id": "HN-revise-admit-inpatient",
-    "type": "TestScript",
-    "url": "http://build.fhir.org/ig/hl7dk/dk-medcom/",
-    "version": "0.1.0",
-    "name": "Update of start hospital stay-admission"
+    "id" : "hospitalnotification-mors",
+    "type" : "TestScript",
+    "url" : "https://medcomfhir.dk/ig/hospitalnotification/",
+    "version" : "1.0.0-b1",
+    "name" : "Start admission of an inpatient."
   },
   {
-    "id": "HN-revise-discharge-emergency-home-re-deseased",
-    "type": "TestScript",
-    "url": "http://build.fhir.org/ig/hl7dk/dk-medcom/",
-    "version": "0.1.0",
-    "name": "revise-discharge-emergency-home-re-deseased"
+    "id" : "hospitalnotification-PF-send-imp-03",
+    "type" : "TestScript",
+    "url" : "https://medcomfhir.dk/ig/hospitalnotification/",
+    "version" : "1.0.0-b1",
+    "name" : "Inpatient deceased after a period of leave"
   },
   {
-    "id": "HN-revise-discharge-emergency-home",
-    "type": "TestScript",
-    "url": "http://build.fhir.org/ig/hl7dk/dk-medcom/",
-    "version": "0.1.0",
-    "name": "revise-discharge-emergency-home"
+    "id" : "hospitalnotification-re-mors-emer",
+    "type" : "TestScript",
+    "url" : "https://medcomfhir.dk/ig/hospitalnotification/",
+    "version" : "1.0.0-b1",
+    "name" : "Update Acute ambulant patient, deceased during hospital stay"
   },
   {
-    "id": "HN-revise-discharge-inpatient-home-re-deseased",
-    "type": "TestScript",
-    "url": "http://build.fhir.org/ig/hl7dk/dk-medcom/",
-    "version": "0.1.0",
-    "name": "revise-discharge-inpatient-home-re-deseased"
+    "id" : "hospitalnotification-re-mors",
+    "type" : "TestScript",
+    "url" : "https://medcomfhir.dk/ig/hospitalnotification/",
+    "version" : "1.0.0-b1",
+    "name" : "Update of deceased inpatient before arrival at the hospital"
   },
   {
-    "id": "HN-revise-discharge-inpatient-home",
-    "type": "TestScript",
-    "url": "http://build.fhir.org/ig/hl7dk/dk-medcom/",
-    "version": "0.1.0",
-    "name": "revise-discharge-inpatient-home"
+    "id" : "hospitalnotification-re-slor",
+    "type" : "TestScript",
+    "url" : "https://medcomfhir.dk/ig/hospitalnotification/",
+    "version" : "1.0.0-b1",
+    "name" : "Update of End leave"
   },
   {
-    "id": "HN-revise-end-leave-inpatient",
-    "type": "TestScript",
-    "url": "http://build.fhir.org/ig/hl7dk/dk-medcom/",
-    "version": "0.1.0",
-    "name": "revise-end-leave-inpatient"
+    "id" : "hospitalnotification-re-staa",
+    "type" : "TestScript",
+    "url" : "https://medcomfhir.dk/ig/hospitalnotification/",
+    "version" : "1.0.0-b1",
+    "name" : "Update of start hospital stay-acute ambulant"
   },
   {
-    "id": "HN-revise-start-leave-inpatient",
-    "type": "TestScript",
-    "url": "http://build.fhir.org/ig/hl7dk/dk-medcom/",
-    "version": "0.1.0",
-    "name": "Update of Start leave"
+    "id" : "hospitalnotification-re-stin",
+    "type" : "TestScript",
+    "url" : "https://medcomfhir.dk/ig/hospitalnotification/",
+    "version" : "1.0.0-b1",
+    "name" : "Update of start hospital stay-admission"
   },
   {
-    "id": "HN-start-leave-inpatient",
-    "type": "TestScript",
-    "url": "http://build.fhir.org/ig/hl7dk/dk-medcom/",
-    "version": "0.1.0",
-    "name": "Start leave"
+    "id" : "hospitalnotification-re-stor",
+    "type" : "TestScript",
+    "url" : "https://medcomfhir.dk/ig/hospitalnotification/",
+    "version" : "1.0.0-b1",
+    "name" : "Update of Start leave"
   },
   {
-    "id": "UFHV01-with-ACK",
-    "type": "TestScript",
-    "url": "http://build.fhir.org/ig/hl7dk/dk-medcom/",
-    "version": "0.1.0",
-    "name": "receive-notification-about-admission"
+    "id" : "hospitalnotification-slhj-emer",
+    "type" : "TestScript",
+    "url" : "https://medcomfhir.dk/ig/hospitalnotification/",
+    "version" : "1.0.0-b1",
+    "name" : "Discharge acute ambulant patient to home"
   },
   {
-    "id": "UFHV01",
-    "type": "TestScript",
-    "url": "http://build.fhir.org/ig/hl7dk/dk-medcom/",
-    "version": "0.1.0",
-    "name": "receive-notification-about-admission"
+    "id" : "hospitalnotification-slhj-imp-timestamptest",
+    "type" : "TestScript",
+    "url" : "https://medcomfhir.dk/ig/hospitalnotification/",
+    "version" : "1.0.0-b1",
+    "name" : "Discharge inpatient to home"
   },
   {
-    "id": "UFHV02-with-ACK",
-    "type": "TestScript",
-    "url": "http://build.fhir.org/ig/hl7dk/dk-medcom/",
-    "version": "0.1.0",
-    "name": "receive-notification-correction"
+    "id" : "hospitalnotification-slhj-imp",
+    "type" : "TestScript",
+    "url" : "https://medcomfhir.dk/ig/hospitalnotification/",
+    "version" : "1.0.0-b1",
+    "name" : "Discharge inpatient to home"
   },
   {
-    "id": "UFHV02",
-    "type": "TestScript",
-    "url": "http://build.fhir.org/ig/hl7dk/dk-medcom/",
-    "version": "0.1.0",
-    "name": "receive-notification-correction"
+    "id" : "hospitalnotification-slor",
+    "type" : "TestScript",
+    "url" : "https://medcomfhir.dk/ig/hospitalnotification/",
+    "version" : "1.0.0-b1",
+    "name" : "End leave of hospital stay admission"
   },
   {
-    "id": "UFHV03-with-ACK",
-    "type": "TestScript",
-    "url": "http://build.fhir.org/ig/hl7dk/dk-medcom/",
-    "version": "0.1.0",
-    "name": "receive-notification-Cancellation"
+    "id" : "hospitalnotification-staa",
+    "type" : "TestScript",
+    "url" : "https://medcomfhir.dk/ig/hospitalnotification/",
+    "version" : "1.0.0-b1",
+    "name" : "Start admission of an acute ambulant patient."
   },
   {
-    "id": "UFHV03",
-    "type": "TestScript",
-    "url": "http://build.fhir.org/ig/hl7dk/dk-medcom/",
-    "version": "0.1.0",
-    "name": "receive-notification-Cancellation"
+    "id" : "hospitalnotification-stin-a1",
+    "type" : "TestScript",
+    "url" : "https://medcomfhir.dk/ig/hospitalnotification/",
+    "version" : "1.0.0-b1",
+    "name" : "Start admission of an inpatient, withou request for a report of admission."
   },
   {
-    "id": "UFHV04-with-ACK",
-    "type": "TestScript",
-    "url": "http://build.fhir.org/ig/hl7dk/dk-medcom/",
-    "version": "0.1.0",
-    "name": "receive-notification-admitted and discharged"
+    "id" : "hospitalnotification-stin",
+    "type" : "TestScript",
+    "url" : "https://medcomfhir.dk/ig/hospitalnotification/",
+    "version" : "1.0.0-b1",
+    "name" : "Start admission of an inpatient."
   },
   {
-    "id": "UFHV04",
-    "type": "TestScript",
-    "url": "http://build.fhir.org/ig/hl7dk/dk-medcom/",
-    "version": "0.1.0",
-    "name": "receive-notification-admitted and discharged"
-  },
-  {
-    "id": "UFHV05-with-ACK",
-    "type": "TestScript",
-    "url": "http://build.fhir.org/ig/hl7dk/dk-medcom/",
-    "version": "0.1.0",
-    "name": "receive-notification-admit and discharge to home"
-  },
-  {
-    "id": "UFHV05",
-    "type": "TestScript",
-    "url": "http://build.fhir.org/ig/hl7dk/dk-medcom/",
-    "version": "0.1.0",
-    "name": "receive-notification-admit and discharge to home"
-  },
-  {
-    "id": "UFHV06-with-ACK",
-    "type": "TestScript",
-    "url": "http://build.fhir.org/ig/hl7dk/dk-medcom/",
-    "version": "0.1.0",
-    "name": "never returns after leave"
-  },
-  {
-    "id": "UFHV06",
-    "type": "TestScript",
-    "url": "http://build.fhir.org/ig/hl7dk/dk-medcom/",
-    "version": "0.1.0",
-    "name": "never returns after leave"
-  },
-  {
-    "id": "UFHV08-with-ACK",
-    "type": "TestScript",
-    "url": "http://build.fhir.org/ig/hl7dk/dk-medcom/",
-    "version": "0.1.0",
-    "name": "Admitted, transferred and discharged to home"
-  },
-  {
-    "id": "UFHV08",
-    "type": "TestScript",
-    "url": "http://build.fhir.org/ig/hl7dk/dk-medcom/",
-    "version": "0.1.0",
-    "name": "Admitted, transferred and discharged to home"
-  },
-  {
-    "id": "UFHV09-with-ACK",
-    "type": "TestScript",
-    "url": "http://build.fhir.org/ig/hl7dk/dk-medcom/",
-    "version": "0.1.0",
-    "name": "Admitted, transferred and discharged to home"
-  },
-  {
-    "id": "UFHV09",
-    "type": "TestScript",
-    "url": "http://build.fhir.org/ig/hl7dk/dk-medcom/",
-    "version": "0.1.0",
-    "name": "Admitted, transferred and discharged to home"
-  },
-  {
-    "id": "UFHV10-with-ACK",
-    "type": "TestScript",
-    "url": "http://build.fhir.org/ig/hl7dk/dk-medcom/",
-    "version": "0.1.0",
-    "name": "Patient is admitted at hospital, transferred to another hospital (another region), and finally discharged to home"
-  },
-  {
-    "id": "UFHV10",
-    "type": "TestScript",
-    "url": "http://build.fhir.org/ig/hl7dk/dk-medcom/",
-    "version": "0.1.0",
-    "name": "Patient is admitted at hospital, transferred to another hospital (another region), and finally discharged to home"
-  },
-  {
-    "id": "UFHV11-with-ACK",
-    "type": "TestScript",
-    "url": "http://build.fhir.org/ig/hl7dk/dk-medcom/",
-    "version": "0.1.0",
-    "name": "Patient is admitted at hospital, transfers himself to another hospital (another region), and finally discharged to home"
-  },
-  {
-    "id": "UFHV11",
-    "type": "TestScript",
-    "url": "http://build.fhir.org/ig/hl7dk/dk-medcom/",
-    "version": "0.1.0",
-    "name": "Patient is admitted at hospital, transfers himself to another hospital (another region), and finally discharged to home"
-  },
-  {
-    "id": "UFHV12-with-ACK",
-    "type": "TestScript",
-    "url": "http://build.fhir.org/ig/hl7dk/dk-medcom/",
-    "version": "0.1.0",
-    "name": "Patient is in an emergency outpatient setting ay hospital, but ends up being admitted"
-  },
-  {
-    "id": "UFHV12",
-    "type": "TestScript",
-    "url": "http://build.fhir.org/ig/hl7dk/dk-medcom/",
-    "version": "0.1.0",
-    "name": "Patient is in an emergency outpatient setting ay hospital, but ends up being admitted"
-  },
-  {
-    "id": "UFHV13-with-ACK",
-    "type": "TestScript",
-    "url": "http://build.fhir.org/ig/hl7dk/dk-medcom/",
-    "version": "0.1.0",
-    "name": "Patient dies upon arrival at the hospital"
-  },
-  {
-    "id": "UFHV13",
-    "type": "TestScript",
-    "url": "http://build.fhir.org/ig/hl7dk/dk-medcom/",
-    "version": "0.1.0",
-    "name": "Patient dies upon arrival at the hospital"
-  },
-  {
-    "id": "UFHV14-with-ACK",
-    "type": "TestScript",
-    "url": "http://build.fhir.org/ig/hl7dk/dk-medcom/",
-    "version": "0.1.0",
-    "name": "Patient is admitted and dies at the hospital"
-  },
-  {
-    "id": "UFHV14",
-    "type": "TestScript",
-    "url": "http://build.fhir.org/ig/hl7dk/dk-medcom/",
-    "version": "0.1.0",
-    "name": "Patient is admitted and dies at the hospital"
-  },
-  {
-    "id": "UFHV15-with-ACK",
-    "type": "TestScript",
-    "url": "http://build.fhir.org/ig/hl7dk/dk-medcom/",
-    "version": "0.1.0",
-    "name": "Dies during leave"
-  },
-  {
-    "id": "UFHV15",
-    "type": "TestScript",
-    "url": "http://build.fhir.org/ig/hl7dk/dk-medcom/",
-    "version": "0.1.0",
-    "name": "Dies during leave"
-  },
-  {
-    "id": "UFHV16-with-ACK",
-    "type": "TestScript",
-    "url": "http://build.fhir.org/ig/hl7dk/dk-medcom/",
-    "version": "0.1.0",
-    "name": "transferred to a private hospital"
-  },
-  {
-    "id": "UFHV16",
-    "type": "TestScript",
-    "url": "http://build.fhir.org/ig/hl7dk/dk-medcom/",
-    "version": "0.1.0",
-    "name": "transferred to a private hospital"
-  },
-  {
-    "id": "medcom",
-    "type": "ImplementationGuide",
-    "url": "http://example.org/fhir/fish/ImplementationGuide/medcom",
-    "version": "0.1.0",
-    "name": "HospitalnotificationTestscripts"
+    "id" : "hospitalnotification-stor",
+    "type" : "TestScript",
+    "url" : "https://medcomfhir.dk/ig/hospitalnotification/",
+    "version" : "1.0.0-b1",
+    "name" : "Start leave of hospital stay admission"
   }
 ]

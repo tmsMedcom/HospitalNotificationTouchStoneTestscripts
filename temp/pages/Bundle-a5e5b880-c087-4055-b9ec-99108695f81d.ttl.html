@@ -1,0 +1,36 @@
+---
+---
+
+{% if 'ttl' == 'xml' %}
+{% assign section = '7' %}
+{% elsif 'ttl' == 'json' %}
+{% assign section = '8' %}
+{% else %}
+{% assign section = '9' %}
+{% endif %}
+
+{% include fragment-pagebegin.html %}
+<div style="counter-reset: section {{section}}" class="col-12">
+<!--ReleaseHeader--><p id="publish-box">Publish Box goes here</p><!--EndReleaseHeader-->
+{% include fragment-base-navtabs.html type='Bundle' id='a5e5b880-c087-4055-b9ec-99108695f81d' active='ttl' %}
+
+<a name="root"> </a>
+{% if site.data.artifacts[page.path].example %}
+  {% assign example = 'Example ' %}
+{% endif %}
+{% assign prefix = site.data.artifacts[page.path].type %}
+<h2 id="root">{{example}}{{prefix}}: {{site.data.pages[page.path].title | escape_once}}</h2>
+{% include fragment-simpletable.html %}
+
+<p><a href="Bundle-a5e5b880-c087-4055-b9ec-99108695f81d.ttl" no-download="true">Raw ttl</a> | <a href="Bundle-a5e5b880-c087-4055-b9ec-99108695f81d.ttl" download>Download</a></p>
+
+  <!-- insert intro if present -->
+  {% include fragment-intro.html type='Bundle' id='a5e5b880-c087-4055-b9ec-99108695f81d' %}
+
+  {% include Bundle-a5e5b880-c087-4055-b9ec-99108695f81d-ttl-html.xhtml %}
+
+  <!-- insert notes if present -->
+  {% include fragment-notes.html type='Bundle' id='a5e5b880-c087-4055-b9ec-99108695f81d' %}
+
+</div>
+{% include fragment-pageend.html %}

@@ -21,13 +21,13 @@ RuleSet: assertResponseNotFound //kan bruges til at bekræfte, at en meddelelse 
 * test[=].action[=].assert.warningOnly = false
 
 RuleSet: assertValidateProfiles
-* test[=].action[+].assert.description = "Validates the bundle against http://medcomfhir.dk/fhir/hospitalnotification/ImplementationGuide/dk.fhir.ig.dk-medcom-hospitalnotification" 
+* test[=].action[+].assert.description = "Validates the bundle against http://medcomfhir.dk/ig/hospitalnotification/ImplementationGuide/dk.fhir.ig.dk-medcom-hospitalnotification" 
 * test[=].action[=].assert.direction = #request
 * test[=].action[=].assert.validateProfileId = "hospitalnotification"
 * test[=].action[=].assert.warningOnly = false
 
 RuleSet: assertMessageHeaderid(messageHeaderid)
-* test[=].action[+].assert.description = "Confirm that the previous MessageHeader fullURL is identical to Provenanve.entity.what" 
+* test[=].action[+].assert.description = "Confirm that the previous MessageHeader fullURL is identical to Provenance.entity.what" 
 * test[=].action[=].assert.direction = #request
 * test[=].action[=].assert.expression = "Bundle.entry.resource.ofType(Provenance).where(entity.what.reference = '${{messageHeaderid}}').count() = 1"
 * test[=].action[=].assert.warningOnly = false
@@ -58,12 +58,12 @@ RuleSet: assertEncounterClass(encounterClass)
 * test[=].action[=].assert.value = "{encounterClass}"
 * test[=].action[=].assert.warningOnly = false
 
-RuleSet: assertOccurredTimeStamp // ikke anvendt
+RuleSet: assertOccurredTimeStamp(occurredDateTime)
 * test[=].action[+].assert.description = "Confirm that the Provenance.occurredDateTime in the latest Provenance is after the previous"
 * test[=].action[=].assert.direction = #request
-* test[=].action[=].assert.expression = "Bundle.entry.resource.ofType(Provenance).where(target.reference = %resource.entry[0].fullUrl).occurred"
-* test[=].action[=].assert.operator = #greaterThan
-* test[=].action[=].assert.value = "{occurredDateTime}"
+* test[=].action[=].assert.expression = "Bundle.entry.resource.ofType(Provenance).where(target.reference = %resource.entry[0].fullUrl).occurred > ${{occurredDateTime}}"
+/* * test[=].action[=].assert.operator = #greaterThan
+* test[=].action[=].assert.value = "{occurredDateTime}" */
 * test[=].action[=].assert.warningOnly = false                               
 
 RuleSet: assertEncounterStatus(encounterStatus)
@@ -74,13 +74,20 @@ RuleSet: assertEncounterStatus(encounterStatus)
 * test[=].action[=].assert.value = "{encounterStatus}"
 * test[=].action[=].assert.warningOnly = false
 
-RuleSet: assertEncounterReportOfAdmission(reportOfAdmission)
+RuleSet: assertMessageHeaderReportOfAdmission(reportOfAdmission)
 * test[=].action[+].assert.description = "Confirm that the report of admission flag is {reportOfAdmission}."
 * test[=].action[=].assert.direction = #request
-* test[=].action[=].assert.expression = "Bundle.entry.resource.ofType(MessageHeader).extension.where(url='http://medcomfhir.dk/fhir/hospitalnotification/StructureDefinition/medcom-messaging-reportOfAdmissionExtension').value"
+* test[=].action[=].assert.expression = "Bundle.entry.resource.ofType(MessageHeader).extension.where(url='http://medcomfhir.dk/ig/hospitalnotification/StructureDefinition/medcom-messaging-reportOfAdmissionExtension').value"
 * test[=].action[=].assert.operator = #equals
 * test[=].action[=].assert.value = "{reportOfAdmission}"
 * test[=].action[=].assert.warningOnly = false
+
+RuleSet: assertMessageHeaderReportOfAdmissionReceiver(reportOfAdmission)
+* test[=].action[+].assert.description = "Confirm that the a receiver of the report of admission exists, when the flag is true, and doesn't exists when the flag is false."
+* test[=].action[=].assert.direction = #request
+* test[=].action[=].assert.expression = "Bundle.entry.resource.ofType(MessageHeader).extension.where(url='http://medcomfhir.dk/ig/hospitalnotification/StructureDefinition/medcom-messaging-reportOfAdmissionRecipientExtension').exists() = {reportOfAdmission}"
+* test[=].action[=].assert.warningOnly = false
+
 
 RuleSet: assertProvenanceTarget
 * test[=].action[+].assert.description = "Confirm that the target reference in Provenance equals MessageHeader.id"
@@ -88,10 +95,12 @@ RuleSet: assertProvenanceTarget
 * test[=].action[=].assert.expression = "Bundle.entry.resource.ofType(Provenance).where(target.reference = %resource.entry[0].fullUrl).exists()"
 * test[=].action[=].assert.warningOnly = false
 
-RuleSet: assertProvenanceEntityExists
-* test[=].action[+].assert.description = "Confirm that the Povenance.what reference exists. Not used when testing the first message in a stream."
+RuleSet: assertProvenanceEntityCount(countProvenances)
+* test[=].action[+].assert.description = "Confirm that the {countProvenances} Provenance instances exists."
 * test[=].action[=].assert.direction = #request
-* test[=].action[=].assert.expression = "Bundle.entry.resource.ofType(Provenance).entity.what.reference.count() > 0"
+* test[=].action[=].assert.expression = "Bundle.entry.resource.ofType(Provenance).count()"
+* test[=].action[=].assert.operator = #equals
+* test[=].action[=].assert.value = "{countProvenances}"
 * test[=].action[=].assert.warningOnly = false 
 
 RuleSet: assertProvenanceEntityRole(role)
@@ -111,3 +120,22 @@ RuleSet: assertPatientDeceased(deceased)
 * test[=].action[=].assert.warningOnly = false
 
 
+RuleSet: assertEpisodeOfCareID(episodeOfCareID)
+* test[=].action[+].assert.description = "Confirm that the episodeOfCare-identifier is {episodeOfCareID}"
+* test[=].action[=].assert.direction = #request
+* test[=].action[=].assert.expression = "Bundle.entry.resource.ofType(Encounter).where(episodeOfCare.identifier.value = '${{episodeOfCareID}}').count() = 1"
+* test[=].action[=].assert.warningOnly = false
+
+RuleSet: assertStructureEpisodeOfCareID
+* test[=].action[+].assert.description = "Confirm that the episodeOfCare-identifier has the structure of an UUID"
+* test[=].action[=].assert.direction = #request
+* test[=].action[=].assert.expression = "Bundle.entry.resource.ofType(Encounter).episodeOfCare.identifier.value.matches('[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}')"
+* test[=].action[=].assert.warningOnly = false
+
+/* RuleSet: assertPatientIdentifier(patientID)
+* test[=].action[+].assert.description = "Confirm that the patient.deceased is set to {deceased}"
+* test[=].action[=].assert.direction = #request
+* test[=].action[=].assert.expression = "Bundle.entry.resource.ofType(Patient).identifier.value"
+* test[=].action[=].assert.operator = #notFound
+* test[=].action[=].assert.value = "{deceased}"
+* test[=].action[=].assert.warningOnly = false */

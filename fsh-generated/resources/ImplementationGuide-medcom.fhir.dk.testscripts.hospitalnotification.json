@@ -1,0 +1,302 @@
+{
+  "resourceType": "ImplementationGuide",
+  "id": "medcom.fhir.dk.testscripts.hospitalnotification",
+  "url": "http://example.org/fhir/fish/ImplementationGuide/medcom.fhir.dk.testscripts.hospitalnotification",
+  "version": "1.0.0-b1",
+  "name": "HospitalnotificationTestscripts",
+  "title": "HospitalNotification Testscripts",
+  "status": "draft",
+  "contact": [
+    {
+      "name": "MedCom",
+      "telecom": [
+        {
+          "system": "email",
+          "value": "fhir@medcom.dk"
+        }
+      ]
+    }
+  ],
+  "description": "Testscripts for HospitalNotification",
+  "packageId": "medcom.fhir.dk.testscripts.hospitalnotification",
+  "license": "CC0-1.0",
+  "fhirVersion": [
+    "4.0.1"
+  ],
+  "definition": {
+    "resource": [
+      {
+        "reference": {
+          "reference": "TestScript/hospitalmotification-an-mors-imp"
+        },
+        "name": "HospitalNotification-TestScript-AN_MORS-IMP",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "TestScript/hospitalmotification-an-mors-stor"
+        },
+        "name": "HospitalNotification-TestScript-AN_MORS-STOR",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "TestScript/hospitalmotification-an-slhj-emer"
+        },
+        "name": "HospitalNotification-TestScript-AN_SLHJ-emer",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "TestScript/hospitalmotification-an-slhj-imp"
+        },
+        "name": "HospitalNotification-TestScript-AN_SLHJ-imp",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "TestScript/hospitalmotification-re-mors-imp"
+        },
+        "name": "HospitalNotification-TestScript-RE_MORS-IMP",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "TestScript/hospitalmotification-re-mors-stor"
+        },
+        "name": "HospitalNotification-TestScript-RE_MORS-STOR",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "TestScript/hospitalmotification-re-slhj-emer"
+        },
+        "name": "HospitalNotification-TestScript-RE_SLHJ-emer",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "TestScript/hospitalmotification-re-slhj-imp"
+        },
+        "name": "HospitalNotification-TestScript-RE_SLHJ-imp",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "TestScript/hospitalnotification-PF-send-imp-03"
+        },
+        "name": "HospitalNotification-TestScript-PF-send-imp-03",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "TestScript/hospitalnotification-an-mors"
+        },
+        "name": "HospitalNotification-TestScript-AN_MORS",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "TestScript/hospitalnotification-an-mors-emer"
+        },
+        "name": "HospitalNotification-TestScript-AN_MORS-emer",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "TestScript/hospitalnotification-an-slor"
+        },
+        "name": "HospitalNotification-TestScript-AN_SLOR",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "TestScript/hospitalnotification-an-staa"
+        },
+        "name": "HospitalNotification-TestScript-AN_STAA",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "TestScript/hospitalnotification-an-stin"
+        },
+        "name": "HospitalNotification-TestScript-AN_STIN",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "TestScript/hospitalnotification-an-stor"
+        },
+        "name": "HospitalNotification-TestScript-AN_STOR",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "TestScript/hospitalnotification-mors"
+        },
+        "name": "HospitalNotification-TestScript-MORS",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "TestScript/hospitalnotification-mors-emer"
+        },
+        "name": "HospitalNotification-TestScript-MORS-EMER",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "TestScript/hospitalnotification-mors-imp"
+        },
+        "name": "HospitalNotification-TestScript-MORS-IMP",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "TestScript/hospitalnotification-mors-stor"
+        },
+        "name": "HospitalNotification-TestScript-MORS-STOR",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "TestScript/hospitalnotification-re-mors"
+        },
+        "name": "HospitalNotification-TestScript-RE_MORS",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "TestScript/hospitalnotification-re-mors-emer"
+        },
+        "name": "HospitalNotification-TestScript-RE_MORS-emer",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "TestScript/hospitalnotification-re-slor"
+        },
+        "name": "HospitalNotification-TestScript-RE_SLOR",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "TestScript/hospitalnotification-re-staa"
+        },
+        "name": "HospitalNotification-TestScript-RE_STAA",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "TestScript/hospitalnotification-re-stin"
+        },
+        "name": "HospitalNotification-TestScript-RE_STIN",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "TestScript/hospitalnotification-re-stor"
+        },
+        "name": "HospitalNotification-TestScript-RE_STOR",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "TestScript/hospitalnotification-slhj-emer"
+        },
+        "name": "HospitalNotification-TestScript-SLHJ-EMER",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "TestScript/hospitalnotification-slhj-imp"
+        },
+        "name": "HospitalNotification-TestScript-SLHJ-imp",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "TestScript/hospitalnotification-slhj-imp-timestamptest"
+        },
+        "name": "HospitalNotification-TestScript-SLHJ-imp-timestamptest",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "TestScript/hospitalnotification-slor"
+        },
+        "name": "HospitalNotification-TestScript-SLOR",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "TestScript/hospitalnotification-staa"
+        },
+        "name": "HospitalNotification-TestScript-STAA",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "TestScript/hospitalnotification-stin"
+        },
+        "name": "HospitalNotification-TestScript-STIN",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "TestScript/hospitalnotification-stin-a1"
+        },
+        "name": "HospitalNotification-TestScript-STIN-A1",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "TestScript/hospitalnotification-stor"
+        },
+        "name": "HospitalNotification-TestScript-STOR",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Bundle/a5e5b880-c087-4055-b9ec-99108695f81d"
+        },
+        "exampleBoolean": false,
+        "name": "a5e5b880-c087-4055-b9ec-99108695f81d"
+      }
+    ],
+    "page": {
+      "nameUrl": "toc.html",
+      "title": "Table of Contents",
+      "generation": "html",
+      "page": [
+        {
+          "nameUrl": "index.html",
+          "title": "Home",
+          "generation": "markdown"
+        }
+      ]
+    },
+    "parameter": [
+      {
+        "code": "copyrightyear",
+        "value": "2020+"
+      },
+      {
+        "code": "releaselabel",
+        "value": "ci-build"
+      },
+      {
+        "code": "apply-publisher",
+        "value": "true"
+      },
+      {
+        "code": "apply-contact",
+        "value": "true"
+      },
+      {
+        "code": "show-inherited-invariants",
+        "value": "false"
+      }
+    ]
+  }
+}

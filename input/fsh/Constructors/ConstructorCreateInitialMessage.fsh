@@ -18,12 +18,13 @@ Beskriver anvendte fixtures
 
 /* 
 Beskriver anvendte variable
-*/
-* insert variableEncounterResourceIdentifier({type}, {number})
-* insert variableMessageHeaderId({type}, {number})
-* insert variableEpisodeOfCareIdentifier({type}, {number})
-* insert variableSearchParamIdentifier({type}, {number})
- 
+*/ 
+//* insert variableEncounterResourceIdentifier({type}, {number})
+* insert variableMessageHeaderId({type})
+* insert variableEpisodeOfCareIdentifier({type})
+* insert variableSearchParamIdentifier({type})
+* insert variableOccurredDateTime({type})
+
 /* 
 Beskriver den operation der udføres i denne test.
 */
@@ -38,7 +39,9 @@ Beskriver den vurdering der sker af operationen
 * insert assertEncounterClass({encounterClass})
 * insert assertEncounterStatus({encounterStatus})
 * insert assertProvenanceActivityCode({activityCode})
-* insert assertEncounterReportOfAdmission({reportOfAdmission})
+* insert assertMessageHeaderReportOfAdmission({reportOfAdmission})
 * insert assertProvenanceTarget
+* insert assertStructureEpisodeOfCareID
+* insert assertMessageHeaderReportOfAdmissionReceiver({reportOfAdmission})
 
 

@@ -1,0 +1,21 @@
+---
+---
+<!-- layouts\layout-changehistory.html -->
+<!-- get modelType -->
+
+
+{% include fragment-pagebegin.html %}
+
+<div style="counter-reset: section 10" class="col-12">
+  <!--ReleaseHeader--><p id="publish-box">Publish Box goes here</p><!--EndReleaseHeader-->
+  {% include fragment-base-navtabs.html type='TestScript' id='hospitalnotification-staa' active='history' %}
+
+  <a name="root"> </a>
+  <h2 id="root">{{type}}: Start admission of an acute ambulant patient. - Change History</h2>
+  <p>History of changes for hospitalnotification-staa {{type | downcase}}.</p>
+
+  {%include TestScript-hospitalnotification-staa-history.xhtml%}
+
+</div>
+{% assign includetabscripts = 'true' %}
+{% include fragment-pageend.html %}

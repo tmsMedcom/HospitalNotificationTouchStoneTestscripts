@@ -1,4 +1,4 @@
-RuleSet: createMessage(type, number, fixture, activityCode, encounterClass, encounterStatus, role, messageHeaderid)
+RuleSet: createMessage(type, number, fixture, activityCode, encounterClass, encounterStatus, role, messageHeaderid, countProvenances, episodeOfCareID)
 
 /* 
 Beskriver server og client for dette testsetup
@@ -19,9 +19,10 @@ Beskriver den profil, der valideres op mod
 /* 
 Beskriver anvendte variable
 */
-* insert variableEncounterResourceIdentifier({type}, {number})
-* insert variableMessageHeaderId({type}, {number})
-* insert variableEpisodeOfCareIdentifier({type}, {number})
+//* insert variableEncounterResourceIdentifier({type}, {number})
+* insert variableMessageHeaderId({type})
+* insert variableEpisodeOfCareIdentifier({type})
+//* insert variableSearchParamIdentifier({type})
 
 /* 
 Beskriver den operation der udføres i denne test.
@@ -40,4 +41,6 @@ Beskriver den vurdering der sker af operationen.
 * insert assertEncounterStatus({encounterStatus})
 * insert assertProvenanceActivityCode({activityCode})
 * insert assertProvenanceTarget
-* insert assertProvenanceEntityExists
+* insert assertProvenanceEntityCount({countProvenances})
+* insert assertEpisodeOfCareID({episodeOfCareID})
+//* insert assertOccurredTimeStamp({occurredDateTime})
