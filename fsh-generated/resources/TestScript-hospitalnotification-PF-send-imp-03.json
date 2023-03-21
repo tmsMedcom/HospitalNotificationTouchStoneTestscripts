@@ -8,7 +8,7 @@
   },
   "url": "https://medcomfhir.dk/ig/hospitalnotification/",
   "status": "active",
-  "date": "2023-02-22",
+  "date": "2023-04-01",
   "publisher": "MedCom",
   "contact": [
     {
@@ -23,9 +23,9 @@
     }
   ],
   "copyright": "MedCom 2021",
-  "name": "Inpatient deceased after a period of leave",
-  "title": "Inpatient deceased after a period of leave - PF-send-imp-03",
-  "description": "Testing correct use of End hospital Stay - deseased",
+  "name": "Send: Admit patient, register patient as being on leave, patient returns from leave, patient dies",
+  "title": "Send: Admit patient, register patient as being on leave, patient returns from leave, patient dies - PF-send-imp-03",
+  "description": "Testing correct use of send HospitalNotification - deceased",
   "origin": [
     {
       "index": 1,
@@ -56,7 +56,7 @@
       "autocreate": false,
       "autodelete": false,
       "resource": {
-        "reference": "/FHIRSandbox/MedCom/HospitalNotificationTMS/fixtureHospitalNotification.xml"
+        "reference": "/FHIRSandbox/MedCom/HospitalNotificationTMS/HospitalNotification-fixture.xml"
       }
     },
     {
@@ -64,7 +64,7 @@
       "autocreate": false,
       "autodelete": false,
       "resource": {
-        "reference": "/FHIRSandbox/MedCom/HospitalNotificationTMS/fixtureHospitalNotification.xml"
+        "reference": "/FHIRSandbox/MedCom/HospitalNotificationTMS/HospitalNotification-fixture.xml"
       }
     },
     {
@@ -72,7 +72,7 @@
       "autocreate": false,
       "autodelete": false,
       "resource": {
-        "reference": "/FHIRSandbox/MedCom/HospitalNotificationTMS/fixtureHospitalNotification.xml"
+        "reference": "/FHIRSandbox/MedCom/HospitalNotificationTMS/HospitalNotification-fixture.xml"
       }
     },
     {
@@ -80,7 +80,7 @@
       "autocreate": false,
       "autodelete": false,
       "resource": {
-        "reference": "/FHIRSandbox/MedCom/HospitalNotificationTMS/fixtureHospitalNotification.xml"
+        "reference": "/FHIRSandbox/MedCom/HospitalNotificationTMS/HospitalNotification-fixture.xml"
       }
     }
   ],

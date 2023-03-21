@@ -7,234 +7,38 @@
     "name" : "HospitalnotificationTestscripts"
   },
   {
-    "id" : "hospitalmotification-an-mors-imp",
+    "id" : "hospitalnotification-PF-send-imp-01",
     "type" : "TestScript",
     "url" : "https://medcomfhir.dk/ig/hospitalnotification/",
     "version" : "1.0.0-b1",
-    "name" : "Cancellation Inpatient deceased during admission"
+    "name" : "Send: Admit patient, register patient as being on leave, register patient as returned from leave, discharge patient."
   },
   {
-    "id" : "hospitalmotification-an-mors-stor",
+    "id" : "hospitalnotification-PF-send-imp-02",
     "type" : "TestScript",
     "url" : "https://medcomfhir.dk/ig/hospitalnotification/",
     "version" : "1.0.0-b1",
-    "name" : "Cancellation Inpatient deceased during a period of leave"
-  },
-  {
-    "id" : "hospitalmotification-an-slhj-emer",
-    "type" : "TestScript",
-    "url" : "https://medcomfhir.dk/ig/hospitalnotification/",
-    "version" : "1.0.0-b1",
-    "name" : "Cancellation discharge acute ambulant patient to Home/Primary sector"
-  },
-  {
-    "id" : "hospitalmotification-an-slhj-imp",
-    "type" : "TestScript",
-    "url" : "https://medcomfhir.dk/ig/hospitalnotification/",
-    "version" : "1.0.0-b1",
-    "name" : "Cancellation discharge patient to Home/Primary sector"
-  },
-  {
-    "id" : "hospitalmotification-re-mors-imp",
-    "type" : "TestScript",
-    "url" : "https://medcomfhir.dk/ig/hospitalnotification/",
-    "version" : "1.0.0-b1",
-    "name" : "Update Inpatient deceased during admission"
-  },
-  {
-    "id" : "hospitalmotification-re-mors-stor",
-    "type" : "TestScript",
-    "url" : "https://medcomfhir.dk/ig/hospitalnotification/",
-    "version" : "1.0.0-b1",
-    "name" : "Update Inpatient deceased during a period of leave"
-  },
-  {
-    "id" : "hospitalmotification-re-slhj-emer",
-    "type" : "TestScript",
-    "url" : "https://medcomfhir.dk/ig/hospitalnotification/",
-    "version" : "1.0.0-b1",
-    "name" : "Update discharge acute ambulant patient to Home/Primary sector"
-  },
-  {
-    "id" : "hospitalmotification-re-slhj-imp",
-    "type" : "TestScript",
-    "url" : "https://medcomfhir.dk/ig/hospitalnotification/",
-    "version" : "1.0.0-b1",
-    "name" : "Update discharge patient to Home/Primary sector"
-  },
-  {
-    "id" : "hospitalnotification-an-mors-emer",
-    "type" : "TestScript",
-    "url" : "https://medcomfhir.dk/ig/hospitalnotification/",
-    "version" : "1.0.0-b1",
-    "name" : "Cancellation Acute ambulant patient, deceased during hospital stay"
-  },
-  {
-    "id" : "hospitalnotification-an-mors",
-    "type" : "TestScript",
-    "url" : "https://medcomfhir.dk/ig/hospitalnotification/",
-    "version" : "1.0.0-b1",
-    "name" : "Cancellationof deceased inpatient before arrival at the hospital"
-  },
-  {
-    "id" : "hospitalnotification-an-slor",
-    "type" : "TestScript",
-    "url" : "https://medcomfhir.dk/ig/hospitalnotification/",
-    "version" : "1.0.0-b1",
-    "name" : "Cancellation of End leave"
-  },
-  {
-    "id" : "hospitalnotification-an-staa",
-    "type" : "TestScript",
-    "url" : "https://medcomfhir.dk/ig/hospitalnotification/",
-    "version" : "1.0.0-b1",
-    "name" : "Cancellation of start hospital stay-acute ambulant"
-  },
-  {
-    "id" : "hospitalnotification-an-stin",
-    "type" : "TestScript",
-    "url" : "https://medcomfhir.dk/ig/hospitalnotification/",
-    "version" : "1.0.0-b1",
-    "name" : "Cancellation of start hospital stay admission - AN_STIN"
-  },
-  {
-    "id" : "hospitalnotification-an-stor",
-    "type" : "TestScript",
-    "url" : "https://medcomfhir.dk/ig/hospitalnotification/",
-    "version" : "1.0.0-b1",
-    "name" : "Cancellation of start leave - AN_STOR"
-  },
-  {
-    "id" : "hospitalnotification-mors-emer",
-    "type" : "TestScript",
-    "url" : "https://medcomfhir.dk/ig/hospitalnotification/",
-    "version" : "1.0.0-b1",
-    "name" : "Acute ambulant patient, deceased during hospital stay"
-  },
-  {
-    "id" : "hospitalnotification-mors-imp",
-    "type" : "TestScript",
-    "url" : "https://medcomfhir.dk/ig/hospitalnotification/",
-    "version" : "1.0.0-b1",
-    "name" : "Inpatient deceased during admission"
-  },
-  {
-    "id" : "hospitalnotification-mors-stor",
-    "type" : "TestScript",
-    "url" : "https://medcomfhir.dk/ig/hospitalnotification/",
-    "version" : "1.0.0-b1",
-    "name" : "Inpatient deceased during a period of leave"
-  },
-  {
-    "id" : "hospitalnotification-mors",
-    "type" : "TestScript",
-    "url" : "https://medcomfhir.dk/ig/hospitalnotification/",
-    "version" : "1.0.0-b1",
-    "name" : "Start admission of an inpatient."
+    "name" : "Send: Admit patient, register patient as being on leave, patient doesn’t return from leave, discharge patient."
   },
   {
     "id" : "hospitalnotification-PF-send-imp-03",
     "type" : "TestScript",
     "url" : "https://medcomfhir.dk/ig/hospitalnotification/",
     "version" : "1.0.0-b1",
-    "name" : "Inpatient deceased after a period of leave"
+    "name" : "Send: Admit patient, register patient as being on leave, patient returns from leave, patient dies"
   },
   {
-    "id" : "hospitalnotification-re-mors-emer",
+    "id" : "hospitalnotification-PF-send-imp-04",
     "type" : "TestScript",
     "url" : "https://medcomfhir.dk/ig/hospitalnotification/",
     "version" : "1.0.0-b1",
-    "name" : "Update Acute ambulant patient, deceased during hospital stay"
+    "name" : "Send: Admit patient, *register patient as being on leave, patient returns from leave*, * to * x2 "
   },
   {
-    "id" : "hospitalnotification-re-mors",
+    "id" : "hospitalnotification-PF-send-imp-05",
     "type" : "TestScript",
     "url" : "https://medcomfhir.dk/ig/hospitalnotification/",
     "version" : "1.0.0-b1",
-    "name" : "Update of deceased inpatient before arrival at the hospital"
-  },
-  {
-    "id" : "hospitalnotification-re-slor",
-    "type" : "TestScript",
-    "url" : "https://medcomfhir.dk/ig/hospitalnotification/",
-    "version" : "1.0.0-b1",
-    "name" : "Update of End leave"
-  },
-  {
-    "id" : "hospitalnotification-re-staa",
-    "type" : "TestScript",
-    "url" : "https://medcomfhir.dk/ig/hospitalnotification/",
-    "version" : "1.0.0-b1",
-    "name" : "Update of start hospital stay-acute ambulant"
-  },
-  {
-    "id" : "hospitalnotification-re-stin",
-    "type" : "TestScript",
-    "url" : "https://medcomfhir.dk/ig/hospitalnotification/",
-    "version" : "1.0.0-b1",
-    "name" : "Update of start hospital stay-admission"
-  },
-  {
-    "id" : "hospitalnotification-re-stor",
-    "type" : "TestScript",
-    "url" : "https://medcomfhir.dk/ig/hospitalnotification/",
-    "version" : "1.0.0-b1",
-    "name" : "Update of Start leave"
-  },
-  {
-    "id" : "hospitalnotification-slhj-emer",
-    "type" : "TestScript",
-    "url" : "https://medcomfhir.dk/ig/hospitalnotification/",
-    "version" : "1.0.0-b1",
-    "name" : "Discharge acute ambulant patient to home"
-  },
-  {
-    "id" : "hospitalnotification-slhj-imp-timestamptest",
-    "type" : "TestScript",
-    "url" : "https://medcomfhir.dk/ig/hospitalnotification/",
-    "version" : "1.0.0-b1",
-    "name" : "Discharge inpatient to home"
-  },
-  {
-    "id" : "hospitalnotification-slhj-imp",
-    "type" : "TestScript",
-    "url" : "https://medcomfhir.dk/ig/hospitalnotification/",
-    "version" : "1.0.0-b1",
-    "name" : "Discharge inpatient to home"
-  },
-  {
-    "id" : "hospitalnotification-slor",
-    "type" : "TestScript",
-    "url" : "https://medcomfhir.dk/ig/hospitalnotification/",
-    "version" : "1.0.0-b1",
-    "name" : "End leave of hospital stay admission"
-  },
-  {
-    "id" : "hospitalnotification-staa",
-    "type" : "TestScript",
-    "url" : "https://medcomfhir.dk/ig/hospitalnotification/",
-    "version" : "1.0.0-b1",
-    "name" : "Start admission of an acute ambulant patient."
-  },
-  {
-    "id" : "hospitalnotification-stin-a1",
-    "type" : "TestScript",
-    "url" : "https://medcomfhir.dk/ig/hospitalnotification/",
-    "version" : "1.0.0-b1",
-    "name" : "Start admission of an inpatient, withou request for a report of admission."
-  },
-  {
-    "id" : "hospitalnotification-stin",
-    "type" : "TestScript",
-    "url" : "https://medcomfhir.dk/ig/hospitalnotification/",
-    "version" : "1.0.0-b1",
-    "name" : "Start admission of an inpatient."
-  },
-  {
-    "id" : "hospitalnotification-stor",
-    "type" : "TestScript",
-    "url" : "https://medcomfhir.dk/ig/hospitalnotification/",
-    "version" : "1.0.0-b1",
-    "name" : "Start leave of hospital stay admission"
+    "name" : "Send: Admit patient, correct message due to incorrect hospital department"
   }
 ]

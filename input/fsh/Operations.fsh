@@ -5,7 +5,8 @@ RuleSet: operationDeleteSetup(destinationUri)
 * setup[=].action[=].operation.description = "System-generated search and delete operations from conditional delete on Bundle MessageHeader.destination.endpoint"
 * setup[=].action[=].operation.accept = #xml
 * setup[=].action[=].operation.encodeRequestUrl = true
-* setup[=].action[=].operation.params = "?message.destination-uri=${destinationUri}"
+//* setup[=].action[=].operation.params = "?message.identifier=${{bundleid}}"
+* setup[=].action[=].operation.params = "?message.destination-uri=${{destinationUri}}"
 
 RuleSet: operationCreateSetup(type, number)
 * setup[=].action[+].operation.type.system = "http://terminology.hl7.org/CodeSystem/testscript-operation-codes"
@@ -15,6 +16,7 @@ RuleSet: operationCreateSetup(type, number)
 * setup[=].action[=].operation.accept = #xml
 * setup[=].action[=].operation.contentType = #xml
 * setup[=].action[=].operation.encodeRequestUrl = true
+//* setup[=].action[=].operation.responseId = "create-message-{type}"
 * setup[=].action[=].operation.sourceId = "create-{type}-{number}"
 
 RuleSet: operationCreateMessage(type, number)
@@ -31,7 +33,7 @@ RuleSet: operationCreateMessage(type, number)
 * test[=].action[=].operation.responseId = "create-message-{type}"
 * test[=].action[=].operation.sourceId = "create-{type}-{number}" 
 
-RuleSet: operationReadMessage(type, number)
+RuleSet: operationReadMessage(type, number, destinationUri)
 * test[+].id = "hospitalnotification-read-{type}-{number}"
 * test[=].name = "Get a HospitalNotification {type} Message {number}"
 * test[=].description = "GET a Hospital notification. The expected response is a 200(OK) with a payload of the Hospital notification resource in XML format."
@@ -43,7 +45,23 @@ RuleSet: operationReadMessage(type, number)
 * test[=].action[=].operation.destination = 1
 * test[=].action[=].operation.encodeRequestUrl = true
 * test[=].action[=].operation.origin = 1
-* test[=].action[=].operation.params = "?message.destination-uri=${destinationUri}"
+* test[=].action[=].operation.params = "?message.destination-uri=${{destinationUri}}"
+
+/* RuleSet: operationSearchMessage(type, number, destinationUri)
+* test[+].id = "hospitalnotification-search-{type}-{number}"
+* test[=].name = "Search a HospitalNotification {type} Message {number}"
+* test[=].description = "Search a Hospital notification. The expected response is a 200(OK) with a payload of the Hospital notification resource in XML format."
+* test[=].action[+].operation.type.system = "http://terminology.hl7.org/CodeSystem/testscript-operation-codes"
+* test[=].action[=].operation.type.code = #search
+* test[=].action[=].operation.resource = #Bundle
+* test[=].action[=].operation.description = "Search Hospital Notification"
+* test[=].action[=].operation.accept = #xml
+* test[=].action[=].operation.destination = 1
+* test[=].action[=].operation.encodeRequestUrl = true
+* test[=].action[=].operation.origin = 1
+* test[=].action[=].operation.params = "?message.destination-uri=${{destinationUri}}"
+* test[=].action[=].operation.responseId = "search-message-{type}" */
+
 
 /* RuleSet: operationUpdateMessage(type, number, searchParamIdentifier)
 * test[+].id = "hospitalnotification-update-{type}-{number}"

@@ -11,7 +11,7 @@
   <name value="HospitalnotificationTestscripts"/>
   <title value="HospitalNotification Testscripts"/>
   <status value="draft"/>
-  <date value="2023-03-17T10:46:55+01:00"/>
+  <date value="2023-03-21T14:28:49+01:00"/>
   <contact>
     <name value="MedCom"/>
     <telecom>
@@ -437,10 +437,10 @@
         <valueString value="TestScript"/>
       </extension>
       <reference>
-        <reference value="TestScript/hospitalmotification-an-mors-imp"/>
+        <reference value="TestScript/hospitalnotification-PF-send-imp-01"/>
       </reference>
-      <name value="HospitalNotification-TestScript-AN_MORS-IMP"/>
-      <description value="Testing correct use of cancellation of End hospital Stay - deceased"/>
+      <name value="HospitalNotification-TestScript-PF-send-imp-01"/>
+      <description value="Testing correct use of send HospitalNotification"/>
       <exampleBoolean value="true"/>
     </resource>
     <resource>
@@ -448,76 +448,10 @@
         <valueString value="TestScript"/>
       </extension>
       <reference>
-        <reference value="TestScript/hospitalmotification-an-mors-stor"/>
+        <reference value="TestScript/hospitalnotification-PF-send-imp-02"/>
       </reference>
-      <name value="HospitalNotification-TestScript-AN_MORS-STOR"/>
-      <description value="Testing correct use of cancellation of deceased during a period of leave - deceased"/>
-      <exampleBoolean value="true"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="TestScript"/>
-      </extension>
-      <reference>
-        <reference value="TestScript/hospitalmotification-an-slhj-emer"/>
-      </reference>
-      <name value="HospitalNotification-TestScript-AN_SLHJ-emer"/>
-      <description value="Testing correct use of cancellation of End hospital Stay"/>
-      <exampleBoolean value="true"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="TestScript"/>
-      </extension>
-      <reference>
-        <reference value="TestScript/hospitalmotification-an-slhj-imp"/>
-      </reference>
-      <name value="HospitalNotification-TestScript-AN_SLHJ-imp"/>
-      <description value="Testing correct use of cancellation of End hospital Stay"/>
-      <exampleBoolean value="true"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="TestScript"/>
-      </extension>
-      <reference>
-        <reference value="TestScript/hospitalmotification-re-mors-imp"/>
-      </reference>
-      <name value="HospitalNotification-TestScript-RE_MORS-IMP"/>
-      <description value="Testing correct use of Update of End hospital Stay - deceased"/>
-      <exampleBoolean value="true"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="TestScript"/>
-      </extension>
-      <reference>
-        <reference value="TestScript/hospitalmotification-re-mors-stor"/>
-      </reference>
-      <name value="HospitalNotification-TestScript-RE_MORS-STOR"/>
-      <description value="Testing correct use of Update of End hospital Stay - deceased"/>
-      <exampleBoolean value="true"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="TestScript"/>
-      </extension>
-      <reference>
-        <reference value="TestScript/hospitalmotification-re-slhj-emer"/>
-      </reference>
-      <name value="HospitalNotification-TestScript-RE_SLHJ-emer"/>
-      <description value="Testing correct use of Update of End hospital Stay"/>
-      <exampleBoolean value="true"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="TestScript"/>
-      </extension>
-      <reference>
-        <reference value="TestScript/hospitalmotification-re-slhj-imp"/>
-      </reference>
-      <name value="HospitalNotification-TestScript-RE_SLHJ-imp"/>
-      <description value="Testing correct use of Update of End hospital Stay"/>
+      <name value="HospitalNotification-TestScript-PF-send-imp-02"/>
+      <description value="Testing correct use of send HospitalNotification"/>
       <exampleBoolean value="true"/>
     </resource>
     <resource>
@@ -528,7 +462,7 @@
         <reference value="TestScript/hospitalnotification-PF-send-imp-03"/>
       </reference>
       <name value="HospitalNotification-TestScript-PF-send-imp-03"/>
-      <description value="Testing correct use of End hospital Stay - deseased"/>
+      <description value="Testing correct use of send HospitalNotification - deceased"/>
       <exampleBoolean value="true"/>
     </resource>
     <resource>
@@ -536,10 +470,10 @@
         <valueString value="TestScript"/>
       </extension>
       <reference>
-        <reference value="TestScript/hospitalnotification-an-mors"/>
+        <reference value="TestScript/hospitalnotification-PF-send-imp-04"/>
       </reference>
-      <name value="HospitalNotification-TestScript-AN_MORS"/>
-      <description value="Testing correct use of cancellation of deceased inpatient before arrival at the hospital - deceased"/>
+      <name value="HospitalNotification-TestScript-PF-send-imp-04"/>
+      <description value="Testing correct use of send HospitalNotification"/>
       <exampleBoolean value="true"/>
     </resource>
     <resource>
@@ -547,252 +481,10 @@
         <valueString value="TestScript"/>
       </extension>
       <reference>
-        <reference value="TestScript/hospitalnotification-an-mors-emer"/>
+        <reference value="TestScript/hospitalnotification-PF-send-imp-05"/>
       </reference>
-      <name value="HospitalNotification-TestScript-AN_MORS-emer"/>
-      <description value="Testing correct use of cancellation of End hospital Stay - deceased"/>
-      <exampleBoolean value="true"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="TestScript"/>
-      </extension>
-      <reference>
-        <reference value="TestScript/hospitalnotification-an-slor"/>
-      </reference>
-      <name value="HospitalNotification-TestScript-AN_SLOR"/>
-      <description value="Testing correct use of cancellation of end leave"/>
-      <exampleBoolean value="true"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="TestScript"/>
-      </extension>
-      <reference>
-        <reference value="TestScript/hospitalnotification-an-staa"/>
-      </reference>
-      <name value="HospitalNotification-TestScript-AN_STAA"/>
-      <description value="Testing correct use of cancellation of start acute ambulant"/>
-      <exampleBoolean value="true"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="TestScript"/>
-      </extension>
-      <reference>
-        <reference value="TestScript/hospitalnotification-an-stin"/>
-      </reference>
-      <name value="HospitalNotification-TestScript-AN_STIN"/>
-      <description value="Testing correct use of cancellation of start hospital stay admission"/>
-      <exampleBoolean value="true"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="TestScript"/>
-      </extension>
-      <reference>
-        <reference value="TestScript/hospitalnotification-an-stor"/>
-      </reference>
-      <name value="HospitalNotification-TestScript-AN_STOR"/>
-      <description value="Testing correct use of cancellation of start leave"/>
-      <exampleBoolean value="true"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="TestScript"/>
-      </extension>
-      <reference>
-        <reference value="TestScript/hospitalnotification-mors"/>
-      </reference>
-      <name value="HospitalNotification-TestScript-MORS"/>
-      <description value="Testing correct use of status inpatient"/>
-      <exampleBoolean value="true"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="TestScript"/>
-      </extension>
-      <reference>
-        <reference value="TestScript/hospitalnotification-mors-emer"/>
-      </reference>
-      <name value="HospitalNotification-TestScript-MORS-EMER"/>
-      <description value="Testing correct use of End hospital Stay-deseased"/>
-      <exampleBoolean value="true"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="TestScript"/>
-      </extension>
-      <reference>
-        <reference value="TestScript/hospitalnotification-mors-imp"/>
-      </reference>
-      <name value="HospitalNotification-TestScript-MORS-IMP"/>
-      <description value="Testing correct use of End hospital Stay - deseased"/>
-      <exampleBoolean value="true"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="TestScript"/>
-      </extension>
-      <reference>
-        <reference value="TestScript/hospitalnotification-mors-stor"/>
-      </reference>
-      <name value="HospitalNotification-TestScript-MORS-STOR"/>
-      <description value="Testing correct use of End hospital Stay - deseased"/>
-      <exampleBoolean value="true"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="TestScript"/>
-      </extension>
-      <reference>
-        <reference value="TestScript/hospitalnotification-re-mors"/>
-      </reference>
-      <name value="HospitalNotification-TestScript-RE_MORS"/>
-      <description value="Testing correct use of update of deceased inpatient before arrival at the hospital - deceased"/>
-      <exampleBoolean value="true"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="TestScript"/>
-      </extension>
-      <reference>
-        <reference value="TestScript/hospitalnotification-re-mors-emer"/>
-      </reference>
-      <name value="HospitalNotification-TestScript-RE_MORS-emer"/>
-      <description value="Testing correct use of Update of End hospital Stay - deceased"/>
-      <exampleBoolean value="true"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="TestScript"/>
-      </extension>
-      <reference>
-        <reference value="TestScript/hospitalnotification-re-slor"/>
-      </reference>
-      <name value="HospitalNotification-TestScript-RE_SLOR"/>
-      <description value="Testing correct use of Update of end leave"/>
-      <exampleBoolean value="true"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="TestScript"/>
-      </extension>
-      <reference>
-        <reference value="TestScript/hospitalnotification-re-staa"/>
-      </reference>
-      <name value="HospitalNotification-TestScript-RE_STAA"/>
-      <description value="Testing correct use of status stay-acute ambulant"/>
-      <exampleBoolean value="true"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="TestScript"/>
-      </extension>
-      <reference>
-        <reference value="TestScript/hospitalnotification-re-stin"/>
-      </reference>
-      <name value="HospitalNotification-TestScript-RE_STIN"/>
-      <description value="Testing correct use of status Update of start hospital stay-admission"/>
-      <exampleBoolean value="true"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="TestScript"/>
-      </extension>
-      <reference>
-        <reference value="TestScript/hospitalnotification-re-stor"/>
-      </reference>
-      <name value="HospitalNotification-TestScript-RE_STOR"/>
-      <description value="Testing correct use of Update of Start leave"/>
-      <exampleBoolean value="true"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="TestScript"/>
-      </extension>
-      <reference>
-        <reference value="TestScript/hospitalnotification-slhj-emer"/>
-      </reference>
-      <name value="HospitalNotification-TestScript-SLHJ-EMER"/>
-      <description value="Testing correct use of End hospital Stay - patient discharged to home/primary sector"/>
-      <exampleBoolean value="true"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="TestScript"/>
-      </extension>
-      <reference>
-        <reference value="TestScript/hospitalnotification-slhj-imp"/>
-      </reference>
-      <name value="HospitalNotification-TestScript-SLHJ-imp"/>
-      <description value="Testing correct use of End hospital Stay- patient discharged to home/primary sector"/>
-      <exampleBoolean value="true"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="TestScript"/>
-      </extension>
-      <reference>
-        <reference value="TestScript/hospitalnotification-slhj-imp-timestamptest"/>
-      </reference>
-      <name value="HospitalNotification-TestScript-SLHJ-imp-timestamptest"/>
-      <description value="Testing correct use of End hospital Stay- patient discharged to home/primary sector"/>
-      <exampleBoolean value="true"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="TestScript"/>
-      </extension>
-      <reference>
-        <reference value="TestScript/hospitalnotification-slor"/>
-      </reference>
-      <name value="HospitalNotification-TestScript-SLOR"/>
-      <description value="Testing correct use of status End leave"/>
-      <exampleBoolean value="true"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="TestScript"/>
-      </extension>
-      <reference>
-        <reference value="TestScript/hospitalnotification-staa"/>
-      </reference>
-      <name value="HospitalNotification-TestScript-STAA"/>
-      <description value="Testing correct use of status acute-ambulant"/>
-      <exampleBoolean value="true"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="TestScript"/>
-      </extension>
-      <reference>
-        <reference value="TestScript/hospitalnotification-stin"/>
-      </reference>
-      <name value="HospitalNotification-TestScript-STIN"/>
-      <description value="Testing correct use of status inpatient"/>
-      <exampleBoolean value="true"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="TestScript"/>
-      </extension>
-      <reference>
-        <reference value="TestScript/hospitalnotification-stin-a1"/>
-      </reference>
-      <name value="HospitalNotification-TestScript-STIN-A1"/>
-      <description value="Testing correct use of status inpatient"/>
-      <exampleBoolean value="true"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="TestScript"/>
-      </extension>
-      <reference>
-        <reference value="TestScript/hospitalnotification-stor"/>
-      </reference>
-      <name value="HospitalNotification-TestScript-STOR"/>
-      <description value="Testing correct use of status Start leave"/>
+      <name value="HospitalNotification-TestScript-PF-send-imp-05"/>
+      <description value="Testing correct use of send HospitalNotification"/>
       <exampleBoolean value="true"/>
     </resource>
     <resource>

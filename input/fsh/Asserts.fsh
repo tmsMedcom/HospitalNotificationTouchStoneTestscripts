@@ -132,6 +132,13 @@ RuleSet: assertStructureEpisodeOfCareID
 * test[=].action[=].assert.expression = "Bundle.entry.resource.ofType(Encounter).episodeOfCare.identifier.value.matches('[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}')"
 * test[=].action[=].assert.warningOnly = false
 
+
+RuleSet: assertHospitalGLN(hospitalGLN)
+* test[=].action[+].assert.description = "Confirm that the sender GLN number is different from the previous message."
+* test[=].action[=].assert.direction = #request
+* test[=].action[=].assert.expression = "Bundle.entry.where(fullUrl = %resource.entry.resource[0].sender.reference).resource.identifier.where(system = 'https://www.gs1.org/gln').value != ${{hospitalGLN}}"
+* test[=].action[=].assert.warningOnly = false
+
 /* RuleSet: assertPatientIdentifier(patientID)
 * test[=].action[+].assert.description = "Confirm that the patient.deceased is set to {deceased}"
 * test[=].action[=].assert.direction = #request

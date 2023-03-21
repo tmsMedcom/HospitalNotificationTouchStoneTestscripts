@@ -26,66 +26,18 @@
          <tbody>
             <tr>
                <td style="column-width:30%">
-                  <a href="TestScript-hospitalmotification-an-mors-imp.html"
-                     title="TestScript/hospitalmotification-an-mors-imp">HospitalNotification-TestScript-AN_MORS-IMP</a>
+                  <a href="TestScript-hospitalnotification-PF-send-imp-01.html"
+                     title="TestScript/hospitalnotification-PF-send-imp-01">HospitalNotification-TestScript-PF-send-imp-01</a>
                </td>
-               <td>{% capture desc %}Testing correct use of cancellation of End hospital Stay - deceased{% endcapture %}
+               <td>{% capture desc %}Testing correct use of send HospitalNotification{% endcapture %}
 {{ desc | markdownify}}</td>
             </tr>
             <tr>
                <td style="column-width:30%">
-                  <a href="TestScript-hospitalmotification-an-mors-stor.html"
-                     title="TestScript/hospitalmotification-an-mors-stor">HospitalNotification-TestScript-AN_MORS-STOR</a>
+                  <a href="TestScript-hospitalnotification-PF-send-imp-02.html"
+                     title="TestScript/hospitalnotification-PF-send-imp-02">HospitalNotification-TestScript-PF-send-imp-02</a>
                </td>
-               <td>{% capture desc %}Testing correct use of cancellation of deceased during a period of leave - deceased{% endcapture %}
-{{ desc | markdownify}}</td>
-            </tr>
-            <tr>
-               <td style="column-width:30%">
-                  <a href="TestScript-hospitalmotification-an-slhj-emer.html"
-                     title="TestScript/hospitalmotification-an-slhj-emer">HospitalNotification-TestScript-AN_SLHJ-emer</a>
-               </td>
-               <td>{% capture desc %}Testing correct use of cancellation of End hospital Stay{% endcapture %}
-{{ desc | markdownify}}</td>
-            </tr>
-            <tr>
-               <td style="column-width:30%">
-                  <a href="TestScript-hospitalmotification-an-slhj-imp.html"
-                     title="TestScript/hospitalmotification-an-slhj-imp">HospitalNotification-TestScript-AN_SLHJ-imp</a>
-               </td>
-               <td>{% capture desc %}Testing correct use of cancellation of End hospital Stay{% endcapture %}
-{{ desc | markdownify}}</td>
-            </tr>
-            <tr>
-               <td style="column-width:30%">
-                  <a href="TestScript-hospitalmotification-re-mors-imp.html"
-                     title="TestScript/hospitalmotification-re-mors-imp">HospitalNotification-TestScript-RE_MORS-IMP</a>
-               </td>
-               <td>{% capture desc %}Testing correct use of Update of End hospital Stay - deceased{% endcapture %}
-{{ desc | markdownify}}</td>
-            </tr>
-            <tr>
-               <td style="column-width:30%">
-                  <a href="TestScript-hospitalmotification-re-mors-stor.html"
-                     title="TestScript/hospitalmotification-re-mors-stor">HospitalNotification-TestScript-RE_MORS-STOR</a>
-               </td>
-               <td>{% capture desc %}Testing correct use of Update of End hospital Stay - deceased{% endcapture %}
-{{ desc | markdownify}}</td>
-            </tr>
-            <tr>
-               <td style="column-width:30%">
-                  <a href="TestScript-hospitalmotification-re-slhj-emer.html"
-                     title="TestScript/hospitalmotification-re-slhj-emer">HospitalNotification-TestScript-RE_SLHJ-emer</a>
-               </td>
-               <td>{% capture desc %}Testing correct use of Update of End hospital Stay{% endcapture %}
-{{ desc | markdownify}}</td>
-            </tr>
-            <tr>
-               <td style="column-width:30%">
-                  <a href="TestScript-hospitalmotification-re-slhj-imp.html"
-                     title="TestScript/hospitalmotification-re-slhj-imp">HospitalNotification-TestScript-RE_SLHJ-imp</a>
-               </td>
-               <td>{% capture desc %}Testing correct use of Update of End hospital Stay{% endcapture %}
+               <td>{% capture desc %}Testing correct use of send HospitalNotification{% endcapture %}
 {{ desc | markdownify}}</td>
             </tr>
             <tr>
@@ -93,199 +45,23 @@
                   <a href="TestScript-hospitalnotification-PF-send-imp-03.html"
                      title="TestScript/hospitalnotification-PF-send-imp-03">HospitalNotification-TestScript-PF-send-imp-03</a>
                </td>
-               <td>{% capture desc %}Testing correct use of End hospital Stay - deseased{% endcapture %}
+               <td>{% capture desc %}Testing correct use of send HospitalNotification - deceased{% endcapture %}
 {{ desc | markdownify}}</td>
             </tr>
             <tr>
                <td style="column-width:30%">
-                  <a href="TestScript-hospitalnotification-an-mors.html"
-                     title="TestScript/hospitalnotification-an-mors">HospitalNotification-TestScript-AN_MORS</a>
+                  <a href="TestScript-hospitalnotification-PF-send-imp-04.html"
+                     title="TestScript/hospitalnotification-PF-send-imp-04">HospitalNotification-TestScript-PF-send-imp-04</a>
                </td>
-               <td>{% capture desc %}Testing correct use of cancellation of deceased inpatient before arrival at the hospital - deceased{% endcapture %}
+               <td>{% capture desc %}Testing correct use of send HospitalNotification{% endcapture %}
 {{ desc | markdownify}}</td>
             </tr>
             <tr>
                <td style="column-width:30%">
-                  <a href="TestScript-hospitalnotification-an-mors-emer.html"
-                     title="TestScript/hospitalnotification-an-mors-emer">HospitalNotification-TestScript-AN_MORS-emer</a>
+                  <a href="TestScript-hospitalnotification-PF-send-imp-05.html"
+                     title="TestScript/hospitalnotification-PF-send-imp-05">HospitalNotification-TestScript-PF-send-imp-05</a>
                </td>
-               <td>{% capture desc %}Testing correct use of cancellation of End hospital Stay - deceased{% endcapture %}
-{{ desc | markdownify}}</td>
-            </tr>
-            <tr>
-               <td style="column-width:30%">
-                  <a href="TestScript-hospitalnotification-an-slor.html"
-                     title="TestScript/hospitalnotification-an-slor">HospitalNotification-TestScript-AN_SLOR</a>
-               </td>
-               <td>{% capture desc %}Testing correct use of cancellation of end leave{% endcapture %}
-{{ desc | markdownify}}</td>
-            </tr>
-            <tr>
-               <td style="column-width:30%">
-                  <a href="TestScript-hospitalnotification-an-staa.html"
-                     title="TestScript/hospitalnotification-an-staa">HospitalNotification-TestScript-AN_STAA</a>
-               </td>
-               <td>{% capture desc %}Testing correct use of cancellation of start acute ambulant{% endcapture %}
-{{ desc | markdownify}}</td>
-            </tr>
-            <tr>
-               <td style="column-width:30%">
-                  <a href="TestScript-hospitalnotification-an-stin.html"
-                     title="TestScript/hospitalnotification-an-stin">HospitalNotification-TestScript-AN_STIN</a>
-               </td>
-               <td>{% capture desc %}Testing correct use of cancellation of start hospital stay admission{% endcapture %}
-{{ desc | markdownify}}</td>
-            </tr>
-            <tr>
-               <td style="column-width:30%">
-                  <a href="TestScript-hospitalnotification-an-stor.html"
-                     title="TestScript/hospitalnotification-an-stor">HospitalNotification-TestScript-AN_STOR</a>
-               </td>
-               <td>{% capture desc %}Testing correct use of cancellation of start leave{% endcapture %}
-{{ desc | markdownify}}</td>
-            </tr>
-            <tr>
-               <td style="column-width:30%">
-                  <a href="TestScript-hospitalnotification-mors.html"
-                     title="TestScript/hospitalnotification-mors">HospitalNotification-TestScript-MORS</a>
-               </td>
-               <td>{% capture desc %}Testing correct use of status inpatient{% endcapture %}
-{{ desc | markdownify}}</td>
-            </tr>
-            <tr>
-               <td style="column-width:30%">
-                  <a href="TestScript-hospitalnotification-mors-emer.html"
-                     title="TestScript/hospitalnotification-mors-emer">HospitalNotification-TestScript-MORS-EMER</a>
-               </td>
-               <td>{% capture desc %}Testing correct use of End hospital Stay-deseased{% endcapture %}
-{{ desc | markdownify}}</td>
-            </tr>
-            <tr>
-               <td style="column-width:30%">
-                  <a href="TestScript-hospitalnotification-mors-imp.html"
-                     title="TestScript/hospitalnotification-mors-imp">HospitalNotification-TestScript-MORS-IMP</a>
-               </td>
-               <td>{% capture desc %}Testing correct use of End hospital Stay - deseased{% endcapture %}
-{{ desc | markdownify}}</td>
-            </tr>
-            <tr>
-               <td style="column-width:30%">
-                  <a href="TestScript-hospitalnotification-mors-stor.html"
-                     title="TestScript/hospitalnotification-mors-stor">HospitalNotification-TestScript-MORS-STOR</a>
-               </td>
-               <td>{% capture desc %}Testing correct use of End hospital Stay - deseased{% endcapture %}
-{{ desc | markdownify}}</td>
-            </tr>
-            <tr>
-               <td style="column-width:30%">
-                  <a href="TestScript-hospitalnotification-re-mors.html"
-                     title="TestScript/hospitalnotification-re-mors">HospitalNotification-TestScript-RE_MORS</a>
-               </td>
-               <td>{% capture desc %}Testing correct use of update of deceased inpatient before arrival at the hospital - deceased{% endcapture %}
-{{ desc | markdownify}}</td>
-            </tr>
-            <tr>
-               <td style="column-width:30%">
-                  <a href="TestScript-hospitalnotification-re-mors-emer.html"
-                     title="TestScript/hospitalnotification-re-mors-emer">HospitalNotification-TestScript-RE_MORS-emer</a>
-               </td>
-               <td>{% capture desc %}Testing correct use of Update of End hospital Stay - deceased{% endcapture %}
-{{ desc | markdownify}}</td>
-            </tr>
-            <tr>
-               <td style="column-width:30%">
-                  <a href="TestScript-hospitalnotification-re-slor.html"
-                     title="TestScript/hospitalnotification-re-slor">HospitalNotification-TestScript-RE_SLOR</a>
-               </td>
-               <td>{% capture desc %}Testing correct use of Update of end leave{% endcapture %}
-{{ desc | markdownify}}</td>
-            </tr>
-            <tr>
-               <td style="column-width:30%">
-                  <a href="TestScript-hospitalnotification-re-staa.html"
-                     title="TestScript/hospitalnotification-re-staa">HospitalNotification-TestScript-RE_STAA</a>
-               </td>
-               <td>{% capture desc %}Testing correct use of status stay-acute ambulant{% endcapture %}
-{{ desc | markdownify}}</td>
-            </tr>
-            <tr>
-               <td style="column-width:30%">
-                  <a href="TestScript-hospitalnotification-re-stin.html"
-                     title="TestScript/hospitalnotification-re-stin">HospitalNotification-TestScript-RE_STIN</a>
-               </td>
-               <td>{% capture desc %}Testing correct use of status Update of start hospital stay-admission{% endcapture %}
-{{ desc | markdownify}}</td>
-            </tr>
-            <tr>
-               <td style="column-width:30%">
-                  <a href="TestScript-hospitalnotification-re-stor.html"
-                     title="TestScript/hospitalnotification-re-stor">HospitalNotification-TestScript-RE_STOR</a>
-               </td>
-               <td>{% capture desc %}Testing correct use of Update of Start leave{% endcapture %}
-{{ desc | markdownify}}</td>
-            </tr>
-            <tr>
-               <td style="column-width:30%">
-                  <a href="TestScript-hospitalnotification-slhj-emer.html"
-                     title="TestScript/hospitalnotification-slhj-emer">HospitalNotification-TestScript-SLHJ-EMER</a>
-               </td>
-               <td>{% capture desc %}Testing correct use of End hospital Stay - patient discharged to home/primary sector{% endcapture %}
-{{ desc | markdownify}}</td>
-            </tr>
-            <tr>
-               <td style="column-width:30%">
-                  <a href="TestScript-hospitalnotification-slhj-imp.html"
-                     title="TestScript/hospitalnotification-slhj-imp">HospitalNotification-TestScript-SLHJ-imp</a>
-               </td>
-               <td>{% capture desc %}Testing correct use of End hospital Stay- patient discharged to home/primary sector{% endcapture %}
-{{ desc | markdownify}}</td>
-            </tr>
-            <tr>
-               <td style="column-width:30%">
-                  <a href="TestScript-hospitalnotification-slhj-imp-timestamptest.html"
-                     title="TestScript/hospitalnotification-slhj-imp-timestamptest">HospitalNotification-TestScript-SLHJ-imp-timestamptest</a>
-               </td>
-               <td>{% capture desc %}Testing correct use of End hospital Stay- patient discharged to home/primary sector{% endcapture %}
-{{ desc | markdownify}}</td>
-            </tr>
-            <tr>
-               <td style="column-width:30%">
-                  <a href="TestScript-hospitalnotification-slor.html"
-                     title="TestScript/hospitalnotification-slor">HospitalNotification-TestScript-SLOR</a>
-               </td>
-               <td>{% capture desc %}Testing correct use of status End leave{% endcapture %}
-{{ desc | markdownify}}</td>
-            </tr>
-            <tr>
-               <td style="column-width:30%">
-                  <a href="TestScript-hospitalnotification-staa.html"
-                     title="TestScript/hospitalnotification-staa">HospitalNotification-TestScript-STAA</a>
-               </td>
-               <td>{% capture desc %}Testing correct use of status acute-ambulant{% endcapture %}
-{{ desc | markdownify}}</td>
-            </tr>
-            <tr>
-               <td style="column-width:30%">
-                  <a href="TestScript-hospitalnotification-stin.html"
-                     title="TestScript/hospitalnotification-stin">HospitalNotification-TestScript-STIN</a>
-               </td>
-               <td>{% capture desc %}Testing correct use of status inpatient{% endcapture %}
-{{ desc | markdownify}}</td>
-            </tr>
-            <tr>
-               <td style="column-width:30%">
-                  <a href="TestScript-hospitalnotification-stin-a1.html"
-                     title="TestScript/hospitalnotification-stin-a1">HospitalNotification-TestScript-STIN-A1</a>
-               </td>
-               <td>{% capture desc %}Testing correct use of status inpatient{% endcapture %}
-{{ desc | markdownify}}</td>
-            </tr>
-            <tr>
-               <td style="column-width:30%">
-                  <a href="TestScript-hospitalnotification-stor.html"
-                     title="TestScript/hospitalnotification-stor">HospitalNotification-TestScript-STOR</a>
-               </td>
-               <td>{% capture desc %}Testing correct use of status Start leave{% endcapture %}
+               <td>{% capture desc %}Testing correct use of send HospitalNotification{% endcapture %}
 {{ desc | markdownify}}</td>
             </tr>
          </tbody>

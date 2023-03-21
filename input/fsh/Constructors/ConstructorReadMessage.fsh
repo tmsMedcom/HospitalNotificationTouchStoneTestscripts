@@ -1,4 +1,4 @@
-RuleSet: readMessage(type, number)
+RuleSet: readMessage(type, number, destinationUri)
 
 /* 
 Beskriver server og client for dette testsetup
@@ -14,7 +14,7 @@ Beskriver den profil, der valideres op mod
 /* 
 Beskriver de operationer der udføres i denne test. Her er det kun setup operationer
 */
-* insert operationReadMessage({type}, {number})
+* insert operationReadMessage({type}, {number}, {destinationUri})
 
 /* 
 Beskriver den vurdering der sker af testen. Er det gået ok?

@@ -5,17 +5,17 @@
   "igName" : "HospitalnotificationTestscripts",
   "packageId" : "medcom.fhir.dk.testscripts.hospitalnotification",
   "igVer" : "1.0.0-b1",
-  "errorCount" : 120,
+  "errorCount" : 26,
   "version" : "4.0.1",
   "revision" : "a53ec6ee1b",
   "versionFull" : "4.0.1-a53ec6ee1b",
   "toolingVersion" : "5.0.0-draft-final",
   "toolingRevision" : "3",
   "toolingVersionFull" : "5.0.0-draft-final (3)",
-  "totalFiles" : 35,
-  "processedFiles" : 44,
-  "genDate" : "Fri, Mar 17, 2023 10:46+0100",
-  "genDay" : "17/03/2023",
+  "totalFiles" : 7,
+  "processedFiles" : 16,
+  "genDate" : "Tue, Mar 21, 2023 14:28+0100",
+  "genDay" : "21/03/2023",
   "resourceTypes" : [
     "Account",
     "ActivityDefinition",
@@ -243,7 +243,7 @@
         "telecom" : ["fhir@medcom.dk"]
       }
     ],
-    "date" : "2023-03-17T10:46:55+01:00",
+    "date" : "2023-03-21T14:28:49+01:00",
     "description" : "Testscripts for HospitalNotification",
     "copyright" : null,
     "fhirVersion" : "4.0.1"

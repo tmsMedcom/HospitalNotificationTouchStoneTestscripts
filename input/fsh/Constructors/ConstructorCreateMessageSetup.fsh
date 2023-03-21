@@ -1,32 +1,23 @@
-RuleSet: createMessageSetup(type, number, fixture)
-
-/* 
-Beskriver server og client for dette testsetup
-*/
-* insert originClient
-* insert destinationServer
-
+RuleSet: createMessageSetup(type, number, fixture, destinationUri)
 /* 
 Beskriver anvendte fixtures
 */
 * insert fixtureCreateMessage({fixture}, {type}, {number})
 
 /* 
-Beskriver den profil, der valideres op mod
-*/
-* insert profileHospitalNotificationMessage
-
-/* 
 Beskriver anvendte variable
 */
-* insert variableMessageHeaderId({type})
+//* insert variableMessageHeaderId({type})
 * insert variableDestinationUri({type}, {number})
-* insert variableSearchParamIdentifier({type}, {number})
+//* insert variableSearchParamIdentifier({type})
+* insert variableBundleid({type}, {number})
+//* insert variableEndpoint({type}, {number})
+
 
 /* 
 Beskriver de operationer der udføres i denne test. Her er det kun setup operationer
 */
-* insert operationDeleteSetup({destinationUri})
+//* insert operationDeleteSetup({destinationUri})
 * insert operationCreateSetup({type}, {number})
 
 /* 

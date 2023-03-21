@@ -10,7 +10,7 @@
   "name" : "HospitalnotificationTestscripts",
   "title" : "HospitalNotification Testscripts",
   "status" : "draft",
-  "date" : "2023-03-17T10:46:55+01:00",
+  "date" : "2023-03-21T14:28:49+01:00",
   "contact" : [{
     "name" : "MedCom",
     "telecom" : [{
@@ -589,10 +589,10 @@
         "valueString" : "TestScript"
       }],
       "reference" : {
-        "reference" : "TestScript/hospitalmotification-an-mors-imp"
+        "reference" : "TestScript/hospitalnotification-PF-send-imp-01"
       },
-      "name" : "HospitalNotification-TestScript-AN_MORS-IMP",
-      "description" : "Testing correct use of cancellation of End hospital Stay - deceased",
+      "name" : "HospitalNotification-TestScript-PF-send-imp-01",
+      "description" : "Testing correct use of send HospitalNotification",
       "exampleBoolean" : true
     },
     {
@@ -601,82 +601,10 @@
         "valueString" : "TestScript"
       }],
       "reference" : {
-        "reference" : "TestScript/hospitalmotification-an-mors-stor"
+        "reference" : "TestScript/hospitalnotification-PF-send-imp-02"
       },
-      "name" : "HospitalNotification-TestScript-AN_MORS-STOR",
-      "description" : "Testing correct use of cancellation of deceased during a period of leave - deceased",
-      "exampleBoolean" : true
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "TestScript"
-      }],
-      "reference" : {
-        "reference" : "TestScript/hospitalmotification-an-slhj-emer"
-      },
-      "name" : "HospitalNotification-TestScript-AN_SLHJ-emer",
-      "description" : "Testing correct use of cancellation of End hospital Stay",
-      "exampleBoolean" : true
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "TestScript"
-      }],
-      "reference" : {
-        "reference" : "TestScript/hospitalmotification-an-slhj-imp"
-      },
-      "name" : "HospitalNotification-TestScript-AN_SLHJ-imp",
-      "description" : "Testing correct use of cancellation of End hospital Stay",
-      "exampleBoolean" : true
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "TestScript"
-      }],
-      "reference" : {
-        "reference" : "TestScript/hospitalmotification-re-mors-imp"
-      },
-      "name" : "HospitalNotification-TestScript-RE_MORS-IMP",
-      "description" : "Testing correct use of Update of End hospital Stay - deceased",
-      "exampleBoolean" : true
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "TestScript"
-      }],
-      "reference" : {
-        "reference" : "TestScript/hospitalmotification-re-mors-stor"
-      },
-      "name" : "HospitalNotification-TestScript-RE_MORS-STOR",
-      "description" : "Testing correct use of Update of End hospital Stay - deceased",
-      "exampleBoolean" : true
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "TestScript"
-      }],
-      "reference" : {
-        "reference" : "TestScript/hospitalmotification-re-slhj-emer"
-      },
-      "name" : "HospitalNotification-TestScript-RE_SLHJ-emer",
-      "description" : "Testing correct use of Update of End hospital Stay",
-      "exampleBoolean" : true
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "TestScript"
-      }],
-      "reference" : {
-        "reference" : "TestScript/hospitalmotification-re-slhj-imp"
-      },
-      "name" : "HospitalNotification-TestScript-RE_SLHJ-imp",
-      "description" : "Testing correct use of Update of End hospital Stay",
+      "name" : "HospitalNotification-TestScript-PF-send-imp-02",
+      "description" : "Testing correct use of send HospitalNotification",
       "exampleBoolean" : true
     },
     {
@@ -688,7 +616,7 @@
         "reference" : "TestScript/hospitalnotification-PF-send-imp-03"
       },
       "name" : "HospitalNotification-TestScript-PF-send-imp-03",
-      "description" : "Testing correct use of End hospital Stay - deseased",
+      "description" : "Testing correct use of send HospitalNotification - deceased",
       "exampleBoolean" : true
     },
     {
@@ -697,10 +625,10 @@
         "valueString" : "TestScript"
       }],
       "reference" : {
-        "reference" : "TestScript/hospitalnotification-an-mors"
+        "reference" : "TestScript/hospitalnotification-PF-send-imp-04"
       },
-      "name" : "HospitalNotification-TestScript-AN_MORS",
-      "description" : "Testing correct use of cancellation of deceased inpatient before arrival at the hospital - deceased",
+      "name" : "HospitalNotification-TestScript-PF-send-imp-04",
+      "description" : "Testing correct use of send HospitalNotification",
       "exampleBoolean" : true
     },
     {
@@ -709,274 +637,10 @@
         "valueString" : "TestScript"
       }],
       "reference" : {
-        "reference" : "TestScript/hospitalnotification-an-mors-emer"
+        "reference" : "TestScript/hospitalnotification-PF-send-imp-05"
       },
-      "name" : "HospitalNotification-TestScript-AN_MORS-emer",
-      "description" : "Testing correct use of cancellation of End hospital Stay - deceased",
-      "exampleBoolean" : true
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "TestScript"
-      }],
-      "reference" : {
-        "reference" : "TestScript/hospitalnotification-an-slor"
-      },
-      "name" : "HospitalNotification-TestScript-AN_SLOR",
-      "description" : "Testing correct use of cancellation of end leave",
-      "exampleBoolean" : true
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "TestScript"
-      }],
-      "reference" : {
-        "reference" : "TestScript/hospitalnotification-an-staa"
-      },
-      "name" : "HospitalNotification-TestScript-AN_STAA",
-      "description" : "Testing correct use of cancellation of start acute ambulant",
-      "exampleBoolean" : true
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "TestScript"
-      }],
-      "reference" : {
-        "reference" : "TestScript/hospitalnotification-an-stin"
-      },
-      "name" : "HospitalNotification-TestScript-AN_STIN",
-      "description" : "Testing correct use of cancellation of start hospital stay admission",
-      "exampleBoolean" : true
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "TestScript"
-      }],
-      "reference" : {
-        "reference" : "TestScript/hospitalnotification-an-stor"
-      },
-      "name" : "HospitalNotification-TestScript-AN_STOR",
-      "description" : "Testing correct use of cancellation of start leave",
-      "exampleBoolean" : true
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "TestScript"
-      }],
-      "reference" : {
-        "reference" : "TestScript/hospitalnotification-mors"
-      },
-      "name" : "HospitalNotification-TestScript-MORS",
-      "description" : "Testing correct use of status inpatient",
-      "exampleBoolean" : true
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "TestScript"
-      }],
-      "reference" : {
-        "reference" : "TestScript/hospitalnotification-mors-emer"
-      },
-      "name" : "HospitalNotification-TestScript-MORS-EMER",
-      "description" : "Testing correct use of End hospital Stay-deseased",
-      "exampleBoolean" : true
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "TestScript"
-      }],
-      "reference" : {
-        "reference" : "TestScript/hospitalnotification-mors-imp"
-      },
-      "name" : "HospitalNotification-TestScript-MORS-IMP",
-      "description" : "Testing correct use of End hospital Stay - deseased",
-      "exampleBoolean" : true
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "TestScript"
-      }],
-      "reference" : {
-        "reference" : "TestScript/hospitalnotification-mors-stor"
-      },
-      "name" : "HospitalNotification-TestScript-MORS-STOR",
-      "description" : "Testing correct use of End hospital Stay - deseased",
-      "exampleBoolean" : true
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "TestScript"
-      }],
-      "reference" : {
-        "reference" : "TestScript/hospitalnotification-re-mors"
-      },
-      "name" : "HospitalNotification-TestScript-RE_MORS",
-      "description" : "Testing correct use of update of deceased inpatient before arrival at the hospital - deceased",
-      "exampleBoolean" : true
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "TestScript"
-      }],
-      "reference" : {
-        "reference" : "TestScript/hospitalnotification-re-mors-emer"
-      },
-      "name" : "HospitalNotification-TestScript-RE_MORS-emer",
-      "description" : "Testing correct use of Update of End hospital Stay - deceased",
-      "exampleBoolean" : true
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "TestScript"
-      }],
-      "reference" : {
-        "reference" : "TestScript/hospitalnotification-re-slor"
-      },
-      "name" : "HospitalNotification-TestScript-RE_SLOR",
-      "description" : "Testing correct use of Update of end leave",
-      "exampleBoolean" : true
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "TestScript"
-      }],
-      "reference" : {
-        "reference" : "TestScript/hospitalnotification-re-staa"
-      },
-      "name" : "HospitalNotification-TestScript-RE_STAA",
-      "description" : "Testing correct use of status stay-acute ambulant",
-      "exampleBoolean" : true
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "TestScript"
-      }],
-      "reference" : {
-        "reference" : "TestScript/hospitalnotification-re-stin"
-      },
-      "name" : "HospitalNotification-TestScript-RE_STIN",
-      "description" : "Testing correct use of status Update of start hospital stay-admission",
-      "exampleBoolean" : true
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "TestScript"
-      }],
-      "reference" : {
-        "reference" : "TestScript/hospitalnotification-re-stor"
-      },
-      "name" : "HospitalNotification-TestScript-RE_STOR",
-      "description" : "Testing correct use of Update of Start leave",
-      "exampleBoolean" : true
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "TestScript"
-      }],
-      "reference" : {
-        "reference" : "TestScript/hospitalnotification-slhj-emer"
-      },
-      "name" : "HospitalNotification-TestScript-SLHJ-EMER",
-      "description" : "Testing correct use of End hospital Stay - patient discharged to home/primary sector",
-      "exampleBoolean" : true
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "TestScript"
-      }],
-      "reference" : {
-        "reference" : "TestScript/hospitalnotification-slhj-imp"
-      },
-      "name" : "HospitalNotification-TestScript-SLHJ-imp",
-      "description" : "Testing correct use of End hospital Stay- patient discharged to home/primary sector",
-      "exampleBoolean" : true
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "TestScript"
-      }],
-      "reference" : {
-        "reference" : "TestScript/hospitalnotification-slhj-imp-timestamptest"
-      },
-      "name" : "HospitalNotification-TestScript-SLHJ-imp-timestamptest",
-      "description" : "Testing correct use of End hospital Stay- patient discharged to home/primary sector",
-      "exampleBoolean" : true
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "TestScript"
-      }],
-      "reference" : {
-        "reference" : "TestScript/hospitalnotification-slor"
-      },
-      "name" : "HospitalNotification-TestScript-SLOR",
-      "description" : "Testing correct use of status End leave",
-      "exampleBoolean" : true
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "TestScript"
-      }],
-      "reference" : {
-        "reference" : "TestScript/hospitalnotification-staa"
-      },
-      "name" : "HospitalNotification-TestScript-STAA",
-      "description" : "Testing correct use of status acute-ambulant",
-      "exampleBoolean" : true
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "TestScript"
-      }],
-      "reference" : {
-        "reference" : "TestScript/hospitalnotification-stin"
-      },
-      "name" : "HospitalNotification-TestScript-STIN",
-      "description" : "Testing correct use of status inpatient",
-      "exampleBoolean" : true
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "TestScript"
-      }],
-      "reference" : {
-        "reference" : "TestScript/hospitalnotification-stin-a1"
-      },
-      "name" : "HospitalNotification-TestScript-STIN-A1",
-      "description" : "Testing correct use of status inpatient",
-      "exampleBoolean" : true
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "TestScript"
-      }],
-      "reference" : {
-        "reference" : "TestScript/hospitalnotification-stor"
-      },
-      "name" : "HospitalNotification-TestScript-STOR",
-      "description" : "Testing correct use of status Start leave",
+      "name" : "HospitalNotification-TestScript-PF-send-imp-05",
+      "description" : "Testing correct use of send HospitalNotification",
       "exampleBoolean" : true
     },
     {

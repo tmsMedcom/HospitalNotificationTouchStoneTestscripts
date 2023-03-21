@@ -1,0 +1,21 @@
+---
+---
+<!-- layouts\layout-changehistory.html -->
+<!-- get modelType -->
+
+
+{% include fragment-pagebegin.html %}
+
+<div style="counter-reset: section 10" class="col-12">
+  <!--ReleaseHeader--><p id="publish-box">Publish Box goes here</p><!--EndReleaseHeader-->
+  {% include fragment-base-navtabs.html type='TestScript' id='hospitalnotification-PF-send-imp-02' active='history' %}
+
+  <a name="root"> </a>
+  <h2 id="root">{{type}}: Send: Admit patient, register patient as being on leave, patient doesn’t return from leave, discharge patient. - Change History</h2>
+  <p>History of changes for hospitalnotification-PF-send-imp-02 {{type | downcase}}.</p>
+
+  {%include TestScript-hospitalnotification-PF-send-imp-02-history.xhtml%}
+
+</div>
+{% assign includetabscripts = 'true' %}
+{% include fragment-pageend.html %}
