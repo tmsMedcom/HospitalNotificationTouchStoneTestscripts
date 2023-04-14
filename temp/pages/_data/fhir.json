@@ -14,8 +14,8 @@
   "toolingVersionFull" : "5.0.0-draft-final (3)",
   "totalFiles" : 7,
   "processedFiles" : 16,
-  "genDate" : "Tue, Mar 21, 2023 14:28+0100",
-  "genDay" : "21/03/2023",
+  "genDate" : "Wed, Mar 22, 2023 08:15+0100",
+  "genDay" : "22/03/2023",
   "resourceTypes" : [
     "Account",
     "ActivityDefinition",
@@ -243,7 +243,7 @@
         "telecom" : ["fhir@medcom.dk"]
       }
     ],
-    "date" : "2023-03-21T14:28:49+01:00",
+    "date" : "2023-03-22T08:15:10+01:00",
     "description" : "Testscripts for HospitalNotification",
     "copyright" : null,
     "fhirVersion" : "4.0.1"

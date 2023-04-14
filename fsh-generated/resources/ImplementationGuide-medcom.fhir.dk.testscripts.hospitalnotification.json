@@ -62,6 +62,13 @@
       },
       {
         "reference": {
+          "reference": "TestScript/hospitalnotification-PF-send-imp-06"
+        },
+        "name": "HospitalNotification-TestScript-PF-send-imp-06",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
           "reference": "Bundle/a5e5b880-c087-4055-b9ec-99108695f81d"
         },
         "exampleBoolean": false,

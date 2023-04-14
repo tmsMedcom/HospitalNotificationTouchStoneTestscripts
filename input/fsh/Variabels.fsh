@@ -43,6 +43,11 @@ RuleSet: variableOccurredDateTime(type) // skal kun anvendes ved den initielle m
 * variable[=].expression = "Bundle.entry.resource.ofType(Provenance).where(target.reference = %resource.entry[0].fullUrl).occurred"
 * variable[=].sourceId = "create-message-{type}"
 
+RuleSet: variableHospitalSOR(type) 
+* variable[+].name = "hospitalSOR-{type}"
+* variable[=].expression = "Bundle.entry.where(fullUrl = %resource.entry.resource[0].sender.reference).resource.identifier.where(system = 'urn:oid:1.2.208.176.1.1').value"
+* variable[=].sourceId = "create-message-{type}"
+
 RuleSet: variableHospitalGLN(type) 
 * variable[+].name = "hospitalGLN-{type}"
 * variable[=].expression = "Bundle.entry.where(fullUrl = %resource.entry.resource[0].sender.reference).resource.identifier.where(system = 'https://www.gs1.org/gln').value"
@@ -52,6 +57,11 @@ RuleSet: variableHospitalGLN(type)
 * variable[+].name = "receiverEndpoint"
 * variable[=].expression = "Bundle.entry.resource.ofType(MessageHeader).destination.endpoint"
 * variable[=].sourceId = "create-{type}-{number}" */
+
+RuleSet: variableEncounterDateTime(type) // skal kun anvendes ved den initielle meddelelse
+* variable[+].name = "encounterDateTime-{type}"
+* variable[=].expression = "Bundle.entry.resource.ofType(Encounter).period.start"
+* variable[=].sourceId = "create-message-{type}"
 
 
 RuleSet: dynamicEndpoint(type, number)

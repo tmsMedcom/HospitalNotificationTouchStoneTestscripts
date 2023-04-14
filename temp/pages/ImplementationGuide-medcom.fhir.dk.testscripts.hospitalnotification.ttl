@@ -17,7 +17,7 @@
   fhir:name [ fhir:v "HospitalnotificationTestscripts"] ; # 
   fhir:title [ fhir:v "HospitalNotification Testscripts"] ; # 
   fhir:status [ fhir:v "draft"] ; # 
-  fhir:date [ fhir:v "2023-03-21T14:28:49+01:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2023-03-22T08:15:10+01:00"^^xsd:dateTime] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "MedCom" ] ;
      fhir:telecom ( [

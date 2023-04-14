@@ -39,6 +39,6 @@
     "type" : "TestScript",
     "url" : "https://medcomfhir.dk/ig/hospitalnotification/",
     "version" : "1.0.0-b1",
-    "name" : "Send: Admit patient, correct message due to incorrect hospital department"
+    "name" : "Send: Admit patient, correct message due to incorrect hospital department. Evaluation is based on GLN number."
   }
 ]

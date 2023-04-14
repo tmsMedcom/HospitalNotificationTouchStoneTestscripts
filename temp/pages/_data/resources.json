@@ -10,7 +10,7 @@
     "version" : "1.0.0-b1",
     "name" : "HospitalnotificationTestscripts",
     "title" : "HospitalNotification Testscripts",
-    "date" : "2023-03-21T14:28:49+01:00",
+    "date" : "2023-03-22T08:15:10+01:00",
     "description" : "Testscripts for HospitalNotification",
     "status" : {
       "class" : "colsd",
@@ -114,8 +114,8 @@
     "path" : "TestScript-hospitalnotification-PF-send-imp-05.html",
     "url" : "https://medcomfhir.dk/ig/hospitalnotification/",
     "version" : "1.0.0-b1",
-    "name" : "Send: Admit patient, correct message due to incorrect hospital department",
-    "title" : "Send: Admit patient, correct message due to incorrect hospital department. - PF-send-imp-02",
+    "name" : "Send: Admit patient, correct message due to incorrect hospital department. Evaluation is based on GLN number.",
+    "title" : "Send: Admit patient, correct message due to incorrect hospital department. Evaluation is based on GLN number.- PF-send-imp-02",
     "date" : "2023-04-01",
     "description" : "Testing correct use of send HospitalNotification",
     "status" : {

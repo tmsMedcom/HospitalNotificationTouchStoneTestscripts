@@ -133,10 +133,22 @@ RuleSet: assertStructureEpisodeOfCareID
 * test[=].action[=].assert.warningOnly = false
 
 
-RuleSet: assertHospitalGLN(hospitalGLN)
-* test[=].action[+].assert.description = "Confirm that the sender GLN number is different from the previous message."
+RuleSet: assertSenderSOR(hospitalSOR)
+* test[=].action[+].assert.description = "Confirm that the sender SOR number is different from the previous message."
+* test[=].action[=].assert.direction = #request
+* test[=].action[=].assert.expression = "Bundle.entry.where(fullUrl = %resource.entry.resource[0].sender.reference).resource.identifier.where(system = 'urn:oid:1.2.208.176.1.1').value != ${{hospitalSOR}}"
+* test[=].action[=].assert.warningOnly = false
+
+RuleSet: assertSenderGLN(hospitalGLN)
+* test[=].action[+].assert.description = "Confirm that the sender SOR number is different from the previous message."
 * test[=].action[=].assert.direction = #request
 * test[=].action[=].assert.expression = "Bundle.entry.where(fullUrl = %resource.entry.resource[0].sender.reference).resource.identifier.where(system = 'https://www.gs1.org/gln').value != ${{hospitalGLN}}"
+* test[=].action[=].assert.warningOnly = true
+
+RuleSet: assertEncounterDateTime(encounterDateTime)
+* test[=].action[+].assert.description = "Confirm that Encounter.period.start has been updated."
+* test[=].action[=].assert.direction = #request
+* test[=].action[=].assert.expression = "Bundle.entry.resource.ofType(Encounter).period.start != ${{encounterDateTime}}"
 * test[=].action[=].assert.warningOnly = false
 
 /* RuleSet: assertPatientIdentifier(patientID)

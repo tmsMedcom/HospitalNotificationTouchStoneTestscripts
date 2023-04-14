@@ -33,7 +33,7 @@ RuleSet: operationCreateMessage(type, number)
 * test[=].action[=].operation.responseId = "create-message-{type}"
 * test[=].action[=].operation.sourceId = "create-{type}-{number}" 
 
-RuleSet: operationReadMessage(type, number, destinationUri)
+RuleSet: operationReadMessage(type, number, destinationUri, bundleid)
 * test[+].id = "hospitalnotification-read-{type}-{number}"
 * test[=].name = "Get a HospitalNotification {type} Message {number}"
 * test[=].description = "GET a Hospital notification. The expected response is a 200(OK) with a payload of the Hospital notification resource in XML format."
@@ -45,7 +45,7 @@ RuleSet: operationReadMessage(type, number, destinationUri)
 * test[=].action[=].operation.destination = 1
 * test[=].action[=].operation.encodeRequestUrl = true
 * test[=].action[=].operation.origin = 1
-* test[=].action[=].operation.params = "?message.destination-uri=${{destinationUri}}"
+* test[=].action[=].operation.params = "?message.destination-uri=${{destinationUri}}&id=${{bundleid}}"
 
 /* RuleSet: operationSearchMessage(type, number, destinationUri)
 * test[+].id = "hospitalnotification-search-{type}-{number}"

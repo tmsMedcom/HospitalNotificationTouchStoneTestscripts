@@ -1,3 +1,27 @@
+/* EKSTRA 2
+Instance: HospitalNotification-TestScript-receive-STIN
+InstanceOf: TestScript
+* insert Metadata
+* id = "hospitalnotification-receive-stin"
+* name = "Receive: Start hospital stay - admitted"
+* title = "Receive: Start hospital stay - admitted - STIN"
+* description = "Test of receiving of HospitalNotification Message."
+// Fixturen indeholder en placeholder ved MessageHeader.destination.endpoint.
+* insert createInitialMessageSetup(STIN, 01, /FHIRSandbox/MedCom/HospitalNotificationTMS/HospitalNotification-fixture-STIN.xml, destinationUri-STIN)
+* insert readMessage(STIN, 01, destinationUri-STIN, bundleid-STIN)
+
+//Get STOR
+Instance: HospitalNotification-TestScript-receive-STOR
+InstanceOf: TestScript
+* insert Metadata
+* id = "hospitalnotification-receive-stor"
+* name = "Receive: Start leave"
+* title = "Receive: Start leave - STOR"
+* description = "Test of receiving of HospitalNotification Message."
+* insert createInitialMessageSetup(STIN, 01, /FHIRSandbox/MedCom/HospitalNotificationTMS/HospitalNotification-fixture-STIN.xml, destinationUri-STIN)
+* insert createMessageSetup(STOR, 02, /FHIRSandbox/MedCom/HospitalNotificationTMS/HospitalNotification-fixture-STOR.xml, destinationUri-STOR)
+* insert readMessage(STIN, 01, destinationUri-STIN, bundleid-STIN)
+* insert readMessage(STOR, 02, destinationUri-STOR, bundleid-STOR) */
 /* //Get STIN
 Instance: HospitalNotification-TestScript-receive-STIN
 InstanceOf: TestScript

@@ -55,13 +55,28 @@ Instance: HospitalNotification-TestScript-PF-send-imp-05
 InstanceOf: TestScript
 * insert Metadata
 * id = "hospitalnotification-PF-send-imp-05"
-* name = "Send: Admit patient, correct message due to incorrect hospital department. Evaluation is based on GLN number."
-* title = "Send: Admit patient, correct message due to incorrect hospital department. Evaluation is based on GLN number.- PF-send-imp-02"
+* name = "Send: Admit patient, correct message due to incorrect hospital department. Evaluation is based on SOR number."
+* title = "Send: Admit patient, correct message due to incorrect hospital department. Evaluation is based on SOR number.- PF-send-imp-05"
 * description = "Testing correct use of send HospitalNotification"
 * insert createInitialMessage(STIN, 01, /FHIRSandbox/MedCom/HospitalNotificationTMS/HospitalNotification-fixture.xml, admit-inpatient, IMP, in-progress, true)
+* insert variableHospitalSOR(STIN)
 * insert variableHospitalGLN(STIN)
 * insert createMessage(RE-STIN, 02, /FHIRSandbox/MedCom/HospitalNotificationTMS/HospitalNotification-fixture.xml, revise-admit-inpatient, IMP, in-progress, revision, messageHeaderid-STIN, 2, episodeOfCareID-STIN)
-* insert assertHospitalGLN(hospitalGLN-STIN)
+* insert assertSenderSOR(hospitalSOR-STIN)
+* insert assertSenderGLN(hospitalGLN-STIN)
+
+ //PF-send-imp-06 - STIN-RE_STIN
+Instance: HospitalNotification-TestScript-PF-send-imp-06
+InstanceOf: TestScript
+* insert Metadata
+* id = "hospitalnotification-PF-send-imp-06"
+* name = "Send: AdmitAdmit patient, correct message due to incorrect time of admission."
+* title = "Send: Admit patient, correct message due to incorrect time of admission - PF-send-imp-05"
+* description = "Testing correct use of send HospitalNotification"
+* insert createInitialMessage(STIN, 01, /FHIRSandbox/MedCom/HospitalNotificationTMS/HospitalNotification-fixture.xml, admit-inpatient, IMP, in-progress, true)
+* insert variableEncounterDateTime(STIN)
+* insert createMessage(RE-STIN, 02, /FHIRSandbox/MedCom/HospitalNotificationTMS/HospitalNotification-fixture.xml, revise-admit-inpatient, IMP, in-progress, revision, messageHeaderid-STIN, 2, episodeOfCareID-STIN)
+* insert assertEncounterDateTime(encounterDateTime-STIN)
 
 
 /* //AN_STIN - wrong patient
